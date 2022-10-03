@@ -1,0 +1,32 @@
+export default function AboutPage() {
+  return (
+    <div class="row">
+      <div class="col-4 bg-dark rounded p-4 text-light">
+        <img
+          src="https://media-exp1.licdn.com/dms/image/C5603AQFwkn0a87ZkUQ/profile-displayphoto-shrink_800_800/0/1656096799326?e=1668643200&v=beta&t=7_m9v79bpEGcI9hXtaZPCbPoCZ4zHXosJpS5rw73x7U"
+          class="img-thumbnail"
+          alt="..."
+        />
+        <h1 class="mt-4">About</h1>
+        <p>
+          I was born in Brazil, Minas Gerais. When I moved to the United States
+          in 2016, a cousin of mine introduced me to programming. Since then, I
+          have not stopped coding because I see it as a means to express my
+          ideas. I have taught, created projects and solutions, and competed. I
+          plan to purue a major in Computer Science as I wish to continue using
+          my skills to help others, and to provide a better life for my family.
+        </p>
+      </div>
+      <div class="col-4">
+        <div class="bg-dark rounded p-2 text-light">
+          <h1 class="text-center">Achievements</h1>
+        </div>
+      </div>
+      <div class="col-4">
+      <div class="bg-dark rounded p-2 text-light">
+          <h1 class="text-center">Certifications</h1>
+        </div>
+      </div>
+    </div>
+  );
+}
