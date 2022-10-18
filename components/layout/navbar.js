@@ -2,13 +2,13 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <nav class="navbar navbar-expand-lg bg-light">
-      <div class="container-fluid">
+    <nav className="navbar navbar-expand-lg bg-light">
+      <div className="container-fluid">
         <Link href="/">
-          <a class="navbar-brand">Home</a>
+          <a className="navbar-brand">Home</a>
         </Link>
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent"
@@ -16,23 +16,23 @@ export default function Navbar() {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <li className="nav-item">
               <Link href="projects">
-                <a class="nav-link">Projects</a>
+                <a className="nav-link">Projects</a>
               </Link>
             </li>
-            <li class="nav-item">
+            <li className="nav-item">
               <Link href="about">
-                <a class="nav-link">About</a>
+                <a className="nav-link">About</a>
               </Link>
             </li>
-            <li class="nav-item dropdown">
+            <li className="nav-item dropdown">
               <a
-                class="nav-link dropdown-toggle"
+                className="nav-link dropdown-toggle"
                 href="#"
                 role="button"
                 data-bs-toggle="dropdown"
@@ -40,20 +40,20 @@ export default function Navbar() {
               >
                 More
               </a>
-              <ul class="dropdown-menu">
+              <ul className="dropdown-menu">
                 <li>
                   <Link href="activities">
-                    <a class="dropdown-item">Activities</a>
+                    <a className="dropdown-item">Activities</a>
                   </Link>
                 </li>
                 <li>
                   <Link href="education">
-                    <a class="dropdown-item">Education</a>
+                    <a className="dropdown-item">Education</a>
                   </Link>
                 </li>
                 <li>
                   <Link href="resume">
-                    <a class="dropdown-item">Resume</a>
+                    <a className="dropdown-item">Resume</a>
                   </Link>
                 </li>
               </ul>

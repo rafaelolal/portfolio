@@ -8,7 +8,7 @@ export default function ProjectsPage(props) {
 
 export async function getStaticProps() {
   const client = await MongoClient.connect(
-    "mongodb+srv://rafaelpbcp:LBjwUg_8J_7N8yk@cluster0.devpukt.mongodb.net/portfolio?retryWrites=true&w=majority"
+    "mongodb+srv://rafaelpbcp:vejsqOpE2lUUVBpq@cluster0.devpukt.mongodb.net/portfolio?retryWrites=true&w=majority"
   );
   const projectsCollection = client.db().collection("projects");
 

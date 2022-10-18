@@ -4,7 +4,7 @@ export default function ProjectList(props) {
   const { projects } = props;
 
   return (
-    <div class="row">
+    <div className="row">
       {projects.map((project) => (
         <Project
           key={project.id}
