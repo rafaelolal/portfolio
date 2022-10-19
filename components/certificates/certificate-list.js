@@ -11,8 +11,10 @@ export default function CertificateList(props) {
           id={certificate.id}
           name={certificate.name}
           description={certificate.description}
-          date={certificate.date}
-          associated_with={certificate.associated_with}
+          year={certificate.year}
+          month={certificate.month}
+          day={certificate.date}
+          issuer={certificate.associated_with}
           link={certificate.link}
         />
       ))}

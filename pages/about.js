@@ -1,3 +1,6 @@
+import AchievementList from "../components/achievements/achievement-list";
+import CertificateList from "../components/certificates/certificate-list";
+
 export default function AboutPage() {
   return (
     <div className="row">
@@ -20,11 +23,13 @@ export default function AboutPage() {
       <div className="col-4">
         <div className="bg-dark rounded p-2 text-light">
           <h1 className="text-center">Achievements</h1>
+          <AchievementList />
         </div>
       </div>
       <div className="col-4">
-      <div className="bg-dark rounded p-2 text-light">
-          <h1 className="text-center">Certifications</h1>
+        <div className="bg-dark rounded p-2 text-light">
+          <h1 className="text-center">Certificates</h1>
+          <CertificateList />
         </div>
       </div>
     </div>
