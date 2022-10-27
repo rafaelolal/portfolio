@@ -1,4 +1,38 @@
-@import "../bootstrap/scss/bootstrap";
-@import url("http://fonts.googleapis.com/css?family=Oswald:400,300,700");
+$font-family-base: "Calibri", serif;
 
-$font-family-base: "Noto Sans", sans-serif
+$dark: #f1eff1;
+$primary: #da1e19;
+$secondary: #f9a660;
+
+$navbar-light-color: #000;
+$navbar-light-hover-color: #da1e19;
+
+$offcanvas-horizontal-width: auto;
+
+$display-font-sizes: (
+  1: 5rem,
+  2: 4.5rem,
+  3: 4rem,
+  4: 3.5rem,
+  5: 3rem,
+  6: 1.75rem
+);
+
+.about {
+  display: inline-block
+}
+
+.blogfolio {
+  width: -webkit-fit-content
+}
+
+.vb {
+  border-bottom: thick solid $secondary;
+}
+
+.vl {
+  border-left: thick solid $primary;
+}
+
+@import "../bootstrap/scss/bootstrap";
+@import url("https://fonts.googleapis.com/css?family=Tangerine");

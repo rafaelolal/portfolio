@@ -21,78 +21,79 @@ export default function Post(props) {
   }
 
   return (
-    <div className="row">
-      <div className="col-12 col-md-6 mx-auto">
-        <div className="card">
-          <div className="card-body">
-            <h5 className="card-title">{props.title}</h5>
-            <p className="card-text">
-              <small className="text-muted">{props.list}</small>
-              <small className="text-muted">{props.year}</small>
-              <small className="text-muted">
-                {props.month} {props.day}
-              </small>
-            </p>
-            <p className="card-text">{props.description}</p>
+    <div className="col-12 my-4">
+      <div className="col-12 col-md-10 col-lg-8 mx-auto bg-dark p-4 rounded-3">
+        <div className="vl position-relative ps-1 mx-4">
+        <small className="text-primary">{props.year + ", " + props.month + " " + props.day}</small>
+          <div>
+            <h2 className="fw-bold">{props.title}</h2>
+            <h2>
+              <span class="badge rounded-5 text-bg-primary position-absolute top-0 end-0">
+                {props.list}
+              </span>
+            </h2>
           </div>
-          <div
-            id={"carousel" + props.id}
-            className="carousel slide card-img-bottom"
-            data-bs-ride="carousel"
-          >
-            <div className="carousel-inner">
-              <div className="carousel-item active">
-                <img
-                  src={`/${props.images[1]}`}
-                  className="d-block w-100"
-                  alt="..."
-                />
-              </div>
-              <div className="carousel-item">
-                <img
-                  src={`/${props.images[0]}`}
-                  className="d-block w-100"
-                  alt="..."
-                />
-              </div>
-            </div>
-            <button
-              className="carousel-control-prev"
-              type="button"
-              data-bs-target={"#carousel" + props.id}
-              data-bs-slide="prev"
-            >
-              <span
-                className="carousel-control-prev-icon"
-                aria-hidden="true"
-              ></span>
-              <span className="visually-hidden">Previous</span>
-            </button>
-            <button
-              className="carousel-control-next"
-              type="button"
-              data-bs-target={"#carousel" + props.id}
-              data-bs-slide="next"
-            >
-              <span
-                className="carousel-control-next-icon"
-                aria-hidden="true"
-              ></span>
-              <span className="visually-hidden">Next</span>
-            </button>
-          </div>
-          <div className="card-body">
-            <Interactions
-              postId={props.id}
-              addLike={addLike}
-              showComments={showComments}
-              likes={likes}
-            ></Interactions>
-          </div>
-          {showingComments && (
-            <CommentList postId={postId} showingComments={showingComments} />
-          )}
+          <p>{props.description}</p>
         </div>
+
+        <div
+          id={"carousel" + props.id}
+          className="carousel slide card-img-bottom"
+          data-bs-ride="carousel"
+        >
+          <div className="carousel-inner">
+            <div className="carousel-item active">
+              <img
+                src={`/${props.images[1]}`}
+                className="d-block w-100"
+                alt="..."
+              />
+            </div>
+            <div className="carousel-item">
+              <img
+                src={`/${props.images[0]}`}
+                className="d-block w-100"
+                alt="..."
+              />
+            </div>
+          </div>
+          <button
+            className="carousel-control-prev"
+            type="button"
+            data-bs-target={"#carousel" + props.id}
+            data-bs-slide="prev"
+          >
+            <span
+              className="carousel-control-prev-icon"
+              aria-hidden="true"
+            ></span>
+            <span className="visually-hidden">Previous</span>
+          </button>
+          <button
+            className="carousel-control-next"
+            type="button"
+            data-bs-target={"#carousel" + props.id}
+            data-bs-slide="next"
+          >
+            <span
+              className="carousel-control-next-icon"
+              aria-hidden="true"
+            ></span>
+            <span className="visually-hidden">Next</span>
+          </button>
+        </div>
+
+        <div className="mt-3">
+          <Interactions
+            postId={props.id}
+            addLike={addLike}
+            showComments={showComments}
+            likes={likes}
+          ></Interactions>
+        </div>
+        {showingComments && (
+          <CommentList postId={postId} showingComments={showingComments} />
+        )}
       </div>
     </div>
   );

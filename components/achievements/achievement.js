@@ -21,11 +21,11 @@ export default function Achievement(props) {
       >
         <div class="accordion-body">
           <div class="card">
-            <div class="card-header">{props.associated_with}</div>
+            <div class="card-header">{props.issuer}</div>
             <div class="card-body">
               <blockquote class="blockquote mb-0">
                 <p>{props.description}</p>
-                <footer class="blockquote-footer">{props.date}</footer>
+                <footer class="blockquote-footer">{props.year}, {props.month} {props.day}</footer>
               </blockquote>
             </div>
           </div>

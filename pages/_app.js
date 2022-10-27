@@ -9,6 +9,8 @@ export default function MyApp({ Component, pageProps }) {
     require("bootstrap/dist/js/bootstrap.bundle.min.js");
   }, []);
 
+
+
   return (
     <Layout>
       <Component {...pageProps} />

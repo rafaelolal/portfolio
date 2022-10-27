@@ -12,13 +12,13 @@ export default function PostSearch(props) {
     router.push({ pathname: "/blog", query: { list: list } }, undefined, {
       shallow: true,
     });
-    console.log("CURRENT LIST " + list)
+    console.log("CURRENT LIST " + list);
     props.setCurrentList(list);
   }
 
   function filterBy() {
     props.setCurrentSearch(searchInputRef.current.value.trim());
-  
+
     if (yearInputRef.current.value.includes("All")) {
       props.setCurrentYear();
     } else {
@@ -32,76 +32,47 @@ export default function PostSearch(props) {
   }
 
   return (
-    <div className="row g-2">
-      <div className="col">
-        <div className="btn-group">
+    <div className="row mt-5">
+      <div className="col-6 col-lg-3 mb-3">
+        <div class="input-group h-100">
           <button
-            onClick={() => filterByList("Featured")}
-            type="button"
-            className="btn btn-warning"
+            className="btn btn-primary"
+            id="button-addon1"
+            onClick={filterBy}
           >
-            See Featured
+            Search
           </button>
-          <button
-            type="button"
-            className="btn btn-warning dropdown-toggle dropdown-toggle-split"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            <span className="visually-hidden">Toggle Dropdown</span>
-          </button>
-          <ul className="dropdown-menu">
-            <li>
-              <a
-                onClick={() => filterByList("Projects")}
-                className="dropdown-item"
-              >
-                Projects
-              </a>
-            </li>
-            <li>
-              <a
-                onClick={() => filterByList("Gym")}
-                className="dropdown-item"
-              >
-                Gym
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div className="col-md">
-        <div className="form-floating">
           <input
-            type="text"
+            type="email"
             className="form-control"
-            id="floatingInputGrid"
-            ref={searchInputRef}
+            id="exampleFormControlInput1"
+            placeholder="Key words..."
+            aria-describedby="button-addon1"
           />
-          <label htmlFor="floatingInputGrid">Key words</label>
         </div>
       </div>
-      <div className="col-md">
-        <div className="form-floating">
-          <select
-            className="form-select"
-            id="floatingSelectGrid"
-            ref={yearInputRef}
-            onChange={filterBy}
-            defaultValue="All years"
-          >
-            <option value="All years">
-              All years
-            </option>
-            <option value="2022">2022</option>
-            <option value="2021">2021</option>
-            <option value="2020">2020</option>
-            <option value="2019">2019</option>
-          </select>
-          <label htmlFor="floatingSelectGrid">Year</label>
+      <div className="col-6 col-lg-3 mb-3">
+        <div className="col-md">
+          <div className="form-floating">
+            <select
+              className="form-select"
+              id="floatingSelectGrid"
+              ref={yearInputRef}
+              onChange={filterBy}
+              defaultValue="All years"
+            >
+              <option value="All years">All years</option>
+              <option value="2022">2022</option>
+              <option value="2021">2021</option>
+              <option value="2020">2020</option>
+              <option value="2019">2019</option>
+            </select>
+            <label htmlFor="floatingSelectGrid">Year</label>
+          </div>
         </div>
       </div>
-      <div className="col-md">
+
+      <div className="col-6 col-lg-3 mb-3">
         <div className="form-floating">
           <select
             className="form-select"
@@ -110,9 +81,7 @@ export default function PostSearch(props) {
             onChange={filterBy}
             defaultValue="All months"
           >
-            <option value="All months">
-              All months
-            </option>
+            <option value="All months">All months</option>
             <option value="January">January</option>
             <option value="February">February</option>
             <option value="March">March</option>
@@ -129,10 +98,39 @@ export default function PostSearch(props) {
           <label htmlFor="floatingSelectGrid">Month</label>
         </div>
       </div>
-      <div className="col-12">
-        <button onClick={filterBy} className="btn btn-primary">
-          Search
-        </button>
+      <div className="col-6 col-lg-3 mb-3">
+        <div className="btn-group h-100 w-100">
+          <button
+            onClick={() => filterByList("Featured")}
+            type="button"
+            className="btn btn-secondary"
+          >
+            <p className="m-0 display-6">See Featured</p>
+          </button>
+          <button
+            type="button"
+            className="fs-5 btn btn-primary dropdown-toggle dropdown-toggle-split"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <span className="visually-hidden">Toggle Dropdown</span>
+          </button>
+          <ul className="dropdown-menu">
+            <li>
+              <a
+                onClick={() => filterByList("Projects")}
+                className="dropdown-item"
+              >
+                Projects
+              </a>
+            </li>
+            <li>
+              <a onClick={() => filterByList("Gym")} className="dropdown-item">
+                Gym
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );

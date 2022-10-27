@@ -59,7 +59,7 @@ export default function PostList(props) {
   console.log(posts)
 
   return (
-    <div>
+    <div className="row me-1 ms-1">
       {posts.map((post) => (
         <Post
           key={post.id}

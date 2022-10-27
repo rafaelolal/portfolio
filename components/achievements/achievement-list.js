@@ -1,40 +1,30 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Achievement from "./achievement";
+import AchievementGroup from "./achievement-group";
 
 export default function AchievementList() {
-  
-  const [achievements, setAchievements] = useState();
+  const [achievementGroups, setAchievementGroups] = useState();
 
   useEffect(() => {
     fetch("/api/getAchievements", {
-      method: "POST",
-      body: JSON.stringify({ postId }),
-      headers: {
-        "Content-Type": "application/json",
-      },
+      method: "GET",
     })
       .then((response) => response.json())
       .then((data) => {
-        setAchievements(data.data);
+        setAchievementGroups(data.data);
       });
   }, []);
 
-  if (!achievements) {
+  if (!achievementGroups) {
     return <p>Loading...</p>;
   }
 
   return (
-    <div class="accordion accordion-flush" id="accordionFlushExample">
-      {achievements.map((achievement) => (
-        <Achievement
-          key={achievement.id}
-          id={achievement.id}
-          name={achievement.name}
-          description={achievement.description}
-          year={achievement.year}
-          month={achievement.month}
-          day={achievement.date}
-          granter={achievement.associated_with}
+    <div className="row g-3">
+      {achievementGroups.map((group) => (
+        <AchievementGroup
+          achievements={group.achievements}
+          name={group.name}
         />
       ))}
     </div>
