@@ -1,23 +1,21 @@
 import CarouselItem from "./carousel-item";
 
 export default function Carousel(props) {
-  const { carousels } = props;
+  console.log("carousel props.children")
 
+  console.log(props.children)
   return (
     <div
-      id="carouselExampleIndicators"
+      id="featuredCarousel"
       className="carousel slide"
-      data-bs-ride="true"
     >
       <div className="carousel-inner">
-        {props.children.map((child) => (
-          <CarouselItem>{child}</CarouselItem>
-        ))}
+        {props.children}
       </div>
       <button
         className="carousel-control-prev"
         type="button"
-        data-bs-target="#carouselExampleIndicators"
+        data-bs-target="#featuredCarousel"
         data-bs-slide="prev"
       >
         <span className="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -26,7 +24,7 @@ export default function Carousel(props) {
       <button
         className="carousel-control-next"
         type="button"
-        data-bs-target="#carouselExampleIndicators"
+        data-bs-target="#featuredCarousel"
         data-bs-slide="next"
       >
         <span className="carousel-control-next-icon" aria-hidden="true"></span>

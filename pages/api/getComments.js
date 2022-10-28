@@ -9,8 +9,10 @@ export default async function handler(req, res) {
 
   res.status(200).json({
     data: comments.map((comment) => ({
+      year: comment.year,
+      month: comment.month,
+      day: comment.day,
       name: comment.name,
-      email: comment.email,
       body: comment.body,
       id: comment._id.toString(),
     })),

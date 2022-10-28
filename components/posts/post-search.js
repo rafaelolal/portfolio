@@ -33,15 +33,8 @@ export default function PostSearch(props) {
 
   return (
     <div className="row mt-5">
-      <div className="col-6 col-lg-3 mb-3">
+      <div className="col-6 col-lg-4 mb-3">
         <div class="input-group h-100">
-          <button
-            className="btn btn-primary"
-            id="button-addon1"
-            onClick={filterBy}
-          >
-            Search
-          </button>
           <input
             type="email"
             className="form-control"
@@ -49,9 +42,16 @@ export default function PostSearch(props) {
             placeholder="Key words..."
             aria-describedby="button-addon1"
           />
+          <button
+            className="btn btn-primary"
+            id="button-addon1"
+            onClick={filterBy}
+          >
+            Search
+          </button>
         </div>
       </div>
-      <div className="col-6 col-lg-3 mb-3">
+      <div className="col-6 col-lg-4 mb-3">
         <div className="col-md">
           <div className="form-floating">
             <select
@@ -72,7 +72,7 @@ export default function PostSearch(props) {
         </div>
       </div>
 
-      <div className="col-6 col-lg-3 mb-3">
+      <div className="col-6 col-lg-4 mb-3">
         <div className="form-floating">
           <select
             className="form-select"
@@ -98,18 +98,18 @@ export default function PostSearch(props) {
           <label htmlFor="floatingSelectGrid">Month</label>
         </div>
       </div>
-      <div className="col-6 col-lg-3 mb-3">
-        <div className="btn-group h-100 w-100">
+      <div className="col-6 col-lg-4 mb-3 mx-auto justify-content-center d-flex">
+        <div className="btn-group dropend">
           <button
             onClick={() => filterByList("Featured")}
             type="button"
             className="btn btn-secondary"
           >
-            <p className="m-0 display-6">See Featured</p>
+            <p className="fs-4 m-0">See Featured</p>
           </button>
           <button
             type="button"
-            className="fs-5 btn btn-primary dropdown-toggle dropdown-toggle-split"
+            className="btn btn-primary dropdown-toggle dropdown-toggle-split"
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
@@ -119,13 +119,16 @@ export default function PostSearch(props) {
             <li>
               <a
                 onClick={() => filterByList("Projects")}
-                className="dropdown-item"
+                className="dropdown-item fs-4"
               >
                 Projects
               </a>
             </li>
             <li>
-              <a onClick={() => filterByList("Gym")} className="dropdown-item">
+              <a
+                onClick={() => filterByList("Gym")}
+                className="dropdown-item fs-4"
+              >
                 Gym
               </a>
             </li>

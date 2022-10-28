@@ -4,7 +4,7 @@ export default function Resume() {
   const size = useWindowSize();
 
   return (
-    <div>
+    <div className="container">
       <iframe src="/Resume.pdf" width="100%" height={size.height} />
     </div>
   );

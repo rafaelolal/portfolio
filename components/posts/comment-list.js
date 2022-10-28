@@ -24,17 +24,17 @@ export default function CommentList(props) {
     return <p>Loading...</p>;
   }
 
-  console.log("COMMENTS")
-  console.log(comments)
-
   return (
-    <div className="row">
+    <div>
+      <p className="display-5 mt-3">Comments {comments.length}</p>
       {comments.map((comment) => (
         <Comment
           key={comment.id}
           name={comment.name}
-          email={comment.email}
           body={comment.body}
+          year={comment.year}
+          month={comment.month}
+          day={comment.day}
         />
       ))}
     </div>

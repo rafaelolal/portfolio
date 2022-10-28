@@ -1,13 +1,25 @@
 $font-family-base: "Calibri", serif;
 
+$tertiary: #212529;
 $dark: #f1eff1;
 $primary: #da1e19;
-$secondary: #f9a660;
+$secondary: #4A5899;
+$success: #00B4D8;
+
+$theme-colors: (
+  "tertiary": $tertiary,
+  "dark": $dark,
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+);
 
 $navbar-light-color: #000;
-$navbar-light-hover-color: #da1e19;
+$navbar-light-hover-color: $primary;
 
 $offcanvas-horizontal-width: auto;
+
+
 
 $display-font-sizes: (
   1: 5rem,
@@ -15,15 +27,16 @@ $display-font-sizes: (
   3: 4rem,
   4: 3.5rem,
   5: 3rem,
-  6: 1.75rem
+  6: 1.75rem,
+  7: 2.5rem,
 );
 
 .about {
-  display: inline-block
+  display: inline-block;
 }
 
 .blogfolio {
-  width: -webkit-fit-content
+  width: -webkit-fit-content;
 }
 
 .vb {

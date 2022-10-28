@@ -75,6 +75,8 @@ export default function PostList(props) {
           images={post.images}
           likes={post.likes}
           comments={post.comments}
+          isShowingCopy={props.isShowingCopy}
+          setIsShowingCopy={props.setIsShowingCopy}
         />
       ))}
     </div>

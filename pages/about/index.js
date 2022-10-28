@@ -29,32 +29,9 @@ export default function AboutPage() {
 
   return (
     <div className="container">
-      <div class="toast-container showing show position-fixed bottom-0 end-0 p-3">
-        <div
-          id="liveToast"
-          class="toast showing show"
-          role="alert"
-          aria-live="assertive"
-          aria-atomic="true"
-        >
-          <div class="toast-header">
-            <strong class="me-auto">Bootstrap</strong>
-            <small>11 mins ago</small>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="toast"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="toast-body">Hello, world! This is a toast message.</div>
-        </div>
-      </div>
-
       <div className="row">
-        <div className="col-12 col-md-3 rounded">
+        <div className="col-12 col-md-4 rounded">
           <div className="about bg-light">
-            <p className="display-5 text-center">Rafael de Oliveira Almeida</p>
             <img
               src="https://media-exp1.licdn.com/dms/image/C5603AQFwkn0a87ZkUQ/profile-displayphoto-shrink_800_800/0/1656096799326?e=1668643200&v=beta&t=7_m9v79bpEGcI9hXtaZPCbPoCZ4zHXosJpS5rw73x7U"
               className="img-fluid"
@@ -63,7 +40,7 @@ export default function AboutPage() {
           </div>
         </div>
 
-        <div className="col-12 col-md-6">
+        <div className="col-12 col-md-8">
           <h1 className="mt-4 text-center">About</h1>
           <p className="mx-5">
             I was born in Brazil, Minas Gerais. When I moved to the United

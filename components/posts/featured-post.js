@@ -2,8 +2,11 @@ import { useEffect, useState } from "react";
 import CommentList from "./comment-list";
 import Interactions from "./interactions";
 
-export default function Post(props) {
+export default function FeaturedPost(props) {
   const postId = props.id;
+
+  console.log('post props')
+  console.log(props)
 
   const [showingComments, setShowingComments] = useState(false);
   const [likes, setLikes] = useState(props.likes);
@@ -26,13 +29,8 @@ export default function Post(props) {
         <small className="text-primary">{props.year + ", " + props.month + " " + props.day}</small>
           <div>
             <h2 className="fw-bold">{props.title}</h2>
-            <h2>
-              <span class="badge rounded-5 text-bg-primary position-absolute top-0 end-0">
-                {props.list}
-              </span>
-            </h2>
           </div>
-          <p>{props.description}</p>
+          <p>{props.description.slice(0, props.description.indexOf('.'))}...</p>
         </div>
 
         <div
@@ -45,6 +43,7 @@ export default function Post(props) {
                 src={`/${props.images[1]}`}
                 className="d-block w-100"
                 alt="..."
+                style={{objectFit: "cover", height:"400px", width: "auto"}}
               />
             </div>
             <div className="carousel-item">
@@ -80,20 +79,6 @@ export default function Post(props) {
             <span className="visually-hidden">Next</span>
           </button>
         </div>
-
-        <div className="mt-3">
-          <Interactions
-            postId={props.id}
-            addLike={addLike}
-            showComments={showComments}
-            likes={likes}
-            isShowingCopy={props.isShowingCopy}
-            setIsShowingCopy={props.setIsShowingCopy}
-          ></Interactions>
-        </div>
-        {showingComments && (
-          <CommentList postId={postId} showingComments={showingComments} />
-        )}
       </div>
   );
 }
