@@ -19,8 +19,7 @@ export default async function handler(req, res) {
   year && (filters.year = year);
   month && (filters.month = month);
 
-  const posts = await collection.find(filters).toArray();
-
+  const posts = await collection.find(filters).sort({_id:-1}).toArray();
   client.close();
 
   if (!posts || posts.length === 0) {

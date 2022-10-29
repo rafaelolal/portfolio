@@ -1,8 +1,7 @@
-import { ObjectId } from "mongodb";
 import { getDBClient } from "../../helpers/db";
 
 export default async function handler(req, res) {
-  const { name, email, body } = req.body;
+  const { name, email, frequencyValue } = req.body;
 
   const client = await getDBClient();
 
@@ -10,7 +9,7 @@ export default async function handler(req, res) {
   const result = await collection.insertOne({
     name: name,
     email: email,
-    body: body,
+    frequency: frequencyValue,
   });
 
   client.close();

@@ -1,6 +1,6 @@
 export default function Achievement(props) {
   return (
-    <div class="accordion-item">
+    <div class="accordion-item mb-2">
       <h2 class="accordion-header" id={"flush-" + props.id}>
         <button
           class="accordion-button collapsed"
@@ -20,15 +20,8 @@ export default function Achievement(props) {
         data-bs-parent="#accordionFlushExample"
       >
         <div class="accordion-body">
-          <div class="card">
-            <div class="card-header">{props.issuer}</div>
-            <div class="card-body">
-              <blockquote class="blockquote mb-0">
-                <p>{props.description}</p>
-                <footer class="blockquote-footer">{props.year}, {props.month} {props.day}</footer>
-              </blockquote>
-            </div>
-          </div>
+          <p>{props.description}</p>
+          {props.year}, {props.month} {props.day}
         </div>
       </div>
     </div>

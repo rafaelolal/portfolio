@@ -1,9 +1,12 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Interactions(props) {
   const nameInputRef = useRef();
   const emailInputRef = useRef();
   const bodyInputRef = useRef();
+  const beNotifiedInputRef = useRef();
+  var frequencyValue;
+  const [beNotified, setBeNotified] = useState(false);
 
   useEffect(() => {
     if (props.isShowingCopy) {
@@ -23,21 +26,60 @@ export default function Interactions(props) {
     props.setIsShowingCopy(true);
   }
 
+  function beNotifiedHandler() {
+    setBeNotified(!beNotified);
+  }
+
+  function frequencyHandler() {
+    const radioButtons = document.querySelectorAll('input[type="radio"]');
+    for (const radioButton of radioButtons) {
+      if (radioButton.checked) {
+        frequencyValue = radioButton.value;
+        break;
+      }
+    }
+  }
+
   function submitComment() {
     const name = nameInputRef.current.value;
     const email = emailInputRef.current.value;
     const body = bodyInputRef.current.value;
+    const beNotified = beNotifiedInputRef.current.checked;
     const postId = props.postId;
+    console.log("beNotified");
+    console.log(beNotified);
+    console.log("frequency");
+    console.log(frequencyValue);
 
     const response = fetch("/api/submitComment", {
       method: "POST",
-      body: JSON.stringify({ postId, name, email, body }),
+      body: JSON.stringify({
+        postId,
+        name,
+        email,
+        body,
+        frequencyValue,
+      }),
       headers: {
         "Content-Type": "application/json",
       },
     }).then(() => {
+      nameInputRef.current.value = "";
+      emailInputRef.current.value = "";
+      bodyInputRef.current.value = "";
+      beNotifiedInputRef.current.checked = false;
       props.showComments();
     });
+
+    if (beNotified) {
+      const response = fetch("/api/addEmail", {
+        method: "POST",
+        body: JSON.stringify({ name, email, frequencyValue }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+    }
   }
 
   return (
@@ -120,69 +162,99 @@ export default function Interactions(props) {
               </div>
               <div className="modal-body">
                 <div class="input-group mb-3">
-                  <span class="input-group-text" id="basic-addon3">
+                  <span class="input-group-text" id="name-input">
                     Name
                   </span>
                   <input
                     type="text"
                     class="form-control"
                     id="basic-url"
-                    aria-describedby="basic-addon3"
+                    aria-describedby="name-input"
+                    ref={nameInputRef}
                   />
                 </div>
-                <div class="input-group mb-3">
-                  <span class="input-group-text" id="basic-addon3">
+                <div class="input-group mb-1">
+                  <span class="input-group-text" id="email-input">
                     Email
                   </span>
                   <input
                     type="text"
                     class="form-control"
                     id="basic-url"
-                    aria-describedby="basic-addon3"
+                    aria-describedby="email-input"
+                    ref={emailInputRef}
                   />
                 </div>
-                <input
-                  className="form-control mb-2"
-                  type="text"
-                  placeholder="Name"
-                  aria-label="name input"
-                  ref={nameInputRef}
-                />
-                <input
-                  className="form-control"
-                  type="email"
-                  placeholder="Email"
-                  aria-label="email input"
-                  ref={emailInputRef}
-                />
               </div>
               <div className="modal-footer">
                 <div class="form-check me-auto">
                   <input
+                    onChange={beNotifiedHandler}
                     class="form-check-input"
                     type="checkbox"
-                    value=""
                     id="flexCheckDefault"
+                    ref={beNotifiedInputRef}
                   />
                   <label class="form-check-label" for="flexCheckDefault">
                     Be notified of new posts
                   </label>
                 </div>
+
                 <button
                   type="button"
-                  className="btn btn-secondary"
+                  className="btn btn-secondary my-auto"
                   data-bs-dismiss="modal"
                 >
                   Close
                 </button>
                 <button
                   type="button"
-                  className="btn btn-success"
+                  className="btn btn-success my-auto"
                   data-bs-dismiss="modal"
                   onClick={submitComment}
                 >
                   Submit
                 </button>
+                {beNotified && (
+                  <div onChange={frequencyHandler} className="me-auto">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="inlineRadioOptions"
+                        id="dailyRadio"
+                        value="Daily"
+                      />
+                      <label class="form-check-label" for="dailyRadio">
+                        Daily
+                      </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="inlineRadioOptions"
+                        id="weeklyRadio"
+                        value="Weekly"
+                      />
+                      <label class="form-check-label" for="weeklyRadio">
+                        Weekly
+                      </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="inlineRadioOptions"
+                        id="monthlyRadio"
+                        value="Monthly"
+                      />
+                      <label class="form-check-label" for="monthlyRadio">
+                        Monthly
+                      </label>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>

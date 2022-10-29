@@ -3,13 +3,13 @@ import Achievement from "./achievement";
 
 export default function AchievementGroup(props) {
   return (
-    <div className="col col-3">
+    <div className="col-md-5 col-12">
       <div
-        class="bg-dark accordion accordion-flush px-2 pb-2"
+        class="rounded bg-dark accordion accordion-flush p-3 pb-2"
         id="accordionFlushExample"
-        style={{ overflow: "auto", height: 300 }}
+        style={{ overflowY: "auto", height: 300 }}
       >
-        <p>{props.name}</p>
+        <p className="text-center text-primary fs-4">{props.name}</p>
         {props.achievements.map((achievement) => (
           <Achievement
             key={achievement.id}

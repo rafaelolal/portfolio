@@ -22,7 +22,7 @@ export default function Post(props) {
 
   return (
       <div id={props.id} className="col-12 col-md-10 col-lg-8 mx-auto bg-dark p-4 rounded-3 my-4">
-        <div className="vl position-relative ps-1 mx-4">
+        <div className="vl position-relative ps-2 mx-4">
         <small className="text-primary">{props.year + ", " + props.month + " " + props.day}</small>
           <div>
             <h2 className="fw-bold">{props.title}</h2>

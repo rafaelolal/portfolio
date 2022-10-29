@@ -25,7 +25,7 @@ export default function BlogPage() {
           Link copied to clipboard!
         </p>
       )}
-      <div className="vb mt-5 blogfolio mx-auto">
+      <div className="bl mt-5 blogfolio mx-auto">
         <p className="fw-bold text-center mx-4 display-1">BLOGFOLIO</p>
       </div>
       <PostSearch

@@ -20,13 +20,15 @@ export default function AchievementList() {
   }
 
   return (
-    <div className="row g-3">
-      {achievementGroups.map((group) => (
-        <AchievementGroup
-          achievements={group.achievements}
-          name={group.name}
-        />
-      ))}
+    <div className="rounded mb-5" style={{ overflow: "auto" }}>
+      <div className="row g-3 flex-nowrap">
+        {achievementGroups.map((group) => (
+          <AchievementGroup
+            achievements={group.achievements}
+            name={group.name}
+          />
+        ))}
+      </div>
     </div>
   );
 }
