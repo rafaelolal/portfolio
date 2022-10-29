@@ -1,9 +1,9 @@
 export default function Achievement(props) {
   return (
-    <div class="accordion-item mb-2">
-      <h2 class="accordion-header" id={"flush-" + props.id}>
+    <div className="accordion-item mb-2">
+      <h2 className="accordion-header" id={"flush-" + props.id}>
         <button
-          class="accordion-button collapsed"
+          className="accordion-button collapsed"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target={"#flush-collapse" + props.id}
@@ -15,11 +15,11 @@ export default function Achievement(props) {
       </h2>
       <div
         id={"flush-collapse" + props.id}
-        class="accordion-collapse collapse"
+        className="accordion-collapse collapse"
         aria-labelledby={"flush-" + props.id}
         data-bs-parent="#accordionFlushExample"
       >
-        <div class="accordion-body">
+        <div className="accordion-body">
           <p>{props.description}</p>
           {props.year}, {props.month} {props.day}
         </div>

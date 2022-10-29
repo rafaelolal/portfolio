@@ -51,14 +51,14 @@ describe('Sanitizer', () => {
     it('should allow aria attributes and safe attributes', () => {
       const template = [
         '<div aria-pressed="true">',
-        '  <span class="test">Some content</span>',
+        '  <span className="test">Some content</span>',
         '</div>'
       ].join('')
 
       const result = sanitizeHtml(template, DefaultAllowlist, null)
 
       expect(result).toContain('aria-pressed')
-      expect(result).toContain('class="test"')
+      expect(result).toContain('className="test"')
     })
 
     it('should remove tags not in allowlist', () => {

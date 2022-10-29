@@ -24,6 +24,7 @@ export default function AchievementList() {
       <div className="row g-3 flex-nowrap">
         {achievementGroups.map((group) => (
           <AchievementGroup
+            key={group.id}
             achievements={group.achievements}
             name={group.name}
           />

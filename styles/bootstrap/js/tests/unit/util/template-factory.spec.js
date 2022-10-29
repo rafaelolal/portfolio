@@ -114,8 +114,8 @@ describe('TemplateFactory', () => {
     it('add simple text content', () => {
       const template = [
         '<div>',
-        '  <div class="foo"></div>',
-        '  <div class="foo2"></div>',
+        '  <div className="foo"></div>',
+        '  <div className="foo2"></div>',
         '</div>'
       ].join('')
 
@@ -250,8 +250,8 @@ describe('TemplateFactory', () => {
     it('should change Content', () => {
       const template = [
         '<div>',
-        '  <div class="foo"></div>',
-        '  <div class="foo2"></div>',
+        '  <div className="foo"></div>',
+        '  <div className="foo2"></div>',
         '</div>'
       ].join('')
 
@@ -278,8 +278,8 @@ describe('TemplateFactory', () => {
     it('should change only the given, content', () => {
       const template = [
         '<div>',
-        '  <div class="foo"></div>',
-        '  <div class="foo2"></div>',
+        '  <div className="foo"></div>',
+        '  <div className="foo2"></div>',
         '</div>'
       ].join('')
 

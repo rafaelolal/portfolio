@@ -30,7 +30,7 @@
     content: '',
     offset: [0, 8],
     placement: 'right',
-    template: '<div class="popover" role="tooltip">' + '<div class="popover-arrow"></div>' + '<h3 class="popover-header"></h3>' + '<div class="popover-body"></div>' + '</div>',
+    template: '<div className="popover" role="tooltip">' + '<div className="popover-arrow"></div>' + '<h3 className="popover-header"></h3>' + '<div className="popover-body"></div>' + '</div>',
     trigger: 'click'
   };
   const DefaultType = { ...Tooltip__default.default.DefaultType,

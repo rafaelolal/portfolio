@@ -27,7 +27,7 @@ export default function Home() {
             <p className="fw-bold text-center mx-4 display-1 mb-0">WELCOME</p>
           </div>
           <p className="text-center mt-3 col-10 mx-auto">
-            @Pekka웃 not that it is relevant, but some reasons include: we
+            not that it is relevant, but some reasons include: we
             cannot use html5 validation on textareas; we cannot use pattern
             constraints to validate textareas; a textarea is an unnecessary
             synonym for an input type=text (it is an input that is type text!)
@@ -42,7 +42,7 @@ export default function Home() {
                     width="64"
                     height="64"
                     fill="currentColor"
-                    class="bi bi-question-diamond"
+                    className="bi bi-question-diamond"
                     viewBox="0 0 16 16"
                   >
                     <path d="M6.95.435c.58-.58 1.52-.58 2.1 0l6.515 6.516c.58.58.58 1.519 0 2.098L9.05 15.565c-.58.58-1.519.58-2.098 0L.435 9.05a1.482 1.482 0 0 1 0-2.098L6.95.435zm1.4.7a.495.495 0 0 0-.7 0L1.134 7.65a.495.495 0 0 0 0 .7l6.516 6.516a.495.495 0 0 0 .7 0l6.516-6.516a.495.495 0 0 0 0-.7L8.35 1.134z" />
@@ -51,7 +51,7 @@ export default function Home() {
                 </p>
                 <p className="display-7 text-center">Why?</p>
                 <p className="text-center">
-                  Using a textarea is sometimes not an option because you don't
+                  Using a textarea is sometimes not an option because you dont
                   want to allow input of multiple lines of text. Just to wrap a
                   single line of text (Note: They are not the same thing).
                 </p>
@@ -63,7 +63,7 @@ export default function Home() {
                     width="64"
                     height="64"
                     fill="currentColor"
-                    class="bi bi-search-heart"
+                    className="bi bi-search-heart"
                     viewBox="0 0 16 16"
                   >
                     <path d="M6.5 4.482c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018Z" />
@@ -72,7 +72,7 @@ export default function Home() {
                 </p>
                 <p className="display-7 text-center">Explore!</p>
                 <p className="text-center">
-                  Using a textarea is sometimes not an option because you don't
+                  Using a textarea is sometimes not an option because you dont
                   want to allow input of multiple lines of text. Just to wrap a
                   single line of text (Note: They are not the same thing).
                 </p>

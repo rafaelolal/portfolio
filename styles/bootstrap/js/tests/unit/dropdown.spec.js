@@ -41,10 +41,10 @@ describe('Dropdown', () => {
   describe('constructor', () => {
     it('should take care of element either passed as a CSS selector or DOM element', () => {
       fixtureEl.innerHTML = [
-        '<div class="dropdown">',
-        '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
-        '  <div class="dropdown-menu">',
-        '    <a class="dropdown-item" href="#">Link</a>',
+        '<div className="dropdown">',
+        '  <button className="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
+        '  <div className="dropdown-menu">',
+        '    <a className="dropdown-item" href="#">Link</a>',
         '  </div>',
         '</div>'
       ].join('')
@@ -61,9 +61,9 @@ describe('Dropdown', () => {
       return new Promise(resolve => {
         // TODO: REMOVE in v6
         fixtureEl.innerHTML = [
-          '<div class="dropdown">',
-          '  <div class="dropdown-menu">',
-          '    <a class="dropdown-item" href="#">Link</a>',
+          '<div className="dropdown">',
+          '  <div className="dropdown-menu">',
+          '    <a className="dropdown-item" href="#">Link</a>',
           '  </div>',
           '</div>'
         ].join('')
@@ -82,10 +82,10 @@ describe('Dropdown', () => {
     it('should create offset modifier correctly when offset option is a function', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div class="dropdown">',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
-          '  <div class="dropdown-menu">',
-          '    <a class="dropdown-item" href="#">Secondary link</a>',
+          '<div className="dropdown">',
+          '  <button className="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
+          '  <div className="dropdown-menu">',
+          '    <a className="dropdown-item" href="#">Secondary link</a>',
           '  </div>',
           '</div>'
         ].join('')
@@ -115,10 +115,10 @@ describe('Dropdown', () => {
 
     it('should create offset modifier correctly when offset option is a string into data attribute', () => {
       fixtureEl.innerHTML = [
-        '<div class="dropdown">',
-        '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown" data-bs-offset="10,20">Dropdown</button>',
-        '  <div class="dropdown-menu">',
-        '    <a class="dropdown-item" href="#">Secondary link</a>',
+        '<div className="dropdown">',
+        '  <button className="btn dropdown-toggle" data-bs-toggle="dropdown" data-bs-offset="10,20">Dropdown</button>',
+        '  <div className="dropdown-menu">',
+        '    <a className="dropdown-item" href="#">Secondary link</a>',
         '  </div>',
         '</div>'
       ].join('')
@@ -131,10 +131,10 @@ describe('Dropdown', () => {
 
     it('should allow to pass config to Popper with `popperConfig`', () => {
       fixtureEl.innerHTML = [
-        '<div class="dropdown">',
-        '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
-        '  <div class="dropdown-menu">',
-        '    <a class="dropdown-item" href="#">Secondary link</a>',
+        '<div className="dropdown">',
+        '  <button className="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
+        '  <div className="dropdown-menu">',
+        '    <a className="dropdown-item" href="#">Secondary link</a>',
         '  </div>',
         '</div>'
       ].join('')
@@ -153,10 +153,10 @@ describe('Dropdown', () => {
 
     it('should allow to pass config to Popper with `popperConfig` as a function', () => {
       fixtureEl.innerHTML = [
-        '<div class="dropdown">',
-        '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown" data-bs-placement="right">Dropdown</button>',
-        '  <div class="dropdown-menu">',
-        '    <a class="dropdown-item" href="#">Secondary link</a>',
+        '<div className="dropdown">',
+        '  <button className="btn dropdown-toggle" data-bs-toggle="dropdown" data-bs-placement="right">Dropdown</button>',
+        '  <div className="dropdown-menu">',
+        '    <a className="dropdown-item" href="#">Secondary link</a>',
         '  </div>',
         '</div>'
       ].join('')
@@ -178,10 +178,10 @@ describe('Dropdown', () => {
     it('should toggle a dropdown', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div class="dropdown">',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>',
-          '  <div class="dropdown-menu">',
-          '    <a class="dropdown-item" href="#">Secondary link</a>',
+          '<div className="dropdown">',
+          '  <button className="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>',
+          '  <div className="dropdown-menu">',
+          '    <a className="dropdown-item" href="#">Secondary link</a>',
           '  </div>',
           '</div>'
         ].join('')
@@ -202,16 +202,16 @@ describe('Dropdown', () => {
     it('should destroy old popper references on toggle', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div class="first dropdown">',
-          '  <button class="firstBtn btn" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>',
-          '  <div class="dropdown-menu">',
-          '    <a class="dropdown-item" href="#">Secondary link</a>',
+          '<div className="first dropdown">',
+          '  <button className="firstBtn btn" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>',
+          '  <div className="dropdown-menu">',
+          '    <a className="dropdown-item" href="#">Secondary link</a>',
           '  </div>',
           '</div>',
-          '<div class="second dropdown">',
-          '  <button class="secondBtn btn" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>',
-          '  <div class="dropdown-menu">',
-          '    <a class="dropdown-item" href="#">Secondary link</a>',
+          '<div className="second dropdown">',
+          '  <button className="secondBtn btn" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>',
+          '  <div className="dropdown-menu">',
+          '    <a className="dropdown-item" href="#">Secondary link</a>',
           '  </div>',
           '</div>'
         ].join('')
@@ -240,10 +240,10 @@ describe('Dropdown', () => {
     it('should toggle a dropdown and add/remove event listener on mobile', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div class="dropdown">',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>',
-          '  <div class="dropdown-menu">',
-          '    <a class="dropdown-item" href="#">Secondary link</a>',
+          '<div className="dropdown">',
+          '  <button className="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>',
+          '  <div className="dropdown-menu">',
+          '    <a className="dropdown-item" href="#">Secondary link</a>',
           '  </div>',
           '</div>'
         ].join('')
@@ -280,10 +280,10 @@ describe('Dropdown', () => {
     it('should toggle a dropdown at the right', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div class="dropdown">',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>',
-          '  <div class="dropdown-menu dropdown-menu-end">',
-          '    <a class="dropdown-item" href="#">Secondary link</a>',
+          '<div className="dropdown">',
+          '  <button className="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>',
+          '  <div className="dropdown-menu dropdown-menu-end">',
+          '    <a className="dropdown-item" href="#">Secondary link</a>',
           '  </div>',
           '</div>'
         ].join('')
@@ -304,10 +304,10 @@ describe('Dropdown', () => {
     it('should toggle a centered dropdown', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div class="dropdown-center">',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>',
-          '  <div class="dropdown-menu">',
-          '    <a class="dropdown-item" href="#">Secondary link</a>',
+          '<div className="dropdown-center">',
+          '  <button className="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>',
+          '  <div className="dropdown-menu">',
+          '    <a className="dropdown-item" href="#">Secondary link</a>',
           '  </div>',
           '</div>'
         ].join('')
@@ -328,10 +328,10 @@ describe('Dropdown', () => {
     it('should toggle a dropup', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div class="dropup">',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>',
-          '  <div class="dropdown-menu">',
-          '    <a class="dropdown-item" href="#">Secondary link</a>',
+          '<div className="dropup">',
+          '  <button className="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>',
+          '  <div className="dropdown-menu">',
+          '    <a className="dropdown-item" href="#">Secondary link</a>',
           '  </div>',
           '</div>'
         ].join('')
@@ -353,10 +353,10 @@ describe('Dropdown', () => {
     it('should toggle a dropup centered', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div class="dropup-center">',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>',
-          '  <div class="dropdown-menu">',
-          '    <a class="dropdown-item" href="#">Secondary link</a>',
+          '<div className="dropup-center">',
+          '  <button className="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>',
+          '  <div className="dropdown-menu">',
+          '    <a className="dropdown-item" href="#">Secondary link</a>',
           '  </div>',
           '</div>'
         ].join('')
@@ -378,10 +378,10 @@ describe('Dropdown', () => {
     it('should toggle a dropup at the right', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div class="dropup">',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>',
-          '  <div class="dropdown-menu dropdown-menu-end">',
-          '    <a class="dropdown-item" href="#">Secondary link</a>',
+          '<div className="dropup">',
+          '  <button className="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>',
+          '  <div className="dropdown-menu dropdown-menu-end">',
+          '    <a className="dropdown-item" href="#">Secondary link</a>',
           '  </div>',
           '</div>'
         ].join('')
@@ -403,10 +403,10 @@ describe('Dropdown', () => {
     it('should toggle a dropend', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div class="dropend">',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>',
-          '  <div class="dropdown-menu">',
-          '    <a class="dropdown-item" href="#">Secondary link</a>',
+          '<div className="dropend">',
+          '  <button className="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>',
+          '  <div className="dropdown-menu">',
+          '    <a className="dropdown-item" href="#">Secondary link</a>',
           '  </div>',
           '</div>'
         ].join('')
@@ -428,10 +428,10 @@ describe('Dropdown', () => {
     it('should toggle a dropstart', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div class="dropstart">',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>',
-          '  <div class="dropdown-menu">',
-          '    <a class="dropdown-item" href="#">Secondary link</a>',
+          '<div className="dropstart">',
+          '  <button className="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>',
+          '  <div className="dropdown-menu">',
+          '    <a className="dropdown-item" href="#">Secondary link</a>',
           '  </div>',
           '</div>'
         ].join('')
@@ -453,10 +453,10 @@ describe('Dropdown', () => {
     it('should toggle a dropdown with parent reference', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div class="dropdown">',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>',
-          '  <div class="dropdown-menu">',
-          '    <a class="dropdown-item" href="#">Secondary link</a>',
+          '<div className="dropdown">',
+          '  <button className="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>',
+          '  <div className="dropdown-menu">',
+          '    <a className="dropdown-item" href="#">Secondary link</a>',
           '  </div>',
           '</div>'
         ].join('')
@@ -479,10 +479,10 @@ describe('Dropdown', () => {
     it('should toggle a dropdown with a dom node reference', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div class="dropdown">',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>',
-          '  <div class="dropdown-menu">',
-          '    <a class="dropdown-item" href="#">Secondary link</a>',
+          '<div className="dropdown">',
+          '  <button className="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>',
+          '  <div className="dropdown-menu">',
+          '    <a className="dropdown-item" href="#">Secondary link</a>',
           '  </div>',
           '</div>'
         ].join('')
@@ -505,10 +505,10 @@ describe('Dropdown', () => {
     it('should toggle a dropdown with a jquery object reference', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div class="dropdown">',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>',
-          '  <div class="dropdown-menu">',
-          '    <a class="dropdown-item" href="#">Secondary link</a>',
+          '<div className="dropdown">',
+          '  <button className="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>',
+          '  <div className="dropdown-menu">',
+          '    <a className="dropdown-item" href="#">Secondary link</a>',
           '  </div>',
           '</div>'
         ].join('')
@@ -531,10 +531,10 @@ describe('Dropdown', () => {
     it('should toggle a dropdown with a valid virtual element reference', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div class="dropdown">',
-          '  <button class="btn dropdown-toggle visually-hidden" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>',
-          '  <div class="dropdown-menu">',
-          '    <a class="dropdown-item" href="#">Secondary link</a>',
+          '<div className="dropdown">',
+          '  <button className="btn dropdown-toggle visually-hidden" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>',
+          '  <div className="dropdown-menu">',
+          '    <a className="dropdown-item" href="#">Secondary link</a>',
           '  </div>',
           '</div>'
         ].join('')
@@ -586,10 +586,10 @@ describe('Dropdown', () => {
     it('should not toggle a dropdown if the element is disabled', () => {
       return new Promise((resolve, reject) => {
         fixtureEl.innerHTML = [
-          '<div class="dropdown">',
-          '  <button disabled class="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
-          '  <div class="dropdown-menu">',
-          '    <a class="dropdown-item" href="#">Secondary link</a>',
+          '<div className="dropdown">',
+          '  <button disabled className="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
+          '  <div className="dropdown-menu">',
+          '    <a className="dropdown-item" href="#">Secondary link</a>',
           '  </div>',
           '</div>'
         ].join('')
@@ -613,10 +613,10 @@ describe('Dropdown', () => {
     it('should not toggle a dropdown if the element contains .disabled', () => {
       return new Promise((resolve, reject) => {
         fixtureEl.innerHTML = [
-          '<div class="dropdown">',
-          '  <button class="btn dropdown-toggle disabled" data-bs-toggle="dropdown">Dropdown</button>',
-          '  <div class="dropdown-menu">',
-          '    <a class="dropdown-item" href="#">Secondary link</a>',
+          '<div className="dropdown">',
+          '  <button className="btn dropdown-toggle disabled" data-bs-toggle="dropdown">Dropdown</button>',
+          '  <div className="dropdown-menu">',
+          '    <a className="dropdown-item" href="#">Secondary link</a>',
           '  </div>',
           '</div>'
         ].join('')
@@ -640,10 +640,10 @@ describe('Dropdown', () => {
     it('should not toggle a dropdown if the menu is shown', () => {
       return new Promise((resolve, reject) => {
         fixtureEl.innerHTML = [
-          '<div class="dropdown">',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
-          '  <div class="dropdown-menu show">',
-          '    <a class="dropdown-item" href="#">Secondary link</a>',
+          '<div className="dropdown">',
+          '  <button className="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
+          '  <div className="dropdown-menu show">',
+          '    <a className="dropdown-item" href="#">Secondary link</a>',
           '  </div>',
           '</div>'
         ].join('')
@@ -667,10 +667,10 @@ describe('Dropdown', () => {
     it('should not toggle a dropdown if show event is prevented', () => {
       return new Promise((resolve, reject) => {
         fixtureEl.innerHTML = [
-          '<div class="dropdown">',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
-          '  <div class="dropdown-menu">',
-          '    <a class="dropdown-item" href="#">Secondary link</a>',
+          '<div className="dropdown">',
+          '  <button className="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
+          '  <div className="dropdown-menu">',
+          '    <a className="dropdown-item" href="#">Secondary link</a>',
           '  </div>',
           '</div>'
         ].join('')
@@ -700,10 +700,10 @@ describe('Dropdown', () => {
     it('should show a dropdown', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div class="dropdown">',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
-          '  <div class="dropdown-menu">',
-          '    <a class="dropdown-item" href="#">Secondary link</a>',
+          '<div className="dropdown">',
+          '  <button className="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
+          '  <div className="dropdown-menu">',
+          '    <a className="dropdown-item" href="#">Secondary link</a>',
           '  </div>',
           '</div>'
         ].join('')
@@ -723,10 +723,10 @@ describe('Dropdown', () => {
     it('should not show a dropdown if the element is disabled', () => {
       return new Promise((resolve, reject) => {
         fixtureEl.innerHTML = [
-          '<div class="dropdown">',
-          '  <button disabled class="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
-          '  <div class="dropdown-menu">',
-          '    <a class="dropdown-item" href="#">Secondary link</a>',
+          '<div className="dropdown">',
+          '  <button disabled className="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
+          '  <div className="dropdown-menu">',
+          '    <a className="dropdown-item" href="#">Secondary link</a>',
           '  </div>',
           '</div>'
         ].join('')
@@ -750,10 +750,10 @@ describe('Dropdown', () => {
     it('should not show a dropdown if the element contains .disabled', () => {
       return new Promise((resolve, reject) => {
         fixtureEl.innerHTML = [
-          '<div class="dropdown">',
-          '  <button class="btn dropdown-toggle disabled" data-bs-toggle="dropdown">Dropdown</button>',
-          '  <div class="dropdown-menu">',
-          '    <a class="dropdown-item" href="#">Secondary link</a>',
+          '<div className="dropdown">',
+          '  <button className="btn dropdown-toggle disabled" data-bs-toggle="dropdown">Dropdown</button>',
+          '  <div className="dropdown-menu">',
+          '    <a className="dropdown-item" href="#">Secondary link</a>',
           '  </div>',
           '</div>'
         ].join('')
@@ -777,10 +777,10 @@ describe('Dropdown', () => {
     it('should not show a dropdown if the menu is shown', () => {
       return new Promise((resolve, reject) => {
         fixtureEl.innerHTML = [
-          '<div class="dropdown">',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
-          '  <div class="dropdown-menu show">',
-          '    <a class="dropdown-item" href="#">Secondary link</a>',
+          '<div className="dropdown">',
+          '  <button className="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
+          '  <div className="dropdown-menu show">',
+          '    <a className="dropdown-item" href="#">Secondary link</a>',
           '  </div>',
           '</div>'
         ].join('')
@@ -804,10 +804,10 @@ describe('Dropdown', () => {
     it('should not show a dropdown if show event is prevented', () => {
       return new Promise((resolve, reject) => {
         fixtureEl.innerHTML = [
-          '<div class="dropdown">',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
-          '  <div class="dropdown-menu">',
-          '    <a class="dropdown-item" href="#">Secondary link</a>',
+          '<div className="dropdown">',
+          '  <button className="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
+          '  <div className="dropdown-menu">',
+          '    <a className="dropdown-item" href="#">Secondary link</a>',
           '  </div>',
           '</div>'
         ].join('')
@@ -837,10 +837,10 @@ describe('Dropdown', () => {
     it('should hide a dropdown', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div class="dropdown">',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="true">Dropdown</button>',
-          '  <div class="dropdown-menu show">',
-          '    <a class="dropdown-item" href="#">Secondary link</a>',
+          '<div className="dropdown">',
+          '  <button className="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="true">Dropdown</button>',
+          '  <div className="dropdown-menu show">',
+          '    <a className="dropdown-item" href="#">Secondary link</a>',
           '  </div>',
           '</div>'
         ].join('')
@@ -862,10 +862,10 @@ describe('Dropdown', () => {
     it('should hide a dropdown and destroy popper', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div class="dropdown">',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
-          '  <div class="dropdown-menu">',
-          '    <a class="dropdown-item" href="#">Secondary link</a>',
+          '<div className="dropdown">',
+          '  <button className="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
+          '  <div className="dropdown-menu">',
+          '    <a className="dropdown-item" href="#">Secondary link</a>',
           '  </div>',
           '</div>'
         ].join('')
@@ -890,10 +890,10 @@ describe('Dropdown', () => {
     it('should not hide a dropdown if the element is disabled', () => {
       return new Promise((resolve, reject) => {
         fixtureEl.innerHTML = [
-          '<div class="dropdown">',
-          '  <button disabled class="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
-          '  <div class="dropdown-menu show">',
-          '    <a class="dropdown-item" href="#">Secondary link</a>',
+          '<div className="dropdown">',
+          '  <button disabled className="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
+          '  <div className="dropdown-menu show">',
+          '    <a className="dropdown-item" href="#">Secondary link</a>',
           '  </div>',
           '</div>'
         ].join('')
@@ -918,10 +918,10 @@ describe('Dropdown', () => {
     it('should not hide a dropdown if the element contains .disabled', () => {
       return new Promise((resolve, reject) => {
         fixtureEl.innerHTML = [
-          '<div class="dropdown">',
-          '  <button class="btn dropdown-toggle disabled" data-bs-toggle="dropdown">Dropdown</button>',
-          '  <div class="dropdown-menu show">',
-          '    <a class="dropdown-item" href="#">Secondary link</a>',
+          '<div className="dropdown">',
+          '  <button className="btn dropdown-toggle disabled" data-bs-toggle="dropdown">Dropdown</button>',
+          '  <div className="dropdown-menu show">',
+          '    <a className="dropdown-item" href="#">Secondary link</a>',
           '  </div>',
           '</div>'
         ].join('')
@@ -946,10 +946,10 @@ describe('Dropdown', () => {
     it('should not hide a dropdown if the menu is not shown', () => {
       return new Promise((resolve, reject) => {
         fixtureEl.innerHTML = [
-          '<div class="dropdown">',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
-          '  <div class="dropdown-menu">',
-          '    <a class="dropdown-item" href="#">Secondary link</a>',
+          '<div className="dropdown">',
+          '  <button className="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
+          '  <div className="dropdown-menu">',
+          '    <a className="dropdown-item" href="#">Secondary link</a>',
           '  </div>',
           '</div>'
         ].join('')
@@ -973,10 +973,10 @@ describe('Dropdown', () => {
     it('should not hide a dropdown if hide event is prevented', () => {
       return new Promise((resolve, reject) => {
         fixtureEl.innerHTML = [
-          '<div class="dropdown">',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
-          '  <div class="dropdown-menu show">',
-          '    <a class="dropdown-item" href="#">Secondary link</a>',
+          '<div className="dropdown">',
+          '  <button className="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
+          '  <div className="dropdown-menu show">',
+          '    <a className="dropdown-item" href="#">Secondary link</a>',
           '  </div>',
           '</div>'
         ].join('')
@@ -1005,10 +1005,10 @@ describe('Dropdown', () => {
     it('should remove event listener on touch-enabled device that was added in show method', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div class="dropdown">',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
-          '  <div class="dropdown-menu">',
-          '    <a class="dropdown-item" href="#">Dropdown item</a>',
+          '<div className="dropdown">',
+          '  <button className="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
+          '  <div className="dropdown-menu">',
+          '    <a className="dropdown-item" href="#">Dropdown item</a>',
           '  </div>',
           '</div>'
         ].join('')
@@ -1041,10 +1041,10 @@ describe('Dropdown', () => {
   describe('dispose', () => {
     it('should dispose dropdown', () => {
       fixtureEl.innerHTML = [
-        '<div class="dropdown">',
-        '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
-        '  <div class="dropdown-menu">',
-        '    <a class="dropdown-item" href="#">Secondary link</a>',
+        '<div className="dropdown">',
+        '  <button className="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
+        '  <div className="dropdown-menu">',
+        '    <a className="dropdown-item" href="#">Secondary link</a>',
         '  </div>',
         '</div>'
       ].join('')
@@ -1067,10 +1067,10 @@ describe('Dropdown', () => {
 
     it('should dispose dropdown with Popper', () => {
       fixtureEl.innerHTML = [
-        '<div class="dropdown">',
-        '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
-        '  <div class="dropdown-menu">',
-        '    <a class="dropdown-item" href="#">Secondary link</a>',
+        '<div className="dropdown">',
+        '  <button className="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
+        '  <div className="dropdown-menu">',
+        '    <a className="dropdown-item" href="#">Secondary link</a>',
         '  </div>',
         '</div>'
       ].join('')
@@ -1095,10 +1095,10 @@ describe('Dropdown', () => {
   describe('update', () => {
     it('should call Popper and detect navbar on update', () => {
       fixtureEl.innerHTML = [
-        '<div class="dropdown">',
-        '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
-        '  <div class="dropdown-menu">',
-        '    <a class="dropdown-item" href="#">Secondary link</a>',
+        '<div className="dropdown">',
+        '  <button className="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
+        '  <div className="dropdown-menu">',
+        '    <a className="dropdown-item" href="#">Secondary link</a>',
         '  </div>',
         '</div>'
       ].join('')
@@ -1121,10 +1121,10 @@ describe('Dropdown', () => {
 
     it('should just detect navbar on update', () => {
       fixtureEl.innerHTML = [
-        '<div class="dropdown">',
-        '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
-        '  <div class="dropdown-menu">',
-        '    <a class="dropdown-item" href="#">Secondary link</a>',
+        '<div className="dropdown">',
+        '  <button className="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
+        '  <div className="dropdown-menu">',
+        '    <a className="dropdown-item" href="#">Secondary link</a>',
         '  </div>',
         '</div>'
       ].join('')
@@ -1145,10 +1145,10 @@ describe('Dropdown', () => {
     it('should show and hide a dropdown', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div class="dropdown">',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>',
-          '  <div class="dropdown-menu">',
-          '    <a class="dropdown-item" href="#">Secondary link</a>',
+          '<div className="dropdown">',
+          '  <button className="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>',
+          '  <div className="dropdown-menu">',
+          '    <a className="dropdown-item" href="#">Secondary link</a>',
           '  </div>',
           '</div>'
         ].join('')
@@ -1188,11 +1188,11 @@ describe('Dropdown', () => {
     it('should not use "static" Popper in navbar', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<nav class="navbar navbar-expand-md bg-light">',
-          '  <div class="dropdown">',
-          '    <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>',
-          '    <div class="dropdown-menu">',
-          '      <a class="dropdown-item" href="#">Secondary link</a>',
+          '<nav className="navbar navbar-expand-md bg-light">',
+          '  <div className="dropdown">',
+          '    <button className="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>',
+          '    <div className="dropdown-menu">',
+          '      <a className="dropdown-item" href="#">Secondary link</a>',
           '    </div>',
           '  </div>',
           '</nav>'
@@ -1215,9 +1215,9 @@ describe('Dropdown', () => {
     it('should not collapse the dropdown when clicking a select option nested in the dropdown', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div class="dropdown">',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>',
-          '  <div class="dropdown-menu">',
+          '<div className="dropdown">',
+          '  <button className="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>',
+          '  <div className="dropdown-menu">',
           '    <select>',
           '      <option selected>Open this select menu</option>',
           '      <option value="1">One</option>',
@@ -1258,11 +1258,11 @@ describe('Dropdown', () => {
     it('should manage bs attribute `data-bs-popper`="static" when dropdown is in navbar', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<nav class="navbar navbar-expand-md bg-light">',
-          '  <div class="dropdown">',
-          '    <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>',
-          '    <div class="dropdown-menu">',
-          '      <a class="dropdown-item" href="#">Secondary link</a>',
+          '<nav className="navbar navbar-expand-md bg-light">',
+          '  <div className="dropdown">',
+          '    <button className="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>',
+          '    <div className="dropdown-menu">',
+          '      <a className="dropdown-item" href="#">Secondary link</a>',
           '    </div>',
           '  </div>',
           '</nav>'
@@ -1289,10 +1289,10 @@ describe('Dropdown', () => {
     it('should not use Popper if display set to static', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div class="dropdown">',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static">Dropdown</button>',
-          '  <div class="dropdown-menu">',
-          '    <a class="dropdown-item" href="#">Secondary link</a>',
+          '<div className="dropdown">',
+          '  <button className="btn dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static">Dropdown</button>',
+          '  <div className="dropdown-menu">',
+          '    <a className="dropdown-item" href="#">Secondary link</a>',
           '  </div>',
           '</div>'
         ].join('')
@@ -1313,10 +1313,10 @@ describe('Dropdown', () => {
     it('should manage bs attribute `data-bs-popper`="static" when display set to static', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div class="dropdown">',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static">Dropdown</button>',
-          '  <div class="dropdown-menu">',
-          '    <a class="dropdown-item" href="#">Secondary link</a>',
+          '<div className="dropdown">',
+          '  <button className="btn dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static">Dropdown</button>',
+          '  <div className="dropdown-menu">',
+          '    <a className="dropdown-item" href="#">Secondary link</a>',
           '  </div>',
           '</div>'
         ].join('')
@@ -1342,10 +1342,10 @@ describe('Dropdown', () => {
     it('should remove "show" class if tabbing outside of menu', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div class="dropdown">',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
-          '  <div class="dropdown-menu">',
-          '    <a class="dropdown-item" href="#">Secondary link</a>',
+          '<div className="dropdown">',
+          '  <button className="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
+          '  <div className="dropdown-menu">',
+          '    <a className="dropdown-item" href="#">Secondary link</a>',
           '  </div>',
           '</div>'
         ].join('')
@@ -1373,19 +1373,19 @@ describe('Dropdown', () => {
     it('should remove "show" class if body is clicked, with multiple dropdowns', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div class="nav">',
-          '  <div class="dropdown" id="testmenu">',
-          '    <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#testmenu">Test menu</a>',
-          '    <div class="dropdown-menu">',
-          '      <a class="dropdown-item" href="#sub1">Submenu 1</a>',
+          '<div className="nav">',
+          '  <div className="dropdown" id="testmenu">',
+          '    <a className="dropdown-toggle" data-bs-toggle="dropdown" href="#testmenu">Test menu</a>',
+          '    <div className="dropdown-menu">',
+          '      <a className="dropdown-item" href="#sub1">Submenu 1</a>',
           '    </div>',
           '  </div>',
           '</div>',
-          '<div class="btn-group">',
-          '  <button class="btn">Actions</button>',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown"></button>',
-          '  <div class="dropdown-menu">',
-          '    <a class="dropdown-item" href="#">Action 1</a>',
+          '<div className="btn-group">',
+          '  <button className="btn">Actions</button>',
+          '  <button className="btn dropdown-toggle" data-bs-toggle="dropdown"></button>',
+          '  <div className="dropdown-menu">',
+          '    <a className="dropdown-item" href="#">Action 1</a>',
           '  </div>',
           '</div>'
         ].join('')
@@ -1425,17 +1425,17 @@ describe('Dropdown', () => {
     it('should remove "show" class if body if tabbing outside of menu, with multiple dropdowns', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div class="dropdown">',
-          '  <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#testmenu">Test menu</a>',
-          '  <div class="dropdown-menu">',
-          '    <a class="dropdown-item" href="#sub1">Submenu 1</a>',
+          '<div className="dropdown">',
+          '  <a className="dropdown-toggle" data-bs-toggle="dropdown" href="#testmenu">Test menu</a>',
+          '  <div className="dropdown-menu">',
+          '    <a className="dropdown-item" href="#sub1">Submenu 1</a>',
           '  </div>',
           '</div>',
-          '<div class="btn-group">',
-          '  <button class="btn">Actions</button>',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown"></button>',
-          '  <div class="dropdown-menu">',
-          '    <a class="dropdown-item" href="#">Action 1</a>',
+          '<div className="btn-group">',
+          '  <button className="btn">Actions</button>',
+          '  <button className="btn dropdown-toggle" data-bs-toggle="dropdown"></button>',
+          '  <div className="dropdown-menu">',
+          '    <a className="dropdown-item" href="#">Action 1</a>',
           '  </div>',
           '</div>'
         ].join('')
@@ -1482,14 +1482,14 @@ describe('Dropdown', () => {
 
     it('should be able to identify clicked dropdown, even with multiple dropdowns in the same tag', () => {
       fixtureEl.innerHTML = [
-        '<div class="dropdown">',
-        '  <button id="dropdown1" class="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown toggle</button>',
-        '  <div id="menu1" class="dropdown-menu">',
-        '    <a class="dropdown-item" href="#">Dropdown item</a>',
+        '<div className="dropdown">',
+        '  <button id="dropdown1" className="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown toggle</button>',
+        '  <div id="menu1" className="dropdown-menu">',
+        '    <a className="dropdown-item" href="#">Dropdown item</a>',
         '  </div>',
-        '  <button id="dropdown2" class="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown toggle</button>',
-        '  <div id="menu2" class="dropdown-menu">',
-        '    <a class="dropdown-item" href="#">Dropdown item</a>',
+        '  <button id="dropdown2" className="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown toggle</button>',
+        '  <div id="menu2" className="dropdown-menu">',
+        '    <a className="dropdown-item" href="#">Dropdown item</a>',
         '  </div>',
         '</div>'
       ].join('')
@@ -1515,14 +1515,14 @@ describe('Dropdown', () => {
 
     it('should be able to show the proper menu, even with multiple dropdowns in the same tag', () => {
       fixtureEl.innerHTML = [
-        '<div class="dropdown">',
-        '  <button id="dropdown1" class="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown toggle</button>',
-        '  <div id="menu1" class="dropdown-menu">',
-        '    <a class="dropdown-item" href="#">Dropdown item</a>',
+        '<div className="dropdown">',
+        '  <button id="dropdown1" className="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown toggle</button>',
+        '  <div id="menu1" className="dropdown-menu">',
+        '    <a className="dropdown-item" href="#">Dropdown item</a>',
         '  </div>',
-        '  <button id="dropdown2" class="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown toggle</button>',
-        '  <div id="menu2" class="dropdown-menu">',
-        '    <a class="dropdown-item" href="#">Dropdown item</a>',
+        '  <button id="dropdown2" className="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown toggle</button>',
+        '  <div id="menu2" className="dropdown-menu">',
+        '    <a className="dropdown-item" href="#">Dropdown item</a>',
         '  </div>',
         '</div>'
       ].join('')
@@ -1544,10 +1544,10 @@ describe('Dropdown', () => {
     it('should fire hide and hidden event without a clickEvent if event type is not click', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div class="dropdown">',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
-          '  <div class="dropdown-menu">',
-          '    <a class="dropdown-item" href="#sub1">Submenu 1</a>',
+          '<div className="dropdown">',
+          '  <button className="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
+          '  <div className="dropdown-menu">',
+          '    <a className="dropdown-item" href="#sub1">Submenu 1</a>',
           '  </div>',
           '</div>'
         ].join('')
@@ -1577,10 +1577,10 @@ describe('Dropdown', () => {
     it('should bubble up the events to the parent elements', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div class="dropdown">',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
-          '  <div class="dropdown-menu">',
-          '    <a class="dropdown-item" href="#subMenu">Sub menu</a>',
+          '<div className="dropdown">',
+          '  <button className="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
+          '  <div className="dropdown-menu">',
+          '    <a className="dropdown-item" href="#subMenu">Sub menu</a>',
           '  </div>',
           '</div>'
         ].join('')
@@ -1615,10 +1615,10 @@ describe('Dropdown', () => {
     it('should ignore keyboard events within <input>s and <textarea>s', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div class="dropdown">',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
-          '  <div class="dropdown-menu">',
-          '    <a class="dropdown-item" href="#sub1">Submenu 1</a>',
+          '<div className="dropdown">',
+          '  <button className="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
+          '  <div className="dropdown-menu">',
+          '    <a className="dropdown-item" href="#sub1">Submenu 1</a>',
           '    <input type="text">',
           '    <textarea></textarea>',
           '  </div>',
@@ -1652,12 +1652,12 @@ describe('Dropdown', () => {
     it('should skip disabled element when using keyboard navigation', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div class="dropdown">',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
-          '  <div class="dropdown-menu">',
-          '    <a class="dropdown-item disabled" href="#sub1">Submenu 1</a>',
-          '    <button class="dropdown-item" type="button" disabled>Disabled button</button>',
-          '    <a id="item1" class="dropdown-item" href="#">Another link</a>',
+          '<div className="dropdown">',
+          '  <button className="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
+          '  <div className="dropdown-menu">',
+          '    <a className="dropdown-item disabled" href="#sub1">Submenu 1</a>',
+          '    <button className="dropdown-item" type="button" disabled>Disabled button</button>',
+          '    <a id="item1" className="dropdown-item" href="#">Another link</a>',
           '  </div>',
           '</div>'
         ].join('')
@@ -1688,13 +1688,13 @@ describe('Dropdown', () => {
           '    display: none;',
           '  }',
           '</style>',
-          '<div class="dropdown">',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
-          '  <div class="dropdown-menu">',
-          '    <button class="dropdown-item d-none" type="button">Hidden button by class</button>',
-          '    <a class="dropdown-item" href="#sub1" style="display: none">Hidden link</a>',
-          '    <a class="dropdown-item" href="#sub1" style="visibility: hidden">Hidden link</a>',
-          '    <a id="item1" class="dropdown-item" href="#">Another link</a>',
+          '<div className="dropdown">',
+          '  <button className="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
+          '  <div className="dropdown-menu">',
+          '    <button className="dropdown-item d-none" type="button">Hidden button by class</button>',
+          '    <a className="dropdown-item" href="#sub1" style="display: none">Hidden link</a>',
+          '    <a className="dropdown-item" href="#sub1" style="visibility: hidden">Hidden link</a>',
+          '    <a id="item1" className="dropdown-item" href="#">Another link</a>',
           '  </div>',
           '</div>'
         ].join('')
@@ -1721,11 +1721,11 @@ describe('Dropdown', () => {
     it('should focus next/previous element when using keyboard navigation', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div class="dropdown">',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
-          '  <div class="dropdown-menu">',
-          '    <a id="item1" class="dropdown-item" href="#">A link</a>',
-          '    <a id="item2" class="dropdown-item" href="#">Another link</a>',
+          '<div className="dropdown">',
+          '  <button className="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
+          '  <div className="dropdown-menu">',
+          '    <a id="item1" className="dropdown-item" href="#">A link</a>',
+          '    <a id="item2" className="dropdown-item" href="#">Another link</a>',
           '  </div>',
           '</div>'
         ].join('')
@@ -1760,11 +1760,11 @@ describe('Dropdown', () => {
     it('should open the dropdown and focus on the last item when using ArrowUp for the first time', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div class="dropdown">',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
-          '  <div class="dropdown-menu">',
-          '    <a id="item1" class="dropdown-item" href="#">A link</a>',
-          '    <a id="item2" class="dropdown-item" href="#">Another link</a>',
+          '<div className="dropdown">',
+          '  <button className="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
+          '  <div className="dropdown-menu">',
+          '    <a id="item1" className="dropdown-item" href="#">A link</a>',
+          '    <a id="item2" className="dropdown-item" href="#">Another link</a>',
           '  </div>',
           '</div>'
         ].join('')
@@ -1788,11 +1788,11 @@ describe('Dropdown', () => {
     it('should open the dropdown and focus on the first item when using ArrowDown for the first time', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div class="dropdown">',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
-          '  <div class="dropdown-menu">',
-          '    <a id="item1" class="dropdown-item" href="#">A link</a>',
-          '    <a id="item2" class="dropdown-item" href="#">Another link</a>',
+          '<div className="dropdown">',
+          '  <button className="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
+          '  <div className="dropdown-menu">',
+          '    <a id="item1" className="dropdown-item" href="#">A link</a>',
+          '    <a id="item2" className="dropdown-item" href="#">Another link</a>',
           '  </div>',
           '</div>'
         ].join('')
@@ -1816,9 +1816,9 @@ describe('Dropdown', () => {
     it('should not close the dropdown if the user clicks on a text field within dropdown-menu', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div class="dropdown">',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
-          '  <div class="dropdown-menu">',
+          '<div className="dropdown">',
+          '  <button className="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
+          '  <div className="dropdown-menu">',
           '    <input type="text">',
           '  </div>',
           '</div>'
@@ -1844,9 +1844,9 @@ describe('Dropdown', () => {
     it('should not close the dropdown if the user clicks on a textarea within dropdown-menu', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div class="dropdown">',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
-          '  <div class="dropdown-menu">',
+          '<div className="dropdown">',
+          '  <button className="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
+          '  <div className="dropdown-menu">',
           '    <textarea></textarea>',
           '  </div>',
           '</div>'
@@ -1872,9 +1872,9 @@ describe('Dropdown', () => {
     it('should close the dropdown if the user clicks on a text field that is not contained within dropdown-menu', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div class="dropdown">',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
-          '  <div class="dropdown-menu">',
+          '<div className="dropdown">',
+          '  <button className="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
+          '  <div className="dropdown-menu">',
           '  </div>',
           '</div>',
           '<input type="text">'
@@ -1901,10 +1901,10 @@ describe('Dropdown', () => {
     it('should ignore keyboard events for <input>s and <textarea>s within dropdown-menu, except for escape key', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div class="dropdown">',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
-          '  <div class="dropdown-menu">',
-          '    <a class="dropdown-item" href="#sub1">Submenu 1</a>',
+          '<div className="dropdown">',
+          '  <button className="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
+          '  <div className="dropdown-menu">',
+          '    <a className="dropdown-item" href="#sub1">Submenu 1</a>',
           '    <input type="text">',
           '    <textarea></textarea>',
           '  </div>',
@@ -1957,14 +1957,14 @@ describe('Dropdown', () => {
     it('should not open dropdown if escape key was pressed on the toggle', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div class="tabs">',
-          '  <div class="dropdown">',
-          '    <button disabled class="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
-          '    <div class="dropdown-menu">',
-          '      <a class="dropdown-item" href="#">Secondary link</a>',
-          '      <a class="dropdown-item" href="#">Something else here</a>',
-          '      <div class="divider"></div>',
-          '      <a class="dropdown-item" href="#">Another link</a>',
+          '<div className="tabs">',
+          '  <div className="dropdown">',
+          '    <button disabled className="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
+          '    <div className="dropdown-menu">',
+          '      <a className="dropdown-item" href="#">Secondary link</a>',
+          '      <a className="dropdown-item" href="#">Something else here</a>',
+          '      <div className="divider"></div>',
+          '      <a className="dropdown-item" href="#">Another link</a>',
           '    </div>',
           '  </div>',
           '</div>'
@@ -1994,11 +1994,11 @@ describe('Dropdown', () => {
     it('should propagate escape key events if dropdown is closed', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div class="parent">',
-          '  <div class="dropdown">',
-          '    <button class="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
-          '    <div class="dropdown-menu">',
-          '      <a class="dropdown-item" href="#">Some Item</a>',
+          '<div className="parent">',
+          '  <div className="dropdown">',
+          '    <button className="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
+          '    <div className="dropdown-menu">',
+          '      <a className="dropdown-item" href="#">Some Item</a>',
           '    </div>',
           '  </div>',
           '</div>'
@@ -2029,11 +2029,11 @@ describe('Dropdown', () => {
     it('should not propagate escape key events if dropdown is open', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div class="parent">',
-          '  <div class="dropdown">',
-          '    <button class="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
-          '    <div class="dropdown-menu">',
-          '      <a class="dropdown-item" href="#">Some Item</a>',
+          '<div className="parent">',
+          '  <div className="dropdown">',
+          '    <button className="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
+          '    <div className="dropdown-menu">',
+          '      <a className="dropdown-item" href="#">Some Item</a>',
           '    </div>',
           '  </div>',
           '</div>'
@@ -2064,10 +2064,10 @@ describe('Dropdown', () => {
     it('should close dropdown using `escape` button, and return focus to its trigger', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div class="dropdown">',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
-          '  <div class="dropdown-menu">',
-          '    <a class="dropdown-item" href="#">Some Item</a>',
+          '<div className="dropdown">',
+          '  <button className="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
+          '  <div className="dropdown-menu">',
+          '    <a className="dropdown-item" href="#">Some Item</a>',
           '  </div>',
           '</div>'
         ].join('')
@@ -2094,10 +2094,10 @@ describe('Dropdown', () => {
     it('should close dropdown (only) by clicking inside the dropdown menu when it has data-attribute `data-bs-auto-close="inside"`', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div class="dropdown">',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="inside">Dropdown toggle</button>',
-          '  <div class="dropdown-menu">',
-          '    <a class="dropdown-item" href="#">Dropdown item</a>',
+          '<div className="dropdown">',
+          '  <button className="btn dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="inside">Dropdown toggle</button>',
+          '  <div className="dropdown-menu">',
+          '    <a className="dropdown-item" href="#">Dropdown item</a>',
           ' </div>',
           '</div>'
         ].join('')
@@ -2127,10 +2127,10 @@ describe('Dropdown', () => {
     it('should close dropdown (only) by clicking outside the dropdown menu when it has data-attribute `data-bs-auto-close="outside"`', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div class="dropdown">',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside">Dropdown toggle</button>',
-          '  <div class="dropdown-menu">',
-          '    <a class="dropdown-item" href="#">Dropdown item</a>',
+          '<div className="dropdown">',
+          '  <button className="btn dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside">Dropdown toggle</button>',
+          '  <div className="dropdown-menu">',
+          '    <a className="dropdown-item" href="#">Dropdown item</a>',
           ' </div>',
           '</div>'
         ].join('')
@@ -2160,10 +2160,10 @@ describe('Dropdown', () => {
     it('should not close dropdown by clicking inside or outside the dropdown menu when it has data-attribute `data-bs-auto-close="false"`', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div class="dropdown">',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="false">Dropdown toggle</button>',
-          '  <div class="dropdown-menu">',
-          '    <a class="dropdown-item" href="#">Dropdown item</a>',
+          '<div className="dropdown">',
+          '  <button className="btn dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="false">Dropdown toggle</button>',
+          '  <div className="dropdown-menu">',
+          '    <a className="dropdown-item" href="#">Dropdown item</a>',
           ' </div>',
           '</div>'
         ].join('')
@@ -2193,11 +2193,11 @@ describe('Dropdown', () => {
 
     it('should be able to identify clicked dropdown, no matter the markup order', () => {
       fixtureEl.innerHTML = [
-        '<div class="dropdown">',
-        '  <div class="dropdown-menu">',
-        '    <a class="dropdown-item" href="#">Dropdown item</a>',
+        '<div className="dropdown">',
+        '  <div className="dropdown-menu">',
+        '    <a className="dropdown-item" href="#">Dropdown item</a>',
         '  </div>',
-        '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown toggle</button>',
+        '  <button className="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown toggle</button>',
         '</div>'
       ].join('')
 
@@ -2332,12 +2332,12 @@ describe('Dropdown', () => {
   it('should open dropdown when pressing keydown or keyup', () => {
     return new Promise(resolve => {
       fixtureEl.innerHTML = [
-        '<div class="dropdown">',
-        '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
-        '  <div class="dropdown-menu">',
-        '    <a class="dropdown-item disabled" href="#sub1">Submenu 1</a>',
-        '    <button class="dropdown-item" type="button" disabled>Disabled button</button>',
-        '    <a id="item1" class="dropdown-item" href="#">Another link</a>',
+        '<div className="dropdown">',
+        '  <button className="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
+        '  <div className="dropdown-menu">',
+        '    <a className="dropdown-item disabled" href="#sub1">Submenu 1</a>',
+        '    <button className="dropdown-item" type="button" disabled>Disabled button</button>',
+        '    <a id="item1" className="dropdown-item" href="#">Another link</a>',
         '  </div>',
         '</div>'
       ].join('')
@@ -2381,10 +2381,10 @@ describe('Dropdown', () => {
 
   it('should allow `data-bs-toggle="dropdown"` click events to bubble up', () => {
     fixtureEl.innerHTML = [
-      '<div class="dropdown">',
-      '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
-      '  <div class="dropdown-menu">',
-      '    <a class="dropdown-item" href="#">Secondary link</a>',
+      '<div className="dropdown">',
+      '  <button className="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
+      '  <div className="dropdown-menu">',
+      '    <a className="dropdown-item" href="#">Secondary link</a>',
       '  </div>',
       '</div>'
     ].join('')
@@ -2405,11 +2405,11 @@ describe('Dropdown', () => {
   it('should open the dropdown when clicking the child element inside `data-bs-toggle="dropdown"`', () => {
     return new Promise(resolve => {
       fixtureEl.innerHTML = [
-        '<div class="container">',
-        '  <div class="dropdown">',
-        '    <button class="btn dropdown-toggle" data-bs-toggle="dropdown"><span id="childElement">Dropdown</span></button>',
-        '    <div class="dropdown-menu">',
-        '      <a class="dropdown-item" href="#subMenu">Sub menu</a>',
+        '<div className="container">',
+        '  <div className="dropdown">',
+        '    <button className="btn dropdown-toggle" data-bs-toggle="dropdown"><span id="childElement">Dropdown</span></button>',
+        '    <div className="dropdown-menu">',
+        '      <a className="dropdown-item" href="#subMenu">Sub menu</a>',
         '    </div>',
         '  </div>',
         '</div>'

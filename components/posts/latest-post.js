@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import CommentList from "./comment-list";
 import Interactions from "./interactions";
@@ -41,18 +42,22 @@ export default function LatestPost(props) {
       >
         <div className="carousel-inner">
           <div className="carousel-item active">
-            <img
-              src={`/${props.images[1]}`}
+            <Image
+              src={props.images[1]}
               className="d-block w-100"
               alt="..."
               style={{ objectFit: "cover", height: "400px", width: "auto" }}
+              width="150"
+              height="150"
             />
           </div>
           <div className="carousel-item">
-            <img
-              src={`/${props.images[0]}`}
+            <Image
+              src={props.images[0]}
               className="d-block w-100"
               alt="..."
+              width="150"
+              height="150"
             />
           </div>
         </div>
@@ -81,7 +86,7 @@ export default function LatestPost(props) {
           <span className="visually-hidden">Next</span>
         </button>
         <div className="mt-3 d-flex">
-          <a type="button" class="btn btn-secondary ms-auto" href="blog">
+          <a type="button" className="btn btn-secondary ms-auto" href="blog">
             Visit
           </a>
         </div>

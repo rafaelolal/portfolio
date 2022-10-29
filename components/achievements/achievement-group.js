@@ -1,11 +1,10 @@
-import { useEffect, useState } from "react";
 import Achievement from "./achievement";
 
 export default function AchievementGroup(props) {
   return (
     <div className="col-md-5 col-12">
       <div
-        class="rounded bg-dark accordion accordion-flush p-3 pb-2"
+        className="rounded bg-dark accordion accordion-flush p-3 pb-2"
         id="accordionFlushExample"
         style={{ overflowY: "auto", height: 300 }}
       >

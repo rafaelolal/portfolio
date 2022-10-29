@@ -34,7 +34,7 @@ describe('SelectorEngine', () => {
         '<ul>',
         '  <li></li>',
         '  <li>',
-        '    <a href="#" class="active">link</a>',
+        '    <a href="#" className="active">link</a>',
         '  </li>',
         '  <li></li>',
         '</ul>'
@@ -83,7 +83,7 @@ describe('SelectorEngine', () => {
 
   describe('prev', () => {
     it('should return previous element', () => {
-      fixtureEl.innerHTML = '<div class="test"></div><button class="btn"></button>'
+      fixtureEl.innerHTML = '<div className="test"></div><button className="btn"></button>'
 
       const btn = fixtureEl.querySelector('.btn')
       const divTest = fixtureEl.querySelector('.test')
@@ -93,9 +93,9 @@ describe('SelectorEngine', () => {
 
     it('should return previous element with an extra element between', () => {
       fixtureEl.innerHTML = [
-        '<div class="test"></div>',
+        '<div className="test"></div>',
         '<span></span>',
-        '<button class="btn"></button>'
+        '<button className="btn"></button>'
       ].join('')
 
       const btn = fixtureEl.querySelector('.btn')
@@ -106,11 +106,11 @@ describe('SelectorEngine', () => {
 
     it('should return previous element with comments or text nodes between', () => {
       fixtureEl.innerHTML = [
-        '<div class="test"></div>',
-        '<div class="test"></div>',
+        '<div className="test"></div>',
+        '<div className="test"></div>',
         '<!-- Comment-->',
         'Text',
-        '<button class="btn"></button>'
+        '<button className="btn"></button>'
       ].join('')
 
       const btn = fixtureEl.querySelector('.btn')
@@ -122,7 +122,7 @@ describe('SelectorEngine', () => {
 
   describe('next', () => {
     it('should return next element', () => {
-      fixtureEl.innerHTML = '<div class="test"></div><button class="btn"></button>'
+      fixtureEl.innerHTML = '<div className="test"></div><button className="btn"></button>'
 
       const btn = fixtureEl.querySelector('.btn')
       const divTest = fixtureEl.querySelector('.test')
@@ -132,9 +132,9 @@ describe('SelectorEngine', () => {
 
     it('should return next element with an extra element between', () => {
       fixtureEl.innerHTML = [
-        '<div class="test"></div>',
+        '<div className="test"></div>',
         '<span></span>',
-        '<button class="btn"></button>'
+        '<button className="btn"></button>'
       ].join('')
 
       const btn = fixtureEl.querySelector('.btn')
@@ -145,11 +145,11 @@ describe('SelectorEngine', () => {
 
     it('should return next element with comments or text nodes between', () => {
       fixtureEl.innerHTML = [
-        '<div class="test"></div>',
+        '<div className="test"></div>',
         '<!-- Comment-->',
         'Text',
-        '<button class="btn"></button>',
-        '<button class="btn"></button>'
+        '<button className="btn"></button>',
+        '<button className="btn"></button>'
       ].join('')
 
       const btn = fixtureEl.querySelector('.btn')

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import AchievementList from "../../components/achievements/achievement-list";
 export default function AboutPage() {
@@ -32,10 +33,12 @@ export default function AboutPage() {
       <div className="row">
         <div className="col-12 col-md-4 rounded">
           <div className="bg-dark p-3">
-            <img
+            <Image
               src="https://media-exp1.licdn.com/dms/image/C5603AQFwkn0a87ZkUQ/profile-displayphoto-shrink_800_800/0/1656096799326?e=1668643200&v=beta&t=7_m9v79bpEGcI9hXtaZPCbPoCZ4zHXosJpS5rw73x7U"
               className="img-fluid"
               alt="..."
+              width="150"
+              height="150"
             />
           </div>
         </div>

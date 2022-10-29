@@ -8,17 +8,19 @@ export default function Interactions(props) {
   var frequencyValue;
   const [beNotified, setBeNotified] = useState(false);
 
+  const {isShowingCopy, setIsShowingCopy} = props
+
   useEffect(() => {
-    if (props.isShowingCopy) {
+    if (isShowingCopy) {
       const timer = setTimeout(() => {
-        props.setIsShowingCopy(false);
+        setIsShowingCopy(false);
       }, 5000);
 
       return () => {
         clearTimeout(timer);
       };
     }
-  }, [props.isShowingCopy]);
+  }, [isShowingCopy, setIsShowingCopy]);
 
   function copyLink() {
     var link = "https://ralmeida.dev/blog#" + props.postId;
@@ -111,8 +113,7 @@ export default function Interactions(props) {
           xmlns="http://www.w3.org/2000/svg"
           length="auto"
           height="30"
-          fill="currentColor"
-          class="bi bi-share"
+          className="bi bi-share"
           viewBox="0 0 16 16"
           onClick={copyLink}
         >
@@ -120,17 +121,17 @@ export default function Interactions(props) {
         </svg>
       </div>
       <div className="col-6">
-        <div class="input-group">
+        <div className="input-group">
           <input
             type="text"
-            class="form-control rounded-5 me-2"
+            className="form-control rounded-5 me-2"
             placeholder="Write a comment..."
             aria-label="Comment"
             aria-describedby="button-addon2"
             ref={bodyInputRef}
           />
           <button
-            class="btn btn-secondary rounded-5"
+            className="btn btn-secondary rounded-5"
             type="button"
             id="button-addon2"
             data-bs-toggle="modal"
@@ -161,25 +162,25 @@ export default function Interactions(props) {
                 ></button>
               </div>
               <div className="modal-body">
-                <div class="input-group mb-3">
-                  <span class="input-group-text" id="name-input">
+                <div className="input-group mb-3">
+                  <span className="input-group-text" id="name-input">
                     Name
                   </span>
                   <input
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     id="basic-url"
                     aria-describedby="name-input"
                     ref={nameInputRef}
                   />
                 </div>
-                <div class="input-group mb-1">
-                  <span class="input-group-text" id="email-input">
+                <div className="input-group mb-1">
+                  <span className="input-group-text" id="email-input">
                     Email
                   </span>
                   <input
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     id="basic-url"
                     aria-describedby="email-input"
                     ref={emailInputRef}
@@ -187,15 +188,15 @@ export default function Interactions(props) {
                 </div>
               </div>
               <div className="modal-footer">
-                <div class="form-check me-auto">
+                <div className="form-check me-auto">
                   <input
                     onChange={beNotifiedHandler}
-                    class="form-check-input"
+                    className="form-check-input"
                     type="checkbox"
                     id="flexCheckDefault"
                     ref={beNotifiedInputRef}
                   />
-                  <label class="form-check-label" for="flexCheckDefault">
+                  <label className="form-check-label" for="flexCheckDefault">
                     Be notified of new posts
                   </label>
                 </div>
@@ -217,39 +218,39 @@ export default function Interactions(props) {
                 </button>
                 {beNotified && (
                   <div onChange={frequencyHandler} className="me-auto">
-                    <div class="form-check form-check-inline">
+                    <div className="form-check form-check-inline">
                       <input
-                        class="form-check-input"
+                        className="form-check-input"
                         type="radio"
                         name="inlineRadioOptions"
                         id="dailyRadio"
                         value="Daily"
                       />
-                      <label class="form-check-label" for="dailyRadio">
+                      <label className="form-check-label" for="dailyRadio">
                         Daily
                       </label>
                     </div>
-                    <div class="form-check form-check-inline">
+                    <div className="form-check form-check-inline">
                       <input
-                        class="form-check-input"
+                        className="form-check-input"
                         type="radio"
                         name="inlineRadioOptions"
                         id="weeklyRadio"
                         value="Weekly"
                       />
-                      <label class="form-check-label" for="weeklyRadio">
+                      <label className="form-check-label" for="weeklyRadio">
                         Weekly
                       </label>
                     </div>
-                    <div class="form-check form-check-inline">
+                    <div className="form-check form-check-inline">
                       <input
-                        class="form-check-input"
+                        className="form-check-input"
                         type="radio"
                         name="inlineRadioOptions"
                         id="monthlyRadio"
                         value="Monthly"
                       />
-                      <label class="form-check-label" for="monthlyRadio">
+                      <label className="form-check-label" for="monthlyRadio">
                         Monthly
                       </label>
                     </div>

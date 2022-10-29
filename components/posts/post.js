@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import CommentList from "./comment-list";
 import Interactions from "./interactions";
@@ -27,7 +28,7 @@ export default function Post(props) {
           <div>
             <h2 className="fw-bold">{props.title}</h2>
             <h2>
-              <span class="badge rounded-5 text-bg-primary position-absolute top-0 end-0">
+              <span className="badge rounded-5 text-bg-primary position-absolute top-0 end-0">
                 {props.list}
               </span>
             </h2>
@@ -41,17 +42,21 @@ export default function Post(props) {
         >
           <div className="carousel-inner">
             <div className="carousel-item active">
-              <img
-                src={`/${props.images[1]}`}
+              <Image
+                src={props.images[1]}
                 className="d-block w-100"
                 alt="..."
+                width="150"
+                height="150"
               />
             </div>
             <div className="carousel-item">
-              <img
-                src={`/${props.images[0]}`}
+              <Image
+                src={props.images[0]}
                 className="d-block w-100"
                 alt="..."
+                width="150"
+                height="150"
               />
             </div>
           </div>

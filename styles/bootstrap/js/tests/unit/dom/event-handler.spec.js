@@ -77,7 +77,7 @@ describe('EventHandler', () => {
           resolve()
         })
 
-        fixtureEl.innerHTML = '<div class="test"></div>'
+        fixtureEl.innerHTML = '<div className="test"></div>'
 
         const div = fixtureEl.querySelector('div')
 
@@ -88,13 +88,13 @@ describe('EventHandler', () => {
     it('should handle mouseenter/mouseleave like the native counterpart', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div class="outer">',
-          '<div class="inner">',
-          '<div class="nested">',
-          '<div class="deep"></div>',
+          '<div className="outer">',
+          '<div className="inner">',
+          '<div className="nested">',
+          '<div className="deep"></div>',
           '</div>',
           '</div>',
-          '<div class="sibling"></div>',
+          '<div className="sibling"></div>',
           '</div>'
         ].join('')
 

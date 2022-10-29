@@ -68,9 +68,9 @@ const Default = {
   sanitize: true,
   sanitizeFn: null,
   selector: false,
-  template: '<div class="tooltip" role="tooltip">' +
-            '<div class="tooltip-arrow"></div>' +
-            '<div class="tooltip-inner"></div>' +
+  template: '<div className="tooltip" role="tooltip">' +
+            '<div className="tooltip-arrow"></div>' +
+            '<div className="tooltip-inner"></div>' +
             '</div>',
   title: '',
   trigger: 'hover focus'

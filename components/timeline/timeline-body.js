@@ -6,10 +6,10 @@ export default function TimelineBody(props) {
     return (
       <TimelineComponent>
         <div
-          class={`${styles.timeline__component} ${styles.timeline__component__bottom} ${styles.timeline__component__bg}`}
+          className={`${styles.timeline__component} ${styles.timeline__component__bottom} ${styles.timeline__component__bg}`}
         >
-          <h2 class={styles.timeline__title}>{props.name}</h2>
-          <p class={styles.timeline__paragraph}>{props.description}</p>
+          <h2 className={styles.timeline__title}>{props.name}</h2>
+          <p className={styles.timeline__paragraph}>{props.description}</p>
         </div>
       </TimelineComponent>
     );
@@ -18,10 +18,10 @@ export default function TimelineBody(props) {
   return (
     <TimelineComponent>
       <div
-        class={`${styles.timeline__component} ${styles.timeline__component__bg}`}
+        className={`${styles.timeline__component} ${styles.timeline__component__bg}`}
       >
-        <h2 class={styles.timeline__title}>{props.name}</h2>
-        <p class={styles.timeline__paragraph}>{props.description}</p>
+        <h2 className={styles.timeline__title}>{props.name}</h2>
+        <p className={styles.timeline__paragraph}>{props.description}</p>
       </div>
     </TimelineComponent>
   );

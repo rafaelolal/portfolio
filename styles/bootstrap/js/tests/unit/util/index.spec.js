@@ -26,7 +26,7 @@ describe('Util', () => {
     it('should get selector from data-bs-target', () => {
       fixtureEl.innerHTML = [
         '<div id="test" data-bs-target=".target"></div>',
-        '<div class="target"></div>'
+        '<div className="target"></div>'
       ].join('')
 
       const testEl = fixtureEl.querySelector('#test')
@@ -37,7 +37,7 @@ describe('Util', () => {
     it('should get selector from href if no data-bs-target set', () => {
       fixtureEl.innerHTML = [
         '<a id="test" href=".target"></a>',
-        '<div class="target"></div>'
+        '<div className="target"></div>'
       ].join('')
 
       const testEl = fixtureEl.querySelector('#test')
@@ -48,7 +48,7 @@ describe('Util', () => {
     it('should get selector from href if data-bs-target equal to #', () => {
       fixtureEl.innerHTML = [
         '<a id="test" data-bs-target="#" href=".target"></a>',
-        '<div class="target"></div>'
+        '<div className="target"></div>'
       ].join('')
 
       const testEl = fixtureEl.querySelector('#test')
@@ -59,7 +59,7 @@ describe('Util', () => {
     it('should return null if a selector from a href is a url without an anchor', () => {
       fixtureEl.innerHTML = [
         '<a id="test" data-bs-target="#" href="foo/bar.html"></a>',
-        '<div class="target"></div>'
+        '<div className="target"></div>'
       ].join('')
 
       const testEl = fixtureEl.querySelector('#test')
@@ -99,7 +99,7 @@ describe('Util', () => {
     it('should get element from data-bs-target', () => {
       fixtureEl.innerHTML = [
         '<div id="test" data-bs-target=".target"></div>',
-        '<div class="target"></div>'
+        '<div className="target"></div>'
       ].join('')
 
       const testEl = fixtureEl.querySelector('#test')
@@ -110,7 +110,7 @@ describe('Util', () => {
     it('should get element from href if no data-bs-target set', () => {
       fixtureEl.innerHTML = [
         '<a id="test" href=".target"></a>',
-        '<div class="target"></div>'
+        '<div className="target"></div>'
       ].join('')
 
       const testEl = fixtureEl.querySelector('#test')
@@ -175,8 +175,8 @@ describe('Util', () => {
   describe('isElement', () => {
     it('should detect if the parameter is an element or not and return Boolean', () => {
       fixtureEl.innerHTML = [
-        '<div id="foo" class="test"></div>',
-        '<div id="bar" class="test"></div>'
+        '<div id="foo" className="test"></div>',
+        '<div id="bar" className="test"></div>'
       ].join('')
 
       const el = fixtureEl.querySelector('#foo')
@@ -202,8 +202,8 @@ describe('Util', () => {
   describe('getElement', () => {
     it('should try to parse element', () => {
       fixtureEl.innerHTML = [
-        '<div id="foo" class="test"></div>',
-        '<div id="bar" class="test"></div>'
+        '<div id="foo" className="test"></div>',
+        '<div id="bar" className="test"></div>'
       ].join('')
 
       const el = fixtureEl.querySelector('div')
@@ -257,7 +257,7 @@ describe('Util', () => {
         '<div style="display: none;">',
         '  <div>',
         '    <div>',
-        '      <div class="content"></div>',
+        '      <div className="content"></div>',
         '    </div>',
         '  </div>',
         '</div>'
@@ -273,7 +273,7 @@ describe('Util', () => {
         '<div style="visibility: hidden;">',
         '  <div>',
         '    <div>',
-        '      <div class="content"></div>',
+        '      <div className="content"></div>',
         '    </div>',
         '  </div>',
         '</div>'
@@ -289,7 +289,7 @@ describe('Util', () => {
         '<div style="visibility: hidden;">',
         '  <div style="visibility: visible;">',
         '    <div>',
-        '      <div class="content"></div>',
+        '      <div className="content"></div>',
         '    </div>',
         '  </div>',
         '</div>'
@@ -448,7 +448,7 @@ describe('Util', () => {
     it('should return true if the element has class "disabled"', () => {
       fixtureEl.innerHTML = [
         '<div>',
-        '  <div id="element" class="disabled"></div>',
+        '  <div id="element" className="disabled"></div>',
         '</div>'
       ].join('')
 
@@ -460,7 +460,7 @@ describe('Util', () => {
     it('should return true if the element has class "disabled" but disabled attribute is false', () => {
       fixtureEl.innerHTML = [
         '<div>',
-        '  <input id="input" class="disabled" disabled="false">',
+        '  <input id="input" className="disabled" disabled="false">',
         '</div>'
       ].join('')
 
@@ -730,8 +730,8 @@ describe('Util', () => {
     it('should ignore transitionend events from nested elements', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div class="outer">',
-          '  <div class="nested"></div>',
+          '<div className="outer">',
+          '  <div className="nested"></div>',
           '</div>'
         ].join('')
 

@@ -33,12 +33,12 @@ describe('ScrollSpy', () => {
 
   const getDummyFixture = () => {
     return [
-      '<nav id="navBar" class="navbar">',
-      '  <ul class="nav">',
-      '    <li class="nav-item"><a id="li-jsm-1" class="nav-link" href="#div-jsm-1">div 1</a></li>',
+      '<nav id="navBar" className="navbar">',
+      '  <ul className="nav">',
+      '    <li className="nav-item"><a id="li-jsm-1" className="nav-link" href="#div-jsm-1">div 1</a></li>',
       '  </ul>',
       '</nav>',
-      '<div class="content" data-bs-target="#navBar" style="overflow-y: auto">',
+      '<div className="content" data-bs-target="#navBar" style="overflow-y: auto">',
       '  <div id="div-jsm-1">div 1</div>',
       '</div>'
     ].join('')
@@ -108,9 +108,9 @@ describe('ScrollSpy', () => {
 
     it('should null, if element is not scrollable', () => {
       fixtureEl.innerHTML = [
-        '<nav id="navigation" class="navbar">',
-        '  <ul class="navbar-nav">' +
-        '     <li class="nav-item"><a class="nav-link active" id="one-link" href="#">One</a></li>' +
+        '<nav id="navigation" className="navbar">',
+        '  <ul className="navbar-nav">' +
+        '     <li className="nav-item"><a className="nav-link active" id="one-link" href="#">One</a></li>' +
         '  </ul>',
         '</nav>',
         '<div id="content">',
@@ -128,8 +128,8 @@ describe('ScrollSpy', () => {
 
     it('should respect threshold option', () => {
       fixtureEl.innerHTML = [
-        '<ul id="navigation" class="navbar">',
-        '   <a class="nav-link active" id="one-link" href="#">One</a>' +
+        '<ul id="navigation" className="navbar">',
+        '   <a className="nav-link active" id="one-link" href="#">One</a>' +
         '</ul>',
         '<div id="content">',
         '  <div id="one-link">test</div>',
@@ -146,8 +146,8 @@ describe('ScrollSpy', () => {
 
     it('should respect threshold option markup', () => {
       fixtureEl.innerHTML = [
-        '<ul id="navigation" class="navbar">',
-        '   <a class="nav-link active" id="one-link" href="#">One</a>' +
+        '<ul id="navigation" className="navbar">',
+        '   <a className="nav-link active" id="one-link" href="#">One</a>' +
         '</ul>',
         '<div id="content" data-bs-threshold="0,0.2,1">',
         '  <div id="one-link">test</div>',
@@ -172,11 +172,11 @@ describe('ScrollSpy', () => {
 
     it('should not take count to not visible sections', () => {
       fixtureEl.innerHTML = [
-        '<nav id="navigation" class="navbar">',
-        '  <ul class="navbar-nav">',
-        '    <li class="nav-item"><a class="nav-link active" id="one-link" href="#one">One</a></li>',
-        '    <li class="nav-item"><a class="nav-link" id="two-link" href="#two">Two</a></li>',
-        '    <li class="nav-item"><a class="nav-link" id="three-link" href="#three">Three</a></li>',
+        '<nav id="navigation" className="navbar">',
+        '  <ul className="navbar-nav">',
+        '    <li className="nav-item"><a className="nav-link active" id="one-link" href="#one">One</a></li>',
+        '    <li className="nav-item"><a className="nav-link" id="two-link" href="#two">Two</a></li>',
+        '    <li className="nav-item"><a className="nav-link" id="three-link" href="#three">Three</a></li>',
         '  </ul>',
         '</nav>',
         '<div id="content" style="height: 200px; overflow-y: auto;">',
@@ -196,11 +196,11 @@ describe('ScrollSpy', () => {
 
     it('should not process element without target', () => {
       fixtureEl.innerHTML = [
-        '<nav id="navigation" class="navbar">',
-        '  <ul class="navbar-nav">',
-        '    <li class="nav-item"><a class="nav-link active" id="one-link" href="#">One</a></li>',
-        '    <li class="nav-item"><a class="nav-link" id="two-link" href="#two">Two</a></li>',
-        '    <li class="nav-item"><a class="nav-link" id="three-link" href="#three">Three</a></li>',
+        '<nav id="navigation" className="navbar">',
+        '  <ul className="navbar-nav">',
+        '    <li className="nav-item"><a className="nav-link active" id="one-link" href="#">One</a></li>',
+        '    <li className="nav-item"><a className="nav-link" id="two-link" href="#two">Two</a></li>',
+        '    <li className="nav-item"><a className="nav-link" id="three-link" href="#three">Three</a></li>',
         '  </ul>',
         '</nav>',
         '<div id="content" style="height: 200px; overflow-y: auto;">',
@@ -219,13 +219,13 @@ describe('ScrollSpy', () => {
     it('should only switch "active" class on current target', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div id="root" class="active" style="display: block">',
-          '  <div class="topbar">',
-          '    <div class="topbar-inner">',
-          '      <div class="container" id="ss-target">',
-          '        <ul class="nav">',
-          '          <li class="nav-item"><a href="#masthead">Overview</a></li>',
-          '          <li class="nav-item"><a href="#detail">Detail</a></li>',
+          '<div id="root" className="active" style="display: block">',
+          '  <div className="topbar">',
+          '    <div className="topbar-inner">',
+          '      <div className="container" id="ss-target">',
+          '        <ul className="nav">',
+          '          <li className="nav-item"><a href="#masthead">Overview</a></li>',
+          '          <li className="nav-item"><a href="#detail">Detail</a></li>',
           '        </ul>',
           '      </div>',
           '    </div>',
@@ -258,13 +258,13 @@ describe('ScrollSpy', () => {
     it('should not process data if `activeTarget` is same as given target', () => {
       return new Promise((resolve, reject) => {
         fixtureEl.innerHTML = [
-          '<nav class="navbar">',
-          '  <ul class="nav">',
-          '    <li class="nav-item"><a class="nav-link" id="a-1" href="#div-1">div 1</a></li>',
-          '    <li class="nav-item"><a class="nav-link" id="a-2" href="#div-2">div 2</a></li>',
+          '<nav className="navbar">',
+          '  <ul className="nav">',
+          '    <li className="nav-item"><a className="nav-link" id="a-1" href="#div-1">div 1</a></li>',
+          '    <li className="nav-item"><a className="nav-link" id="a-2" href="#div-2">div 2</a></li>',
           '  </ul>',
           '</nav>',
-          '<div class="content" style="overflow: auto; height: 50px">',
+          '<div className="content" style="overflow: auto; height: 50px">',
           '  <div id="div-1" style="height: 100px; padding: 0; margin: 0">div 1</div>',
           '  <div id="div-2" style="height: 200px; padding: 0; margin: 0">div 2</div>',
           '</div>'
@@ -297,13 +297,13 @@ describe('ScrollSpy', () => {
     it('should only switch "active" class on current target specified w element', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div id="root" class="active" style="display: block">',
-          '  <div class="topbar">',
-          '    <div class="topbar-inner">',
-          '      <div class="container" id="ss-target">',
-          '        <ul class="nav">',
-          '          <li class="nav-item"><a href="#masthead">Overview</a></li>',
-          '          <li class="nav-item"><a href="#detail">Detail</a></li>',
+          '<div id="root" className="active" style="display: block">',
+          '  <div className="topbar">',
+          '    <div className="topbar-inner">',
+          '      <div className="container" id="ss-target">',
+          '        <ul className="nav">',
+          '          <li className="nav-item"><a href="#masthead">Overview</a></li>',
+          '          <li className="nav-item"><a href="#detail">Detail</a></li>',
           '        </ul>',
           '      </div>',
           '    </div>',
@@ -337,13 +337,13 @@ describe('ScrollSpy', () => {
     it('should add the active class to the correct element', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<nav class="navbar">',
-          '  <ul class="nav">',
-          '    <li class="nav-item"><a class="nav-link" id="a-1" href="#div-1">div 1</a></li>',
-          '    <li class="nav-item"><a class="nav-link" id="a-2" href="#div-2">div 2</a></li>',
+          '<nav className="navbar">',
+          '  <ul className="nav">',
+          '    <li className="nav-item"><a className="nav-link" id="a-1" href="#div-1">div 1</a></li>',
+          '    <li className="nav-item"><a className="nav-link" id="a-2" href="#div-2">div 2</a></li>',
           '  </ul>',
           '</nav>',
-          '<div class="content" style="overflow: auto; height: 50px">',
+          '<div className="content" style="overflow: auto; height: 50px">',
           '  <div id="div-1" style="height: 100px; padding: 0; margin: 0">div 1</div>',
           '  <div id="div-2" style="height: 200px; padding: 0; margin: 0">div 2</div>',
           '</div>'
@@ -376,13 +376,13 @@ describe('ScrollSpy', () => {
     it('should add to nav the active class to the correct element (nav markup)', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<nav class="navbar">',
-          '  <nav class="nav">',
-          '    <a class="nav-link" id="a-1" href="#div-1">div 1</a>',
-          '    <a class="nav-link" id="a-2" href="#div-2">div 2</a>',
+          '<nav className="navbar">',
+          '  <nav className="nav">',
+          '    <a className="nav-link" id="a-1" href="#div-1">div 1</a>',
+          '    <a className="nav-link" id="a-2" href="#div-2">div 2</a>',
           '  </nav>',
           '</nav>',
-          '<div class="content" style="overflow: auto; height: 50px">',
+          '<div className="content" style="overflow: auto; height: 50px">',
           '  <div id="div-1" style="height: 100px; padding: 0; margin: 0">div 1</div>',
           '  <div id="div-2" style="height: 200px; padding: 0; margin: 0">div 2</div>',
           '</div>'
@@ -415,13 +415,13 @@ describe('ScrollSpy', () => {
     it('should add to list-group, the active class to the correct element (list-group markup)', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<nav class="navbar">',
-          '  <div class="list-group">',
-          '    <a class="list-group-item" id="a-1" href="#div-1">div 1</a>',
-          '    <a class="list-group-item" id="a-2" href="#div-2">div 2</a>',
+          '<nav className="navbar">',
+          '  <div className="list-group">',
+          '    <a className="list-group-item" id="a-1" href="#div-1">div 1</a>',
+          '    <a className="list-group-item" id="a-2" href="#div-2">div 2</a>',
           '  </div>',
           '</nav>',
-          '<div class="content" style="overflow: auto; height: 50px">',
+          '<div className="content" style="overflow: auto; height: 50px">',
           '  <div id="div-1" style="height: 100px; padding: 0; margin: 0">div 1</div>',
           '  <div id="div-2" style="height: 200px; padding: 0; margin: 0">div 2</div>',
           '</div>'
@@ -455,11 +455,11 @@ describe('ScrollSpy', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
           '<div id="header" style="height: 500px;"></div>',
-          '<nav id="navigation" class="navbar">',
-          '  <ul class="navbar-nav">',
-          '    <li class="nav-item"><a id="one-link"   class="nav-link active" href="#one">One</a></li>',
-          '    <li class="nav-item"><a id="two-link"   class="nav-link" href="#two">Two</a></li>',
-          '    <li class="nav-item"><a id="three-link" class="nav-link" href="#three">Three</a></li>',
+          '<nav id="navigation" className="navbar">',
+          '  <ul className="navbar-nav">',
+          '    <li className="nav-item"><a id="one-link"   className="nav-link active" href="#one">One</a></li>',
+          '    <li className="nav-item"><a id="two-link"   className="nav-link" href="#two">Two</a></li>',
+          '    <li className="nav-item"><a id="three-link" className="nav-link" href="#three">Three</a></li>',
           '  </ul>',
           '</nav>',
           '<div id="content" style="height: 200px; overflow-y: auto;">',
@@ -499,11 +499,11 @@ describe('ScrollSpy', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
           '<div id="header" style="height: 500px;"></div>',
-          '<nav id="navigation" class="navbar">',
-          '  <ul class="navbar-nav">',
-          '    <li class="nav-item"><a id="one-link" class="nav-link active" href="#one">One</a></li>',
-          '    <li class="nav-item"><a id="two-link" class="nav-link" href="#two">Two</a></li>',
-          '    <li class="nav-item"><a id="three-link" class="nav-link" href="#three">Three</a></li>',
+          '<nav id="navigation" className="navbar">',
+          '  <ul className="navbar-nav">',
+          '    <li className="nav-item"><a id="one-link" className="nav-link active" href="#one">One</a></li>',
+          '    <li className="nav-item"><a id="two-link" className="nav-link" href="#two">Two</a></li>',
+          '    <li className="nav-item"><a id="three-link" className="nav-link" href="#three">Three</a></li>',
           '  </ul>',
           '</nav>',
           '<div id="content" style="height: 150px; overflow-y: auto;">',
@@ -546,16 +546,16 @@ describe('ScrollSpy', () => {
     it('should correctly select navigation element on backward scrolling when each target section height is 100%', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<nav class="navbar">',
-          '  <ul class="nav">',
-          '    <li class="nav-item"><a id="li-100-1" class="nav-link" href="#div-100-1">div 1</a></li>',
-          '    <li class="nav-item"><a id="li-100-2" class="nav-link" href="#div-100-2">div 2</a></li>',
-          '    <li class="nav-item"><a id="li-100-3" class="nav-link" href="#div-100-3">div 3</a></li>',
-          '    <li class="nav-item"><a id="li-100-4" class="nav-link" href="#div-100-4">div 4</a></li>',
-          '    <li class="nav-item"><a id="li-100-5" class="nav-link" href="#div-100-5">div 5</a></li>',
+          '<nav className="navbar">',
+          '  <ul className="nav">',
+          '    <li className="nav-item"><a id="li-100-1" className="nav-link" href="#div-100-1">div 1</a></li>',
+          '    <li className="nav-item"><a id="li-100-2" className="nav-link" href="#div-100-2">div 2</a></li>',
+          '    <li className="nav-item"><a id="li-100-3" className="nav-link" href="#div-100-3">div 3</a></li>',
+          '    <li className="nav-item"><a id="li-100-4" className="nav-link" href="#div-100-4">div 4</a></li>',
+          '    <li className="nav-item"><a id="li-100-5" className="nav-link" href="#div-100-5">div 5</a></li>',
           '  </ul>',
           '</nav>',
-          '<div class="content" style="position: relative; overflow: auto; height: 100px">',
+          '<div className="content" style="position: relative; overflow: auto; height: 100px">',
           '  <div id="div-100-1" style="position: relative; height: 100%; padding: 0; margin: 0">div 1</div>',
           '  <div id="div-100-2" style="position: relative; height: 100%; padding: 0; margin: 0">div 2</div>',
           '  <div id="div-100-3" style="position: relative; height: 100%; padding: 0; margin: 0">div 3</div>',
@@ -877,13 +877,13 @@ describe('ScrollSpy', () => {
 
     it('should not smoothScroll to element if it not handles a scrollspy section', () => {
       fixtureEl.innerHTML = [
-        '<nav id="navBar" class="navbar">',
-        '  <ul class="nav">',
+        '<nav id="navBar" className="navbar">',
+        '  <ul className="nav">',
         '    <a id="anchor-1" href="#div-jsm-1">div 1</a></li>',
         '    <a id="anchor-2" href="#foo">div 2</a></li>',
         '  </ul>',
         '</nav>',
-        '<div class="content" data-bs-target="#navBar" style="overflow-y: auto">',
+        '<div className="content" data-bs-target="#navBar" style="overflow-y: auto">',
         '  <div id="div-jsm-1">div 1</div>',
         '</div>'
       ].join('')

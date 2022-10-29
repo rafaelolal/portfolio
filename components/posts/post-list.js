@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
@@ -40,7 +41,7 @@ export default function PostList(props) {
     return (
       <div>
         <p className="text-center">Loading...</p>
-        <img
+        <Image
           height="auto"
           width="300"
           className="img-thumbnail rounded mx-auto d-block"

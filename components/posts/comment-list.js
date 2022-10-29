@@ -18,7 +18,7 @@ export default function CommentList(props) {
       .then((data) => {
         setComments(data.data);
       });
-  }, [props.showingComments]);
+  }, [props.showingComments, postId]);
 
   if (!comments) {
     return <p>Loading...</p>;

@@ -32,7 +32,7 @@ describe('Plugin functions', () => {
   describe('data-bs-dismiss functionality', () => {
     it('should get Plugin and execute the given method, when a click occurred on data-bs-dismiss="PluginName"', () => {
       fixtureEl.innerHTML = [
-        '<div id="foo" class="test">',
+        '<div id="foo" className="test">',
         '  <button type="button" data-bs-dismiss="test" data-bs-target="#foo"></button>',
         '</div>'
       ].join('')
@@ -52,7 +52,7 @@ describe('Plugin functions', () => {
 
     it('if data-bs-dismiss="PluginName" hasn\'t got "data-bs-target", "getOrCreateInstance" has to be initialized by closest "plugin.Name" class', () => {
       fixtureEl.innerHTML = [
-        '<div id="foo" class="test">',
+        '<div id="foo" className="test">',
         '  <button type="button" data-bs-dismiss="test"></button>',
         '</div>'
       ].join('')
@@ -72,7 +72,7 @@ describe('Plugin functions', () => {
 
     it('if data-bs-dismiss="PluginName" is disabled, must not trigger function', () => {
       fixtureEl.innerHTML = [
-        '<div id="foo" class="test">',
+        '<div id="foo" className="test">',
         '  <button type="button" disabled data-bs-dismiss="test"></button>',
         '</div>'
       ].join('')
@@ -89,7 +89,7 @@ describe('Plugin functions', () => {
 
     it('should prevent default when the trigger is <a> or <area>', () => {
       fixtureEl.innerHTML = [
-        '<div id="foo" class="test">',
+        '<div id="foo" className="test">',
         '  <a type="button" data-bs-dismiss="test"></a>',
         '</div>'
       ].join('')

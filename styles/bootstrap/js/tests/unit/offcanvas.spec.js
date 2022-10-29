@@ -42,7 +42,7 @@ describe('Offcanvas', () => {
   describe('constructor', () => {
     it('should call hide when a element with data-bs-dismiss="offcanvas" is clicked', () => {
       fixtureEl.innerHTML = [
-        '<div class="offcanvas">',
+        '<div className="offcanvas">',
         '  <a href="#" data-bs-dismiss="offcanvas">Close</a>',
         '</div>'
       ].join('')
@@ -60,7 +60,7 @@ describe('Offcanvas', () => {
     })
 
     it('should hide if esc is pressed', () => {
-      fixtureEl.innerHTML = '<div class="offcanvas"></div>'
+      fixtureEl.innerHTML = '<div className="offcanvas"></div>'
 
       const offCanvasEl = fixtureEl.querySelector('.offcanvas')
       const offCanvas = new Offcanvas(offCanvasEl)
@@ -75,7 +75,7 @@ describe('Offcanvas', () => {
     })
 
     it('should hide if esc is pressed and backdrop is static', () => {
-      fixtureEl.innerHTML = '<div class="offcanvas"></div>'
+      fixtureEl.innerHTML = '<div className="offcanvas"></div>'
 
       const offCanvasEl = fixtureEl.querySelector('.offcanvas')
       const offCanvas = new Offcanvas(offCanvasEl, { backdrop: 'static' })
@@ -90,7 +90,7 @@ describe('Offcanvas', () => {
     })
 
     it('should not hide if esc is not pressed', () => {
-      fixtureEl.innerHTML = '<div class="offcanvas"></div>'
+      fixtureEl.innerHTML = '<div className="offcanvas"></div>'
 
       const offCanvasEl = fixtureEl.querySelector('.offcanvas')
       const offCanvas = new Offcanvas(offCanvasEl)
@@ -106,7 +106,7 @@ describe('Offcanvas', () => {
 
     it('should not hide if esc is pressed but with keyboard = false', () => {
       return new Promise(resolve => {
-        fixtureEl.innerHTML = '<div class="offcanvas"></div>'
+        fixtureEl.innerHTML = '<div className="offcanvas"></div>'
 
         const offCanvasEl = fixtureEl.querySelector('.offcanvas')
         const offCanvas = new Offcanvas(offCanvasEl, { keyboard: false })
@@ -132,7 +132,7 @@ describe('Offcanvas', () => {
 
     it('should not hide if user clicks on static backdrop', () => {
       return new Promise(resolve => {
-        fixtureEl.innerHTML = '<div class="offcanvas"></div>'
+        fixtureEl.innerHTML = '<div className="offcanvas"></div>'
 
         const offCanvasEl = fixtureEl.querySelector('div')
         const offCanvas = new Offcanvas(offCanvasEl, { backdrop: 'static' })
@@ -158,7 +158,7 @@ describe('Offcanvas', () => {
 
     it('should call `hide` on resize, if element\'s position is not fixed any more', () => {
       return new Promise(resolve => {
-        fixtureEl.innerHTML = '<div class="offcanvas-lg"></div>'
+        fixtureEl.innerHTML = '<div className="offcanvas-lg"></div>'
 
         const offCanvasEl = fixtureEl.querySelector('div')
         const offCanvas = new Offcanvas(offCanvasEl)
@@ -181,7 +181,7 @@ describe('Offcanvas', () => {
 
   describe('config', () => {
     it('should have default values', () => {
-      fixtureEl.innerHTML = '<div class="offcanvas"></div>'
+      fixtureEl.innerHTML = '<div className="offcanvas"></div>'
 
       const offCanvasEl = fixtureEl.querySelector('.offcanvas')
       const offCanvas = new Offcanvas(offCanvasEl)
@@ -193,7 +193,7 @@ describe('Offcanvas', () => {
     })
 
     it('should read data attributes and override default config', () => {
-      fixtureEl.innerHTML = '<div class="offcanvas" data-bs-scroll="true" data-bs-backdrop="false" data-bs-keyboard="false"></div>'
+      fixtureEl.innerHTML = '<div className="offcanvas" data-bs-scroll="true" data-bs-backdrop="false" data-bs-keyboard="false"></div>'
 
       const offCanvasEl = fixtureEl.querySelector('.offcanvas')
       const offCanvas = new Offcanvas(offCanvasEl)
@@ -205,7 +205,7 @@ describe('Offcanvas', () => {
     })
 
     it('given a config object must override data attributes', () => {
-      fixtureEl.innerHTML = '<div class="offcanvas" data-bs-scroll="true" data-bs-backdrop="false" data-bs-keyboard="false"></div>'
+      fixtureEl.innerHTML = '<div className="offcanvas" data-bs-scroll="true" data-bs-backdrop="false" data-bs-keyboard="false"></div>'
 
       const offCanvasEl = fixtureEl.querySelector('.offcanvas')
       const offCanvas = new Offcanvas(offCanvasEl, {
@@ -222,7 +222,7 @@ describe('Offcanvas', () => {
   describe('options', () => {
     it('if scroll is enabled, should allow body to scroll while offcanvas is open', () => {
       return new Promise(resolve => {
-        fixtureEl.innerHTML = '<div class="offcanvas"></div>'
+        fixtureEl.innerHTML = '<div className="offcanvas"></div>'
 
         const spyHide = spyOn(ScrollBarHelper.prototype, 'hide').and.callThrough()
         const spyReset = spyOn(ScrollBarHelper.prototype, 'reset').and.callThrough()
@@ -243,7 +243,7 @@ describe('Offcanvas', () => {
 
     it('if scroll is disabled, should call ScrollBarHelper to handle scrollBar on body', () => {
       return new Promise(resolve => {
-        fixtureEl.innerHTML = '<div class="offcanvas"></div>'
+        fixtureEl.innerHTML = '<div className="offcanvas"></div>'
 
         const spyHide = spyOn(ScrollBarHelper.prototype, 'hide').and.callThrough()
         const spyReset = spyOn(ScrollBarHelper.prototype, 'reset').and.callThrough()
@@ -264,7 +264,7 @@ describe('Offcanvas', () => {
 
     it('should hide a shown element if user click on backdrop', () => {
       return new Promise(resolve => {
-        fixtureEl.innerHTML = '<div class="offcanvas"></div>'
+        fixtureEl.innerHTML = '<div className="offcanvas"></div>'
 
         const offCanvasEl = fixtureEl.querySelector('div')
         const offCanvas = new Offcanvas(offCanvasEl, { backdrop: true })
@@ -289,7 +289,7 @@ describe('Offcanvas', () => {
 
     it('should not trap focus if scroll is allowed', () => {
       return new Promise(resolve => {
-        fixtureEl.innerHTML = '<div class="offcanvas"></div>'
+        fixtureEl.innerHTML = '<div className="offcanvas"></div>'
 
         const offCanvasEl = fixtureEl.querySelector('.offcanvas')
         const offCanvas = new Offcanvas(offCanvasEl, {
@@ -310,7 +310,7 @@ describe('Offcanvas', () => {
 
     it('should trap focus if scroll is allowed OR backdrop is enabled', () => {
       return new Promise(resolve => {
-        fixtureEl.innerHTML = '<div class="offcanvas"></div>'
+        fixtureEl.innerHTML = '<div className="offcanvas"></div>'
 
         const offCanvasEl = fixtureEl.querySelector('.offcanvas')
         const offCanvas = new Offcanvas(offCanvasEl, {
@@ -332,7 +332,7 @@ describe('Offcanvas', () => {
 
   describe('toggle', () => {
     it('should call show method if show class is not present', () => {
-      fixtureEl.innerHTML = '<div class="offcanvas"></div>'
+      fixtureEl.innerHTML = '<div className="offcanvas"></div>'
 
       const offCanvasEl = fixtureEl.querySelector('.offcanvas')
       const offCanvas = new Offcanvas(offCanvasEl)
@@ -346,7 +346,7 @@ describe('Offcanvas', () => {
 
     it('should call hide method if show class is present', () => {
       return new Promise(resolve => {
-        fixtureEl.innerHTML = '<div class="offcanvas"></div>'
+        fixtureEl.innerHTML = '<div className="offcanvas"></div>'
 
         const offCanvasEl = fixtureEl.querySelector('.offcanvas')
         const offCanvas = new Offcanvas(offCanvasEl)
@@ -369,7 +369,7 @@ describe('Offcanvas', () => {
   describe('show', () => {
     it('should add `showing` class during opening and `show` class on end', () => {
       return new Promise(resolve => {
-        fixtureEl.innerHTML = '<div class="offcanvas"></div>'
+        fixtureEl.innerHTML = '<div className="offcanvas"></div>'
         const offCanvasEl = fixtureEl.querySelector('.offcanvas')
         const offCanvas = new Offcanvas(offCanvasEl)
 
@@ -389,7 +389,7 @@ describe('Offcanvas', () => {
     })
 
     it('should do nothing if already shown', () => {
-      fixtureEl.innerHTML = '<div class="offcanvas show"></div>'
+      fixtureEl.innerHTML = '<div className="offcanvas show"></div>'
 
       const offCanvasEl = fixtureEl.querySelector('div')
       const offCanvas = new Offcanvas(offCanvasEl)
@@ -407,7 +407,7 @@ describe('Offcanvas', () => {
 
     it('should show a hidden element', () => {
       return new Promise(resolve => {
-        fixtureEl.innerHTML = '<div class="offcanvas"></div>'
+        fixtureEl.innerHTML = '<div className="offcanvas"></div>'
 
         const offCanvasEl = fixtureEl.querySelector('div')
         const offCanvas = new Offcanvas(offCanvasEl)
@@ -425,7 +425,7 @@ describe('Offcanvas', () => {
 
     it('should not fire shown when show is prevented', () => {
       return new Promise((resolve, reject) => {
-        fixtureEl.innerHTML = '<div class="offcanvas"></div>'
+        fixtureEl.innerHTML = '<div className="offcanvas"></div>'
 
         const offCanvasEl = fixtureEl.querySelector('div')
         const offCanvas = new Offcanvas(offCanvasEl)
@@ -453,7 +453,7 @@ describe('Offcanvas', () => {
 
     it('on window load, should make visible an offcanvas element, if its markup contains class "show"', () => {
       return new Promise(resolve => {
-        fixtureEl.innerHTML = '<div class="offcanvas show"></div>'
+        fixtureEl.innerHTML = '<div className="offcanvas show"></div>'
 
         const offCanvasEl = fixtureEl.querySelector('div')
         const spy = spyOn(Offcanvas.prototype, 'show').and.callThrough()
@@ -472,7 +472,7 @@ describe('Offcanvas', () => {
 
     it('should trap focus', () => {
       return new Promise(resolve => {
-        fixtureEl.innerHTML = '<div class="offcanvas"></div>'
+        fixtureEl.innerHTML = '<div className="offcanvas"></div>'
 
         const offCanvasEl = fixtureEl.querySelector('.offcanvas')
         const offCanvas = new Offcanvas(offCanvasEl)
@@ -492,7 +492,7 @@ describe('Offcanvas', () => {
   describe('hide', () => {
     it('should add `hiding` class during closing and remover `show` & `hiding` classes on end', () => {
       return new Promise(resolve => {
-        fixtureEl.innerHTML = '<div class="offcanvas"></div>'
+        fixtureEl.innerHTML = '<div className="offcanvas"></div>'
         const offCanvasEl = fixtureEl.querySelector('.offcanvas')
         const offCanvas = new Offcanvas(offCanvasEl)
 
@@ -517,7 +517,7 @@ describe('Offcanvas', () => {
     })
 
     it('should do nothing if already shown', () => {
-      fixtureEl.innerHTML = '<div class="offcanvas"></div>'
+      fixtureEl.innerHTML = '<div className="offcanvas"></div>'
 
       const spyTrigger = spyOn(EventHandler, 'trigger').and.callThrough()
 
@@ -532,7 +532,7 @@ describe('Offcanvas', () => {
 
     it('should hide a shown element', () => {
       return new Promise(resolve => {
-        fixtureEl.innerHTML = '<div class="offcanvas"></div>'
+        fixtureEl.innerHTML = '<div className="offcanvas"></div>'
 
         const offCanvasEl = fixtureEl.querySelector('div')
         const offCanvas = new Offcanvas(offCanvasEl)
@@ -551,7 +551,7 @@ describe('Offcanvas', () => {
 
     it('should not fire hidden when hide is prevented', () => {
       return new Promise((resolve, reject) => {
-        fixtureEl.innerHTML = '<div class="offcanvas"></div>'
+        fixtureEl.innerHTML = '<div className="offcanvas"></div>'
 
         const offCanvasEl = fixtureEl.querySelector('div')
         const offCanvas = new Offcanvas(offCanvasEl)
@@ -581,7 +581,7 @@ describe('Offcanvas', () => {
 
     it('should release focus trap', () => {
       return new Promise(resolve => {
-        fixtureEl.innerHTML = '<div class="offcanvas"></div>'
+        fixtureEl.innerHTML = '<div className="offcanvas"></div>'
 
         const offCanvasEl = fixtureEl.querySelector('div')
         const offCanvas = new Offcanvas(offCanvasEl)
@@ -600,7 +600,7 @@ describe('Offcanvas', () => {
 
   describe('dispose', () => {
     it('should dispose an offcanvas', () => {
-      fixtureEl.innerHTML = '<div class="offcanvas"></div>'
+      fixtureEl.innerHTML = '<div className="offcanvas"></div>'
 
       const offCanvasEl = fixtureEl.querySelector('div')
       const offCanvas = new Offcanvas(offCanvasEl)
@@ -626,7 +626,7 @@ describe('Offcanvas', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
           '<input type="checkbox" data-bs-toggle="offcanvas" data-bs-target="#offcanvasdiv1">',
-          '<div id="offcanvasdiv1" class="offcanvas"></div>'
+          '<div id="offcanvasdiv1" className="offcanvas"></div>'
         ].join('')
 
         const target = fixtureEl.querySelector('input')
@@ -644,8 +644,8 @@ describe('Offcanvas', () => {
 
     it('should not call toggle on disabled elements', () => {
       fixtureEl.innerHTML = [
-        '<a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasdiv1" class="disabled"></a>',
-        '<div id="offcanvasdiv1" class="offcanvas"></div>'
+        '<a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasdiv1" className="disabled"></a>',
+        '<div id="offcanvasdiv1" className="offcanvas"></div>'
       ].join('')
 
       const target = fixtureEl.querySelector('a')
@@ -661,8 +661,8 @@ describe('Offcanvas', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
           '<button id="btn2" data-bs-toggle="offcanvas" data-bs-target="#offcanvas2"></button>',
-          '<div id="offcanvas1" class="offcanvas"></div>',
-          '<div id="offcanvas2" class="offcanvas"></div>'
+          '<div id="offcanvas1" className="offcanvas"></div>',
+          '<div id="offcanvas2" className="offcanvas"></div>'
         ].join('')
 
         const trigger2 = fixtureEl.querySelector('#btn2')
@@ -685,7 +685,7 @@ describe('Offcanvas', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
           '<button id="btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvas"></button>',
-          '<div id="offcanvas" class="offcanvas"></div>'
+          '<div id="offcanvas" className="offcanvas"></div>'
         ].join('')
 
         const trigger = fixtureEl.querySelector('#btn')
@@ -711,7 +711,7 @@ describe('Offcanvas', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
           '<button id="btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvas"></button>',
-          '<div id="offcanvas" class="offcanvas"></div>'
+          '<div id="offcanvas" className="offcanvas"></div>'
         ].join('')
 
         const trigger = fixtureEl.querySelector('#btn')

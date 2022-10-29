@@ -5,7 +5,7 @@ export default function TimelineDate(props) {
   if (props.right) {
     return (
       <TimelineComponent>
-        <div class={`${styles.timeline__date} ${styles.timeline__date__right}`}>
+        <div className={`${styles.timeline__date} ${styles.timeline__date__right}`}>
           {props.start_date}/{props.end_date}
         </div>
       </TimelineComponent>
@@ -14,7 +14,7 @@ export default function TimelineDate(props) {
 
   return (
     <TimelineComponent>
-      <div class={styles.timeline__date}>{props.start_date}/{props.end_date}</div>
+      <div className={styles.timeline__date}>{props.start_date}/{props.end_date}</div>
     </TimelineComponent>
   );
 }

@@ -16,12 +16,12 @@ export default function BlogPage() {
 
   useEffect(() => {
     setCurrentList(router.query.list);
-  }, [router.isReady]);
+  }, [router.isReady, router.query.list]);
 
   return (
     <div className="container">
       {isShowingCopy && (
-        <p style={{zIndex: 100}} class="badge text-bg-success position-fixed bottom-0 end-0 m-3 p-3 fs-5">
+        <p style={{zIndex: 100}} className="badge text-bg-success position-fixed bottom-0 end-0 m-3 p-3 fs-5">
           Link copied to clipboard!
         </p>
       )}

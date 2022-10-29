@@ -34,7 +34,7 @@ export default function PostSearch(props) {
   return (
     <div className="row mt-5">
       <div className="col-6 col-lg-4 mb-3">
-        <div class="input-group h-100">
+        <div className="input-group h-100">
           <input
             type="email"
             className="form-control"

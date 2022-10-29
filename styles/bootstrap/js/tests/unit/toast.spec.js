@@ -26,7 +26,7 @@ describe('Toast', () => {
 
   describe('constructor', () => {
     it('should take care of element either passed as a CSS selector or DOM element', () => {
-      fixtureEl.innerHTML = '<div class="toast"></div>'
+      fixtureEl.innerHTML = '<div className="toast"></div>'
 
       const toastEl = fixtureEl.querySelector('.toast')
       const toastBySelector = new Toast('.toast')
@@ -39,8 +39,8 @@ describe('Toast', () => {
     it('should allow to config in js', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div class="toast">',
-          '  <div class="toast-body">',
+          '<div className="toast">',
+          '  <div className="toast-body">',
           '    a simple toast',
           '  </div>',
           '</div>'
@@ -63,8 +63,8 @@ describe('Toast', () => {
     it('should close toast when close element with data-bs-dismiss attribute is set', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div class="toast" data-bs-delay="1" data-bs-autohide="false" data-bs-animation="false">',
-          '  <button type="button" class="ms-2 mb-1 btn-close" data-bs-dismiss="toast" aria-label="Close"></button>',
+          '<div className="toast" data-bs-delay="1" data-bs-autohide="false" data-bs-animation="false">',
+          '  <button type="button" className="ms-2 mb-1 btn-close" data-bs-dismiss="toast" aria-label="Close"></button>',
           '</div>'
         ].join('')
 
@@ -96,8 +96,8 @@ describe('Toast', () => {
       Toast.Default.delay = defaultDelay
 
       fixtureEl.innerHTML = [
-        '<div class="toast" data-bs-autohide="false" data-bs-animation="false">',
-        '  <button type="button" class="ms-2 mb-1 btn-close" data-bs-dismiss="toast" aria-label="Close"></button>',
+        '<div className="toast" data-bs-autohide="false" data-bs-animation="false">',
+        '  <button type="button" className="ms-2 mb-1 btn-close" data-bs-dismiss="toast" aria-label="Close"></button>',
         '</div>'
       ].join('')
 
@@ -118,8 +118,8 @@ describe('Toast', () => {
     it('should auto hide', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div class="toast" data-bs-delay="1">',
-          '  <div class="toast-body">',
+          '<div className="toast" data-bs-delay="1">',
+          '  <div className="toast-body">',
           '    a simple toast',
           '  </div>',
           '</div>'
@@ -140,8 +140,8 @@ describe('Toast', () => {
     it('should not add fade class', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div class="toast" data-bs-delay="1" data-bs-animation="false">',
-          '  <div class="toast-body">',
+          '<div className="toast" data-bs-delay="1" data-bs-animation="false">',
+          '  <div className="toast-body">',
           '    a simple toast',
           '  </div>',
           '</div>'
@@ -162,8 +162,8 @@ describe('Toast', () => {
     it('should not trigger shown if show is prevented', () => {
       return new Promise((resolve, reject) => {
         fixtureEl.innerHTML = [
-          '<div class="toast" data-bs-delay="1" data-bs-animation="false">',
-          '  <div class="toast-body">',
+          '<div className="toast" data-bs-delay="1" data-bs-animation="false">',
+          '  <div className="toast-body">',
           '    a simple toast',
           '  </div>',
           '</div>'
@@ -195,8 +195,8 @@ describe('Toast', () => {
     it('should clear timeout if toast is shown again before it is hidden', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div class="toast">',
-          '  <div class="toast-body">',
+          '<div className="toast">',
+          '  <div className="toast-body">',
           '    a simple toast',
           '  </div>',
           '</div>'
@@ -224,8 +224,8 @@ describe('Toast', () => {
     it('should clear timeout if toast is interacted with mouse', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div class="toast">',
-          '  <div class="toast-body">',
+          '<div className="toast">',
+          '  <div className="toast-body">',
           '    a simple toast',
           '  </div>',
           '</div>'
@@ -256,8 +256,8 @@ describe('Toast', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
           '<button id="outside-focusable">outside focusable</button>',
-          '<div class="toast">',
-          '  <div class="toast-body">',
+          '<div className="toast">',
+          '  <div className="toast-body">',
           '    a simple toast',
           '    <button>with a button</button>',
           '  </div>',
@@ -289,8 +289,8 @@ describe('Toast', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
           '<button id="outside-focusable">outside focusable</button>',
-          '<div class="toast">',
-          '  <div class="toast-body">',
+          '<div className="toast">',
+          '  <div className="toast-body">',
           '    a simple toast',
           '    <button>with a button</button>',
           '  </div>',
@@ -333,8 +333,8 @@ describe('Toast', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
           '<button id="outside-focusable">outside focusable</button>',
-          '<div class="toast">',
-          '  <div class="toast-body">',
+          '<div className="toast">',
+          '  <div className="toast-body">',
           '    a simple toast',
           '    <button>with a button</button>',
           '  </div>',
@@ -372,8 +372,8 @@ describe('Toast', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
           '<button id="outside-focusable">outside focusable</button>',
-          '<div class="toast">',
-          '  <div class="toast-body">',
+          '<div className="toast">',
+          '  <div className="toast-body">',
           '    a simple toast',
           '    <button>with a button</button>',
           '  </div>',
@@ -412,8 +412,8 @@ describe('Toast', () => {
     it('should allow to hide toast manually', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div class="toast" data-bs-delay="1" data-bs-autohide="false">',
-          '  <div class="toast-body">',
+          '<div className="toast" data-bs-delay="1" data-bs-autohide="false">',
+          '  <div className="toast-body">',
           '    a simple toast',
           '  </div>',
           '</div>'
@@ -451,8 +451,8 @@ describe('Toast', () => {
     it('should not trigger hidden if hide is prevented', () => {
       return new Promise((resolve, reject) => {
         fixtureEl.innerHTML = [
-          '<div class="toast" data-bs-delay="1" data-bs-animation="false">',
-          '  <div class="toast-body">',
+          '<div className="toast" data-bs-delay="1" data-bs-animation="false">',
+          '  <div className="toast-body">',
           '    a simple toast',
           '  </div>',
           '</div>'
@@ -504,8 +504,8 @@ describe('Toast', () => {
     it('should allow to destroy toast and hide it before that', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div class="toast" data-bs-delay="0" data-bs-autohide="false">',
-          '  <div class="toast-body">',
+          '<div className="toast" data-bs-delay="0" data-bs-autohide="false">',
+          '  <div className="toast-body">',
           '    a simple toast',
           '  </div>',
           '</div>'

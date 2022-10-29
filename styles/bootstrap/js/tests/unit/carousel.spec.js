@@ -53,7 +53,7 @@ describe('Carousel', () => {
 
   describe('constructor', () => {
     it('should take care of element either passed as a CSS selector or DOM element', () => {
-      fixtureEl.innerHTML = '<div id="myCarousel" class="carousel slide"></div>'
+      fixtureEl.innerHTML = '<div id="myCarousel" className="carousel slide"></div>'
 
       const carouselEl = fixtureEl.querySelector('#myCarousel')
       const carouselBySelector = new Carousel('#myCarousel')
@@ -64,14 +64,14 @@ describe('Carousel', () => {
     })
 
     it('should start cycling if `ride`===`carousel`', () => {
-      fixtureEl.innerHTML = '<div id="myCarousel" class="carousel slide" data-bs-ride="carousel"></div>'
+      fixtureEl.innerHTML = '<div id="myCarousel" className="carousel slide" data-bs-ride="carousel"></div>'
 
       const carousel = new Carousel('#myCarousel')
       expect(carousel._interval).not.toBeNull()
     })
 
     it('should not start cycling if `ride`!==`carousel`', () => {
-      fixtureEl.innerHTML = '<div id="myCarousel" class="carousel slide" data-bs-ride="true"></div>'
+      fixtureEl.innerHTML = '<div id="myCarousel" className="carousel slide" data-bs-ride="true"></div>'
 
       const carousel = new Carousel('#myCarousel')
       expect(carousel._interval).toBeNull()
@@ -80,11 +80,11 @@ describe('Carousel', () => {
     it('should go to next item if right arrow key is pressed', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div id="myCarousel" class="carousel slide">',
-          '  <div class="carousel-inner">',
-          '    <div class="carousel-item active">item 1</div>',
-          '    <div id="item2" class="carousel-item">item 2</div>',
-          '    <div class="carousel-item">item 3</div>',
+          '<div id="myCarousel" className="carousel slide">',
+          '  <div className="carousel-inner">',
+          '    <div className="carousel-item active">item 1</div>',
+          '    <div id="item2" className="carousel-item">item 2</div>',
+          '    <div className="carousel-item">item 3</div>',
           '  </div>',
           '</div>'
         ].join('')
@@ -111,10 +111,10 @@ describe('Carousel', () => {
 
     it('should ignore keyboard events if data-bs-keyboard=false', () => {
       fixtureEl.innerHTML = [
-        '<div id="myCarousel" class="carousel slide" data-bs-keyboard="false">',
-        '  <div class="carousel-inner">',
-        '    <div class="carousel-item active">item 1</div>',
-        '    <div id="item2" class="carousel-item">item 2</div>',
+        '<div id="myCarousel" className="carousel slide" data-bs-keyboard="false">',
+        '  <div className="carousel-inner">',
+        '    <div className="carousel-item active">item 1</div>',
+        '    <div id="item2" className="carousel-item">item 2</div>',
         '  </div>',
         '</div>'
       ].join('')
@@ -128,10 +128,10 @@ describe('Carousel', () => {
 
     it('should ignore mouse events if data-bs-pause=false', () => {
       fixtureEl.innerHTML = [
-        '<div id="myCarousel" class="carousel slide" data-bs-pause="false">',
-        '  <div class="carousel-inner">',
-        '    <div class="carousel-item active">item 1</div>',
-        '    <div id="item2" class="carousel-item">item 2</div>',
+        '<div id="myCarousel" className="carousel slide" data-bs-pause="false">',
+        '  <div className="carousel-inner">',
+        '    <div className="carousel-item active">item 1</div>',
+        '    <div id="item2" className="carousel-item">item 2</div>',
         '  </div>',
         '</div>'
       ].join('')
@@ -146,11 +146,11 @@ describe('Carousel', () => {
     it('should go to previous item if left arrow key is pressed', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div id="myCarousel" class="carousel slide">',
-          '  <div class="carousel-inner">',
-          '    <div id="item1" class="carousel-item">item 1</div>',
-          '    <div class="carousel-item active">item 2</div>',
-          '    <div class="carousel-item">item 3</div>',
+          '<div id="myCarousel" className="carousel slide">',
+          '  <div className="carousel-inner">',
+          '    <div id="item1" className="carousel-item">item 1</div>',
+          '    <div className="carousel-item active">item 2</div>',
+          '    <div className="carousel-item">item 3</div>',
           '  </div>',
           '</div>'
         ].join('')
@@ -178,11 +178,11 @@ describe('Carousel', () => {
     it('should not prevent keydown if key is not ARROW_LEFT or ARROW_RIGHT', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div id="myCarousel" class="carousel slide">',
-          '  <div class="carousel-inner">',
-          '    <div class="carousel-item active">item 1</div>',
-          '    <div class="carousel-item">item 2</div>',
-          '    <div class="carousel-item">item 3</div>',
+          '<div id="myCarousel" className="carousel slide">',
+          '  <div className="carousel-inner">',
+          '    <div className="carousel-item active">item 1</div>',
+          '    <div className="carousel-item">item 2</div>',
+          '    <div className="carousel-item">item 3</div>',
           '  </div>',
           '</div>'
         ].join('')
@@ -209,14 +209,14 @@ describe('Carousel', () => {
 
     it('should ignore keyboard events within <input>s and <textarea>s', () => {
       fixtureEl.innerHTML = [
-        '<div id="myCarousel" class="carousel slide">',
-        '  <div class="carousel-inner">',
-        '    <div class="carousel-item active">',
+        '<div id="myCarousel" className="carousel slide">',
+        '  <div className="carousel-inner">',
+        '    <div className="carousel-item active">',
         '      <input type="text">',
         '      <textarea></textarea>',
         '    </div>',
-        '    <div class="carousel-item"></div>',
-        '    <div class="carousel-item">item 3</div>',
+        '    <div className="carousel-item"></div>',
+        '    <div className="carousel-item">item 3</div>',
         '  </div>',
         '</div>'
       ].join('')
@@ -279,11 +279,11 @@ describe('Carousel', () => {
     it('should wrap around from end to start when wrap option is true', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div id="myCarousel" class="carousel slide">',
-          '  <div class="carousel-inner">',
-          '    <div id="one" class="carousel-item active"></div>',
-          '    <div id="two" class="carousel-item"></div>',
-          '    <div id="three" class="carousel-item">item 3</div>',
+          '<div id="myCarousel" className="carousel slide">',
+          '  <div className="carousel-inner">',
+          '    <div id="one" className="carousel-item active"></div>',
+          '    <div id="two" className="carousel-item"></div>',
+          '    <div id="three" className="carousel-item">item 3</div>',
           '  </div>',
           '</div>'
         ].join('')
@@ -320,11 +320,11 @@ describe('Carousel', () => {
     it('should stay at the start when the prev method is called and wrap is false', () => {
       return new Promise((resolve, reject) => {
         fixtureEl.innerHTML = [
-          '<div id="myCarousel" class="carousel slide">',
-          '  <div class="carousel-inner">',
-          '    <div id="one" class="carousel-item active"></div>',
-          '    <div id="two" class="carousel-item"></div>',
-          '    <div id="three" class="carousel-item">item 3</div>',
+          '<div id="myCarousel" className="carousel slide">',
+          '  <div className="carousel-inner">',
+          '    <div id="one" className="carousel-item active"></div>',
+          '    <div id="two" className="carousel-item"></div>',
+          '    <div id="three" className="carousel-item">item 3</div>',
           '  </div>',
           '</div>'
         ].join('')
@@ -406,12 +406,12 @@ describe('Carousel', () => {
         Simulator.setType('pointer')
 
         fixtureEl.innerHTML = [
-          '<div class="carousel">',
-          '  <div class="carousel-inner">',
-          '    <div id="item" class="carousel-item">',
+          '<div className="carousel">',
+          '  <div className="carousel-inner">',
+          '    <div id="item" className="carousel-item">',
           '      <img alt="">',
           '    </div>',
-          '    <div class="carousel-item active">',
+          '    <div className="carousel-item active">',
           '      <img alt="">',
           '    </div>',
           '  </div>',
@@ -453,12 +453,12 @@ describe('Carousel', () => {
         Simulator.setType('pointer')
 
         fixtureEl.innerHTML = [
-          '<div class="carousel">',
-          '  <div class="carousel-inner">',
-          '    <div id="item" class="carousel-item active">',
+          '<div className="carousel">',
+          '  <div className="carousel-inner">',
+          '    <div id="item" className="carousel-item active">',
           '      <img alt="">',
           '    </div>',
-          '    <div class="carousel-item">',
+          '    <div className="carousel-item">',
           '      <img alt="">',
           '    </div>',
           '  </div>',
@@ -495,12 +495,12 @@ describe('Carousel', () => {
         document.documentElement.ontouchstart = noop
 
         fixtureEl.innerHTML = [
-          '<div class="carousel">',
-          '  <div class="carousel-inner">',
-          '    <div id="item" class="carousel-item">',
+          '<div className="carousel">',
+          '  <div className="carousel-inner">',
+          '    <div id="item" className="carousel-item">',
           '      <img alt="">',
           '    </div>',
-          '    <div class="carousel-item active">',
+          '    <div className="carousel-item active">',
           '      <img alt="">',
           '    </div>',
           '  </div>',
@@ -536,12 +536,12 @@ describe('Carousel', () => {
         document.documentElement.ontouchstart = noop
 
         fixtureEl.innerHTML = [
-          '<div class="carousel">',
-          '  <div class="carousel-inner">',
-          '    <div id="item" class="carousel-item active">',
+          '<div className="carousel">',
+          '  <div className="carousel-inner">',
+          '    <div id="item" className="carousel-item active">',
           '      <img alt="">',
           '    </div>',
-          '    <div class="carousel-item">',
+          '    <div className="carousel-item">',
           '      <img alt="">',
           '    </div>',
           '  </div>',
@@ -578,12 +578,12 @@ describe('Carousel', () => {
         document.documentElement.ontouchstart = noop
 
         fixtureEl.innerHTML = [
-          '<div class="carousel">',
-          '  <div class="carousel-inner">',
-          '    <div id="item" class="carousel-item active">',
+          '<div className="carousel">',
+          '  <div className="carousel-inner">',
+          '    <div id="item" className="carousel-item active">',
           '      <img alt="">',
           '    </div>',
-          '    <div class="carousel-item">',
+          '    <div className="carousel-item">',
           '      <img alt="">',
           '    </div>',
           '  </div>',
@@ -622,7 +622,7 @@ describe('Carousel', () => {
         clearPointerEvents()
         document.documentElement.ontouchstart = noop
 
-        fixtureEl.innerHTML = '<div class="carousel"></div>'
+        fixtureEl.innerHTML = '<div className="carousel"></div>'
 
         const carouselEl = fixtureEl.querySelector('.carousel')
         const carousel = new Carousel(carouselEl)
@@ -643,7 +643,7 @@ describe('Carousel', () => {
 
     it('should call pause method on mouse over with pause equal to hover', () => {
       return new Promise(resolve => {
-        fixtureEl.innerHTML = '<div class="carousel"></div>'
+        fixtureEl.innerHTML = '<div className="carousel"></div>'
 
         const carouselEl = fixtureEl.querySelector('.carousel')
         const carousel = new Carousel(carouselEl)
@@ -662,7 +662,7 @@ describe('Carousel', () => {
 
     it('should call `maybeEnableCycle` on mouse out with pause equal to hover', () => {
       return new Promise(resolve => {
-        fixtureEl.innerHTML = '<div class="carousel" data-bs-ride="true"></div>'
+        fixtureEl.innerHTML = '<div className="carousel" data-bs-ride="true"></div>'
 
         const carouselEl = fixtureEl.querySelector('.carousel')
         const carousel = new Carousel(carouselEl)
@@ -728,11 +728,11 @@ describe('Carousel', () => {
     it('should fire slide event with: direction, relatedTarget, from and to', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div id="myCarousel" class="carousel slide">',
-          '  <div class="carousel-inner">',
-          '    <div class="carousel-item active">item 1</div>',
-          '    <div class="carousel-item">item 2</div>',
-          '    <div class="carousel-item">item 3</div>',
+          '<div id="myCarousel" className="carousel slide">',
+          '  <div className="carousel-inner">',
+          '    <div className="carousel-item active">item 1</div>',
+          '    <div className="carousel-item">item 2</div>',
+          '    <div className="carousel-item">item 3</div>',
           '  </div>',
           '</div>'
         ].join('')
@@ -765,11 +765,11 @@ describe('Carousel', () => {
     it('should fire slid event with: direction, relatedTarget, from and to', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div id="myCarousel" class="carousel slide">',
-          '  <div class="carousel-inner">',
-          '    <div class="carousel-item active">item 1</div>',
-          '    <div class="carousel-item">item 2</div>',
-          '    <div class="carousel-item">item 3</div>',
+          '<div id="myCarousel" className="carousel slide">',
+          '  <div className="carousel-inner">',
+          '    <div className="carousel-item active">item 1</div>',
+          '    <div className="carousel-item">item 2</div>',
+          '    <div className="carousel-item">item 3</div>',
           '  </div>',
           '</div>'
         ].join('')
@@ -801,11 +801,11 @@ describe('Carousel', () => {
 
     it('should update the active element to the next item before sliding', () => {
       fixtureEl.innerHTML = [
-        '<div id="myCarousel" class="carousel slide">',
-        '  <div class="carousel-inner">',
-        '    <div class="carousel-item active">item 1</div>',
-        '    <div id="secondItem" class="carousel-item">item 2</div>',
-        '    <div class="carousel-item">item 3</div>',
+        '<div id="myCarousel" className="carousel slide">',
+        '  <div className="carousel-inner">',
+        '    <div className="carousel-item active">item 1</div>',
+        '    <div id="secondItem" className="carousel-item">item 2</div>',
+        '    <div className="carousel-item">item 3</div>',
         '  </div>',
         '</div>'
       ].join('')
@@ -821,10 +821,10 @@ describe('Carousel', () => {
 
     it('should continue cycling if it was already', () => {
       fixtureEl.innerHTML = [
-        '<div id="myCarousel" class="carousel slide">',
-        '  <div class="carousel-inner">',
-        '    <div class="carousel-item active">item 1</div>',
-        '    <div class="carousel-item">item 2</div>',
+        '<div id="myCarousel" className="carousel slide">',
+        '  <div className="carousel-inner">',
+        '    <div className="carousel-item active">item 1</div>',
+        '    <div className="carousel-item">item 2</div>',
         '  </div>',
         '</div>'
       ].join('')
@@ -844,16 +844,16 @@ describe('Carousel', () => {
     it('should update indicators if present', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div id="myCarousel" class="carousel slide">',
-          '  <div class="carousel-indicators">',
-          '    <button type="button" id="firstIndicator" data-bs-target="myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>',
+          '<div id="myCarousel" className="carousel slide">',
+          '  <div className="carousel-indicators">',
+          '    <button type="button" id="firstIndicator" data-bs-target="myCarousel" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>',
           '    <button type="button" id="secondIndicator" data-bs-target="myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>',
           '    <button type="button" data-bs-target="myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>',
           '  </div>',
-          '  <div class="carousel-inner">',
-          '    <div class="carousel-item active">item 1</div>',
-          '    <div class="carousel-item" data-bs-interval="7">item 2</div>',
-          '    <div class="carousel-item">item 3</div>',
+          '  <div className="carousel-inner">',
+          '    <div className="carousel-item active">item 1</div>',
+          '    <div className="carousel-item" data-bs-interval="7">item 2</div>',
+          '    <div className="carousel-item">item 3</div>',
           '  </div>',
           '</div>'
         ].join('')
@@ -877,14 +877,14 @@ describe('Carousel', () => {
 
     it('should call next()/prev() instance methods when clicking the respective direction buttons', () => {
       fixtureEl.innerHTML = [
-        '<div id="carousel" class="carousel slide">',
-        '  <div class="carousel-inner">',
-        '    <div class="carousel-item active">item 1</div>',
-        '    <div class="carousel-item">item 2</div>',
-        '    <div class="carousel-item">item 3</div>',
+        '<div id="carousel" className="carousel slide">',
+        '  <div className="carousel-inner">',
+        '    <div className="carousel-item active">item 1</div>',
+        '    <div className="carousel-item">item 2</div>',
+        '    <div className="carousel-item">item 3</div>',
         '  </div>',
-        '  <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev"></button>',
-        '  <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next"></button>',
+        '  <button className="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev"></button>',
+        '  <button className="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next"></button>',
         '</div>'
       ].join('')
 
@@ -910,7 +910,7 @@ describe('Carousel', () => {
     it('should not call next when the page is not visible', () => {
       fixtureEl.innerHTML = [
         '<div style="display: none;">',
-        '  <div class="carousel"></div>',
+        '  <div className="carousel"></div>',
         '</div>'
       ].join('')
 
@@ -945,14 +945,14 @@ describe('Carousel', () => {
     it('should trigger transitionend if the carousel have carousel-item-next or carousel-item-prev class, cause is sliding', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div id="myCarousel" class="carousel slide">',
-          '  <div class="carousel-inner">',
-          '    <div class="carousel-item active">item 1</div>',
-          '    <div class="carousel-item carousel-item-next">item 2</div>',
-          '    <div class="carousel-item">item 3</div>',
+          '<div id="myCarousel" className="carousel slide">',
+          '  <div className="carousel-inner">',
+          '    <div className="carousel-item active">item 1</div>',
+          '    <div className="carousel-item carousel-item-next">item 2</div>',
+          '    <div className="carousel-item">item 3</div>',
           '  </div>',
-          '  <div class="carousel-control-prev"></div>',
-          '  <div class="carousel-control-next"></div>',
+          '  <div className="carousel-control-prev"></div>',
+          '  <div className="carousel-control-next"></div>',
           '</div>'
         ].join('')
 
@@ -974,14 +974,14 @@ describe('Carousel', () => {
   describe('cycle', () => {
     it('should set an interval', () => {
       fixtureEl.innerHTML = [
-        '<div id="myCarousel" class="carousel slide">',
-        '  <div class="carousel-inner">',
-        '    <div class="carousel-item active">item 1</div>',
-        '    <div class="carousel-item">item 2</div>',
-        '    <div class="carousel-item">item 3</div>',
+        '<div id="myCarousel" className="carousel slide">',
+        '  <div className="carousel-inner">',
+        '    <div className="carousel-item active">item 1</div>',
+        '    <div className="carousel-item">item 2</div>',
+        '    <div className="carousel-item">item 3</div>',
         '  </div>',
-        '  <div class="carousel-control-prev"></div>',
-        '  <div class="carousel-control-next"></div>',
+        '  <div className="carousel-control-prev"></div>',
+        '  <div className="carousel-control-next"></div>',
         '</div>'
       ].join('')
 
@@ -997,14 +997,14 @@ describe('Carousel', () => {
 
     it('should clear interval if there is one', () => {
       fixtureEl.innerHTML = [
-        '<div id="myCarousel" class="carousel slide">',
-        '  <div class="carousel-inner">',
-        '    <div class="carousel-item active">item 1</div>',
-        '    <div class="carousel-item">item 2</div>',
-        '    <div class="carousel-item">item 3</div>',
+        '<div id="myCarousel" className="carousel slide">',
+        '  <div className="carousel-inner">',
+        '    <div className="carousel-item active">item 1</div>',
+        '    <div className="carousel-item">item 2</div>',
+        '    <div className="carousel-item">item 3</div>',
         '  </div>',
-        '  <div class="carousel-control-prev"></div>',
-        '  <div class="carousel-control-next"></div>',
+        '  <div className="carousel-control-prev"></div>',
+        '  <div className="carousel-control-next"></div>',
         '</div>'
       ].join('')
 
@@ -1024,11 +1024,11 @@ describe('Carousel', () => {
 
     it('should get interval from data attribute on the active item element', () => {
       fixtureEl.innerHTML = [
-        '<div id="myCarousel" class="carousel slide">',
-        '  <div class="carousel-inner">',
-        '    <div class="carousel-item active" data-bs-interval="7">item 1</div>',
-        '    <div id="secondItem" class="carousel-item" data-bs-interval="9385">item 2</div>',
-        '    <div class="carousel-item">item 3</div>',
+        '<div id="myCarousel" className="carousel slide">',
+        '  <div className="carousel-inner">',
+        '    <div className="carousel-item active" data-bs-interval="7">item 1</div>',
+        '    <div id="secondItem" className="carousel-item" data-bs-interval="9385">item 2</div>',
+        '    <div className="carousel-item">item 3</div>',
         '  </div>',
         '</div>'
       ].join('')
@@ -1056,11 +1056,11 @@ describe('Carousel', () => {
     it('should go directly to the provided index', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div id="myCarousel" class="carousel slide">',
-          '  <div class="carousel-inner">',
-          '    <div id="item1" class="carousel-item active">item 1</div>',
-          '    <div class="carousel-item">item 2</div>',
-          '    <div id="item3" class="carousel-item">item 3</div>',
+          '<div id="myCarousel" className="carousel slide">',
+          '  <div className="carousel-inner">',
+          '    <div id="item1" className="carousel-item active">item 1</div>',
+          '    <div className="carousel-item">item 2</div>',
+          '    <div id="item3" className="carousel-item">item 3</div>',
           '  </div>',
           '</div>'
         ].join('')
@@ -1082,11 +1082,11 @@ describe('Carousel', () => {
     it('should return to a previous slide if the provided index is lower than the current', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div id="myCarousel" class="carousel slide">',
-          '  <div class="carousel-inner">',
-          '    <div class="carousel-item">item 1</div>',
-          '    <div id="item2" class="carousel-item">item 2</div>',
-          '    <div id="item3" class="carousel-item active">item 3</div>',
+          '<div id="myCarousel" className="carousel slide">',
+          '  <div className="carousel-inner">',
+          '    <div className="carousel-item">item 1</div>',
+          '    <div id="item2" className="carousel-item">item 2</div>',
+          '    <div id="item3" className="carousel-item active">item 3</div>',
           '  </div>',
           '</div>'
         ].join('')
@@ -1107,11 +1107,11 @@ describe('Carousel', () => {
 
     it('should do nothing if a wrong index is provided', () => {
       fixtureEl.innerHTML = [
-        '<div id="myCarousel" class="carousel slide">',
-        '  <div class="carousel-inner">',
-        '    <div class="carousel-item active">item 1</div>',
-        '    <div class="carousel-item" data-bs-interval="7">item 2</div>',
-        '    <div class="carousel-item">item 3</div>',
+        '<div id="myCarousel" className="carousel slide">',
+        '  <div className="carousel-inner">',
+        '    <div className="carousel-item active">item 1</div>',
+        '    <div className="carousel-item" data-bs-interval="7">item 2</div>',
+        '    <div className="carousel-item">item 3</div>',
         '  </div>',
         '</div>'
       ].join('')
@@ -1134,11 +1134,11 @@ describe('Carousel', () => {
 
     it('should not continue if the provided is the same compare to the current one', () => {
       fixtureEl.innerHTML = [
-        '<div id="myCarousel" class="carousel slide">',
-        '  <div class="carousel-inner">',
-        '    <div class="carousel-item active">item 1</div>',
-        '    <div class="carousel-item" data-bs-interval="7">item 2</div>',
-        '    <div class="carousel-item">item 3</div>',
+        '<div id="myCarousel" className="carousel slide">',
+        '  <div className="carousel-inner">',
+        '    <div className="carousel-item active">item 1</div>',
+        '    <div className="carousel-item" data-bs-interval="7">item 2</div>',
+        '    <div className="carousel-item">item 3</div>',
         '  </div>',
         '</div>'
       ].join('')
@@ -1156,11 +1156,11 @@ describe('Carousel', () => {
     it('should wait before performing to if a slide is sliding', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div id="myCarousel" class="carousel slide">',
-          '  <div class="carousel-inner">',
-          '    <div class="carousel-item active">item 1</div>',
-          '    <div class="carousel-item" data-bs-interval="7">item 2</div>',
-          '    <div class="carousel-item">item 3</div>',
+          '<div id="myCarousel" className="carousel slide">',
+          '  <div className="carousel-inner">',
+          '    <div className="carousel-item active">item 1</div>',
+          '    <div className="carousel-item" data-bs-interval="7">item 2</div>',
+          '    <div className="carousel-item">item 3</div>',
           '  </div>',
           '</div>'
         ].join('')
@@ -1255,11 +1255,11 @@ describe('Carousel', () => {
   describe('dispose', () => {
     it('should destroy a carousel', () => {
       fixtureEl.innerHTML = [
-        '<div id="myCarousel" class="carousel slide">',
-        '  <div class="carousel-inner">',
-        '    <div class="carousel-item active">item 1</div>',
-        '    <div class="carousel-item" data-bs-interval="7">item 2</div>',
-        '    <div class="carousel-item">item 3</div>',
+        '<div id="myCarousel" className="carousel slide">',
+        '  <div className="carousel-inner">',
+        '    <div className="carousel-item active">item 1</div>',
+        '    <div className="carousel-item" data-bs-interval="7">item 2</div>',
+        '    <div className="carousel-item">item 3</div>',
         '  </div>',
         '</div>'
       ].join('')
@@ -1452,14 +1452,14 @@ describe('Carousel', () => {
     it('should create carousel and go to the next slide on click (with real button controls)', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div id="myCarousel" class="carousel slide">',
-          '  <div class="carousel-inner">',
-          '    <div class="carousel-item active">item 1</div>',
-          '    <div id="item2" class="carousel-item">item 2</div>',
-          '    <div class="carousel-item">item 3</div>',
+          '<div id="myCarousel" className="carousel slide">',
+          '  <div className="carousel-inner">',
+          '    <div className="carousel-item active">item 1</div>',
+          '    <div id="item2" className="carousel-item">item 2</div>',
+          '    <div className="carousel-item">item 3</div>',
           '  </div>',
-          '  <button class="carousel-control-prev" data-bs-target="#myCarousel" type="button" data-bs-slide="prev"></button>',
-          '  <button id="next" class="carousel-control-next" data-bs-target="#myCarousel" type="button" data-bs-slide="next"></button>',
+          '  <button className="carousel-control-prev" data-bs-target="#myCarousel" type="button" data-bs-slide="prev"></button>',
+          '  <button id="next" className="carousel-control-next" data-bs-target="#myCarousel" type="button" data-bs-slide="next"></button>',
           '</div>'
         ].join('')
 
@@ -1478,14 +1478,14 @@ describe('Carousel', () => {
     it('should create carousel and go to the next slide on click (using links as controls)', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div id="myCarousel" class="carousel slide">',
-          '  <div class="carousel-inner">',
-          '    <div class="carousel-item active">item 1</div>',
-          '    <div id="item2" class="carousel-item">item 2</div>',
-          '    <div class="carousel-item">item 3</div>',
+          '<div id="myCarousel" className="carousel slide">',
+          '  <div className="carousel-inner">',
+          '    <div className="carousel-item active">item 1</div>',
+          '    <div id="item2" className="carousel-item">item 2</div>',
+          '    <div className="carousel-item">item 3</div>',
           '  </div>',
-          '  <a class="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev"></a>',
-          '  <a id="next" class="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next"></a>',
+          '  <a className="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev"></a>',
+          '  <a id="next" className="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next"></a>',
           '</div>'
         ].join('')
 
@@ -1504,11 +1504,11 @@ describe('Carousel', () => {
     it('should create carousel and go to the next slide on click with data-bs-slide-to', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div id="myCarousel" class="carousel slide" data-bs-ride="true">',
-          '  <div class="carousel-inner">',
-          '    <div class="carousel-item active">item 1</div>',
-          '    <div id="item2" class="carousel-item">item 2</div>',
-          '    <div class="carousel-item">item 3</div>',
+          '<div id="myCarousel" className="carousel slide" data-bs-ride="true">',
+          '  <div className="carousel-inner">',
+          '    <div className="carousel-item active">item 1</div>',
+          '    <div id="item2" className="carousel-item">item 2</div>',
+          '    <div className="carousel-item">item 3</div>',
           '  </div>',
           '  <div id="next" data-bs-target="#myCarousel" data-bs-slide-to="1"></div>',
           '</div>'
@@ -1529,14 +1529,14 @@ describe('Carousel', () => {
 
     it('should do nothing if no selector on click on arrows', () => {
       fixtureEl.innerHTML = [
-        '<div id="myCarousel" class="carousel slide">',
-        '  <div class="carousel-inner">',
-        '    <div class="carousel-item active">item 1</div>',
-        '    <div class="carousel-item">item 2</div>',
-        '    <div class="carousel-item">item 3</div>',
+        '<div id="myCarousel" className="carousel slide">',
+        '  <div className="carousel-inner">',
+        '    <div className="carousel-item active">item 1</div>',
+        '    <div className="carousel-item">item 2</div>',
+        '    <div className="carousel-item">item 3</div>',
         '  </div>',
-        '  <button class="carousel-control-prev" data-bs-target="#myCarousel" type="button" data-bs-slide="prev"></button>',
-        '  <button id="next" class="carousel-control-next" type="button" data-bs-slide="next"></button>',
+        '  <button className="carousel-control-prev" data-bs-target="#myCarousel" type="button" data-bs-slide="prev"></button>',
+        '  <button id="next" className="carousel-control-next" type="button" data-bs-slide="next"></button>',
         '</div>'
       ].join('')
 
@@ -1549,14 +1549,14 @@ describe('Carousel', () => {
 
     it('should do nothing if no carousel class on click on arrows', () => {
       fixtureEl.innerHTML = [
-        '<div id="myCarousel" class="slide">',
-        '  <div class="carousel-inner">',
-        '    <div class="carousel-item active">item 1</div>',
-        '    <div id="item2" class="carousel-item">item 2</div>',
-        '    <div class="carousel-item">item 3</div>',
+        '<div id="myCarousel" className="slide">',
+        '  <div className="carousel-inner">',
+        '    <div className="carousel-item active">item 1</div>',
+        '    <div id="item2" className="carousel-item">item 2</div>',
+        '    <div className="carousel-item">item 3</div>',
         '  </div>',
-        '  <button class="carousel-control-prev" data-bs-target="#myCarousel" type="button" data-bs-slide="prev"></button>',
-        '  <button id="next" class="carousel-control-next" data-bs-target="#myCarousel" type="button" data-bs-slide="next"></button>',
+        '  <button className="carousel-control-prev" data-bs-target="#myCarousel" type="button" data-bs-slide="prev"></button>',
+        '  <button id="next" className="carousel-control-next" data-bs-target="#myCarousel" type="button" data-bs-slide="next"></button>',
         '</div>'
       ].join('')
 

@@ -14,7 +14,7 @@ describe('Alert', () => {
   })
 
   it('should take care of element either passed as a CSS selector or DOM element', () => {
-    fixtureEl.innerHTML = '<div class="alert"></div>'
+    fixtureEl.innerHTML = '<div className="alert"></div>'
 
     const alertEl = fixtureEl.querySelector('.alert')
     const alertBySelector = new Alert('.alert')
@@ -37,7 +37,7 @@ describe('Alert', () => {
   describe('data-api', () => {
     it('should close an alert without instantiating it manually', () => {
       fixtureEl.innerHTML = [
-        '<div class="alert">',
+        '<div className="alert">',
         '  <button type="button" data-bs-dismiss="alert">x</button>',
         '</div>'
       ].join('')
@@ -50,7 +50,7 @@ describe('Alert', () => {
 
     it('should close an alert without instantiating it manually with the parent selector', () => {
       fixtureEl.innerHTML = [
-        '<div class="alert">',
+        '<div className="alert">',
         '  <button type="button" data-bs-target=".alert" data-bs-dismiss="alert">x</button>',
         '</div>'
       ].join('')
@@ -66,7 +66,7 @@ describe('Alert', () => {
     it('should close an alert', () => {
       return new Promise(resolve => {
         const spy = jasmine.createSpy('spy', getTransitionDurationFromElement)
-        fixtureEl.innerHTML = '<div class="alert"></div>'
+        fixtureEl.innerHTML = '<div className="alert"></div>'
 
         const alertEl = document.querySelector('.alert')
         const alert = new Alert(alertEl)
@@ -83,7 +83,7 @@ describe('Alert', () => {
 
     it('should close alert with fade class', () => {
       return new Promise(resolve => {
-        fixtureEl.innerHTML = '<div class="alert fade"></div>'
+        fixtureEl.innerHTML = '<div className="alert fade"></div>'
 
         const alertEl = document.querySelector('.alert')
         const alert = new Alert(alertEl)
@@ -103,7 +103,7 @@ describe('Alert', () => {
 
     it('should not remove alert if close event is prevented', () => {
       return new Promise((resolve, reject) => {
-        fixtureEl.innerHTML = '<div class="alert"></div>'
+        fixtureEl.innerHTML = '<div className="alert"></div>'
 
         const getAlert = () => document.querySelector('.alert')
         const alertEl = getAlert()
@@ -128,7 +128,7 @@ describe('Alert', () => {
 
   describe('dispose', () => {
     it('should dispose an alert', () => {
-      fixtureEl.innerHTML = '<div class="alert"></div>'
+      fixtureEl.innerHTML = '<div className="alert"></div>'
 
       const alertEl = document.querySelector('.alert')
       const alert = new Alert(alertEl)
@@ -143,7 +143,7 @@ describe('Alert', () => {
 
   describe('jQueryInterface', () => {
     it('should handle config passed and toggle existing alert', () => {
-      fixtureEl.innerHTML = '<div class="alert"></div>'
+      fixtureEl.innerHTML = '<div className="alert"></div>'
 
       const alertEl = fixtureEl.querySelector('.alert')
       const alert = new Alert(alertEl)
@@ -159,7 +159,7 @@ describe('Alert', () => {
     })
 
     it('should create new alert instance and call close', () => {
-      fixtureEl.innerHTML = '<div class="alert"></div>'
+      fixtureEl.innerHTML = '<div className="alert"></div>'
 
       const alertEl = fixtureEl.querySelector('.alert')
 
@@ -173,7 +173,7 @@ describe('Alert', () => {
     })
 
     it('should just create an alert instance without calling close', () => {
-      fixtureEl.innerHTML = '<div class="alert"></div>'
+      fixtureEl.innerHTML = '<div className="alert"></div>'
 
       const alertEl = fixtureEl.querySelector('.alert')
 

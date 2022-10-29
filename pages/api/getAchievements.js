@@ -29,8 +29,10 @@ export default async function handler(req, res) {
   }
 
   var l = [];
+  var id = 1;
   for (var key in sorted) {
-    l.push({ name: key, achievements: sorted[key] });
+    l.push({ name: key, achievements: sorted[key], id: id });
+    id = id + 1
   }
 
   res.status(200).json({

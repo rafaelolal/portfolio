@@ -6,7 +6,7 @@ export default function Timeline(props) {
   const { entries } = props;
 
   return (
-    <div class={styles.timeline}>
+    <div className={styles.timeline}>
       {entries.map((entry, index) => (
         <TimelineItem
           key={entry.id}

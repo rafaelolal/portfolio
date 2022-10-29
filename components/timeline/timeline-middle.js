@@ -4,18 +4,18 @@ import TimelineComponent from "./timeline-component";
 export default function TimelineMiddle(props) {
   if (props.bottom) {
     return (
-      <div class={styles.timeline__middle}>
-        <div class={styles.timeline__point}></div>
+      <div className={styles.timeline__middle}>
+        <div className={styles.timeline__point}></div>
         <div
-          class={`${styles.timeline__point} ${styles.timeline__point__bottom}`}
+          className={`${styles.timeline__point} ${styles.timeline__point__bottom}`}
         ></div>
       </div>
     );
   }
 
   return (
-    <div class={styles.timeline__middle}>
-      <div class={styles.timeline__point}></div>
+    <div className={styles.timeline__middle}>
+      <div className={styles.timeline__point}></div>
     </div>
   );
 }

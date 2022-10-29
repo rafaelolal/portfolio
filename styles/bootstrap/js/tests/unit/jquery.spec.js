@@ -43,7 +43,7 @@ describe('jQuery', () => {
   it('should use jQuery event system', () => {
     return new Promise(resolve => {
       fixtureEl.innerHTML = [
-        '<div class="alert">',
+        '<div className="alert">',
         '  <button type="button" data-bs-dismiss="alert">x</button>',
         '</div>'
       ].join('')

@@ -33,7 +33,7 @@ describe('Collapse', () => {
 
   describe('constructor', () => {
     it('should take care of element either passed as a CSS selector or DOM element', () => {
-      fixtureEl.innerHTML = '<div class="my-collapse"></div>'
+      fixtureEl.innerHTML = '<div className="my-collapse"></div>'
 
       const collapseEl = fixtureEl.querySelector('div.my-collapse')
       const collapseBySelector = new Collapse('div.my-collapse')
@@ -45,10 +45,10 @@ describe('Collapse', () => {
 
     it('should allow jquery object in parent config', () => {
       fixtureEl.innerHTML = [
-        '<div class="my-collapse">',
-        '  <div class="item">',
+        '<div className="my-collapse">',
+        '  <div className="item">',
         '    <a data-bs-toggle="collapse" href="#">Toggle item</a>',
-        '    <div class="collapse">Lorem ipsum</div>',
+        '    <div className="collapse">Lorem ipsum</div>',
         '  </div>',
         '</div>'
       ].join('')
@@ -68,10 +68,10 @@ describe('Collapse', () => {
 
     it('should allow non jquery object in parent config', () => {
       fixtureEl.innerHTML = [
-        '<div class="my-collapse">',
-        '  <div class="item">',
+        '<div className="my-collapse">',
+        '  <div className="item">',
         '    <a data-bs-toggle="collapse" href="#">Toggle item</a>',
-        '    <div class="collapse">Lorem ipsum</div>',
+        '    <div className="collapse">Lorem ipsum</div>',
         '  </div>',
         '</div>'
       ].join('')
@@ -87,10 +87,10 @@ describe('Collapse', () => {
 
     it('should allow string selector in parent config', () => {
       fixtureEl.innerHTML = [
-        '<div class="my-collapse">',
-        '  <div class="item">',
+        '<div className="my-collapse">',
+        '  <div className="item">',
         '    <a data-bs-toggle="collapse" href="#">Toggle item</a>',
-        '    <div class="collapse">Lorem ipsum</div>',
+        '    <div className="collapse">Lorem ipsum</div>',
         '  </div>',
         '</div>'
       ].join('')
@@ -120,7 +120,7 @@ describe('Collapse', () => {
     })
 
     it('should call hide method if show class is present', () => {
-      fixtureEl.innerHTML = '<div class="show"></div>'
+      fixtureEl.innerHTML = '<div className="show"></div>'
 
       const collapseEl = fixtureEl.querySelector('.show')
       const collapse = new Collapse(collapseEl, {
@@ -137,14 +137,14 @@ describe('Collapse', () => {
     it('should find collapse children if they have collapse class too not only data-bs-parent', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div class="my-collapse">',
-          '  <div class="item">',
+          '<div className="my-collapse">',
+          '  <div className="item">',
           '    <a data-bs-toggle="collapse" href="#">Toggle item 1</a>',
-          '    <div id="collapse1" class="collapse show">Lorem ipsum 1</div>',
+          '    <div id="collapse1" className="collapse show">Lorem ipsum 1</div>',
           '  </div>',
-          '  <div class="item">',
+          '  <div className="item">',
           '    <a id="triggerCollapse2" data-bs-toggle="collapse" href="#">Toggle item 2</a>',
-          '    <div id="collapse2" class="collapse">Lorem ipsum 2</div>',
+          '    <div id="collapse2" className="collapse">Lorem ipsum 2</div>',
           '  </div>',
           '</div>'
         ].join('')
@@ -188,7 +188,7 @@ describe('Collapse', () => {
     })
 
     it('should do nothing if already shown', () => {
-      fixtureEl.innerHTML = '<div class="show"></div>'
+      fixtureEl.innerHTML = '<div className="show"></div>'
 
       const spy = spyOn(EventHandler, 'trigger')
 
@@ -204,7 +204,7 @@ describe('Collapse', () => {
 
     it('should show a collapsed element', () => {
       return new Promise(resolve => {
-        fixtureEl.innerHTML = '<div class="collapse" style="height: 0px;"></div>'
+        fixtureEl.innerHTML = '<div className="collapse" style="height: 0px;"></div>'
 
         const collapseEl = fixtureEl.querySelector('div')
         const collapse = new Collapse(collapseEl, {
@@ -226,7 +226,7 @@ describe('Collapse', () => {
 
     it('should show a collapsed element on width', () => {
       return new Promise(resolve => {
-        fixtureEl.innerHTML = '<div class="collapse collapse-horizontal" style="width: 0px;"></div>'
+        fixtureEl.innerHTML = '<div className="collapse collapse-horizontal" style="width: 0px;"></div>'
 
         const collapseEl = fixtureEl.querySelector('div')
         const collapse = new Collapse(collapseEl, {
@@ -249,11 +249,11 @@ describe('Collapse', () => {
     it('should collapse only the first collapse', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div class="card" id="accordion1">',
-          '  <div id="collapse1" class="collapse"></div>',
+          '<div className="card" id="accordion1">',
+          '  <div id="collapse1" className="collapse"></div>',
           '</div>',
-          '<div class="card" id="accordion2">',
-          '  <div id="collapse2" class="collapse show"></div>',
+          '<div className="card" id="accordion2">',
+          '  <div id="collapse2" className="collapse show"></div>',
           '</div>'
         ].join('')
 
@@ -276,26 +276,26 @@ describe('Collapse', () => {
     it('should be able to handle toggling of other children siblings', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div id="parentGroup" class="accordion">',
-          '  <div id="parentHeader" class="accordion-header">',
-          '    <button data-bs-target="#parentContent" data-bs-toggle="collapse" role="button" class="accordion-toggle">Parent</button>',
+          '<div id="parentGroup" className="accordion">',
+          '  <div id="parentHeader" className="accordion-header">',
+          '    <button data-bs-target="#parentContent" data-bs-toggle="collapse" role="button" className="accordion-toggle">Parent</button>',
           '  </div>',
-          '  <div id="parentContent" class="accordion-collapse collapse" aria-labelledby="parentHeader" data-bs-parent="#parentGroup">',
-          '    <div class="accordion-body">',
-          '      <div id="childGroup" class="accordion">',
-          '        <div class="accordion-item">',
-          '          <div id="childHeader1" class="accordion-header">',
-          '            <button data-bs-target="#childContent1" data-bs-toggle="collapse" role="button" class="accordion-toggle">Child 1</button>',
+          '  <div id="parentContent" className="accordion-collapse collapse" aria-labelledby="parentHeader" data-bs-parent="#parentGroup">',
+          '    <div className="accordion-body">',
+          '      <div id="childGroup" className="accordion">',
+          '        <div className="accordion-item">',
+          '          <div id="childHeader1" className="accordion-header">',
+          '            <button data-bs-target="#childContent1" data-bs-toggle="collapse" role="button" className="accordion-toggle">Child 1</button>',
           '          </div>',
-          '          <div id="childContent1" class="accordion-collapse collapse" aria-labelledby="childHeader1" data-bs-parent="#childGroup">',
+          '          <div id="childContent1" className="accordion-collapse collapse" aria-labelledby="childHeader1" data-bs-parent="#childGroup">',
           '            <div>content</div>',
           '          </div>',
           '        </div>',
-          '        <div class="accordion-item">',
-          '          <div id="childHeader2" class="accordion-header">',
-          '            <button data-bs-target="#childContent2" data-bs-toggle="collapse" role="button" class="accordion-toggle">Child 2</button>',
+          '        <div className="accordion-item">',
+          '          <div id="childHeader2" className="accordion-header">',
+          '            <button data-bs-target="#childContent2" data-bs-toggle="collapse" role="button" className="accordion-toggle">Child 2</button>',
           '          </div>',
-          '          <div id="childContent2" class="accordion-collapse collapse" aria-labelledby="childHeader2" data-bs-parent="#childGroup">',
+          '          <div id="childContent2" className="accordion-collapse collapse" aria-labelledby="childHeader2" data-bs-parent="#childGroup">',
           '            <div>content</div>',
           '          </div>',
           '        </div>',
@@ -336,24 +336,24 @@ describe('Collapse', () => {
     it('should not change tab tabpanels descendants on accordion', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<div class="accordion" id="accordionExample">',
-          '  <div class="accordion-item">',
-          '    <h2 class="accordion-header" id="headingOne">',
-          '      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">',
+          '<div className="accordion" id="accordionExample">',
+          '  <div className="accordion-item">',
+          '    <h2 className="accordion-header" id="headingOne">',
+          '      <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">',
           '        Accordion Item #1',
           '      </button>',
           '    </h2>',
-          '    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">',
-          '      <div class="accordion-body">',
+          '    <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">',
+          '      <div className="accordion-body">',
           '        <nav>',
-          '          <div class="nav nav-tabs" id="nav-tab" role="tablist">',
-          '            <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Home</button>',
-          '            <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</button>',
+          '          <div className="nav nav-tabs" id="nav-tab" role="tablist">',
+          '            <button className="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Home</button>',
+          '            <button className="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</button>',
           '          </div>',
           '        </nav>',
-          '        <div class="tab-content" id="nav-tabContent">',
-          '          <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">Home</div>',
-          '          <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">Profile</div>',
+          '        <div className="tab-content" id="nav-tabContent">',
+          '          <div className="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">Home</div>',
+          '          <div className="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">Profile</div>',
           '        </div>',
           '      </div>',
           '    </div>',
@@ -386,7 +386,7 @@ describe('Collapse', () => {
 
     it('should not fire shown when show is prevented', () => {
       return new Promise((resolve, reject) => {
-        fixtureEl.innerHTML = '<div class="collapse"></div>'
+        fixtureEl.innerHTML = '<div className="collapse"></div>'
 
         const collapseEl = fixtureEl.querySelector('div')
         const collapse = new Collapse(collapseEl, {
@@ -448,7 +448,7 @@ describe('Collapse', () => {
 
     it('should hide a collapsed element', () => {
       return new Promise(resolve => {
-        fixtureEl.innerHTML = '<div class="collapse show"></div>'
+        fixtureEl.innerHTML = '<div className="collapse show"></div>'
 
         const collapseEl = fixtureEl.querySelector('div')
         const collapse = new Collapse(collapseEl, {
@@ -467,7 +467,7 @@ describe('Collapse', () => {
 
     it('should not fire hidden when hide is prevented', () => {
       return new Promise((resolve, reject) => {
-        fixtureEl.innerHTML = '<div class="collapse show"></div>'
+        fixtureEl.innerHTML = '<div className="collapse show"></div>'
 
         const collapseEl = fixtureEl.querySelector('div')
         const collapse = new Collapse(collapseEl, {
@@ -497,7 +497,7 @@ describe('Collapse', () => {
 
   describe('dispose', () => {
     it('should destroy a collapse', () => {
-      fixtureEl.innerHTML = '<div class="collapse show"></div>'
+      fixtureEl.innerHTML = '<div className="collapse show"></div>'
 
       const collapseEl = fixtureEl.querySelector('div')
       const collapse = new Collapse(collapseEl, {
@@ -516,10 +516,10 @@ describe('Collapse', () => {
     it('should prevent url change if click on nested elements', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<a role="button" data-bs-toggle="collapse" class="collapsed" href="#collapse">',
+          '<a role="button" data-bs-toggle="collapse" className="collapsed" href="#collapse">',
           '  <span id="nested"></span>',
           '</a>',
-          '<div id="collapse" class="collapse"></div>'
+          '<div id="collapse" className="collapse"></div>'
         ].join('')
 
         const triggerEl = fixtureEl.querySelector('a')
@@ -541,9 +541,9 @@ describe('Collapse', () => {
     it('should show multiple collapsed elements', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<a role="button" data-bs-toggle="collapse" class="collapsed" href=".multi"></a>',
-          '<div id="collapse1" class="collapse multi"></div>',
-          '<div id="collapse2" class="collapse multi"></div>'
+          '<a role="button" data-bs-toggle="collapse" className="collapsed" href=".multi"></a>',
+          '<div id="collapse1" className="collapse multi"></div>',
+          '<div id="collapse2" className="collapse multi"></div>'
         ].join('')
 
         const trigger = fixtureEl.querySelector('a')
@@ -566,8 +566,8 @@ describe('Collapse', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
           '<a role="button" data-bs-toggle="collapse" href=".multi"></a>',
-          '<div id="collapse1" class="collapse multi show"></div>',
-          '<div id="collapse2" class="collapse multi show"></div>'
+          '<div id="collapse1" className="collapse multi show"></div>',
+          '<div id="collapse2" className="collapse multi show"></div>'
         ].join('')
 
         const trigger = fixtureEl.querySelector('a')
@@ -589,8 +589,8 @@ describe('Collapse', () => {
     it('should remove "collapsed" class from target when collapse is shown', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<a id="link1" role="button" data-bs-toggle="collapse" class="collapsed" href="#" data-bs-target="#test1"></a>',
-          '<a id="link2" role="button" data-bs-toggle="collapse" class="collapsed" href="#" data-bs-target="#test1"></a>',
+          '<a id="link1" role="button" data-bs-toggle="collapse" className="collapsed" href="#" data-bs-target="#test1"></a>',
+          '<a id="link2" role="button" data-bs-toggle="collapse" className="collapsed" href="#" data-bs-target="#test1"></a>',
           '<div id="test1"></div>'
         ].join('')
 
@@ -615,7 +615,7 @@ describe('Collapse', () => {
         fixtureEl.innerHTML = [
           '<a id="link1" role="button" data-bs-toggle="collapse" href="#" data-bs-target="#test1"></a>',
           '<a id="link2" role="button" data-bs-toggle="collapse" href="#" data-bs-target="#test1"></a>',
-          '<div id="test1" class="show"></div>'
+          '<div id="test1" className="show"></div>'
         ].join('')
 
         const link1 = fixtureEl.querySelector('#link1')
@@ -638,13 +638,13 @@ describe('Collapse', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
           '<div id="accordion">',
-          '  <div class="item">',
+          '  <div className="item">',
           '    <a id="linkTrigger" data-bs-toggle="collapse" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne"></a>',
-          '    <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-bs-parent="#accordion"></div>',
+          '    <div id="collapseOne" className="collapse" role="tabpanel" aria-labelledby="headingThree" data-bs-parent="#accordion"></div>',
           '  </div>',
-          '  <div class="item">',
+          '  <div className="item">',
           '    <a id="linkTriggerTwo" data-bs-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"></a>',
-          '    <div id="collapseTwo" class="collapse show" role="tabpanel" aria-labelledby="headingTwo" data-bs-parent="#accordion"></div>',
+          '    <div id="collapseTwo" className="collapse show" role="tabpanel" aria-labelledby="headingTwo" data-bs-parent="#accordion"></div>',
           '  </div>',
           '</div>'
         ].join('')
@@ -695,17 +695,17 @@ describe('Collapse', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
           '<div id="accordion">',
-          '  <div class="row">',
-          '    <div class="col-lg-6">',
-          '      <div class="item">',
+          '  <div className="row">',
+          '    <div className="col-lg-6">',
+          '      <div className="item">',
           '        <a id="linkTrigger" data-bs-toggle="collapse" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne"></a>',
-          '        <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-bs-parent="#accordion"></div>',
+          '        <div id="collapseOne" className="collapse" role="tabpanel" aria-labelledby="headingThree" data-bs-parent="#accordion"></div>',
           '      </div>',
           '    </div>',
-          '    <div class="col-lg-6">',
-          '      <div class="item">',
+          '    <div className="col-lg-6">',
+          '      <div className="item">',
           '        <a id="linkTriggerTwo" data-bs-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"></a>',
-          '        <div id="collapseTwo" class="collapse show" role="tabpanel" aria-labelledby="headingTwo" data-bs-parent="#accordion"></div>',
+          '        <div id="collapseTwo" className="collapse show" role="tabpanel" aria-labelledby="headingTwo" data-bs-parent="#accordion"></div>',
           '      </div>',
           '    </div>',
           '  </div>',
@@ -750,10 +750,10 @@ describe('Collapse', () => {
           '<div id="accordion">',
           '  <a id="linkTriggerOne" data-bs-toggle="collapse" data-bs-target=".collapseOne" href="#" aria-expanded="false" aria-controls="collapseOne"></a>',
           '  <a id="linkTriggerTwo" data-bs-toggle="collapse" data-bs-target=".collapseTwo" href="#" aria-expanded="false" aria-controls="collapseTwo"></a>',
-          '  <div id="collapseOneOne" class="collapse collapseOne" role="tabpanel" data-bs-parent="#accordion"></div>',
-          '  <div id="collapseOneTwo" class="collapse collapseOne" role="tabpanel" data-bs-parent="#accordion"></div>',
-          '  <div id="collapseTwoOne" class="collapse collapseTwo" role="tabpanel" data-bs-parent="#accordion"></div>',
-          '  <div id="collapseTwoTwo" class="collapse collapseTwo" role="tabpanel" data-bs-parent="#accordion"></div>',
+          '  <div id="collapseOneOne" className="collapse collapseOne" role="tabpanel" data-bs-parent="#accordion"></div>',
+          '  <div id="collapseOneTwo" className="collapse collapseOne" role="tabpanel" data-bs-parent="#accordion"></div>',
+          '  <div id="collapseTwoOne" className="collapse collapseTwo" role="tabpanel" data-bs-parent="#accordion"></div>',
+          '  <div id="collapseTwoTwo" className="collapse collapseTwo" role="tabpanel" data-bs-parent="#accordion"></div>',
           '</div>'
         ].join('')
 
@@ -827,20 +827,20 @@ describe('Collapse', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
           '<div id="accordion">',
-          '  <div class="item">',
+          '  <div className="item">',
           '    <a id="linkTrigger" data-bs-toggle="collapse" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne"></a>',
-          '    <div id="collapseOne" data-bs-parent="#accordion" class="collapse" role="tabpanel" aria-labelledby="headingThree">',
+          '    <div id="collapseOne" data-bs-parent="#accordion" className="collapse" role="tabpanel" aria-labelledby="headingThree">',
           '      <div id="nestedAccordion">',
-          '        <div class="item">',
+          '        <div className="item">',
           '          <a id="nestedLinkTrigger" data-bs-toggle="collapse" href="#nestedCollapseOne" aria-expanded="false" aria-controls="nestedCollapseOne"></a>',
-          '          <div id="nestedCollapseOne" data-bs-parent="#nestedAccordion" class="collapse" role="tabpanel" aria-labelledby="headingThree"></div>',
+          '          <div id="nestedCollapseOne" data-bs-parent="#nestedAccordion" className="collapse" role="tabpanel" aria-labelledby="headingThree"></div>',
           '        </div>',
           '      </div>',
           '    </div>',
           '  </div>',
-          '  <div class="item">',
+          '  <div className="item">',
           '    <a id="linkTriggerTwo" data-bs-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"></a>',
-          '    <div id="collapseTwo" data-bs-parent="#accordion" class="collapse show" role="tabpanel" aria-labelledby="headingTwo"></div>',
+          '    <div id="collapseTwo" data-bs-parent="#accordion" className="collapse show" role="tabpanel" aria-labelledby="headingTwo"></div>',
           '  </div>',
           '</div>'
         ].join('')
@@ -889,8 +889,8 @@ describe('Collapse', () => {
           '<a id="trigger1" role="button" data-bs-toggle="collapse" href="#test1"></a>',
           '<a id="trigger2" role="button" data-bs-toggle="collapse" href="#test2"></a>',
           '<a id="trigger3" role="button" data-bs-toggle="collapse" href=".multi"></a>',
-          '<div id="test1" class="multi"></div>',
-          '<div id="test2" class="multi"></div>'
+          '<div id="test1" className="multi"></div>',
+          '<div id="test2" className="multi"></div>'
         ].join('')
 
         const trigger1 = fixtureEl.querySelector('#trigger1')

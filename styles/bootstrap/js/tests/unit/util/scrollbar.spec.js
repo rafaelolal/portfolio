@@ -104,8 +104,8 @@ describe('ScrollBar', () => {
     it('should adjust the inline padding of fixed elements which are full-width', () => {
       fixtureEl.innerHTML = [
         '<div style="height: 110vh; width: 100%">',
-        '  <div class="fixed-top" id="fixed1" style="padding-right: 0px; width: 100vw"></div>',
-        '  <div class="fixed-top" id="fixed2" style="padding-right: 5px; width: 100vw"></div>',
+        '  <div className="fixed-top" id="fixed1" style="padding-right: 0px; width: 100vw"></div>',
+        '  <div className="fixed-top" id="fixed2" style="padding-right: 5px; width: 100vw"></div>',
         '</div>'
       ].join('')
       doc.style.overflowY = 'scroll'
@@ -139,8 +139,8 @@ describe('ScrollBar', () => {
     it('should remove padding & margin if not existed before adjustment', () => {
       fixtureEl.innerHTML = [
         '<div style="height: 110vh; width: 100%">',
-        '  <div class="fixed" id="fixed" style="width: 100vw;"></div>',
-        '  <div class="sticky-top" id="sticky" style=" width: 100vw;"></div>',
+        '  <div className="fixed" id="fixed" style="width: 100vw;"></div>',
+        '  <div className="sticky-top" id="sticky" style=" width: 100vw;"></div>',
         '</div>'
       ].join('')
       doc.style.overflowY = 'scroll'
@@ -159,7 +159,7 @@ describe('ScrollBar', () => {
     it('should adjust the inline margin and padding of sticky elements', () => {
       fixtureEl.innerHTML = [
         '<div style="height: 110vh">',
-        '  <div class="sticky-top" style="margin-right: 10px; padding-right: 20px; width: 100vw; height: 10px"></div>',
+        '  <div className="sticky-top" style="margin-right: 10px; padding-right: 20px; width: 100vw; height: 10px"></div>',
         '</div>'
       ].join('')
       doc.style.overflowY = 'scroll'
@@ -185,7 +185,7 @@ describe('ScrollBar', () => {
     })
 
     it('should not adjust the inline margin and padding of sticky and fixed elements when element do not have full width', () => {
-      fixtureEl.innerHTML = '<div class="sticky-top" style="margin-right: 0px; padding-right: 0px; width: 50vw"></div>'
+      fixtureEl.innerHTML = '<div className="sticky-top" style="margin-right: 0px; padding-right: 0px; width: 50vw"></div>'
 
       const stickyTopEl = fixtureEl.querySelector('.sticky-top')
       const originalMargin = getMarginX(stickyTopEl)
@@ -206,7 +206,7 @@ describe('ScrollBar', () => {
     it('should not put data-attribute if element doesn\'t have the proper style property, should just remove style property if element didn\'t had one', () => {
       fixtureEl.innerHTML = [
         '<div style="height: 110vh; width: 100%">',
-        '  <div class="sticky-top" id="sticky" style="width: 100vw"></div>',
+        '  <div className="sticky-top" id="sticky" style="width: 100vw"></div>',
         '</div>'
       ].join('')
 
