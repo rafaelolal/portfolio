@@ -14,7 +14,7 @@ $theme-colors: (
   "success": $success,
 );
 
-$navbar-light-color: #000;
+$navbar-light-color: rgb(0, 0, 0);
 $navbar-light-hover-color: $primary;
 
 $offcanvas-horizontal-width: auto;
@@ -29,20 +29,43 @@ $display-font-sizes: (
   7: 2.5rem,
 );
 
+.myToast {
+  @extend .badge;
+  @extend .text-white;
+  @extend .text-bg-success;
+  @extend .position-fixed;
+  @extend .bottom-0;
+  @extend .end-0;
+  @extend .m-3;
+  @extend .p-3;
+  @extend .fs-5;
+  z-index: 100;
+}
+
 .about {
   display: inline-block;
 }
 
-.blogfolio {
-  width: -webkit-fit-content;
+.vl {
+  border-left: 5px solid $primary;
 }
 
 .bl {
-  border-bottom: thick solid $secondary;
+  border-bottom: 5px solid $secondary;
 }
 
-.vl {
-  border-left: thick solid $primary;
+.blogfolio {
+  @extend .bl;
+  @extend .mx-auto;
+  width: -webkit-fit-content;
+
+  p {
+    @extend .fw-bold;
+    @extend .text-center;
+    @extend .mx-4;
+    @extend .mb-0;
+    @extend .display-1;
+  }
 }
 
 ::-webkit-scrollbar {

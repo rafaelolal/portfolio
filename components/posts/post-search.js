@@ -32,8 +32,8 @@ export default function PostSearch(props) {
   }
 
   return (
-    <div className="row mt-5">
-      <div className="col-6 col-lg-4 mb-3">
+    <>
+      <div className="col-12 col-md-4 mb-3">
         <div className="input-group h-100">
           <input
             type="email"
@@ -51,7 +51,7 @@ export default function PostSearch(props) {
           </button>
         </div>
       </div>
-      <div className="col-6 col-lg-4 mb-3">
+      <div className="col-6 col-md-4 mb-3">
         <div className="col-md">
           <div className="form-floating">
             <select
@@ -72,7 +72,7 @@ export default function PostSearch(props) {
         </div>
       </div>
 
-      <div className="col-6 col-lg-4 mb-3">
+      <div className="col-6 col-md-4 mb-3">
         <div className="form-floating">
           <select
             className="form-select"
@@ -135,6 +135,6 @@ export default function PostSearch(props) {
           </ul>
         </div>
       </div>
-    </div>
+    </>
   );
 }

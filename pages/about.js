@@ -1,33 +1,6 @@
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
-import AchievementList from "../../components/achievements/achievement-list";
+import AchievementList from "../components/achievements/achievement-list";
 export default function AboutPage() {
-  const [showingToast, setShowingToast] = useState(false);
-
-  const nameRef = useRef();
-  const emailRef = useRef();
-  const toastRef = useRef();
-  const bodyRef = useRef();
-
-  function addMessage() {
-    fetch("api/addMessage", {
-      method: "PATCH",
-      body: JSON.stringify({
-        name: nameRef.current.value,
-        email: emailRef.current.value,
-        body: bodyRef.current.value,
-      }),
-      headers: { "Content-Type": "application/json" },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        if (data.message === "Email added") {
-          setShowingToast(true);
-        }
-      });
-  }
-
   return (
     <div className="container">
       <div className="row">
@@ -37,8 +10,10 @@ export default function AboutPage() {
               src="https://media-exp1.licdn.com/dms/image/C5603AQFwkn0a87ZkUQ/profile-displayphoto-shrink_800_800/0/1656096799326?e=1668643200&v=beta&t=7_m9v79bpEGcI9hXtaZPCbPoCZ4zHXosJpS5rw73x7U"
               className="img-fluid"
               alt="..."
-              width="150"
-              height="150"
+              width="100%"
+              height="56%"
+              layout="responsive"
+              objectFit="cover"
             />
           </div>
         </div>
@@ -62,7 +37,9 @@ export default function AboutPage() {
       <div className="bl my-5 blogfolio mx-auto">
         <p className="fw-bold text-center mx-4 display-5">ACHIEVEMENTS</p>
       </div>
-      <AchievementList />
+      <div className="rounded mb-5" style={{ overflow: "auto" }}>
+        <AchievementList />
+      </div>
     </div>
   );
 }

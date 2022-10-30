@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 import Post from "./post";
@@ -42,8 +41,10 @@ export default function PostList(props) {
       <div>
         <p className="text-center">Loading...</p>
         <Image
-          height="auto"
-          width="300"
+          width="100%"
+          height="56%"
+          layout="responsive"
+          objectFit="cover"
           className="img-thumbnail rounded mx-auto d-block"
           src="https://static.skillshare.com/cdn-cgi/image/quality=80,width=1000,format=auto/uploads/project/dd1724f380aa3bc0b87155b0de4fcd86/d5bb402c.gif"
           alt="..."
@@ -56,30 +57,32 @@ export default function PostList(props) {
     return <p>No posts available</p>;
   }
 
-  console.log("POSTS")
-  console.log(posts)
-
   return (
-    <div className="row me-1 ms-1">
+    <>
       {posts.map((post) => (
-        <Post
-          key={post.id}
+        <div
           id={post.id}
-          list={post.list}
-          title={post.title}
-          year={post.year}
-          month={post.month}
-          day={post.day}
-          description={post.description}
-          body={post.body}
-          links={post.links}
-          images={post.images}
-          likes={post.likes}
-          comments={post.comments}
-          isShowingCopy={props.isShowingCopy}
-          setIsShowingCopy={props.setIsShowingCopy}
-        />
+          className="col-12 col-md-10 col-lg-8 mx-auto bg-dark p-3 rounded my-4"
+        >
+          <Post
+            key={post.id}
+            id={post.id}
+            list={post.list}
+            title={post.title}
+            year={post.year}
+            month={post.month}
+            day={post.day}
+            description={post.description}
+            body={post.body}
+            links={post.links}
+            images={post.images}
+            likes={post.likes}
+            comments={post.comments}
+            isShowingCopy={props.isShowingCopy}
+            setIsShowingCopy={props.setIsShowingCopy}
+          />
+        </div>
       ))}
-    </div>
+    </>
   );
 }

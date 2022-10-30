@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Achievement from "./achievement";
 import AchievementGroup from "./achievement-group";
 
 export default function AchievementList() {
@@ -20,16 +19,15 @@ export default function AchievementList() {
   }
 
   return (
-    <div className="rounded mb-5" style={{ overflow: "auto" }}>
-      <div className="row g-3 flex-nowrap">
-        {achievementGroups.map((group) => (
-          <AchievementGroup
-            key={group.id}
-            achievements={group.achievements}
-            name={group.name}
-          />
-        ))}
-      </div>
+    <div className="row g-3 flex-nowrap">
+      {achievementGroups.map((group) => (
+        <AchievementGroup
+          key={group.id}
+          id={group.id}
+          achievements={group.achievements}
+          name={group.name}
+        />
+      ))}
     </div>
   );
 }

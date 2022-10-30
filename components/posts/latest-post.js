@@ -1,37 +1,24 @@
 import Image from "next/image";
-import { useEffect, useState } from "react";
-import CommentList from "./comment-list";
-import Interactions from "./interactions";
+
+import Link from "next/link";
 
 export default function LatestPost(props) {
-  const postId = props.id;
-
-  console.log("post props");
-  console.log(props);
-
-  const [showingComments, setShowingComments] = useState(false);
-  const [likes, setLikes] = useState(props.likes);
-
-  function showComments() {
-    setShowingComments(!showingComments);
-  }
-
-  function addLike() {
-    fetch("api/addLike", {
-      method: "PATCH",
-      body: JSON.stringify({ postId }),
-      headers: { "Content-Type": "application/json" },
-    }).then(setLikes(likes + 1));
-  }
-
   return (
-    <div id={props.id} className="mx-auto bg-dark p-4 rounded-3 my-4">
-      <div className="vl position-relative ps-1 mx-4">
+    <div
+      id={props.id}
+      className="bg-dark p-3 rounded"
+    >
+      <div className="vl position-relative ps-2 mx-4">
         <small className="text-primary">
           {props.year + ", " + props.month + " " + props.day}
         </small>
         <div>
           <h2 className="fw-bold">{props.title}</h2>
+          <h2>
+            <span className="badge rounded-5 text-bg-primary position-absolute top-0 end-0">
+              {props.list}
+            </span>
+          </h2>
         </div>
         <p>{props.description.slice(0, props.description.indexOf("."))}...</p>
       </div>
@@ -40,26 +27,20 @@ export default function LatestPost(props) {
         id={"carousel" + props.id}
         className="carousel slide card-img-bottom"
       >
-        <div className="carousel-inner">
-          <div className="carousel-item active">
-            <Image
-              src={props.images[1]}
-              className="d-block w-100"
-              alt="..."
-              style={{ objectFit: "cover", height: "400px", width: "auto" }}
-              width="150"
-              height="150"
-            />
-          </div>
-          <div className="carousel-item">
-            <Image
-              src={props.images[0]}
-              className="d-block w-100"
-              alt="..."
-              width="150"
-              height="150"
-            />
-          </div>
+        <div className="carousel-inner rounded">
+          {props.images.map((imageLink) => (
+            <div className="carousel-item active">
+              <Image
+                src={imageLink}
+                className="d-block w-100"
+                alt="..."
+                height="56%"
+                width="100%"
+                layout="responsive"
+                objectFit="cover"
+              />
+            </div>
+          ))}
         </div>
         <button
           className="carousel-control-prev"
@@ -85,11 +66,12 @@ export default function LatestPost(props) {
           ></span>
           <span className="visually-hidden">Next</span>
         </button>
-        <div className="mt-3 d-flex">
-          <a type="button" className="btn btn-secondary ms-auto" href="blog">
-            Visit
-          </a>
-        </div>
+      </div>
+
+      <div className="mt-3 d-flex">
+        <Link href="posts">
+          <a className="btn btn-secondary ms-auto">Visit</a>
+        </Link>
       </div>
     </div>
   );

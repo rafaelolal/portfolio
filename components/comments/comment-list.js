@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+
 import Comment from "./comment";
 
 export default function CommentList(props) {
@@ -24,9 +25,13 @@ export default function CommentList(props) {
     return <p>Loading...</p>;
   }
 
+  if (comments.length === 0) {
+    return <p className="display-6">Comments (0)</p>;
+  }
+
   return (
-    <div>
-      <p className="display-5 mt-3">Comments {comments.length}</p>
+    <div className="rounded mt-3" style={{ height: 300, overflow: "auto" }}>
+      <p className="display-6">Comments ({comments.length})</p>
       {comments.map((comment) => (
         <Comment
           key={comment.id}

@@ -1,27 +1,27 @@
 export default function Achievement(props) {
   return (
     <div className="accordion-item mb-2">
-      <h2 className="accordion-header" id={"flush-" + props.id}>
+      <h2 className="accordion-header" id={"achievement" + props.id}>
         <button
           className="accordion-button collapsed"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target={"#flush-collapse" + props.id}
+          data-bs-target={"#achievementCollapse" + props.id}
           aria-expanded="false"
-          aria-controls={"flush-collapse" + props.id}
+          aria-controls={"achievementCollapse" + props.id}
         >
           {props.name}
         </button>
       </h2>
       <div
-        id={"flush-collapse" + props.id}
+        id={"achievementCollapse" + props.id}
         className="accordion-collapse collapse"
-        aria-labelledby={"flush-" + props.id}
-        data-bs-parent="#accordionFlushExample"
+        aria-labelledby={"achievement" + props.id}
+        data-bs-parent={"#accordionGroup" + props.groupId}
       >
         <div className="accordion-body">
           <p>{props.description}</p>
-          {props.year}, {props.month} {props.day}
+          <small className="text-primary">{props.year}, {props.month} {props.day}</small>
         </div>
       </div>
     </div>

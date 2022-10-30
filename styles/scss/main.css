@@ -1,26 +1,29 @@
 @import url("https://fonts.googleapis.com/css?family=Tangerine");
 /* line 32, main.scss */
+.myToast { z-index: 100; }
+
+/* line 45, main.scss */
 .about { display: inline-block; }
 
-/* line 36, main.scss */
-.blogfolio { width: -webkit-fit-content; }
-
-/* line 40, main.scss */
-.bl { border-bottom: thick solid #4a5899; }
-
-/* line 44, main.scss */
-.vl { border-left: thick solid #da1e19; }
-
-/* line 48, main.scss */
-::-webkit-scrollbar { height: 5px; width: 5px; }
+/* line 49, main.scss */
+.vl { border-left: 5px solid #da1e19; }
 
 /* line 53, main.scss */
-::-webkit-scrollbar-track { background-color: transparent; }
+.bl, .blogfolio { border-bottom: 5px solid #4a5899; }
 
 /* line 57, main.scss */
+.blogfolio { width: -webkit-fit-content; }
+
+/* line 71, main.scss */
+::-webkit-scrollbar { height: 5px; width: 5px; }
+
+/* line 76, main.scss */
+::-webkit-scrollbar-track { background-color: transparent; }
+
+/* line 80, main.scss */
 ::-webkit-scrollbar-thumb { background-color: #4a5899; border-radius: 5px; border: 1px solid transparent; background-clip: content-box; }
 
-/* line 64, main.scss */
+/* line 87, main.scss */
 ::-webkit-scrollbar-thumb:hover { background-color: #212529; }
 
 /*!
@@ -253,9 +256,9 @@ progress { vertical-align: baseline; }
 .lead { font-size: 1.25rem; font-weight: 300; }
 
 /* line 36, ../bootstrap/scss/_type.scss */
-.display-1 { font-size: calc(1.625rem + 4.5vw); font-weight: 300; line-height: 1.2; }
+.display-1, .blogfolio p { font-size: calc(1.625rem + 4.5vw); font-weight: 300; line-height: 1.2; }
 @media (min-width: 1200px) { /* line 36, ../bootstrap/scss/_type.scss */
-  .display-1 { font-size: 5rem; } }
+  .display-1, .blogfolio p { font-size: 5rem; } }
 
 /* line 36, ../bootstrap/scss/_type.scss */
 .display-2 { font-size: calc(1.575rem + 3.9vw); font-weight: 300; line-height: 1.2; }
@@ -1620,7 +1623,7 @@ textarea.form-control-lg { min-height: calc(1.5em + 1rem + 2px); }
 .tab-content > .active { display: block; }
 
 /* line 6, ../bootstrap/scss/_navbar.scss */
-.navbar { --bs-navbar-padding-x: 0; --bs-navbar-padding-y: 0.5rem; --bs-navbar-color: #000; --bs-navbar-hover-color: #da1e19; --bs-navbar-disabled-color: rgba(0, 0, 0, 0.3); --bs-navbar-active-color: rgba(0, 0, 0, 0.9); --bs-navbar-brand-padding-y: 0.3125rem; --bs-navbar-brand-margin-end: 1rem; --bs-navbar-brand-font-size: 1.25rem; --bs-navbar-brand-color: rgba(0, 0, 0, 0.9); --bs-navbar-brand-hover-color: rgba(0, 0, 0, 0.9); --bs-navbar-nav-link-padding-x: 0.5rem; --bs-navbar-toggler-padding-y: 0.25rem; --bs-navbar-toggler-padding-x: 0.75rem; --bs-navbar-toggler-font-size: 1.25rem; --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23000' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); --bs-navbar-toggler-border-color: rgba(0, 0, 0, 0.1); --bs-navbar-toggler-border-radius: 0.375rem; --bs-navbar-toggler-focus-width: 0.25rem; --bs-navbar-toggler-transition: box-shadow 0.15s ease-in-out; position: relative; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; padding: var(--bs-navbar-padding-y) var(--bs-navbar-padding-x); }
+.navbar { --bs-navbar-padding-x: 0; --bs-navbar-padding-y: 0.5rem; --bs-navbar-color: black; --bs-navbar-hover-color: #da1e19; --bs-navbar-disabled-color: rgba(0, 0, 0, 0.3); --bs-navbar-active-color: rgba(0, 0, 0, 0.9); --bs-navbar-brand-padding-y: 0.3125rem; --bs-navbar-brand-margin-end: 1rem; --bs-navbar-brand-font-size: 1.25rem; --bs-navbar-brand-color: rgba(0, 0, 0, 0.9); --bs-navbar-brand-hover-color: rgba(0, 0, 0, 0.9); --bs-navbar-nav-link-padding-x: 0.5rem; --bs-navbar-toggler-padding-y: 0.25rem; --bs-navbar-toggler-padding-x: 0.75rem; --bs-navbar-toggler-font-size: 1.25rem; --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='black' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); --bs-navbar-toggler-border-color: rgba(0, 0, 0, 0.1); --bs-navbar-toggler-border-radius: 0.375rem; --bs-navbar-toggler-focus-width: 0.25rem; --bs-navbar-toggler-transition: box-shadow 0.15s ease-in-out; position: relative; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; padding: var(--bs-navbar-padding-y) var(--bs-navbar-padding-x); }
 /* line 41, ../bootstrap/scss/_navbar.scss */
 .navbar > .container, .navbar > .container-fluid, .navbar > .container-sm, .navbar > .container-md, .navbar > .container-lg, .navbar > .container-xl, .navbar > .container-xxl { display: flex; flex-wrap: inherit; align-items: center; justify-content: space-between; }
 
@@ -1954,12 +1957,12 @@ textarea.form-control-lg { min-height: calc(1.5em + 1rem + 2px); }
 .pagination-sm { --bs-pagination-padding-x: 0.5rem; --bs-pagination-padding-y: 0.25rem; --bs-pagination-font-size: 0.875rem; --bs-pagination-border-radius: 0.25rem; }
 
 /* line 6, ../bootstrap/scss/_badge.scss */
-.badge { --bs-badge-padding-x: 0.65em; --bs-badge-padding-y: 0.35em; --bs-badge-font-size: 0.75em; --bs-badge-font-weight: 700; --bs-badge-color: #fff; --bs-badge-border-radius: 0.375rem; display: inline-block; padding: var(--bs-badge-padding-y) var(--bs-badge-padding-x); font-size: var(--bs-badge-font-size); font-weight: var(--bs-badge-font-weight); line-height: 1; color: var(--bs-badge-color); text-align: center; white-space: nowrap; vertical-align: baseline; border-radius: var(--bs-badge-border-radius); }
+.badge, .myToast { --bs-badge-padding-x: 0.65em; --bs-badge-padding-y: 0.35em; --bs-badge-font-size: 0.75em; --bs-badge-font-weight: 700; --bs-badge-color: #fff; --bs-badge-border-radius: 0.375rem; display: inline-block; padding: var(--bs-badge-padding-y) var(--bs-badge-padding-x); font-size: var(--bs-badge-font-size); font-weight: var(--bs-badge-font-weight); line-height: 1; color: var(--bs-badge-color); text-align: center; white-space: nowrap; vertical-align: baseline; border-radius: var(--bs-badge-border-radius); }
 /* line 29, ../bootstrap/scss/_badge.scss */
-.badge:empty { display: none; }
+.badge:empty, .myToast:empty { display: none; }
 
 /* line 35, ../bootstrap/scss/_badge.scss */
-.btn .badge { position: relative; top: -1px; }
+.btn .badge, .btn .myToast { position: relative; top: -1px; }
 
 /* line 5, ../bootstrap/scss/_alert.scss */
 .alert { --bs-alert-bg: transparent; --bs-alert-padding-x: 1rem; --bs-alert-padding-y: 1rem; --bs-alert-margin-bottom: 1rem; --bs-alert-color: inherit; --bs-alert-border-color: transparent; --bs-alert-border: 1px solid var(--bs-alert-border-color); --bs-alert-border-radius: 0.375rem; position: relative; padding: var(--bs-alert-padding-y) var(--bs-alert-padding-x); margin-bottom: var(--bs-alert-margin-bottom); color: var(--bs-alert-color); background-color: var(--bs-alert-bg); border: var(--bs-alert-border); border-radius: var(--bs-alert-border-radius); }
@@ -2686,7 +2689,7 @@ textarea.form-control-lg { min-height: calc(1.5em + 1rem + 2px); }
 .text-bg-secondary { color: #fff !important; background-color: RGBA(74, 88, 153, var(--bs-bg-opacity, 1)) !important; }
 
 /* line 6, ../bootstrap/scss/helpers/_color-bg.scss */
-.text-bg-success { color: #000 !important; background-color: RGBA(0, 180, 216, var(--bs-bg-opacity, 1)) !important; }
+.text-bg-success, .myToast { color: #000 !important; background-color: RGBA(0, 180, 216, var(--bs-bg-opacity, 1)) !important; }
 
 /* line 2, ../bootstrap/scss/helpers/_colored-links.scss */
 .link-tertiary { color: #212529 !important; }
@@ -2888,7 +2891,7 @@ textarea.form-control-lg { min-height: calc(1.5em + 1rem + 2px); }
 .position-absolute { position: absolute !important; }
 
 /* line 67, ../bootstrap/scss/mixins/_utilities.scss */
-.position-fixed { position: fixed !important; }
+.position-fixed, .myToast { position: fixed !important; }
 
 /* line 67, ../bootstrap/scss/mixins/_utilities.scss */
 .position-sticky { position: sticky !important; }
@@ -2903,7 +2906,7 @@ textarea.form-control-lg { min-height: calc(1.5em + 1rem + 2px); }
 .top-100 { top: 100% !important; }
 
 /* line 67, ../bootstrap/scss/mixins/_utilities.scss */
-.bottom-0 { bottom: 0 !important; }
+.bottom-0, .myToast { bottom: 0 !important; }
 
 /* line 67, ../bootstrap/scss/mixins/_utilities.scss */
 .bottom-50 { bottom: 50% !important; }
@@ -2921,7 +2924,7 @@ textarea.form-control-lg { min-height: calc(1.5em + 1rem + 2px); }
 .start-100 { left: 100% !important; }
 
 /* line 67, ../bootstrap/scss/mixins/_utilities.scss */
-.end-0 { right: 0 !important; }
+.end-0, .myToast { right: 0 !important; }
 
 /* line 67, ../bootstrap/scss/mixins/_utilities.scss */
 .end-50 { right: 50% !important; }
@@ -3203,7 +3206,7 @@ textarea.form-control-lg { min-height: calc(1.5em + 1rem + 2px); }
 .m-2 { margin: 0.5rem !important; }
 
 /* line 67, ../bootstrap/scss/mixins/_utilities.scss */
-.m-3 { margin: 1rem !important; }
+.m-3, .myToast { margin: 1rem !important; }
 
 /* line 67, ../bootstrap/scss/mixins/_utilities.scss */
 .m-4 { margin: 1.5rem !important; }
@@ -3227,13 +3230,13 @@ textarea.form-control-lg { min-height: calc(1.5em + 1rem + 2px); }
 .mx-3 { margin-right: 1rem !important; margin-left: 1rem !important; }
 
 /* line 67, ../bootstrap/scss/mixins/_utilities.scss */
-.mx-4 { margin-right: 1.5rem !important; margin-left: 1.5rem !important; }
+.mx-4, .blogfolio p { margin-right: 1.5rem !important; margin-left: 1.5rem !important; }
 
 /* line 67, ../bootstrap/scss/mixins/_utilities.scss */
 .mx-5 { margin-right: 3rem !important; margin-left: 3rem !important; }
 
 /* line 67, ../bootstrap/scss/mixins/_utilities.scss */
-.mx-auto { margin-right: auto !important; margin-left: auto !important; }
+.mx-auto, .blogfolio { margin-right: auto !important; margin-left: auto !important; }
 
 /* line 67, ../bootstrap/scss/mixins/_utilities.scss */
 .my-0 { margin-top: 0 !important; margin-bottom: 0 !important; }
@@ -3299,7 +3302,7 @@ textarea.form-control-lg { min-height: calc(1.5em + 1rem + 2px); }
 .me-auto { margin-right: auto !important; }
 
 /* line 67, ../bootstrap/scss/mixins/_utilities.scss */
-.mb-0 { margin-bottom: 0 !important; }
+.mb-0, .blogfolio p { margin-bottom: 0 !important; }
 
 /* line 67, ../bootstrap/scss/mixins/_utilities.scss */
 .mb-1 { margin-bottom: 0.25rem !important; }
@@ -3350,7 +3353,7 @@ textarea.form-control-lg { min-height: calc(1.5em + 1rem + 2px); }
 .p-2 { padding: 0.5rem !important; }
 
 /* line 67, ../bootstrap/scss/mixins/_utilities.scss */
-.p-3 { padding: 1rem !important; }
+.p-3, .myToast { padding: 1rem !important; }
 
 /* line 67, ../bootstrap/scss/mixins/_utilities.scss */
 .p-4 { padding: 1.5rem !important; }
@@ -3500,7 +3503,7 @@ textarea.form-control-lg { min-height: calc(1.5em + 1rem + 2px); }
 .fs-4 { font-size: calc(1.275rem + 0.3vw) !important; }
 
 /* line 67, ../bootstrap/scss/mixins/_utilities.scss */
-.fs-5 { font-size: 1.25rem !important; }
+.fs-5, .myToast { font-size: 1.25rem !important; }
 
 /* line 67, ../bootstrap/scss/mixins/_utilities.scss */
 .fs-6 { font-size: 1rem !important; }
@@ -3521,7 +3524,7 @@ textarea.form-control-lg { min-height: calc(1.5em + 1rem + 2px); }
 .fw-normal { font-weight: 400 !important; }
 
 /* line 67, ../bootstrap/scss/mixins/_utilities.scss */
-.fw-bold { font-weight: 700 !important; }
+.fw-bold, .blogfolio p { font-weight: 700 !important; }
 
 /* line 67, ../bootstrap/scss/mixins/_utilities.scss */
 .fw-semibold { font-weight: 600 !important; }
@@ -3548,7 +3551,7 @@ textarea.form-control-lg { min-height: calc(1.5em + 1rem + 2px); }
 .text-end { text-align: right !important; }
 
 /* line 67, ../bootstrap/scss/mixins/_utilities.scss */
-.text-center { text-align: center !important; }
+.text-center, .blogfolio p { text-align: center !important; }
 
 /* line 67, ../bootstrap/scss/mixins/_utilities.scss */
 .text-decoration-none { text-decoration: none !important; }
@@ -3598,7 +3601,7 @@ textarea.form-control-lg { min-height: calc(1.5em + 1rem + 2px); }
 .text-black { --bs-text-opacity: 1; color: rgba(var(--bs-black-rgb), var(--bs-text-opacity)) !important; }
 
 /* line 67, ../bootstrap/scss/mixins/_utilities.scss */
-.text-white { --bs-text-opacity: 1; color: rgba(var(--bs-white-rgb), var(--bs-text-opacity)) !important; }
+.text-white, .myToast { --bs-text-opacity: 1; color: rgba(var(--bs-white-rgb), var(--bs-text-opacity)) !important; }
 
 /* line 67, ../bootstrap/scss/mixins/_utilities.scss */
 .text-body { --bs-text-opacity: 1; color: rgba(var(--bs-body-color-rgb), var(--bs-text-opacity)) !important; }
