@@ -1,6 +1,5 @@
-import Image from "next/image";
-
 import Link from "next/link";
+import Carousel from "./carousel";
 
 export default function LatestPost(props) {
   return (
@@ -17,7 +16,7 @@ export default function LatestPost(props) {
       </div>
 
       {(props.images || props.images.length > 0) && (
-        <Carousel 
+        <Carousel
           postId={props.id}
           images={props.images}
         />
