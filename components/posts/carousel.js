@@ -30,7 +30,7 @@ export default function Carousel(props) {
     <button
       className="carousel-control-prev"
       type="button"
-      data-bs-target={"#carousel" + postId}
+      data-bs-target={"#carousel" + props.postId}
       data-bs-slide="prev"
     >
       <span
@@ -43,7 +43,7 @@ export default function Carousel(props) {
     <button
       className="carousel-control-next"
       type="button"
-      data-bs-target={"#carousel" + postId}
+      data-bs-target={"#carousel" + props.postId}
       data-bs-slide="next"
     >
       <span
