@@ -27,7 +27,7 @@ export default function Post(props) {
       <div className="vl position-relative ps-2 mx-3">
         <p
           className={
-            "badge fs-4 rounded-5 position-absolute top-0 end-0 text-white text-bg-" +
+            "badge fs-5 rounded-5 position-absolute top-0 end-0 text-white text-bg-" +
             props.list
           }
         >
@@ -36,9 +36,7 @@ export default function Post(props) {
         <p className="text-primary m-0 p-0">
           {props.year + ", " + props.month + " " + props.day}
         </p>
-        <div className="col-9">
           <p className="fw-bold fs-3">{props.title}</p>
-        </div>
         <p>{props.description}</p>
       </div>
 
