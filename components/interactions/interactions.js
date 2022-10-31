@@ -54,7 +54,7 @@ export default function Interactions(props) {
     const beNotified = beNotifiedInputRef.current.checked;
     const postId = props.postId;
 
-    const response = fetch("/blog/api/addComment", {
+    const response = fetch("/api/addComment", {
       method: "POST",
       body: JSON.stringify({
         postId,
@@ -75,7 +75,7 @@ export default function Interactions(props) {
     });
 
     if (beNotified) {
-      const response = fetch("/blog/api/addEmail", {
+      const response = fetch("/api/addEmail", {
         method: "POST",
         body: JSON.stringify({ name, email, frequencyValue }),
         headers: {

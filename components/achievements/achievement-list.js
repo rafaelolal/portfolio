@@ -6,7 +6,7 @@ export default function AchievementList() {
   const [achievementGroups, setAchievementGroups] = useState();
 
   useEffect(() => {
-    fetch("/blog/api/getAchievements", {
+    fetch("/api/getAchievements", {
       method: "GET",
     })
       .then((response) => response.json())

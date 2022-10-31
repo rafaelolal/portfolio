@@ -12,7 +12,7 @@ export default function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <link rel="shortcut icon" href="/blog/favicon.ico" />
+        <link rel="shortcut icon" href="/favicon.ico" />
       </Head>
       <Layout>
         <Component {...pageProps} />

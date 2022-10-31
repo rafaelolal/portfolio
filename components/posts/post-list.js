@@ -23,7 +23,7 @@ export default function PostList(props) {
     props.currentYear && (query.year = props.currentYear);
     props.currentMonth && (query.month = props.currentMonth);
 
-    fetch("/blog/api/getPosts", {
+    fetch("/api/getPosts", {
       method: "POST",
       body: JSON.stringify(query),
       headers: { "Content-Type": "application/json" },

@@ -29,7 +29,7 @@ export default function LatestPost(props) {
               key={imageLink}
             >
               <Image
-                src={"/blog" + imageLink}
+                src={imageLink}
                 className="d-block w-100"
                 alt="..."
                 height="56%"
