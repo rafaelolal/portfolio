@@ -23,7 +23,7 @@ export default function OffCanvasBar() {
         </a>
         <a className="navbar-brand ms-2">
           <img
-            src="/logo.png"
+            src="/blog/logo.png"
             alt="..."
             height="32px"
             width="auto"
