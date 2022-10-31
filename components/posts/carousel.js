@@ -19,7 +19,7 @@ export default function Carousel(props) {
             className="d-block w-100"
             alt="..."
             width="100%"
-            height="56%"
+            height="100%"
             layout="responsive"
             objectFit="cover"
           />
