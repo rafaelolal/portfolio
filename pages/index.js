@@ -32,7 +32,7 @@ export default function Home(props) {
         <p className="text-center mt-3 mx-auto mt-4">
           Welcome to my blog. Here you will see blogs from my{" "}
           <Link href="/posts?list=Featured">
-            <a className="text-Featured fw-bold">Featured</a>
+            <a className="fw-bold featuredPulse">Featured</a>
           </Link>{" "}
           endeavors to my day-to-day activities. It is organized in a way that
           you can easily find out what I am up to, and what I am proud of. You
@@ -62,7 +62,7 @@ export default function Home(props) {
               Yes, this is a blog, but if you are only interested in what really
               matters, explore the{" "}
               <Link href="/posts?list=Featured">
-                <a className="text-Featured fw-bold">Featured</a>
+                <a className="fw-bold featuredPulse">Featured</a>
               </Link>{" "}
               posts. If you have the time, you can always check out other posts
               to see what I am up to. On this page is my latest post.

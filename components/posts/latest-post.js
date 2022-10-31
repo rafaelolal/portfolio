@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function LatestPost(props) {
   return (
-    <div id={props.id} className="bg-dark p-3 rounded">
+    <div id={props.id} className="bg-dark p-3 rounded shadow">
       <div className="vl position-relative ps-2 mx-4">
         <p className="fs-5 badge rounded-5 text-white text-bg-Latest position-absolute top-0 end-0">
           Latest

@@ -55,7 +55,7 @@ export default function EmailMe() {
           data-bs-toggle="modal"
           data-bs-target="#emailMeModal"
           style={{ borderStyle: "solid", borderColor: "#da1e19" }}
-          className="ms-2 p-1 fw-bold bg-white"
+          className="ms-2 p-1 fw-bold bg-white shadow-sm"
         >
           EMAIL ME
         </button>

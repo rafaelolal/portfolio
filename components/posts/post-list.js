@@ -66,10 +66,10 @@ export default function PostList(props) {
   }
 
   return (
-    <>
+    <div className="fadeIn">
       {posts.map((post) => (
         <div
-          className="col-12 col-md-10 col-lg-8 mx-auto bg-dark p-3 rounded my-4"
+          className="col-12 col-md-10 col-lg-8 mx-auto bg-dark p-3 rounded my-4 shadow"
           id={post.id}
           key={post.id}
         >
@@ -91,6 +91,6 @@ export default function PostList(props) {
           />
         </div>
       ))}
-    </>
+    </div>
   );
 }

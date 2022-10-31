@@ -9,7 +9,7 @@ export default function AboutPage() {
     </Head>
       <div className="row mt-5">
         <div className="col-12 col-md-5 col-lg-4 rounded">
-          <div className="bg-dark p-3">
+          <div className="bg-dark p-3 shadow">
             <Image
               src="https://media-exp1.licdn.com/dms/image/C5603AQFwkn0a87ZkUQ/profile-displayphoto-shrink_800_800/0/1656096799326?e=1668643200&v=beta&t=7_m9v79bpEGcI9hXtaZPCbPoCZ4zHXosJpS5rw73x7U"
               className="img-fluid rounded"

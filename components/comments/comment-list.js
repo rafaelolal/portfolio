@@ -22,7 +22,7 @@ export default function CommentList(props) {
   }, [props.showingComments, postId]);
 
   if (!comments) {
-    return <p>Loading...</p>;
+    return <p></p>;
   }
 
   if (comments.length === 0) {
@@ -30,7 +30,7 @@ export default function CommentList(props) {
   }
 
   return (
-    <div className="rounded mt-3" style={{ height: 300, overflow: "auto" }}>
+    <div className="rounded mt-3 commentShow" style={{ height: 300, overflow: "auto" }}>
       <p className="display-6">Comments ({comments.length})</p>
       {comments.map((comment) => (
         <Comment
