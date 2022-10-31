@@ -12,7 +12,7 @@ export default function AchievementGroup(props) {
         {props.achievements.map((achievement) => (
           <Achievement
             key={achievement.id}
-            groupdId = {props.id}
+            groupId = {props.id}
             id={achievement.id}
             name={achievement.name}
             description={achievement.description}

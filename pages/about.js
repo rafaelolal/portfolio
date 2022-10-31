@@ -1,9 +1,13 @@
+import Head from "next/head";
 import Image from "next/image";
 import AchievementList from "../components/achievements/achievement-list";
 export default function AboutPage() {
   return (
     <>
-      <div className="row">
+    <Head>
+      <title>About Me</title>
+    </Head>
+      <div className="row mt-5">
         <div className="col-12 col-md-5 col-lg-4 rounded">
           <div className="bg-dark p-3">
             <Image

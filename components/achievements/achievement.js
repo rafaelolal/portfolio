@@ -1,7 +1,7 @@
 export default function Achievement(props) {
   return (
     <div className="accordion-item mb-2">
-      <h2 className="accordion-header" id={"achievement" + props.id}>
+      <p className="accordion-header fs-2" id={"achievement" + props.id}>
         <button
           className="accordion-button collapsed"
           type="button"
@@ -12,7 +12,7 @@ export default function Achievement(props) {
         >
           {props.name}
         </button>
-      </h2>
+      </p>
       <div
         id={"achievementCollapse" + props.id}
         className="accordion-collapse collapse"

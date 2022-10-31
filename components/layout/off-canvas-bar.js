@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import DiscordIcon from "../icons/discord-icon";
 import EmailIcon from "../icons/email-icon";
@@ -20,19 +21,27 @@ export default function OffCanvasBar() {
         >
           <HamburgerIcon />
         </a>
-        <a className="navbar-brand ms-2">Logo</a>
+        <a className="navbar-brand ms-2">
+          <img
+            src="/blog/logo.png"
+            alt="..."
+            height="32px"
+            width="auto"
+            layout="responsive"
+          />
+        </a>
         <div
           className="offcanvas offcanvas-start"
           id="offcanvasNavbar"
           aria-labelledby="offcanvasNavbarLabel"
         >
           <div className="offcanvas-header">
-            <h1
-              className="offcanvas-title mx-auto fw-bold"
+            <p
+              className="offcanvas-title mx-auto fw-bold fs-1"
               id="offcanvasNavbarLabel"
             >
               CONTACT ME
-            </h1>
+            </p>
           </div>
           <div className="offcanvas-body">
             <p className="nav-link fs-5">
@@ -63,11 +72,6 @@ export default function OffCanvasBar() {
 
             <hr />
 
-            <p className="nav-link fs-5 mb-0">
-              <NavigiationIcon />
-              Navigation
-            </p>
-
             <ul className="navbar-nav">
               <li
                 className="nav-item"
@@ -75,7 +79,7 @@ export default function OffCanvasBar() {
                 data-bs-target="#offcanvasNavbar"
               >
                 <Link href="/">
-                  <a className="nav-link fs-5 pb-0">
+                  <a className="nav-link fs-5 pt-0 pb-0">
                     <LinkIcon />
                     Home
                   </a>

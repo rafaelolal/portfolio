@@ -116,7 +116,7 @@ export default function PostSearch(props) {
             type="button"
             className="btn btn-dark"
           >
-            <p className="fs-4 m-0 text-tertiary">See Featured</p>
+            <p className="fs-5 m-0 text-tertiary">See Featured</p>
           </button>
           <button
             type="button"

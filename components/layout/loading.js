@@ -6,9 +6,9 @@ export default function Loading() {
       <Image
         width="50%"
         height="50%"
-        objectFit="cover"
         src="/blog/loading.gif"
         alt="Loading..."
+        objectFit="cover"
       />
     </p>
   );

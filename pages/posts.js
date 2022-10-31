@@ -2,6 +2,7 @@ import PostList from "../components/posts/post-list";
 import PostSearch from "../components/posts/post-search";
 
 import { useState } from "react";
+import Head from "next/head";
 
 export default function BlogPage() {
   const [isShowingCopy, setIsShowingCopy] = useState(false);
@@ -13,9 +14,13 @@ export default function BlogPage() {
 
   return (
     <>
+      <Head>
+        <title>Blog</title>
+      </Head>
+      
       {isShowingCopy && <p className="myToast">Link copied!</p>}
 
-      <div className="blogfolio">
+      <div className="blogfolio mt-5">
         <p className="">BLOGFOLIO</p>
       </div>
 

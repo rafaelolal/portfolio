@@ -55,7 +55,7 @@ export default function EmailMe() {
           data-bs-toggle="modal"
           data-bs-target="#emailMeModal"
           style={{ borderStyle: "solid", borderColor: "#da1e19" }}
-          className="navbar-brand ms-2 p-1 fw-bold bg-white"
+          className="ms-2 p-1 fw-bold bg-white"
         >
           EMAIL ME
         </button>
@@ -63,7 +63,6 @@ export default function EmailMe() {
         <div
           className="modal fade"
           id="emailMeModal"
-          tabindex="-1"
           aria-labelledby="emailMeModalLabel"
           aria-hidden="true"
         >

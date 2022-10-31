@@ -5,7 +5,7 @@ export default function LinkIcon() {
       width="16"
       height="16"
       fill="currentColor"
-      class="bi bi-box-arrow-up-right me-4"
+      className="bi bi-box-arrow-up-right ms-2 me-2"
       viewBox="0 0 16 16"
     >
       <path

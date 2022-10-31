@@ -2,6 +2,7 @@ import { useEffect } from "react";
 
 import "../styles/scss/main.css";
 import Layout from "../components/layout/layout";
+import Head from "next/head";
 
 export default function MyApp({ Component, pageProps }) {
   useEffect(() => {
@@ -9,8 +10,13 @@ export default function MyApp({ Component, pageProps }) {
   }, []);
 
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <>
+      <Head>
+        <link rel="shortcut icon" href="/blog/favicon.ico" />
+      </Head>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </>
   );
 }

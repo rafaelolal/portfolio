@@ -42,7 +42,7 @@ export default function CommentModal(props) {
                 id="flexCheckDefault"
                 ref={props.beNotifiedInputRef}
               />
-              <label className="form-check-label" for="flexCheckDefault">
+              <label className="form-check-label" htmlFor="flexCheckDefault">
                 Be notified of new posts
               </label>
             </div>
@@ -72,7 +72,7 @@ export default function CommentModal(props) {
                     id="dailyRadio"
                     value="Daily"
                   />
-                  <label className="form-check-label" for="dailyRadio">
+                  <label className="form-check-label" htmlFor="dailyRadio">
                     Daily
                   </label>
                 </div>
@@ -84,7 +84,7 @@ export default function CommentModal(props) {
                     id="weeklyRadio"
                     value="Weekly"
                   />
-                  <label className="form-check-label" for="weeklyRadio">
+                  <label className="form-check-label" htmlFor="weeklyRadio">
                     Weekly
                   </label>
                 </div>
@@ -96,7 +96,7 @@ export default function CommentModal(props) {
                     id="monthlyRadio"
                     value="Monthly"
                   />
-                  <label className="form-check-label" for="monthlyRadio">
+                  <label className="form-check-label" htmlFor="monthlyRadio">
                     Monthly
                   </label>
                 </div>

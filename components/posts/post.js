@@ -33,10 +33,10 @@ export default function Post(props) {
         >
           {props.list}
         </p>
-        <p className="text-primary m-0 p-0">
+        <p className="text-primary m-0">
           {props.year + ", " + props.month + " " + props.day}
         </p>
-          <p className="fw-bold fs-3">{props.title}</p>
+        <p className="fw-bold fs-3 mt-3 mb-0">{props.title}</p>
         <p>{props.description}</p>
       </div>
 
@@ -46,12 +46,14 @@ export default function Post(props) {
       >
         <div className="carousel-inner rounded">
           {props.images.map((imageLink) => (
-            <div 
-            className="carousel-item active"
-            key={imageLink}
+            <div
+              className={
+                "carousel-item " + (imageLink == props.images[0] && "active")
+              }
+              key={imageLink}
             >
               <Image
-                src={"/blog"+imageLink}
+                src={"/blog" + imageLink}
                 className="d-block w-100"
                 alt="..."
                 width="100%"

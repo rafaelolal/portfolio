@@ -2,9 +2,9 @@ $font-family-base: "Arial", serif;
 
 $tertiary: #212529;
 $dark: #f1eff1;
-$primary: #da1e19;
-$secondary: #4a5899;
-$success: #00b4d8;
+$primary: #EA4E48;
+$secondary: #9FA8D1;
+$success: #5CE4FF;
 
 $theme-colors: (
   "tertiary": $tertiary,
@@ -12,11 +12,11 @@ $theme-colors: (
   "primary": $primary,
   "secondary": $secondary,
   "success": $success,
-  "Latest": #2D93AD,
-  "Featured": #FF8811,
-  "Gym": #61A53B,
-  "Project": #694873,
-  "Achievement": #CB4C89,
+  "Latest": #4DB7D1,
+  "Featured": #FFAD5C,
+  "Gym": #81C45A,
+  "Project": #9468A1,
+  "Achievement": #DA81AC,
 );
 
 $navbar-light-color: rgb(0, 0, 0);
@@ -24,14 +24,25 @@ $navbar-light-hover-color: $primary;
 
 $offcanvas-horizontal-width: auto;
 
+$font-size-base: 1rem;
+
+$font-sizes: (
+  1: $font-size-base * 1.75,
+  2: $font-size-base * 1.66,
+  3: $font-size-base * 1.33,
+  4: $font-size-base * 1.25,
+  5: $font-size-base * 1.20,
+  6: $font-size-base * 1.10,
+  7: $font-size-base * 1,
+);
+
 $display-font-sizes: (
-  1: 5rem,
-  2: 4.5rem,
-  3: 4rem,
-  4: 3.5rem,
-  5: 3rem,
-  6: 1.75rem,
-  7: 2.5rem,
+  1: $font-size-base * 2.75,
+  2: $font-size-base * 2.25,
+  3: $font-size-base * 2,
+  4: $font-size-base * 1.75,
+  5: $font-size-base * 1.66,
+  6: $font-size-base * 1.33,
 );
 
 .myToast {

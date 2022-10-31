@@ -90,10 +90,10 @@ export default function Interactions(props) {
       <div className="col-12 col-md-4 d-flex mt-1">
         <div className="mx-auto">
           <LikeIcon onClick={props.addLike} />
-          <small className="text-primary me-2 fs-6">{props.likes}</small>
+          <small className="text-primary me-2 fs-7">{props.likes}</small>
           
           <CommentIcon onClick={props.showComments} />
-          <small className="text-primary me-3 fs-6">{props.commentCount}</small>
+          <small className="text-primary me-3 fs-7">{props.commentCount}</small>
           
           <ShareIcon onClick={copyLink} />
         </div>

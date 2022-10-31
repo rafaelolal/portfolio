@@ -6,17 +6,13 @@ export default function LatestPost(props) {
   return (
     <div id={props.id} className="bg-dark p-3 rounded">
       <div className="vl position-relative ps-2 mx-4">
-        <small className="text-primary">
+        <p className="fs-5 badge rounded-5 text-white text-bg-Latest position-absolute top-0 end-0">
+          Latest
+        </p>
+        <p className="text-primary m-0">
           {props.year + ", " + props.month + " " + props.day}
-        </small>
-        <div>
-          <h2 className="fw-bold">{props.title}</h2>
-          <h2>
-            <span className="badge rounded-5 text-white text-bg-Latest position-absolute top-0 end-0">
-              Latest
-            </span>
-          </h2>
-        </div>
+        </p>
+        <p className="fw-bold fs-2 mt-3 mb-0">{props.title}</p>
         <p>{props.description.slice(0, props.description.indexOf("."))}...</p>
       </div>
 
@@ -26,11 +22,14 @@ export default function LatestPost(props) {
       >
         <div className="carousel-inner rounded">
           {props.images.map((imageLink) => (
-            <div className="carousel-item active"
-            key={imageLink}
+            <div
+              className={
+                "carousel-item " + (imageLink == props.images[0] && "active")
+              }
+              key={imageLink}
             >
               <Image
-                src={"/blog"+imageLink}
+                src={"/blog" + imageLink}
                 className="d-block w-100"
                 alt="..."
                 height="56%"
