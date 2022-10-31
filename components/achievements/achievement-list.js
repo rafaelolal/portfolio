@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
+import Loading from "../layout/loading";
 import AchievementGroup from "./achievement-group";
 
 export default function AchievementList() {
   const [achievementGroups, setAchievementGroups] = useState();
 
   useEffect(() => {
-    fetch("/api/getAchievements", {
+    fetch("/blog/api/getAchievements", {
       method: "GET",
     })
       .then((response) => response.json())
@@ -15,7 +16,7 @@ export default function AchievementList() {
   }, []);
 
   if (!achievementGroups) {
-    return <p>Loading...</p>;
+    return <Loading />;
   }
 
   return (

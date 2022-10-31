@@ -1,23 +1,23 @@
 import { useEffect, useRef, useState } from "react";
 
 export default function EmailMe() {
-  const [isShowingEmail, setIsShowingEmail] = useState(false);
+  const [showingEmail, setShowingEmail] = useState(false);
 
   const nameInputRef = useRef();
   const emailInputRef = useRef();
   const bodyInputRef = useRef();
 
   useEffect(() => {
-    if (isShowingEmail) {
+    if (showingEmail) {
       const timer = setTimeout(() => {
-        setIsShowingEmail(false);
+        setShowingEmail(false);
       }, 5000);
 
       return () => {
         clearTimeout(timer);
       };
     }
-  }, [isShowingEmail, setIsShowingEmail]);
+  }, [showingEmail, setShowingEmail]);
 
   function addMessage() {
     fetch("api/addMessage", {
@@ -32,7 +32,7 @@ export default function EmailMe() {
       .then((response) => response.json())
       .then((data) => {
         if (data.message === "Message added") {
-          setIsShowingEmail(true);
+          setShowingEmail(true);
           nameInputRef.current.value = ""
           emailInputRef.current.value = ""
           bodyInputRef.current.value = ""
@@ -42,7 +42,7 @@ export default function EmailMe() {
 
   return (
     <nav className="navbar ms-auto">
-      {isShowingEmail && (
+      {showingEmail && (
         <p
           className="myToast"
         >
@@ -61,15 +61,15 @@ export default function EmailMe() {
         </button>
 
         <div
-          class="modal fade"
+          className="modal fade"
           id="emailMeModal"
           tabindex="-1"
           aria-labelledby="emailMeModalLabel"
           aria-hidden="true"
         >
-          <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-              <div class="modal-body">
+          <div className="modal-dialog modal-dialog-centered">
+            <div className="modal-content">
+              <div className="modal-body">
                 <div className="input-group mb-3">
                   <span className="input-group-text" id="name-input">
                     Name
@@ -100,10 +100,10 @@ export default function EmailMe() {
                   />
                 </div>
               </div>
-              <div class="modal-footer">
+              <div className="modal-footer">
                 <button
                   type="button"
-                  class="btn btn-secondary"
+                  className="btn btn-secondary"
                   data-bs-dismiss="modal"
                 >
                   Close
@@ -111,7 +111,7 @@ export default function EmailMe() {
                 <button
                   onClick={addMessage}
                   type="button"
-                  class="btn btn-primary"
+                  className="btn btn-primary"
                   data-bs-dismiss="modal"
                 >
                   Send

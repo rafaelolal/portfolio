@@ -1,9 +1,14 @@
-import Image from "next/image";
+import { Router, useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
+import Image from "next/image";
+import Link from "next/link";
+
 import Post from "./post";
+import Loading from "../layout/loading";
 
 export default function PostList(props) {
+  const router = useRouter();
   const [posts, setPosts] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
@@ -11,15 +16,12 @@ export default function PostList(props) {
     setIsLoading(true);
 
     let query = {};
-    props.currentList && (query.list = props.currentList);
+    router.query.list && (query.list = router.query.list);
     props.currentSearch && (query.search = props.currentSearch);
     props.currentYear && (query.year = props.currentYear);
     props.currentMonth && (query.month = props.currentMonth);
 
-    console.log("QUERY");
-    console.log(query);
-
-    fetch("/api/getPosts", {
+    fetch("/blog/api/getPosts", {
       method: "POST",
       body: JSON.stringify(query),
       headers: { "Content-Type": "application/json" },
@@ -30,31 +32,35 @@ export default function PostList(props) {
         setIsLoading(false);
       });
   }, [
+    router.isReady,
+    router.query.list,
     props.currentList,
     props.currentSearch,
     props.currentYear,
     props.currentMonth,
   ]);
 
+  function resetFilters() {
+    Router.reload(window.location.pathname);
+  }
+
   if (isLoading) {
-    return (
-      <div>
-        <p className="text-center">Loading...</p>
-        <Image
-          width="100%"
-          height="56%"
-          layout="responsive"
-          objectFit="cover"
-          className="img-thumbnail rounded mx-auto d-block"
-          src="https://static.skillshare.com/cdn-cgi/image/quality=80,width=1000,format=auto/uploads/project/dd1724f380aa3bc0b87155b0de4fcd86/d5bb402c.gif"
-          alt="..."
-        />
-      </div>
-    );
+    return <Loading />;
   }
 
   if (!posts) {
-    return <p>No posts available</p>;
+    return (
+      <div className="d-flex">
+        <Link href="posts">
+          <a
+            className="btn btn-secondary btn-block mt-4 mx-auto"
+            onClick={resetFilters}
+          >
+            Reset Filters
+          </a>
+        </Link>
+      </div>
+    );
   }
 
   return (

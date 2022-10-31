@@ -3,11 +3,7 @@ import { useState, useEffect } from "react";
 export default function Resume() {
   const size = useWindowSize();
 
-  return (
-    <div className="container">
-      <iframe src="/Resume.pdf" width="100%" height={size.height} />
-    </div>
-  );
+  return <iframe src="/blog/Resume.pdf" width="100%" height={size.height} />;
 }
 
 // Hook

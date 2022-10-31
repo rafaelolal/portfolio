@@ -28,7 +28,7 @@ export default function Interactions(props) {
   }, [isShowingCopy, setIsShowingCopy]);
 
   function copyLink() {
-    var link = "https://ralmeida.dev/blog#" + props.postId;
+    var link = "https://ralmeida.dev/blog/posts#" + props.postId;
     navigator.clipboard.writeText(link);
     props.setIsShowingCopy(true);
   }
@@ -54,7 +54,7 @@ export default function Interactions(props) {
     const beNotified = beNotifiedInputRef.current.checked;
     const postId = props.postId;
 
-    const response = fetch("/api/addComment", {
+    const response = fetch("/blog/api/addComment", {
       method: "POST",
       body: JSON.stringify({
         postId,
@@ -75,7 +75,7 @@ export default function Interactions(props) {
     });
 
     if (beNotified) {
-      const response = fetch("/api/addEmail", {
+      const response = fetch("/blog/api/addEmail", {
         method: "POST",
         body: JSON.stringify({ name, email, frequencyValue }),
         headers: {

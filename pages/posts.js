@@ -1,12 +1,9 @@
 import PostList from "../components/posts/post-list";
 import PostSearch from "../components/posts/post-search";
 
-import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
+import { useState } from "react";
 
 export default function BlogPage() {
-  const router = useRouter();
-
   const [isShowingCopy, setIsShowingCopy] = useState(false);
 
   const [currentList, setCurrentList] = useState();
@@ -14,20 +11,9 @@ export default function BlogPage() {
   const [currentYear, setCurrentYear] = useState();
   const [currentMonth, setCurrentMonth] = useState();
 
-  useEffect(() => {
-    setCurrentList(router.query.list);
-  }, [router.isReady, router.query.list]);
-
   return (
     <>
-      {isShowingCopy && (
-        <p
-          style={{ zIndex: 100 }}
-          className="badge text-bg-success position-fixed bottom-0 end-0 m-3 p-3 fs-5"
-        >
-          Link copied to clipboard!
-        </p>
-      )}
+      {isShowingCopy && <p className="myToast">Link copied!</p>}
 
       <div className="blogfolio">
         <p className="">BLOGFOLIO</p>

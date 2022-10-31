@@ -9,11 +9,16 @@ export default function PostSearch(props) {
   const monthInputRef = useRef();
 
   function filterByList(list) {
-    router.push({ pathname: "/blog", query: { list: list } }, undefined, {
+    router.push({ pathname: "", query: { list: list } }, undefined, {
       shallow: true,
     });
     console.log("CURRENT LIST " + list);
     props.setCurrentList(list);
+  }
+
+  function clearSearch() {
+    props.setCurrentSearch("")
+    searchInputRef.current.value = ""
   }
 
   function filterBy() {
@@ -35,16 +40,22 @@ export default function PostSearch(props) {
     <>
       <div className="col-12 col-md-4 mb-3">
         <div className="input-group h-100">
+          {searchInputRef.current && searchInputRef.current.value && (
+            <button
+              className="btn btn-secondary"
+              onClick={clearSearch}
+            >
+              Clear
+            </button>
+          )}
           <input
             type="email"
             className="form-control"
-            id="exampleFormControlInput1"
             placeholder="Key words..."
-            aria-describedby="button-addon1"
+            ref={searchInputRef}
           />
           <button
             className="btn btn-primary"
-            id="button-addon1"
             onClick={filterBy}
           >
             Search
@@ -118,10 +129,10 @@ export default function PostSearch(props) {
           <ul className="dropdown-menu">
             <li>
               <a
-                onClick={() => filterByList("Projects")}
+                onClick={() => filterByList("Project")}
                 className="dropdown-item fs-4"
               >
-                Projects
+                Project
               </a>
             </li>
             <li>
@@ -130,6 +141,14 @@ export default function PostSearch(props) {
                 className="dropdown-item fs-4"
               >
                 Gym
+              </a>
+            </li>
+            <li>
+              <a
+                onClick={() => filterByList("Achievement")}
+                className="dropdown-item fs-4"
+              >
+                Achievement
               </a>
             </li>
           </ul>

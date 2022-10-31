@@ -8,7 +8,7 @@ export default function CommentList(props) {
   const [comments, setComments] = useState();
 
   useEffect(() => {
-    fetch("/api/getComments", {
+    fetch("/blog/api/getComments", {
       method: "POST",
       body: JSON.stringify({ postId }),
       headers: {

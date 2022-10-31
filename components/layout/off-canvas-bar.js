@@ -2,6 +2,7 @@ import Link from "next/link";
 import DiscordIcon from "../icons/discord-icon";
 import EmailIcon from "../icons/email-icon";
 import HamburgerIcon from "../icons/hamburger-icon";
+import LinkIcon from "../icons/link-icon";
 import LinkedInIcon from "../icons/linkedIn-icon";
 import NavigiationIcon from "../icons/navigation-icon";
 import TelephoneIcon from "../icons/telephone-icon";
@@ -19,9 +20,7 @@ export default function OffCanvasBar() {
         >
           <HamburgerIcon />
         </a>
-        <a className="navbar-brand ms-2" href="#">
-          Logo
-        </a>
+        <a className="navbar-brand ms-2">Logo</a>
         <div
           className="offcanvas offcanvas-start"
           id="offcanvasNavbar"
@@ -36,11 +35,11 @@ export default function OffCanvasBar() {
             </h1>
           </div>
           <div className="offcanvas-body">
-            <p className="nav-link fs-5" href="#">
+            <p className="nav-link fs-5">
               <TelephoneIcon />
               +1 (908) 937-4898
             </p>
-            <p className="nav-link fs-5" href="#">
+            <p className="nav-link fs-5">
               <EmailIcon />
               rafaelpbcp@gmail.com
             </p>
@@ -50,51 +49,73 @@ export default function OffCanvasBar() {
                   className="nav-link"
                   href="https://www.linkedin.com/in/rafael-almeida-386bb0202/"
                 >
-                  <p className="fs-5" href="#">
+                  <p className="fs-5">
                     <LinkedInIcon />
                     Rafael Almeida
                   </p>
                 </a>
               </li>
             </ul>
-            <p className="nav-link fs-5" href="#">
+            <p className="nav-link fs-5">
               <DiscordIcon />
               Rafael Almeida#3398
             </p>
-            <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
-              <hr />
-              <li className="nav-item pb-2 dropdown fs-5">
-                <a
-                  className="nav-link dropdown-toggle"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  <NavigiationIcon />
-                  Navigation
-                </a>
-                <ul className="dropdown-menu">
-                  <li>
-                    <Link href="/">
-                      <a className="dropdown-item">Home</a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="about">
-                      <a className="dropdown-item">About Me</a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="posts">
-                      <a className="dropdown-item">Blog</a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="resume">
-                      <a className="dropdown-item">Resume</a>
-                    </Link>
-                  </li>
-                </ul>
+
+            <hr />
+
+            <p className="nav-link fs-5 mb-0">
+              <NavigiationIcon />
+              Navigation
+            </p>
+
+            <ul className="navbar-nav">
+              <li
+                className="nav-item"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNavbar"
+              >
+                <Link href="/">
+                  <a className="nav-link fs-5 pb-0">
+                    <LinkIcon />
+                    Home
+                  </a>
+                </Link>
+              </li>
+              <li
+                className="nav-item"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNavbar"
+              >
+                <Link href="about">
+                  <a className="nav-link fs-5 pb-0">
+                    <LinkIcon />
+                    About Me
+                  </a>
+                </Link>
+              </li>
+              <li
+                className="nav-item"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNavbar"
+              >
+                <Link href="posts">
+                  <a className="nav-link fs-5 pb-0">
+                    <LinkIcon />
+                    Blog
+                  </a>
+                </Link>
+              </li>
+              <li
+                className="nav-item"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNavbar"
+              >
+                <Link href="resume">
+                  <a className="nav-link fs-5 pb-0">
+                    <LinkIcon />
+                    Resume
+                  </a>
+                </Link>
               </li>
             </ul>
           </div>

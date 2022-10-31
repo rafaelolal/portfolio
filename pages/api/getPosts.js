@@ -1,7 +1,7 @@
 import { getDBClient } from "../../helpers/db";
 
-export default async function handler(req, res) {
-  const { list, search, year, month } = req.body;
+export async function getPosts(reqBody) {
+  const { list, search, year, month } = reqBody;
 
   const client = await getDBClient();
   const collection = client.db().collection("posts");
@@ -19,13 +19,13 @@ export default async function handler(req, res) {
   year && (filters.year = year);
   month && (filters.month = month);
 
-  const posts = await collection.find(filters).sort({_id:-1}).toArray();
+  const posts = await collection.find(filters).sort({ _id: -1 }).toArray();
   client.close();
 
   if (!posts || posts.length === 0) {
-    res.status(404).json({ message: "No posts found" });
+    return { message: "No posts found" };
   } else {
-    res.status(200).json({
+    return {
       data: posts.map((post) => ({
         list: post.list,
         title: post.title,
@@ -40,6 +40,15 @@ export default async function handler(req, res) {
         comments: post.comments,
         id: post._id.toString(),
       })),
-    });
+    };
+  }
+}
+
+export default async function handler(req, res) {
+  const response = await getPosts(req.body);
+  if (response.message == "No posts found") {
+    res.status(404).json(response);
+  } else {
+    res.status(200).json(response);
   }
 }

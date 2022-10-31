@@ -2,7 +2,7 @@ import Achievement from "./achievement";
 
 export default function AchievementGroup(props) {
   return (
-    <div className="col-md-5 col-12">
+    <div className="col-md-5 col-10">
       <div
         className="rounded bg-dark accordion accordion-flush p-3"
         id={"accordionGroup" + props.id}

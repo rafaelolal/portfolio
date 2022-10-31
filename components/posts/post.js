@@ -25,7 +25,12 @@ export default function Post(props) {
   return (
     <div>
       <div className="vl position-relative ps-2 mx-3">
-        <p className="badge fs-4 text-bg-primary rounded-5 position-absolute top-0 end-0">
+        <p
+          className={
+            "badge fs-4 rounded-5 position-absolute top-0 end-0 text-white text-bg-" +
+            props.list
+          }
+        >
           {props.list}
         </p>
         <p className="text-primary m-0 p-0">
@@ -36,7 +41,7 @@ export default function Post(props) {
         </div>
         <p>{props.description}</p>
       </div>
-      
+
       <div
         id={"carousel" + props.id}
         className="carousel slide card-img-bottom"
@@ -56,7 +61,7 @@ export default function Post(props) {
             </div>
           ))}
         </div>
-        
+
         <button
           className="carousel-control-prev"
           type="button"
@@ -69,7 +74,7 @@ export default function Post(props) {
           ></span>
           <span className="visually-hidden">Previous</span>
         </button>
-        
+
         <button
           className="carousel-control-next"
           type="button"

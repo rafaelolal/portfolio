@@ -4,10 +4,7 @@ import Link from "next/link";
 
 export default function LatestPost(props) {
   return (
-    <div
-      id={props.id}
-      className="bg-dark p-3 rounded"
-    >
+    <div id={props.id} className="bg-dark p-3 rounded">
       <div className="vl position-relative ps-2 mx-4">
         <small className="text-primary">
           {props.year + ", " + props.month + " " + props.day}
@@ -15,8 +12,8 @@ export default function LatestPost(props) {
         <div>
           <h2 className="fw-bold">{props.title}</h2>
           <h2>
-            <span className="badge rounded-5 text-bg-primary position-absolute top-0 end-0">
-              {props.list}
+            <span className="badge rounded-5 text-white text-bg-Latest position-absolute top-0 end-0">
+              Latest
             </span>
           </h2>
         </div>
@@ -69,9 +66,14 @@ export default function LatestPost(props) {
       </div>
 
       <div className="mt-3 d-flex">
-        <Link href="posts">
-          <a className="btn btn-secondary ms-auto">Visit</a>
-        </Link>
+        <div className="ms-auto">
+          <Link href="posts">
+            <a className="btn btn-secondary me-2">Visit</a>
+          </Link>
+          <Link href="posts?list=Featured">
+            <a className="btn btn-Featured text-white">See Featured</a>
+          </Link>
+        </div>
       </div>
     </div>
   );
