@@ -40,7 +40,7 @@ export default function Post(props) {
         <p>{props.description}</p>
       </div>
 
-      <div
+      {(props.images || props.images.length > 0) && (      <div
         id={"carousel" + postId}
         className="carousel slide card-img-bottom"
       >
@@ -90,7 +90,7 @@ export default function Post(props) {
           ></span>
           <span className="visually-hidden">Next</span>
         </button>
-      </div>
+      </div>)}
 
       <div className="mt-3">
         <Interactions
