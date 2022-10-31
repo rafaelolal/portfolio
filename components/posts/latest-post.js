@@ -16,55 +16,12 @@ export default function LatestPost(props) {
         <p>{props.description.slice(0, props.description.indexOf("."))}...</p>
       </div>
 
-      <div
-        id={"carousel" + props.id}
-        className="carousel slide card-img-bottom"
-      >
-        <div className="carousel-inner rounded">
-          {props.images.map((imageLink) => (
-            <div
-              className={
-                "carousel-item " + (imageLink == props.images[0] && "active")
-              }
-              key={imageLink}
-            >
-              <Image
-                src={"/blog" + imageLink}
-                className="d-block w-100"
-                alt="..."
-                height="56%"
-                width="100%"
-                layout="responsive"
-                objectFit="cover"
-              />
-            </div>
-          ))}
-        </div>
-        <button
-          className="carousel-control-prev"
-          type="button"
-          data-bs-target={"#carousel" + props.id}
-          data-bs-slide="prev"
-        >
-          <span
-            className="carousel-control-prev-icon"
-            aria-hidden="true"
-          ></span>
-          <span className="visually-hidden">Previous</span>
-        </button>
-        <button
-          className="carousel-control-next"
-          type="button"
-          data-bs-target={"#carousel" + props.id}
-          data-bs-slide="next"
-        >
-          <span
-            className="carousel-control-next-icon"
-            aria-hidden="true"
-          ></span>
-          <span className="visually-hidden">Next</span>
-        </button>
-      </div>
+      {(props.images || props.images.length > 0) && (
+        <Carousel 
+          postId={props.id}
+          images={props.images}
+        />
+      )}
 
       <div className="mt-3 d-flex">
         <div className="ms-auto">
