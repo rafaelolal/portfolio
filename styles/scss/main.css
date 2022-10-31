@@ -1,45 +1,45 @@
 @import url("https://fonts.googleapis.com/css?family=Tangerine");
+/* line 48, main.scss */
+.myToast { z-index: 100; }
+
+/* line 62, main.scss */
+.about { display: inline-block; }
+
+/* line 66, main.scss */
+.vl { border-left: 5px solid #ea4e48; }
+
+/* line 70, main.scss */
+.bl, .blogfolio { border-bottom: 5px solid #9fa8d1; }
+
+/* line 74, main.scss */
+.blogfolio { width: -webkit-fit-content; }
+
+/* line 88, main.scss */
+::-webkit-scrollbar { height: 5px; width: 5px; }
+
+/* line 93, main.scss */
+::-webkit-scrollbar-track { background-color: transparent; }
+
+/* line 97, main.scss */
+::-webkit-scrollbar-thumb { background-color: #9fa8d1; border-radius: 5px; border: 1px solid transparent; background-clip: content-box; }
+
+/* line 104, main.scss */
+::-webkit-scrollbar-thumb:hover { background-color: #212529; }
+
 @keyframes fadeInAnimation { 0% { opacity: 0; }
   100% { opacity: 100; } }
-/* line 10, main.scss */
-.fadeIn, .myToast { animation: 1s normal 0s 1 fadeInAnimation; }
+/* line 10, animations.scss */
+.fadeIn, .myToast { animation: 0.3s normal 0s 1 fadeInAnimation; }
 
 @keyframes commentAnimation { 0% { height: 0; }
   100% { height: 300; } }
-/* line 23, main.scss */
+/* line 23, animations.scss */
 .commentShow { animation: 1s normal 0s 1 commentAnimation; }
 
 @keyframes featuredPulseAnimation { 0% { color: #000; }
   100% { color: #ffad5c; } }
-/* line 36, main.scss */
+/* line 36, animations.scss */
 .featuredPulse { animation: featuredPulseAnimation 1s normal forwards; }
-
-/* line 87, main.scss */
-.myToast { z-index: 100; }
-
-/* line 101, main.scss */
-.about { display: inline-block; }
-
-/* line 105, main.scss */
-.vl { border-left: 5px solid #ea4e48; }
-
-/* line 109, main.scss */
-.bl, .blogfolio { border-bottom: 5px solid #9fa8d1; }
-
-/* line 113, main.scss */
-.blogfolio { width: -webkit-fit-content; }
-
-/* line 127, main.scss */
-::-webkit-scrollbar { height: 5px; width: 5px; }
-
-/* line 132, main.scss */
-::-webkit-scrollbar-track { background-color: transparent; }
-
-/* line 136, main.scss */
-::-webkit-scrollbar-thumb { background-color: #9fa8d1; border-radius: 5px; border: 1px solid transparent; background-clip: content-box; }
-
-/* line 143, main.scss */
-::-webkit-scrollbar-thumb:hover { background-color: #212529; }
 
 /*!
  * Bootstrap  v5.2.2 (https://getbootstrap.com/)

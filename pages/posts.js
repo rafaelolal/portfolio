@@ -13,7 +13,7 @@ export default function BlogPage() {
   const [currentMonth, setCurrentMonth] = useState();
 
   return (
-    <>
+    <div className="fadeIn">
       <Head>
         <title>Blog</title>
       </Head>
@@ -43,6 +43,6 @@ export default function BlogPage() {
           setIsShowingCopy={setIsShowingCopy}
         />
       </div>
-    </>
+    </div>
   );
 }

@@ -1,42 +1,3 @@
-@keyframes fadeInAnimation {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 100;
-  }
-}
-
-.fadeIn {
-  animation: 1s normal 0s 1 fadeInAnimation;
-}
-
-@keyframes commentAnimation {
-  0% {
-    height: 0;
-  }
-  100% {
-    height: 300;
-  }
-}
-
-.commentShow {
-  animation: 1s normal 0s 1 commentAnimation;
-}
-
-@keyframes featuredPulseAnimation {
-  0% {
-    color: #000;
-  }
-  100% {
-    color: #ffad5c;
-  }
-}
-
-.featuredPulse {
-  animation: featuredPulseAnimation 1s normal forwards;
-}
-
 $font-family-base: "Arial", serif;
 
 $tertiary: #212529;
@@ -144,5 +105,6 @@ $display-font-sizes: (
   background-color: $tertiary;
 }
 
+@import "./animations.scss";
 @import "../bootstrap/scss/bootstrap";
 @import url("https://fonts.googleapis.com/css?family=Tangerine");

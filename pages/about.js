@@ -4,10 +4,10 @@ import AchievementList from "../components/achievements/achievement-list";
 export default function AboutPage() {
   return (
     <>
-    <Head>
-      <title>About Me</title>
-    </Head>
-      <div className="row mt-5">
+      <Head>
+        <title>About Me</title>
+      </Head>
+      <div className="row mt-5 fadeIn">
         <div className="col-12 col-md-5 col-lg-4 rounded">
           <div className="bg-dark p-3 shadow">
             <Image

@@ -9,7 +9,7 @@ import Head from "next/head";
 
 export default function Home(props) {
   return (
-    <div className="row mt-5">
+    <div className="row mt-5 fadeIn">
       <Head>
         <title>Home</title>
       </Head>

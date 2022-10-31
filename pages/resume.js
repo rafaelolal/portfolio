@@ -10,7 +10,7 @@ export default function Resume() {
         <title>Resume</title>
       </Head>
       <iframe
-        className="mt-5"
+        className="mt-5 fadeIn"
         src="/blog/Resume.pdf"
         width="100%"
         height={size.height}
