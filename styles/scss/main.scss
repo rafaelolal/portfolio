@@ -116,7 +116,6 @@ $display-font-sizes: (
   width: -webkit-fit-content;
 
   p {
-    @extend .shadow;
     @extend .fw-bold;
     @extend .text-center;
     @extend .mx-4;
