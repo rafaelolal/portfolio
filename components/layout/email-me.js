@@ -20,7 +20,7 @@ export default function EmailMe() {
   }, [showingEmail, setShowingEmail]);
 
   function addMessage() {
-    fetch("api/addMessage", {
+    fetch("/blog/api/addMessage", {
       method: "PATCH",
       body: JSON.stringify({
         name: nameInputRef.current.value,

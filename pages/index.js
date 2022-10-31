@@ -15,7 +15,7 @@ export default function Home(props) {
         </div>
         <p className="text-center mt-3 mx-auto">
           Welcome to my blog. Here you will see blogs from my{" "}
-          <Link href="posts?list=Featured">
+          <Link href="/posts?list=Featured">
             <a className="text-Featured fw-bold">Featured</a>
           </Link>{" "}
           endeavors to my day-to-day activities. It is organized in a way that
@@ -45,7 +45,7 @@ export default function Home(props) {
             <p className="text-center">
               Yes, this is a blog, but if you are only interested in what really
               matters, explore the{" "}
-              <Link href="posts?list=Featured">
+              <Link href="/posts?list=Featured">
                 <a className="text-Featured fw-bold">Featured</a>
               </Link>{" "}
               posts. If you have the time, you can always check out other posts

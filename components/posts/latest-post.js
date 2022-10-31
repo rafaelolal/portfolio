@@ -30,7 +30,7 @@ export default function LatestPost(props) {
             key={imageLink}
             >
               <Image
-                src={imageLink}
+                src={"/blog"+imageLink}
                 className="d-block w-100"
                 alt="..."
                 height="56%"
@@ -69,10 +69,10 @@ export default function LatestPost(props) {
 
       <div className="mt-3 d-flex">
         <div className="ms-auto">
-          <Link href="posts">
+          <Link href="/posts">
             <a className="btn btn-secondary me-2">Visit</a>
           </Link>
-          <Link href="posts?list=Featured">
+          <Link href="/posts?list=Featured">
             <a className="btn btn-Featured text-white">See Featured</a>
           </Link>
         </div>

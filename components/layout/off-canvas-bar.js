@@ -74,7 +74,7 @@ export default function OffCanvasBar() {
                 data-bs-toggle="offcanvas"
                 data-bs-target="#offcanvasNavbar"
               >
-                <Link href="/">
+                <Link href="/blog">
                   <a className="nav-link fs-5 pb-0">
                     <LinkIcon />
                     Home
@@ -86,7 +86,7 @@ export default function OffCanvasBar() {
                 data-bs-toggle="offcanvas"
                 data-bs-target="#offcanvasNavbar"
               >
-                <Link href="about">
+                <Link href="/about">
                   <a className="nav-link fs-5 pb-0">
                     <LinkIcon />
                     About Me
@@ -98,7 +98,7 @@ export default function OffCanvasBar() {
                 data-bs-toggle="offcanvas"
                 data-bs-target="#offcanvasNavbar"
               >
-                <Link href="posts">
+                <Link href="/posts">
                   <a className="nav-link fs-5 pb-0">
                     <LinkIcon />
                     Blog
@@ -110,7 +110,7 @@ export default function OffCanvasBar() {
                 data-bs-toggle="offcanvas"
                 data-bs-target="#offcanvasNavbar"
               >
-                <Link href="resume">
+                <Link href="/resume">
                   <a className="nav-link fs-5 pb-0">
                     <LinkIcon />
                     Resume

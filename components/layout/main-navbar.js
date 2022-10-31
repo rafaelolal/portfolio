@@ -14,7 +14,7 @@ export default function MainNavbar() {
               </Link>
             </li>
             <li className="nav-item">
-              <Link href="about">
+              <Link href="/about">
                 <a className="nav-link fw-bold">ABOUT ME</a>
               </Link>
             </li>
@@ -29,12 +29,12 @@ export default function MainNavbar() {
               </a>
               <ul className="dropdown-menu">
                 <li>
-                  <Link href="posts">
+                  <Link href="/posts">
                     <a className="dropdown-item">Blog</a>
                   </Link>
                 </li>
                 <li>
-                  <Link href="resume">
+                  <Link href="/resume">
                     <a className="dropdown-item">Resume</a>
                   </Link>
                 </li>

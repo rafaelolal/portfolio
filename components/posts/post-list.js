@@ -51,7 +51,7 @@ export default function PostList(props) {
   if (!posts) {
     return (
       <div className="d-flex">
-        <Link href="posts">
+        <Link href="/posts">
           <a
             className="btn btn-secondary btn-block mt-4 mx-auto"
             onClick={resetFilters}

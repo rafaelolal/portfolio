@@ -1,8 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
-  basePath: "/blog",
+  // reactStrictMode: true,
+  // swcMinify: true,
   images: {
     remotePatterns: [
       {
@@ -11,6 +10,7 @@ const nextConfig = {
       },
     ],
   },
+  basePath: "/blog",
 }
 
 module.exports = nextConfig
