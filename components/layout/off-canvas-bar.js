@@ -74,7 +74,7 @@ export default function OffCanvasBar() {
                 data-bs-toggle="offcanvas"
                 data-bs-target="#offcanvasNavbar"
               >
-                <Link href="/blog">
+                <Link href="/">
                   <a className="nav-link fs-5 pb-0">
                     <LinkIcon />
                     Home
