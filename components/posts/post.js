@@ -15,7 +15,7 @@ export default function Post(props) {
   }
 
   function addLike() {
-    fetch("/api/addLike", {
+    fetch("/blog/api/addLike", {
       method: "PATCH",
       body: JSON.stringify({ postId }),
       headers: { "Content-Type": "application/json" },
@@ -53,7 +53,7 @@ export default function Post(props) {
               key={imageLink}
             >
               <Image
-                src={imageLink}
+                src={"/blog" + imageLink}
                 className="d-block w-100"
                 alt="..."
                 width="100%"
