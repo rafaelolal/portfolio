@@ -30,7 +30,7 @@ export default function Home(props) {
             </p>
             <p className="display-7 text-center">Why?</p>
             <p className="text-center">
-              It's complicated, but I independently came up with the idea of a
+              It is complicated, but I independently came up with the idea of a
               blogfolio right after finishing my normal portfolio and noticing
               that it was a literal copy and paste of everything else one sees.
               Blogging would also bring me the benefits of journaling.

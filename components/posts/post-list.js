@@ -67,11 +67,11 @@ export default function PostList(props) {
     <>
       {posts.map((post) => (
         <div
-          id={post.id}
           className="col-12 col-md-10 col-lg-8 mx-auto bg-dark p-3 rounded my-4"
+          id={post.id}
+          key={post.id}
         >
           <Post
-            key={post.id}
             id={post.id}
             list={post.list}
             title={post.title}

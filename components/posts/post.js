@@ -48,7 +48,10 @@ export default function Post(props) {
       >
         <div className="carousel-inner rounded">
           {props.images.map((imageLink) => (
-            <div className="carousel-item active">
+            <div 
+            className="carousel-item active"
+            key={imageLink}
+            >
               <Image
                 src={imageLink}
                 className="d-block w-100"
