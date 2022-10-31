@@ -15,7 +15,7 @@ export default function LatestPost(props) {
         <p>{props.description.slice(0, props.description.indexOf("."))}...</p>
       </div>
 
-      {(props.images || props.images.length > 0) && (
+      {(props.images && props.images.length > 0) && (
         <Carousel
           postId={props.id}
           images={props.images}

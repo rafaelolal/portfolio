@@ -41,7 +41,7 @@ export default function Post(props) {
         <p>{props.description}</p>
       </div>
 
-      {(props.images || props.images.length > 0) && (
+      {(props.images && props.images.length > 0) && (
         <Carousel 
           postId={postId}
           images={props.images}

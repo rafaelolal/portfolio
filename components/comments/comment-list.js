@@ -26,7 +26,7 @@ export default function CommentList(props) {
   }
 
   if (comments.length === 0) {
-    return <p className="display-6">Comments (0)</p>;
+    return <p className="display-6 mt-3">Comments (0)</p>;
   }
 
   return (
