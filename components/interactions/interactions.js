@@ -112,18 +112,20 @@ export default function Interactions(props) {
             className="btn btn-secondary rounded-5"
             type="button"
             data-bs-toggle="modal"
-            data-bs-target="#commentModal"
+            data-bs-target={"#commentModal" + props.postId}
           >
             Submit
           </button>
+
           <CommentModal
-            nameInputRe={nameInputRef}
+            nameInputRef={nameInputRef}
             emailInputRef={emailInputRef}
             beNotifiedHandler={beNotifiedHandler}
             beNotifiedInputRef={beNotifiedInputRef}
             addComment={addComment}
             frequencyHandler={frequencyHandler}
             beNotified={beNotified}
+            postId={props.postId}
           />
         </div>
       </div>

@@ -1,8 +1,9 @@
 export default function CommentModal(props) {
+
   return (
     <div
       className="modal fade"
-      id="commentModal"
+      id={"commentModal" + props.postId}
       aria-hidden="true"
     >
       <div className="modal-dialog modal-dialog-centered">
@@ -16,7 +17,6 @@ export default function CommentModal(props) {
                 type="text"
                 className="form-control"
                 id="basic-url"
-                aria-describedby="name-input"
                 ref={props.nameInputRef}
               />
             </div>
@@ -28,7 +28,6 @@ export default function CommentModal(props) {
                 type="text"
                 className="form-control"
                 id="basic-url"
-                aria-describedby="email-input"
                 ref={props.emailInputRef}
               />
             </div>

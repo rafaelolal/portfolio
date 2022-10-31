@@ -65,7 +65,7 @@ export default function Home(props) {
                 <a className="text-Featured fw-bold">Featured</a>
               </Link>{" "}
               posts. If you have the time, you can always check out other posts
-              to see what I am up to. On the side, is the latest post.
+              to see what I am up to. On this page is my latest post.
             </p>
           </div>
         </div>

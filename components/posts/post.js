@@ -41,7 +41,7 @@ export default function Post(props) {
       </div>
 
       <div
-        id={"carousel" + props.id}
+        id={"carousel" + postId}
         className="carousel slide card-img-bottom"
       >
         <div className="carousel-inner rounded">
@@ -68,7 +68,7 @@ export default function Post(props) {
         <button
           className="carousel-control-prev"
           type="button"
-          data-bs-target={"#carousel" + props.id}
+          data-bs-target={"#carousel" + postId}
           data-bs-slide="prev"
         >
           <span
@@ -81,7 +81,7 @@ export default function Post(props) {
         <button
           className="carousel-control-next"
           type="button"
-          data-bs-target={"#carousel" + props.id}
+          data-bs-target={"#carousel" + postId}
           data-bs-slide="next"
         >
           <span
@@ -94,7 +94,7 @@ export default function Post(props) {
 
       <div className="mt-3">
         <Interactions
-          postId={props.id}
+          postId={postId}
           addLike={addLike}
           showComments={showComments}
           likes={likes}

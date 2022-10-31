@@ -17,7 +17,7 @@ const monthNames = [
 ];
 
 export default async function handler(req, res) {
-  const { postId, name, email, body, frequencyValue } = req.body;
+  const { postId, name, email, body } = req.body;
 
   const client = await getDBClient();
 

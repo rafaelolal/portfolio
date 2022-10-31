@@ -4,7 +4,7 @@ export default async function handler(req, res) {
   const { postId } = req.body;
   const client = await getDBClient();
   const collection = client.db().collection("comments");
-  const comments = await collection.find({ postId: postId }).toArray();
+  const comments = await collection.find({ postId: postId }).sort({ _id: -1 }).toArray();
   client.close();
 
   res.status(200).json({
