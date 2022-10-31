@@ -5,7 +5,6 @@ import EmailIcon from "../icons/email-icon";
 import HamburgerIcon from "../icons/hamburger-icon";
 import LinkIcon from "../icons/link-icon";
 import LinkedInIcon from "../icons/linkedIn-icon";
-import NavigiationIcon from "../icons/navigation-icon";
 import TelephoneIcon from "../icons/telephone-icon";
 
 export default function OffCanvasBar() {

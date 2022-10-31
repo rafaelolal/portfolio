@@ -6,7 +6,7 @@ export default function Loading() {
       <Image
         width="50%"
         height="50%"
-        src="/blog/loading.gif"
+        src="https://media.tenor.com/On7kvXhzml4AAAAj/loading-gif.gif"
         alt="Loading..."
         objectFit="cover"
       />

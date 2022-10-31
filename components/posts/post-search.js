@@ -12,7 +12,6 @@ export default function PostSearch(props) {
     router.push({ pathname: "", query: { list: list } }, undefined, {
       shallow: true,
     });
-    console.log("CURRENT LIST " + list);
     props.setCurrentList(list);
   }
 

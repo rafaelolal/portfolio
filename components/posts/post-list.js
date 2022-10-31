@@ -16,7 +16,6 @@ export default function PostList(props) {
     setIsLoading(true);
 
     let query = {};
-    console.log("QUERY LIST " + router.query.list)
     router.query.list && (query.list = router.query.list);
     props.currentList && (query.list = props.currentList);
     props.currentSearch && (query.search = props.currentSearch);
