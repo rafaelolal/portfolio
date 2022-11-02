@@ -31,7 +31,7 @@ export default function AboutPage() {
           </p>
           <p className="display-6 fw-bold text-primary">I ASPIRE TO BE</p>
           <p>
-            A software engineer. As a child, I've always been inventive, and
+            A software engineer. As a child, I have always been inventive, and
             coding has been my way of actualizing the countless ideas scattered
             in my head.
           </p>
