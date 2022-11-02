@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useAppContext } from "../../context/state";
 
 import CommentIcon from "../icons/comment-icon";
 import LikeIcon from "../icons/like-icon";
@@ -6,6 +7,8 @@ import ShareIcon from "../icons/share-icon";
 import CommentModal from "./commentModal";
 
 export default function Interactions(props) {
+  const { name, setName, email, setEmail } = useAppContext();
+
   const nameInputRef = useRef();
   const emailInputRef = useRef();
   const bodyInputRef = useRef();
@@ -67,10 +70,14 @@ export default function Interactions(props) {
         "Content-Type": "application/json",
       },
     }).then(() => {
-      nameInputRef.current.value = "";
-      emailInputRef.current.value = "";
       bodyInputRef.current.value = "";
       beNotifiedInputRef.current.checked = false;
+      if (name != nameInputRef) {
+        setName(nameInputRef.current.value);
+      }
+      if (email != emailInputRef) {
+        setEmail(emailInputRef.current.value);
+      }
       props.showComments();
     });
 
@@ -91,14 +98,14 @@ export default function Interactions(props) {
         <div className="mx-auto">
           <LikeIcon onClick={props.addLike} />
           <small className="text-primary me-2 fs-7">{props.likes}</small>
-          
+
           <CommentIcon onClick={props.showComments} />
           <small className="text-primary me-3 fs-7">{props.commentCount}</small>
-          
+
           <ShareIcon onClick={copyLink} />
         </div>
       </div>
-      
+
       <div className="col-12 col-md-8 mt-1">
         <div className="input-group">
           <input
@@ -118,6 +125,8 @@ export default function Interactions(props) {
           </button>
 
           <CommentModal
+            name={name}
+            email={email}
             nameInputRef={nameInputRef}
             emailInputRef={emailInputRef}
             beNotifiedHandler={beNotifiedHandler}

@@ -18,6 +18,7 @@ export default function CommentModal(props) {
                 className="form-control"
                 id="basic-url"
                 ref={props.nameInputRef}
+                defaultValue={props.name}
               />
             </div>
             <div className="input-group mb-1">
@@ -29,6 +30,7 @@ export default function CommentModal(props) {
                 className="form-control"
                 id="basic-url"
                 ref={props.emailInputRef}
+                defaultValue={props.email}
               />
             </div>
           </div>

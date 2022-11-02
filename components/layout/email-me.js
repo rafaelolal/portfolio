@@ -1,6 +1,11 @@
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
+import { useAppContext } from "../../context/state";
 
 export default function EmailMe() {
+  const { name, setName, email, setEmail } = useAppContext();
+
+  console.log("name " + name + " email " + email);
+
   const [showingEmail, setShowingEmail] = useState(false);
 
   const nameInputRef = useRef();
@@ -33,22 +38,20 @@ export default function EmailMe() {
       .then((data) => {
         if (data.message === "Message added") {
           setShowingEmail(true);
-          nameInputRef.current.value = ""
-          emailInputRef.current.value = ""
-          bodyInputRef.current.value = ""
+          bodyInputRef.current.value = "";
+        }
+        if (name != nameInputRef.current.value) {
+          setName(nameInputRef.current.value);
+        }
+        if (email != emailInputRef.current.value) {
+          setEmail(emailInputRef.current.value);
         }
       });
   }
 
   return (
     <nav className="navbar ms-auto">
-      {showingEmail && (
-        <p
-          className="myToast"
-        >
-          Message sent!
-        </p>
-      )}
+      {showingEmail && <p className="myToast">Message sent!</p>}
       <div className="container-fluid">
         <button
           type="button"
@@ -78,6 +81,7 @@ export default function EmailMe() {
                     className="form-control"
                     aria-describedby="name-input"
                     ref={nameInputRef}
+                    defaultValue={name}
                   />
                 </div>
                 <div className="input-group mb-3">
@@ -89,6 +93,7 @@ export default function EmailMe() {
                     className="form-control"
                     aria-describedby="email-input"
                     ref={emailInputRef}
+                    defaultValue={email}
                   />
                 </div>
                 <div className="input-group">

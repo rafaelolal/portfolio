@@ -17,6 +17,7 @@ $theme-colors: (
   "Gym": #81c45a,
   "Project": #9468a1,
   "Achievement": #da81ac,
+  "General": #C4A484,
 );
 
 $navbar-light-color: rgb(0, 0, 0);
@@ -24,7 +25,7 @@ $navbar-light-hover-color: $primary;
 
 $offcanvas-horizontal-width: auto;
 
-$font-size-base: 0.75rem;
+$font-size-base: 0.9375rem;
 
 $font-sizes: (
   1: $font-size-base * 1.75,

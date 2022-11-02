@@ -25,19 +25,16 @@ export default function Home(props) {
           images={props.post.images}
         />
       </div>
-      <div className="col-12 col-md-6 my-5">
+      <div className="col-12 col-md-6 my-auto">
         <div className="blogfolio">
           <p>WELCOME</p>
         </div>
         <p className="text-center mt-3 mx-auto mt-4">
-          Welcome to my blog. Here you will see blogs from my{" "}
-          <Link href="/posts?list=Featured">
-            <a className="fw-bold featuredPulse">Featured</a>
-          </Link>{" "}
-          endeavors to my day-to-day activities. It is organized in a way that
-          you can easily find out what I am up to, and what I am proud of. You
-          will also have the opportunity to learn more about me than you could
-          in a normal portfolio.
+          Welcome to my blog. Here you will see blogs from my Featured endeavors
+          to my day-to-day activities. It is organized in a way that you can
+          easily find out what I am up to, and what I am proud of. You will also
+          have the opportunity to learn more about me than you could in a normal
+          portfolio.
         </p>
         <div className="row mt-5">
           <div className="col-12 col-md-6 mx-auto">
@@ -60,12 +57,9 @@ export default function Home(props) {
 
             <p className="text-center">
               Yes, this is a blog, but if you are only interested in what really
-              matters, explore the{" "}
-              <Link href="/posts?list=Featured">
-                <a className="fw-bold featuredPulse">Featured</a>
-              </Link>{" "}
-              posts. If you have the time, you can always check out other posts
-              to see what I am up to. On this page is my latest post.
+              matters, explore the Featured posts. If you have the time, you can
+              always check out other posts to see what I am up to. On this page
+              is my latest post.
             </p>
           </div>
         </div>

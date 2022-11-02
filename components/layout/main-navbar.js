@@ -18,27 +18,15 @@ export default function MainNavbar() {
                 <a className="nav-link fw-bold">ABOUT ME</a>
               </Link>
             </li>
-            <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle fw-bold"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                MORE
-              </a>
-              <ul className="dropdown-menu">
-                <li>
-                  <Link href="/posts">
-                    <a className="dropdown-item">Blog</a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/resume">
-                    <a className="dropdown-item">Resume</a>
-                  </Link>
-                </li>
-              </ul>
+            <li>
+              <Link href="/posts">
+                <a className="nav-link fw-bold">BLOG</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/resume">
+                <a className="nav-link fw-bold">RESUME</a>
+              </Link>
             </li>
           </ul>
         </div>
