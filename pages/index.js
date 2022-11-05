@@ -104,7 +104,7 @@ export default function Home(props) {
           </div>
 
           <div className="col-12 col-md-5 my-auto">
-            <div className="blogfolio">
+            <div className="blogfolio mt-5">
               <p>LOOK AROUND</p>
             </div>
             <p className="mt-3 text-center">
