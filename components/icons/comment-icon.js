@@ -1,7 +1,7 @@
 export default function CommentIcon(props) {
   return (
     <svg
-      length="auto"
+      width="2rem"
       height="auto"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 512 512"

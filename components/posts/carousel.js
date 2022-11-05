@@ -4,8 +4,76 @@ export default function Carousel(props) {
   return (
     <>
       <div
+        class="modal fade"
+        id={"carouselModal" + props.postId}
+        tabIndex="-1"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-body">
+              <div
+                id={"carousel" + props.postId}
+                className="carousel slide card-img-bottom"
+              >
+                <div className="carousel-inner rounded">
+                  {props.images.map((imageLink) => (
+                    <div
+                      className={
+                        "carousel-item " +
+                        (imageLink == props.images[0] && "active")
+                      }
+                      key={imageLink}
+                    >
+                      <img
+                        src={"/blog" + imageLink}
+                        alt="..."
+                        className="img-fluid"
+                      />
+                    </div>
+                  ))}
+                </div>
+
+                {props.images.length > 1 && (
+                  <>
+                    <button
+                      className="carousel-control-prev"
+                      type="button"
+                      data-bs-target={"#carousel" + props.postId}
+                      data-bs-slide="prev"
+                    >
+                      <span
+                        className="carousel-control-prev-icon"
+                        aria-hidden="true"
+                      ></span>
+                      <span className="visually-hidden">Previous</span>
+                    </button>
+
+                    <button
+                      className="carousel-control-next"
+                      type="button"
+                      data-bs-target={"#carousel" + props.postId}
+                      data-bs-slide="next"
+                    >
+                      <span
+                        className="carousel-control-next-icon"
+                        aria-hidden="true"
+                      ></span>
+                      <span className="visually-hidden">Next</span>
+                    </button>
+                  </>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
         id={"carousel" + props.postId}
         className="carousel slide card-img-bottom"
+        data-bs-toggle="modal"
+        data-bs-target={"#carouselModal" + props.postId}
       >
         <div className="carousel-inner rounded">
           {props.images.map((imageLink) => (

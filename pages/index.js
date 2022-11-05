@@ -13,17 +13,11 @@ import ResumeIcon from "../components/icons/resume-icon";
 import BlogIcon from "../components/icons/blog-icon";
 
 export default function Home(props) {
-  function convertRemToPixels(rem) {
-    return (
-      rem * parseFloat(getComputedStyle(document.documentElement).fontSize)
-    );
-  }
-
   useEffect(() => {
     window.onscroll = function (e) {
       let el = document.getElementsByClassName("jump")[0];
       if (el) {
-        if (window.scrollY >= convertRemToPixels(5)) {
+        if (window.scrollY >= 80) {
           el.style.opacity = 0;
         } else {
           el.style.opacity = 100;
@@ -54,13 +48,14 @@ export default function Home(props) {
 
             <div className="col-12 col-md-6 mx-auto fadeIn2">
               <Link href="/about">
-                <>
+                <a>
                   <p className="text-center text-primary">
                     <QuestionIcon />
                   </p>
-                  <p className="display-6 fw-bold text-center">Why?</p>
-                </>
+                </a>
               </Link>
+              <p className="display-6 fw-bold text-center">Why?</p>
+
               <p className="text-center">
                 I decided to create a blogfolio after noticing that all
                 portfolios, though some may be more complex, always fall in the
@@ -70,13 +65,13 @@ export default function Home(props) {
 
             <div className="col-12 col-md-6 fadeIn3">
               <Link href="/posts">
-                <>
+                <a>
                   <p className="text-center text-primary">
                     <ExploreIcon />
                   </p>
-                  <p className="display-6 fw-bold text-center">Explore!</p>
-                </>
+                </a>
               </Link>
+              <p className="display-6 fw-bold text-center">Explore!</p>
 
               <p className="text-center">
                 If you are only interested in what really matters, explore About
@@ -117,43 +112,43 @@ export default function Home(props) {
             </p>
 
             <div className="row g-2 mt-5 justify-content-center">
-              <div className="col-6">
+              <div className="col-7">
                 <center>
                   <Link href="/about">
-                    <>
+                    <a>
                       <AboutIcon />
                       <a className="btn btn-dark">ABOUT ME</a>
-                    </>
+                    </a>
                   </Link>
-                  <p className="mt-2 text-center">
+                  <p className="mt-4 text-center">
                     Check out my achievements and what I like to do.
                   </p>
                 </center>
               </div>
 
-              <div className="col-6">
+              <div className="col-7 mt-4">
                 <center>
                   <Link href="/resume">
-                    <>
+                    <a>
                       <ResumeIcon />
                       <a className="btn btn-dark">RESUME</a>
-                    </>
+                    </a>
                   </Link>
                 </center>
-                <p className="mt-2 text-center">
+                <p className="mt-4 text-center">
                   If writing bores you, read it in succinctly with my resume.
                 </p>
               </div>
 
-              <div className="col-6 mx-auto">
+              <div className="col-7 mt-4">
                 <center>
                   <Link href="/posts">
-                    <>
+                    <a>
                       <BlogIcon />
                       <a className="btn btn-dark">BLOG</a>
-                    </>
+                    </a>
                   </Link>
-                  <p className="mt-2 text-center">
+                  <p className="mt-4 text-center">
                     Check out the featured blogs for my best accomplishments
                   </p>
                 </center>
