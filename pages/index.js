@@ -53,10 +53,12 @@ export default function Home(props) {
             </div>
 
             <div className="col-12 col-md-6 mx-auto fadeIn2">
-              <p className="text-center text-primary">
-                <QuestionIcon />
-              </p>
-              <p className="display-6 fw-bold text-center">Why?</p>
+              <Link href="/about">
+                <p className="text-center text-primary">
+                  <QuestionIcon />
+                </p>
+                <p className="display-6 fw-bold text-center">Why?</p>
+              </Link>
               <p className="text-center">
                 I decided to create a blogfolio after noticing that all
                 portfolios, though some may be more complex, always fall in the
@@ -65,10 +67,12 @@ export default function Home(props) {
             </div>
 
             <div className="col-12 col-md-6 fadeIn3">
-              <p className="text-center text-primary">
-                <ExploreIcon />
-              </p>
-              <p className="display-6 fw-bold text-center">Explore!</p>
+              <Link href="/posts">
+                <p className="text-center text-primary">
+                  <ExploreIcon />
+                </p>
+                <p className="display-6 fw-bold text-center">Explore!</p>
+              </Link>
 
               <p className="text-center">
                 If you are only interested in what really matters, explore About
@@ -111,10 +115,10 @@ export default function Home(props) {
             <div className="row g-2 mt-5 justify-content-center">
               <div className="col-6">
                 <center>
-                  <AboutIcon />
-                  <button className="btn btn-dark">
-                    ABOUT ME
-                  </button>
+                  <Link href="/about">
+                    <AboutIcon />
+                    <a className="btn btn-dark">ABOUT ME</a>
+                  </Link>
                   <p className="mt-2 text-center">
                     Check out my achievements and what I like to do.
                   </p>
@@ -123,10 +127,10 @@ export default function Home(props) {
 
               <div className="col-6">
                 <center>
-                  <ResumeIcon />
-                  <button className="btn btn-dark">
-                    RESUME
-                  </button>
+                  <Link href="/resume">
+                    <ResumeIcon />
+                    <a className="btn btn-dark">RESUME</a>
+                  </Link>
                 </center>
                 <p className="mt-2 text-center">
                   If writing bores you, read it in succinctly with my resume.
@@ -135,8 +139,10 @@ export default function Home(props) {
 
               <div className="col-6 mx-auto">
                 <center>
-                  <BlogIcon />
-                  <button className="btn btn-dark">BLOG</button>
+                  <Link href="/posts">
+                    <BlogIcon />
+                    <a className="btn btn-dark">BLOG</a>
+                  </Link>
                   <p className="mt-2 text-center">
                     Check out the featured blogs for my best accomplishments
                   </p>
