@@ -17,22 +17,22 @@
 
 .fadeIn1 {
   @extend .fadeIn;
-  animation-delay: 1s;
+  animation-delay: 0s;
 }
 
 .fadeIn2 {
   @extend .fadeIn;
-  animation-delay: 2s;
+  animation-delay: 1s;
 }
 
 .fadeIn3 {
   @extend .fadeIn;
-  animation-delay: 3s;
+  animation-delay: 2s;
 }
 
 .fadeIn4 {
   @extend .fadeIn;
-  animation-delay: 4s;
+  animation-delay: 3s;
 }
 
 @keyframes commentAnimation {
