@@ -2,8 +2,8 @@ export default function EmailIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="auto"
-      height="2rem"
+      width="2rem"
+      height="auto"
       fill="currentColor"
       className="bi bi-envelope me-4"
       viewBox="0 0 16 16"

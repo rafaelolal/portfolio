@@ -25,7 +25,7 @@ export default function OffCanvasBar() {
             src="/blog/logo.png"
             alt="..."
             height="32px"
-            width="auto"
+            width="2rem"
             layout="responsive"
           />
         </a>
