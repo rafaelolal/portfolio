@@ -4,8 +4,6 @@ import { useAppContext } from "../../context/state";
 export default function EmailMe() {
   const { name, setName, email, setEmail } = useAppContext();
 
-  console.log("name " + name + " email " + email);
-
   const [showingEmail, setShowingEmail] = useState(false);
 
   const nameInputRef = useRef();
