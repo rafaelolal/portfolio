@@ -4,7 +4,7 @@ import Carousel from "./carousel";
 export default function LatestPost(props) {
   return (
     <div id={props.id} className="bg-dark p-3 rounded shadow">
-      <div className="vl position-relative ps-2 mx-4">
+      <div className="vl ps-2 mx-4">
         <div className="d-flex justify-content-between">
           <p className="text-primary m-0">
             {props.year + ", " + props.month + " " + props.day}
@@ -15,6 +15,7 @@ export default function LatestPost(props) {
             Latest
           </button>
         </div>
+        
         <p className="fw-bold fs-2 mb-0">{props.title}</p>
         <p>{props.description.slice(0, props.description.indexOf("."))}...</p>
       </div>

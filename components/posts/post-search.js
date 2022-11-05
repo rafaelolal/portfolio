@@ -16,8 +16,8 @@ export default function PostSearch(props) {
   }
 
   function clearSearch() {
-    props.setCurrentSearch("")
-    searchInputRef.current.value = ""
+    props.setCurrentSearch("");
+    searchInputRef.current.value = "";
   }
 
   function filterBy() {
@@ -36,14 +36,11 @@ export default function PostSearch(props) {
   }
 
   return (
-    <>
+    <div className="row mt-5 gx-3">
       <div className="col-12 col-md-4 mb-3">
         <div className="input-group h-100">
           {searchInputRef.current && searchInputRef.current.value && (
-            <button
-              className="btn btn-secondary"
-              onClick={clearSearch}
-            >
+            <button className="btn btn-secondary" onClick={clearSearch}>
               Clear
             </button>
           )}
@@ -53,10 +50,7 @@ export default function PostSearch(props) {
             placeholder="Key words..."
             ref={searchInputRef}
           />
-          <button
-            className="btn btn-primary text-white"
-            onClick={filterBy}
-          >
+          <button className="btn btn-primary text-white" onClick={filterBy}>
             Search
           </button>
         </div>
@@ -153,6 +147,6 @@ export default function PostSearch(props) {
           </ul>
         </div>
       </div>
-    </>
+    </div>
   );
 }

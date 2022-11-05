@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function MainNavbar() {
+export default function CenterNavbar() {
   return (
     <nav className="navbar navbar-expand-lg mx-auto">
       <div className="container-fluid">

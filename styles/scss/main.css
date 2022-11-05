@@ -38,19 +38,19 @@
 @keyframes fadeInAnimation { 0% { opacity: 0; }
   100% { opacity: 100; } }
 /* line 10, animations.scss */
-.fadeIn, .myToast, .fadeIn1, .fadeIn2, .fadeIn3, .fadeIn4 { opacity: 0; animation-name: fadeInAnimation; animation-duration: 0.5s; animation-iteration-count: 1; animation-fill-mode: forwards; }
+.fadeIn, .myToast, .fadeIn1, .fadeIn2, .fadeIn3, .fadeIn4 { animation: 0.5s normal 0s 1 fadeInAnimation; }
 
-/* line 18, animations.scss */
-.fadeIn1 { animation-delay: 0s; }
+/* line 14, animations.scss */
+.fadeIn1 { animation-delay: 0s; animation-fill-mode: forwards; }
 
-/* line 23, animations.scss */
-.fadeIn2 { animation-delay: 1s; }
+/* line 20, animations.scss */
+.fadeIn2 { animation-delay: 1s; animation-fill-mode: forwards; }
 
-/* line 28, animations.scss */
-.fadeIn3 { animation-delay: 2s; }
+/* line 26, animations.scss */
+.fadeIn3 { animation-delay: 2s; animation-fill-mode: forwards; }
 
-/* line 33, animations.scss */
-.fadeIn4 { animation-delay: 3s; }
+/* line 32, animations.scss */
+.fadeIn4 { animation-delay: 3s; animation-fill-mode: forwards; }
 
 @keyframes commentAnimation { 0% { height: 0; }
   100% { height: 300; } }

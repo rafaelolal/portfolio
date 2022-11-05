@@ -1,9 +1,6 @@
 import { Router, useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
-import Image from "next/image";
-import Link from "next/link";
-
 import Post from "./post";
 import Loading from "../layout/loading";
 
@@ -12,7 +9,13 @@ export default function PostList(props) {
   const [posts, setPosts] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
-  const {currentSearch, currentList, currentYear, currentMonth} = props
+  const {
+    setCurrentList,
+    currentSearch,
+    currentList,
+    currentYear,
+    currentMonth,
+  } = props;
 
   useEffect(() => {
     setIsLoading(true);
@@ -20,7 +23,7 @@ export default function PostList(props) {
     let query = {};
     if (currentList && !router.query.list) {
       query.list = "";
-      setCurrentList("")
+      setCurrentList("");
     } else {
       router.query.list && (query.list = router.query.list);
       currentList && (query.list = currentList);
@@ -48,32 +51,16 @@ export default function PostList(props) {
     currentMonth,
   ]);
 
-  function resetFilters() {
-    Router.reload(window.location.pathname);
-  }
-
   if (isLoading) {
     return <Loading />;
   }
 
   if (!posts) {
-    return (
-      <div className="d-flex flex-column my-5">
-        <p className="text-center fw-bold">NO POSTS FOUND</p>
-        <Link href="/posts">
-          <a
-            className="btn btn-secondary btn-block mx-auto text-white"
-            onClick={resetFilters}
-          >
-            Reset Filters
-          </a>
-        </Link>
-      </div>
-    );
+    return <p className="text-center fw-bold mt-5">NO POSTS FOUND</p>;
   }
 
   return (
-    <div className="fadeIn d-flex flex-column">
+    <div className="fadeIn">
       {posts.map((post) => (
         <div
           className="col-12 col-md-10 col-lg-8 mx-auto bg-dark p-3 rounded my-5 shadow"
@@ -99,14 +86,6 @@ export default function PostList(props) {
           />
         </div>
       ))}
-      <Link href="/posts">
-        <a
-          className="btn btn-secondary btn-block mx-auto mb-5 text-white"
-          onClick={resetFilters}
-        >
-          Reset Filters
-        </a>
-      </Link>
     </div>
   );
 }

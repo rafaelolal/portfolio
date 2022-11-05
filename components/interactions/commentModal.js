@@ -1,5 +1,4 @@
 export default function CommentModal(props) {
-
   return (
     <div
       className="modal fade"

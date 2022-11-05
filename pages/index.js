@@ -54,10 +54,12 @@ export default function Home(props) {
 
             <div className="col-12 col-md-6 mx-auto fadeIn2">
               <Link href="/about">
-                <p className="text-center text-primary">
-                  <QuestionIcon />
-                </p>
-                <p className="display-6 fw-bold text-center">Why?</p>
+                <>
+                  <p className="text-center text-primary">
+                    <QuestionIcon />
+                  </p>
+                  <p className="display-6 fw-bold text-center">Why?</p>
+                </>
               </Link>
               <p className="text-center">
                 I decided to create a blogfolio after noticing that all
@@ -68,10 +70,12 @@ export default function Home(props) {
 
             <div className="col-12 col-md-6 fadeIn3">
               <Link href="/posts">
-                <p className="text-center text-primary">
-                  <ExploreIcon />
-                </p>
-                <p className="display-6 fw-bold text-center">Explore!</p>
+                <>
+                  <p className="text-center text-primary">
+                    <ExploreIcon />
+                  </p>
+                  <p className="display-6 fw-bold text-center">Explore!</p>
+                </>
               </Link>
 
               <p className="text-center">
@@ -116,8 +120,10 @@ export default function Home(props) {
               <div className="col-6">
                 <center>
                   <Link href="/about">
-                    <AboutIcon />
-                    <a className="btn btn-dark">ABOUT ME</a>
+                    <>
+                      <AboutIcon />
+                      <a className="btn btn-dark">ABOUT ME</a>
+                    </>
                   </Link>
                   <p className="mt-2 text-center">
                     Check out my achievements and what I like to do.
@@ -128,8 +134,10 @@ export default function Home(props) {
               <div className="col-6">
                 <center>
                   <Link href="/resume">
-                    <ResumeIcon />
-                    <a className="btn btn-dark">RESUME</a>
+                    <>
+                      <ResumeIcon />
+                      <a className="btn btn-dark">RESUME</a>
+                    </>
                   </Link>
                 </center>
                 <p className="mt-2 text-center">
@@ -140,8 +148,10 @@ export default function Home(props) {
               <div className="col-6 mx-auto">
                 <center>
                   <Link href="/posts">
-                    <BlogIcon />
-                    <a className="btn btn-dark">BLOG</a>
+                    <>
+                      <BlogIcon />
+                      <a className="btn btn-dark">BLOG</a>
+                    </>
                   </Link>
                   <p className="mt-2 text-center">
                     Check out the featured blogs for my best accomplishments

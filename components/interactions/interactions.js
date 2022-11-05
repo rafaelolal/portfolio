@@ -123,20 +123,20 @@ export default function Interactions(props) {
           >
             Submit
           </button>
-
-          <CommentModal
-            name={name}
-            email={email}
-            nameInputRef={nameInputRef}
-            emailInputRef={emailInputRef}
-            beNotifiedHandler={beNotifiedHandler}
-            beNotifiedInputRef={beNotifiedInputRef}
-            addComment={addComment}
-            frequencyHandler={frequencyHandler}
-            beNotified={beNotified}
-            postId={props.postId}
-          />
         </div>
+
+        <CommentModal
+          name={name}
+          email={email}
+          nameInputRef={nameInputRef}
+          emailInputRef={emailInputRef}
+          beNotifiedHandler={beNotifiedHandler}
+          beNotifiedInputRef={beNotifiedInputRef}
+          addComment={addComment}
+          frequencyHandler={frequencyHandler}
+          beNotified={beNotified}
+          postId={props.postId}
+        />
       </div>
     </div>
   );

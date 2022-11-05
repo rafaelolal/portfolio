@@ -8,31 +8,31 @@
 }
 
 .fadeIn {
-  opacity: 0;
-  animation-name: fadeInAnimation;
-  animation-duration: 0.5s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
+  animation: 0.5s normal 0s 1 fadeInAnimation;
 }
 
 .fadeIn1 {
   @extend .fadeIn;
   animation-delay: 0s;
+  animation-fill-mode: forwards;
 }
 
 .fadeIn2 {
   @extend .fadeIn;
   animation-delay: 1s;
+  animation-fill-mode: forwards;
 }
 
 .fadeIn3 {
   @extend .fadeIn;
   animation-delay: 2s;
+  animation-fill-mode: forwards;
 }
 
 .fadeIn4 {
   @extend .fadeIn;
   animation-delay: 3s;
+  animation-fill-mode: forwards;
 }
 
 @keyframes commentAnimation {
