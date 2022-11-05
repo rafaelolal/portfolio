@@ -84,7 +84,7 @@ export default function Home(props) {
       </section>
 
       <section id="section2" className="tall2 d-flex">
-        <div className="row my-auto">
+        <div className="row py-auto g-5">
           <div className="col-12 col-md-7 my-auto">
             <div className="">
               <LatestPost
