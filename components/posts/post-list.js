@@ -12,20 +12,22 @@ export default function PostList(props) {
   const [posts, setPosts] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
+  const {currentSearch, currentList, currentYear, currentMonth} = props
+
   useEffect(() => {
     setIsLoading(true);
 
     let query = {};
-    if (props.currentList && !router.query.list) {
+    if (currentList && !router.query.list) {
       query.list = "";
-      props.setCurrentList("")
+      setCurrentList("")
     } else {
       router.query.list && (query.list = router.query.list);
-      props.currentList && (query.list = props.currentList);
+      currentList && (query.list = currentList);
     }
-    props.currentSearch && (query.search = props.currentSearch);
-    props.currentYear && (query.year = props.currentYear);
-    props.currentMonth && (query.month = props.currentMonth);
+    currentSearch && (query.search = currentSearch);
+    currentYear && (query.year = currentYear);
+    currentMonth && (query.month = currentMonth);
 
     fetch("/blog/api/getPosts", {
       method: "POST",
@@ -40,10 +42,10 @@ export default function PostList(props) {
   }, [
     router.isReady,
     router.query.list,
-    props.currentList,
-    props.currentSearch,
-    props.currentYear,
-    props.currentMonth,
+    currentList,
+    currentSearch,
+    currentYear,
+    currentMonth,
   ]);
 
   function resetFilters() {
