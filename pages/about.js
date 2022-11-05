@@ -23,32 +23,40 @@ export default function AboutPage() {
         </div>
 
         <div className="col-12 col-md-7 col-lg-8 p-3 my-auto">
-          <p className="display-3 fw-bold">ABOUT ME</p>
-          <p>
-            I was born in Brazil, Minas Gerais and moved to the United States in
-            2016. I am currently a senior at the Academy for Information
-            Technology, Scotch Plains.
-          </p>
-          <p className="display-6 fw-bold text-primary">I ASPIRE TO BE</p>
-          <p>
-            A software engineer. As a child, I have always been inventive, and
-            coding has been my way of actualizing the countless ideas scattered
-            in my head.
-          </p>
-          <p className="display-6 fw-bold text-primary">I LIKE</p>
-          <p>
-            To work out and play video games (this excludes coding). Working out
-            has completely changed my life, and I play games competitively in my
-            free time.
-          </p>
-          <p className="display-6 fw-bold text-primary">
-            I AM CURRENTLY WORKING ON
-          </p>
-          <p>
-            College applications, and of course, this blog project. I have been
-            working diligently for hours on end to make the user experience as
-            good as possible to make using the blog enjoyable.
-          </p>
+          <div className="fadeIn1">
+            <p className="display-3 fw-bold">ABOUT ME</p>
+            <p>
+              I was born in Brazil, Minas Gerais and moved to the United States
+              in 2016. I am currently a senior at the Academy for Information
+              Technology, Scotch Plains.
+            </p>
+          </div>
+          <div className="fadeIn2">
+            <p className="display-6 fw-bold text-primary">I ASPIRE TO BE</p>
+            <p>
+              A software engineer. As a child, I have always been inventive, and
+              coding has been my way of actualizing the countless ideas
+              scattered in my head.
+            </p>
+          </div>
+          <div className="fadeIn3">
+            <p className="display-6 fw-bold text-primary">I LIKE</p>
+            <p>
+              To work out and play video games (this excludes coding). Working
+              out has completely changed my life, and I play games competitively
+              in my free time.
+            </p>
+          </div>
+          <div className="fadeIn4">
+            <p className="display-6 fw-bold text-primary">
+              I AM CURRENTLY WORKING ON
+            </p>
+            <p>
+              College applications, and of course, this blog project. I have
+              been working diligently for hours on end to make the user
+              experience as good as possible to make using the blog enjoyable.
+            </p>
+          </div>
         </div>
       </div>
 

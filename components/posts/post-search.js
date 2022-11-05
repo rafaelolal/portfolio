@@ -54,7 +54,7 @@ export default function PostSearch(props) {
             ref={searchInputRef}
           />
           <button
-            className="btn btn-primary"
+            className="btn btn-primary text-white"
             onClick={filterBy}
           >
             Search
@@ -113,13 +113,13 @@ export default function PostSearch(props) {
           <button
             onClick={() => filterByList("Featured")}
             type="button"
-            className="btn btn-dark"
+            className="btn btn-Featured"
           >
-            <p className="fs-5 m-0 text-tertiary">See Featured</p>
+            <p className="fs-5 m-0 text-white">See Featured</p>
           </button>
           <button
             type="button"
-            className="btn btn-primary dropdown-toggle dropdown-toggle-split"
+            className="btn btn-dark dropdown-toggle dropdown-toggle-split"
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >

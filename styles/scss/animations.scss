@@ -8,7 +8,31 @@
 }
 
 .fadeIn {
-  animation: 0.3s normal 0s 1 fadeInAnimation;
+  opacity: 0;
+  animation-name: fadeInAnimation;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.fadeIn1 {
+  @extend .fadeIn;
+  animation-delay: 1s;
+}
+
+.fadeIn2 {
+  @extend .fadeIn;
+  animation-delay: 2s;
+}
+
+.fadeIn3 {
+  @extend .fadeIn;
+  animation-delay: 3s;
+}
+
+.fadeIn4 {
+  @extend .fadeIn;
+  animation-delay: 4s;
 }
 
 @keyframes commentAnimation {
@@ -21,7 +45,7 @@
 }
 
 .commentShow {
-  animation: 1s normal 0s 1 commentAnimation;
+  animation: 1s normal 1 commentAnimation;
 }
 
 @keyframes featuredPulseAnimation {
@@ -35,4 +59,17 @@
 
 .featuredPulse {
   animation: featuredPulseAnimation 1s normal forwards;
+}
+
+@keyframes jumpAnimation {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(36px);
+  }
+}
+
+.jump {
+  animation: jumpAnimation 0.5s alternate infinite forwards ease-in-out;
 }

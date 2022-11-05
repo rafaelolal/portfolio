@@ -1,16 +1,33 @@
 @keyframes fadeInAnimation { 0% { opacity: 0; }
   100% { opacity: 100; } }
 /* line 10, animations.scss */
-.fadeIn { animation: 0.3s normal 0s 1 fadeInAnimation; }
+.fadeIn, .fadeIn1, .fadeIn2, .fadeIn3, .fadeIn4 { opacity: 0; animation-name: fadeInAnimation; animation-duration: 0.5s; animation-iteration-count: 1; animation-fill-mode: forwards; }
+
+/* line 18, animations.scss */
+.fadeIn1 { animation-delay: 1s; }
+
+/* line 23, animations.scss */
+.fadeIn2 { animation-delay: 2s; }
+
+/* line 28, animations.scss */
+.fadeIn3 { animation-delay: 3s; }
+
+/* line 33, animations.scss */
+.fadeIn4 { animation-delay: 4s; }
 
 @keyframes commentAnimation { 0% { height: 0; }
   100% { height: 300; } }
-/* line 23, animations.scss */
-.commentShow { animation: 1s normal 0s 1 commentAnimation; }
+/* line 47, animations.scss */
+.commentShow { animation: 1s normal 1 commentAnimation; }
 
 @keyframes featuredPulseAnimation { 0% { color: #000; }
   100% { color: #ffad5c; } }
-/* line 36, animations.scss */
+/* line 60, animations.scss */
 .featuredPulse { animation: featuredPulseAnimation 1s normal forwards; }
+
+@keyframes jumpAnimation { 0% { transform: translateY(0%); }
+  100% { transform: translateY(36px); } }
+/* line 73, animations.scss */
+.jump { animation: jumpAnimation 0.5s alternate infinite forwards ease-in-out; }
 
 /*# sourceMappingURL=animations.css.map */

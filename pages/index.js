@@ -1,70 +1,152 @@
+import { useEffect } from "react";
 import Link from "next/link";
+import Head from "next/head";
 
 import { getPosts } from "./api/getPosts";
 
 import LatestPost from "../components/posts/latest-post";
 import ExploreIcon from "../components/icons/explore-icon";
 import QuestionIcon from "../components/icons/question-icon";
-import Head from "next/head";
+import DownIcon from "../components/icons/down-icon";
+import AboutIcon from "../components/icons/about-icon";
+import ResumeIcon from "../components/icons/resume-icon";
+import BlogIcon from "../components/icons/blog-icon";
 
 export default function Home(props) {
+  function convertRemToPixels(rem) {
+    return (
+      rem * parseFloat(getComputedStyle(document.documentElement).fontSize)
+    );
+  }
+
+  useEffect(() => {
+    window.onscroll = function (e) {
+      let el = document.getElementsByClassName("jump")[0];
+      if (el) {
+        if (window.scrollY >= convertRemToPixels(5)) {
+          el.style.opacity = 0;
+        } else {
+          el.style.opacity = 100;
+        }
+      }
+    };
+  });
+
   return (
-    <div className="row mt-5 fadeIn">
+    <>
       <Head>
         <title>Home</title>
       </Head>
-      <div className="col-12 col-md-6 my-auto">
-        <LatestPost
-          id={props.post.id}
-          list={props.post.list}
-          title={props.post.title}
-          year={props.post.year}
-          month={props.post.month}
-          day={props.post.day}
-          description={props.post.description}
-          images={props.post.images}
-        />
-      </div>
-      <div className="col-12 col-md-6 my-auto">
-        <div className="blogfolio">
-          <p>WELCOME</p>
-        </div>
-        <p className="text-center mt-3 mx-auto mt-4">
-          Welcome to my blog. Here you will see blogs from my Featured endeavors
-          to my day-to-day activities. It is organized in a way that you can
-          easily find out what I am up to, and what I am proud of. You will also
-          have the opportunity to learn more about me than you could in a normal
-          portfolio.
-        </p>
-        <div className="row mt-5">
-          <div className="col-12 col-md-6 mx-auto">
-            <p className="text-center text-primary">
-              <QuestionIcon />
-            </p>
-            <p className="display-6 fw-bold text-center">Why?</p>
-            <p className="text-center">
-              It is complicated, but I independently came up with the idea of a
-              blogfolio right after finishing my normal portfolio and noticing
-              that it was a literal copy and paste of everything else one sees.
-              Blogging would also bring me the benefits of journaling.
-            </p>
-          </div>
-          <div className="col-12 col-md-6">
-            <p className="text-center text-primary">
-              <ExploreIcon />
-            </p>
-            <p className="display-6 fw-bold text-center">Explore!</p>
 
-            <p className="text-center">
-              Yes, this is a blog, but if you are only interested in what really
-              matters, explore the Featured posts. If you have the time, you can
-              always check out other posts to see what I am up to. On this page
-              is my latest post.
+      <section className="tall1 d-flex">
+        <div className="col-12 col-md-10 col-lg-6 mx-auto my-auto">
+          <div className="row">
+            <div className="col-12 fadeIn1">
+              <div className="blogfolio">
+                <p>WELCOME</p>
+              </div>
+              <p className="text-center mt-3 mx-auto mt-4">
+                You will find from Featured blogs to my day-to-day activities.
+                Here, I show off my technical skills and you learn more about
+                me!
+              </p>
+            </div>
+
+            <div className="col-12 col-md-6 mx-auto fadeIn2">
+              <p className="text-center text-primary">
+                <QuestionIcon />
+              </p>
+              <p className="display-6 fw-bold text-center">Why?</p>
+              <p className="text-center">
+                I decided to create a blogfolio after noticing that all
+                portfolios, though some may be more complex, always fall in the
+                same structure.
+              </p>
+            </div>
+
+            <div className="col-12 col-md-6 fadeIn3">
+              <p className="text-center text-primary">
+                <ExploreIcon />
+              </p>
+              <p className="display-6 fw-bold text-center">Explore!</p>
+
+              <p className="text-center">
+                If you are only interested in what really matters, explore About
+                Me and Featured posts. Down this page is my latest post.
+              </p>
+            </div>
+          </div>
+
+          <center className="fadeIn4">
+            <DownIcon />
+          </center>
+        </div>
+      </section>
+
+      <section id="section2" className="tall2 d-flex">
+        <div className="row my-auto">
+          <div className="col-12 col-md-7 my-auto">
+            <div className="">
+              <LatestPost
+                id={props.post.id}
+                list={props.post.list}
+                title={props.post.title}
+                year={props.post.year}
+                month={props.post.month}
+                day={props.post.day}
+                description={props.post.description}
+                images={props.post.images}
+              />
+            </div>
+          </div>
+
+          <div className="col-12 col-md-5 my-auto">
+            <div className="blogfolio">
+              <p>LOOK AROUND</p>
+            </div>
+            <p className="mt-3 text-center">
+              That is my latest post. Hopefully this will change every day!
             </p>
+
+            <div className="row g-2 mt-5 justify-content-center">
+              <div className="col-6">
+                <center>
+                  <AboutIcon />
+                  <button className="btn btn-dark">
+                    ABOUT ME
+                  </button>
+                  <p className="mt-2 text-center">
+                    Check out my achievements and what I like to do.
+                  </p>
+                </center>
+              </div>
+
+              <div className="col-6">
+                <center>
+                  <ResumeIcon />
+                  <button className="btn btn-dark">
+                    RESUME
+                  </button>
+                </center>
+                <p className="mt-2 text-center">
+                  If writing bores you, read it in succinctly with my resume.
+                </p>
+              </div>
+
+              <div className="col-6 mx-auto">
+                <center>
+                  <BlogIcon />
+                  <button className="btn btn-dark">BLOG</button>
+                  <p className="mt-2 text-center">
+                    Check out the featured blogs for my best accomplishments
+                  </p>
+                </center>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </>
   );
 }
 

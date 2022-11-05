@@ -1,3 +1,11 @@
+.tall1 {
+  height: 92vh;
+}
+
+.tall2 {
+  height: 100vh;
+}
+
 $font-family-base: "Arial", serif;
 
 $tertiary: #212529;
@@ -17,8 +25,14 @@ $theme-colors: (
   "Gym": #81c45a,
   "Project": #9468a1,
   "Achievement": #da81ac,
-  "General": #C4A484,
+  "General": #c4a484,
 );
+
+.primary {
+  color: $primary;
+}
+
+$input-group-addon-bg: $dark;
 
 $navbar-light-color: rgb(0, 0, 0);
 $navbar-light-hover-color: $primary;

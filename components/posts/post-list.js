@@ -16,8 +16,13 @@ export default function PostList(props) {
     setIsLoading(true);
 
     let query = {};
-    router.query.list && (query.list = router.query.list);
-    props.currentList && (query.list = props.currentList);
+    if (props.currentList && !router.query.list) {
+      query.list = "";
+      props.setCurrentList("")
+    } else {
+      router.query.list && (query.list = router.query.list);
+      props.currentList && (query.list = props.currentList);
+    }
     props.currentSearch && (query.search = props.currentSearch);
     props.currentYear && (query.year = props.currentYear);
     props.currentMonth && (query.month = props.currentMonth);
@@ -51,10 +56,11 @@ export default function PostList(props) {
 
   if (!posts) {
     return (
-      <div className="d-flex">
+      <div className="d-flex flex-column my-5">
+        <p className="text-center fw-bold">NO POSTS FOUND</p>
         <Link href="/posts">
           <a
-            className="btn btn-secondary btn-block mt-4 mx-auto"
+            className="btn btn-secondary btn-block mx-auto text-white"
             onClick={resetFilters}
           >
             Reset Filters
@@ -65,10 +71,10 @@ export default function PostList(props) {
   }
 
   return (
-    <div className="fadeIn">
+    <div className="fadeIn d-flex flex-column">
       {posts.map((post) => (
         <div
-          className="col-12 col-md-10 col-lg-8 mx-auto bg-dark p-3 rounded my-4 shadow"
+          className="col-12 col-md-10 col-lg-8 mx-auto bg-dark p-3 rounded my-5 shadow"
           id={post.id}
           key={post.id}
         >
@@ -87,9 +93,18 @@ export default function PostList(props) {
             comments={post.comments}
             isShowingCopy={props.isShowingCopy}
             setIsShowingCopy={props.setIsShowingCopy}
+            setCurrentList={props.setCurrentList}
           />
         </div>
       ))}
+      <Link href="/posts">
+        <a
+          className="btn btn-secondary btn-block mx-auto mb-5 text-white"
+          onClick={resetFilters}
+        >
+          Reset Filters
+        </a>
+      </Link>
     </div>
   );
 }

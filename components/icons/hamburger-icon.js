@@ -2,8 +2,8 @@ export default function HamburgerIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="32"
-      height="32"
+      width="auto"
+      height="2rem"
       fill="currentColor"
       className="bi bi-list"
       viewBox="0 0 16 16"

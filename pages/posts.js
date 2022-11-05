@@ -33,8 +33,9 @@ export default function BlogPage() {
         />
       </div>
 
-      <div className="row me-1 ms-1">
+      <div className="row">
         <PostList
+          setCurrentList={setCurrentList}
           currentList={currentList}
           currentSearch={currentSearch}
           currentYear={currentYear}

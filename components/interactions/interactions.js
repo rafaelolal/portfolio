@@ -93,14 +93,13 @@ export default function Interactions(props) {
   }
 
   return (
-    <div className="row">
+    <div className="row mt-3">
       <div className="col-12 col-md-4 d-flex mt-1">
         <div className="mx-auto">
           <LikeIcon onClick={props.addLike} />
           <small className="text-primary me-2 fs-7">{props.likes}</small>
 
           <CommentIcon onClick={props.showComments} />
-          <small className="text-primary me-3 fs-7">{props.commentCount}</small>
 
           <ShareIcon onClick={copyLink} />
         </div>
@@ -115,8 +114,9 @@ export default function Interactions(props) {
             aria-label="Comment"
             ref={bodyInputRef}
           />
+
           <button
-            className="btn btn-secondary rounded-5"
+            className="btn btn-secondary rounded-5 text-white"
             type="button"
             data-bs-toggle="modal"
             data-bs-target={"#commentModal" + props.postId}
