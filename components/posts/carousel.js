@@ -9,11 +9,11 @@ export default function Carousel(props) {
         tabIndex="-1"
         aria-hidden="true"
       >
-        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-dialog modal-dialog-centered" style={{maxWidth: "fit-content"}}>
           <div class="modal-content">
             <div class="modal-body">
               <div
-                id={"carousel" + props.postId}
+                id={"carousel2" + props.postId}
                 className="carousel slide card-img-bottom"
               >
                 <div className="carousel-inner rounded">
@@ -39,7 +39,7 @@ export default function Carousel(props) {
                     <button
                       className="carousel-control-prev"
                       type="button"
-                      data-bs-target={"#carousel" + props.postId}
+                      data-bs-target={"#carousel2" + props.postId}
                       data-bs-slide="prev"
                     >
                       <span
@@ -52,7 +52,7 @@ export default function Carousel(props) {
                     <button
                       className="carousel-control-next"
                       type="button"
-                      data-bs-target={"#carousel" + props.postId}
+                      data-bs-target={"#carousel2" + props.postId}
                       data-bs-slide="next"
                     >
                       <span
@@ -70,12 +70,14 @@ export default function Carousel(props) {
       </div>
 
       <div
-        id={"carousel" + props.postId}
         className="carousel slide card-img-bottom"
-        data-bs-toggle="modal"
-        data-bs-target={"#carouselModal" + props.postId}
+        id={"carousel1" + props.postId}
       >
-        <div className="carousel-inner rounded">
+        <div
+          className="carousel-inner rounded"
+          data-bs-toggle="modal"
+          data-bs-target={"#carouselModal" + props.postId}
+        >
           {props.images.map((imageLink) => (
             <div
               className={
@@ -101,7 +103,7 @@ export default function Carousel(props) {
             <button
               className="carousel-control-prev"
               type="button"
-              data-bs-target={"#carousel" + props.postId}
+              data-bs-target={"#carousel1" + props.postId}
               data-bs-slide="prev"
             >
               <span
@@ -114,7 +116,7 @@ export default function Carousel(props) {
             <button
               className="carousel-control-next"
               type="button"
-              data-bs-target={"#carousel" + props.postId}
+              data-bs-target={"#carousel1" + props.postId}
               data-bs-slide="next"
             >
               <span
