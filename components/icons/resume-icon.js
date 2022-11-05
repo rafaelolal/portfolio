@@ -5,7 +5,7 @@ export default function ResumeIcon() {
       width="1.5rem"
       height="1.5rem"
       fill="currentColor"
-      class="bi bi-filetype-pdf me-3 primary"
+      className="bi bi-filetype-pdf me-3 primary"
       viewBox="0 0 16 16"
     >
       <path

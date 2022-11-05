@@ -5,7 +5,7 @@ export default function DownIcon() {
       width="auto"
       height="2rem"
       fill="currentColor"
-      class="bi bi-arrow-down jump"
+      className="bi bi-arrow-down jump"
       viewBox="0 0 16 16"
     >
       <path

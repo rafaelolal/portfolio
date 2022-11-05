@@ -108,9 +108,9 @@ export default function NewPostPage() {
 
   return (
     <>
-      <div class="input-group mt-5">
-        <span class="input-group-text">Title</span>
-        <input class="form-control" ref={titleRef} />
+      <div className="input-group mt-5">
+        <span className="input-group-text">Title</span>
+        <input className="form-control" ref={titleRef} />
       </div>
 
       <div className="row mt-2">
@@ -131,11 +131,11 @@ export default function NewPostPage() {
         </div>
 
         <div className="col">
-          <div class="input-group">
-            <span class="input-group-text">Year</span>
+          <div className="input-group">
+            <span className="input-group-text">Year</span>
             <input
               type="number"
-              class="form-control"
+              className="form-control"
               defaultValue={year}
               ref={yearRef}
             />
@@ -167,11 +167,11 @@ export default function NewPostPage() {
         </div>
 
         <div className="col">
-          <div class="input-group">
-            <span class="input-group-text">Day</span>
+          <div className="input-group">
+            <span className="input-group-text">Day</span>
             <input
               type="number"
-              class="form-control"
+              className="form-control"
               defaultValue={day}
               ref={dayRef}
             />
@@ -179,14 +179,14 @@ export default function NewPostPage() {
         </div>
       </div>
 
-      <div class="input-group mt-2">
-        <span class="input-group-text">Desc</span>
-        <textarea class="form-control" ref={descRef} />
+      <div className="input-group mt-2">
+        <span className="input-group-text">Desc</span>
+        <textarea className="form-control" ref={descRef} />
       </div>
 
-      <div class="input-group mt-2">
-        <span class="input-group-text">Body</span>
-        <textarea class="form-control" ref={bodyRef} />
+      <div className="input-group mt-2">
+        <span className="input-group-text">Body</span>
+        <textarea className="form-control" ref={bodyRef} />
       </div>
 
       <div className="row mt-2">
@@ -196,7 +196,7 @@ export default function NewPostPage() {
             <input
               key={i}
               type="url"
-              class="form-control mt-1 linkInput"
+              className="form-control mt-1 linkInput"
               id={"link" + i}
               onChange={
                 i >= linkCount - 2
@@ -215,7 +215,7 @@ export default function NewPostPage() {
             <input
               key={i}
               type="url"
-              class="form-control mt-1 imageInput"
+              className="form-control mt-1 imageInput"
               id={"image" + i}
               onChange={
                 i >= imageCount - 2
@@ -229,9 +229,9 @@ export default function NewPostPage() {
         </div>
       </div>
 
-      <div class="input-group mt-2">
-        <span class="input-group-text">Key</span>
-        <input type="password" class="form-control" ref={keyRef} />
+      <div className="input-group mt-2">
+        <span className="input-group-text">Key</span>
+        <input type="password" className="form-control" ref={keyRef} />
       </div>
 
       <button className="btn btn-primary text-white mt-2" onClick={addPost}>
