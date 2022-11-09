@@ -69,7 +69,7 @@ export default function NewPostPage() {
     const imageValues = [];
     const images = document.getElementsByClassName("imageInput");
     for (let image of images) {
-      if (image.values !== "") {
+      if (image.value !== "") {
         imageValues.push(image.value);
       }
     }

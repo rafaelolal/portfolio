@@ -55,14 +55,14 @@ export default function Post(props) {
 
         <p className="fw-bold fs-3 mb-0">{props.title}</p>
         <div style={{ maxHeight: 200, overflow: "auto" }}>
-          {descriptionList.map((paragraph, i) => (
-            <p key={i} className="tab">{paragraph}</p>
-          ))}
-          <p>
+        <p>
             {props.links.map((link, i) => (
               <a key={i} className="me-2" href={link}>{link}</a>
             ))}
           </p>
+          {descriptionList.map((paragraph, i) => (
+            <p key={i} className="tab">{paragraph}</p>
+          ))}
         </div>
       </div>
 
