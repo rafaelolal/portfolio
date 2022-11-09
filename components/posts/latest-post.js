@@ -14,11 +14,8 @@ export default function LatestPost(props) {
           </p>
           <span
             className="badge fs-5 rounded-5 text-white bg-Latest"
-            onClick={() => {
-              filterByList(props.list);
-            }}
           >
-            {props.list}
+            Latest
           </span>
         </div>
 
