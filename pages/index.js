@@ -34,7 +34,7 @@ export default function Home(props) {
 
       <section className="tall1 d-flex">
         <div className="col-12 col-md-10 col-lg-6 mx-auto my-auto">
-          <div className="row">
+          <div className="row m-0">
             <div className="col-12 fadeIn1">
               <div className="blogfolio">
                 <p>WELCOME</p>
@@ -87,8 +87,8 @@ export default function Home(props) {
       </section>
 
       <section id="section2" className="tall2 d-flex">
-        <div className="row py-auto g-5">
-          <div className="col-12 col-md-7 my-auto">
+        <div className="row m-0 py-auto">
+          <div className="col-12 col-md-7 my-auto p-0">
             <div className="">
               <LatestPost
                 id={props.post.id}
@@ -111,7 +111,7 @@ export default function Home(props) {
               That is my latest post. Hopefully this will change every day!
             </p>
 
-            <div className="row g-2 mt-5 justify-content-center">
+            <div className="row m-0 mt-5 justify-content-center">
               <div className="col-7">
                 <center>
                   <Link href="/about">

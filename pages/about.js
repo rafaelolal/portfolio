@@ -7,9 +7,9 @@ export default function AboutPage() {
       <Head>
         <title>About Me</title>
       </Head>
-      <div className="row mt-5 fadeIn">
+      <div className="row m-0 mt-5 fadeIn">
         <div className="col-12 col-md-5 col-lg-4 rounded my-auto">
-          <div className="bg-dark p-3 shadow">
+          <div className="bg-dark p-3 rounded shadow">
             <Image
               src="/blog/profile.jpg"
               className="img-fluid rounded"
@@ -64,9 +64,7 @@ export default function AboutPage() {
         <p>ACHIEVEMENTS</p>
       </div>
 
-      <div className="rounded my-5" style={{ overflow: "auto" }}>
         <AchievementList />
-      </div>
     </>
   );
 }

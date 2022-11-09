@@ -12,37 +12,38 @@ export default function BlogPage() {
   const [currentMonth, setCurrentMonth] = useState();
 
   return (
-    <div className="fadeIn">
+    <>
       <Head>
         <title>Blog</title>
       </Head>
+      <div className="fadeIn">
+        <div className="blogfolio mt-5">
+          <p className="">BLOGFOLIO</p>
+        </div>
 
-      <div className="blogfolio mt-5">
-        <p className="">BLOGFOLIO</p>
+        <PostSearch
+          setCurrentList={setCurrentList}
+          setCurrentSearch={setCurrentSearch}
+          setCurrentYear={setCurrentYear}
+          setCurrentMonth={setCurrentMonth}
+        />
+
+        <PostList
+          setCurrentList={setCurrentList}
+          currentSearch={currentSearch}
+          currentYear={currentYear}
+          currentMonth={currentMonth}
+        />
+
+        <div className="d-flex flex-column my-5">
+          <a
+            className="btn btn-secondary btn-block mx-auto text-white"
+            href="/blog/posts"
+          >
+            Reset Filters
+          </a>
+        </div>
       </div>
-
-      <PostSearch
-        setCurrentList={setCurrentList}
-        setCurrentSearch={setCurrentSearch}
-        setCurrentYear={setCurrentYear}
-        setCurrentMonth={setCurrentMonth}
-      />
-
-      <PostList
-        setCurrentList={setCurrentList}
-        currentSearch={currentSearch}
-        currentYear={currentYear}
-        currentMonth={currentMonth}
-      />
-
-      <div className="d-flex flex-column my-5">
-        <a
-          className="btn btn-secondary btn-block mx-auto text-white"
-          href="/blog/posts"
-        >
-          Reset Filters
-        </a>
-      </div>
-    </div>
+    </>
   );
 }

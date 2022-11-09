@@ -20,14 +20,17 @@ export default function AchievementList() {
   }
 
   return (
-    <div className="row g-3 flex-nowrap fadeIn">
+    <div
+      className="rounded my-5 row m-0 gx-3 flex-nowrap fadeIn"
+      style={{ overflow: "auto" }}
+    >
       {achievementGroups.map((group) => (
-          <AchievementGroup
-            key={group.id}
-            id={group.id}
-            achievements={group.achievements}
-            name={group.name}
-          />
+        <AchievementGroup
+          key={group.id}
+          id={group.id}
+          achievements={group.achievements}
+          name={group.name}
+        />
       ))}
     </div>
   );
