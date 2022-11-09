@@ -21,7 +21,9 @@ export default function Achievement(props) {
       >
         <div className="accordion-body">
           <p>{props.description}</p>
-          <small className="text-primary">{props.year}, {props.month} {props.day}</small>
+          <small className="text-primary">
+            {props.year}, {props.month} {props.day}
+          </small>
         </div>
       </div>
     </div>

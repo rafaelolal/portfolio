@@ -1,26 +1,13 @@
-import { useContext, useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import { useAppContext } from "../../context/state";
 
 export default function EmailMe() {
-  const { name, setName, email, setEmail } = useAppContext();
-
-  const [showingEmail, setShowingEmail] = useState(false);
+  const { name, setName, email, setEmail, setShowingToast, setToastStatus } =
+    useAppContext();
 
   const nameInputRef = useRef();
   const emailInputRef = useRef();
   const bodyInputRef = useRef();
-
-  useEffect(() => {
-    if (showingEmail) {
-      const timer = setTimeout(() => {
-        setShowingEmail(false);
-      }, 5000);
-
-      return () => {
-        clearTimeout(timer);
-      };
-    }
-  }, [showingEmail, setShowingEmail]);
 
   function addMessage() {
     fetch("/blog/api/addMessage", {
@@ -35,7 +22,8 @@ export default function EmailMe() {
       .then((response) => response.json())
       .then((data) => {
         if (data.message === "Message added") {
-          setShowingEmail(true);
+          setToastStatus({ message: "Message sent!", type: "success" });
+          setShowingToast(true);
           bodyInputRef.current.value = "";
         }
         if (name != nameInputRef.current.value) {
@@ -49,13 +37,12 @@ export default function EmailMe() {
 
   return (
     <nav className="navbar ms-auto">
-      {showingEmail && <p className="myToast">Message sent!</p>}
       <div className="container-fluid">
         <button
           type="button"
           data-bs-toggle="modal"
           data-bs-target="#emailMeModal"
-          style={{ borderStyle: "solid", borderColor: "#da1e19" }}
+          style={{ border: "#da1e19 solid"}}
           className="ms-2 p-1 fw-bold bg-white shadow-sm"
         >
           EMAIL ME
@@ -105,7 +92,7 @@ export default function EmailMe() {
               <div className="modal-footer">
                 <button
                   type="button"
-                  className="btn btn-secondary"
+                  className="btn btn-secondary text-white"
                   data-bs-dismiss="modal"
                 >
                   Close
@@ -113,7 +100,7 @@ export default function EmailMe() {
                 <button
                   onClick={addMessage}
                   type="button"
-                  className="btn btn-primary"
+                  className="btn btn-success text-white"
                   data-bs-dismiss="modal"
                 >
                   Send

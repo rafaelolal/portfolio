@@ -22,13 +22,12 @@ export default function AchievementList() {
   return (
     <div className="row g-3 flex-nowrap fadeIn">
       {achievementGroups.map((group) => (
-        <div className="col-md-5 col-10" key={group.id}>
           <AchievementGroup
+            key={group.id}
             id={group.id}
             achievements={group.achievements}
             name={group.name}
           />
-        </div>
       ))}
     </div>
   );

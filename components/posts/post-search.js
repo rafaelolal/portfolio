@@ -36,7 +36,7 @@ export default function PostSearch(props) {
   }
 
   return (
-    <div className="row mt-5 gx-3">
+    <div className="row mt-5 gx-3 mx-auto">
       <div className="col-12 col-md-4 mb-3">
         <div className="input-group h-100">
           {searchInputRef.current && searchInputRef.current.value && (
@@ -102,7 +102,7 @@ export default function PostSearch(props) {
           <label htmlFor="floatingSelectGrid">Month</label>
         </div>
       </div>
-      <div className="col-6 col-lg-4 mb-3 mx-auto justify-content-center d-flex">
+      <div className="col-6 col-lg-4 mx-auto justify-content-center d-flex">
         <div className="btn-group dropend">
           <button
             onClick={() => filterByList("Featured")}

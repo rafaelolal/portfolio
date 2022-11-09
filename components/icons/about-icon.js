@@ -2,7 +2,7 @@ export default function AboutIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="1.5rem"
+      length="auto"
       height="1.5rem"
       fill="currentColor"
       className="bi bi-person me-3 primary"

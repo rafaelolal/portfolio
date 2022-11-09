@@ -12,6 +12,8 @@ export default function Post(props) {
   const [showingComments, setShowingComments] = useState(false);
   const [likes, setLikes] = useState(props.likes);
 
+  const descriptionList = props.description.split("\n");
+
   function filterByList(list) {
     router.push({ pathname: "", query: { list: list } }, undefined, {
       shallow: true,
@@ -32,7 +34,10 @@ export default function Post(props) {
   }
 
   return (
-    <>
+    <div
+      className="col-12 col-md-10 col-lg-8 mx-auto bg-dark py-3 rounded my-5 shadow"
+      id={props.id}
+    >
       <div className="vl ps-2 mx-3">
         <div className="d-flex justify-content-between">
           <p className="text-primary m-0">
@@ -49,7 +54,16 @@ export default function Post(props) {
         </div>
 
         <p className="fw-bold fs-3 mb-0">{props.title}</p>
-        <p>{props.description}</p>
+        <div style={{ maxHeight: 200, overflow: "auto" }}>
+          {descriptionList.map((paragraph) => (
+            <p className="tab">{paragraph}</p>
+          ))}
+          <p>
+            {props.links.map((link) => (
+              <a className="me-2" href={link}>{link}</a>
+            ))}
+          </p>
+        </div>
       </div>
 
       {props.images && props.images.length > 0 && (
@@ -61,13 +75,11 @@ export default function Post(props) {
         addLike={addLike}
         showComments={showComments}
         likes={likes}
-        isShowingCopy={props.isShowingCopy}
-        setIsShowingCopy={props.setIsShowingCopy}
       ></Interactions>
 
       {showingComments && (
         <CommentList postId={postId} showingComments={showingComments} />
       )}
-    </>
+    </div>
   );
 }

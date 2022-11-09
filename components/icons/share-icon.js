@@ -2,8 +2,8 @@ export default function ShareIcon(props) {
   return (
     <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="2rem"
-    height="auto"
+    length="auto"
+    height="2rem"
     className="bi bi-share"
     viewBox="0 0 16 16"
     onClick={props.onClick}

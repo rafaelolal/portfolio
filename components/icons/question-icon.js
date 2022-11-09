@@ -2,8 +2,8 @@ export default function QuestionIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="64"
-      height="64"
+      length="auto"
+      height="4rem"
       fill="currentColor"
       className="bi bi-question-diamond"
       viewBox="0 0 16 16"

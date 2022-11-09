@@ -26,11 +26,11 @@ export default function CommentList(props) {
   }
 
   if (comments.length === 0) {
-    return <p className="display-6 mt-3">Comments (0)</p>;
+    return <p className="display-6 m-0 mt-3 px-3">Comments (0)</p>;
   }
 
   return (
-    <div className="rounded mt-3 commentShow" style={{ height: 300, overflow: "auto" }}>
+    <div className="rounded mt-3 commentShow p-3 pt-0">
       <p className="display-6">Comments ({comments.length})</p>
       {comments.map((comment) => (
         <Comment

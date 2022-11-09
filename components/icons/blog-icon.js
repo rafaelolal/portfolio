@@ -2,7 +2,7 @@ export default function BlogIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="1.5rem"
+      length="auto"
       height="1.5rem"
       fill="currentColor"
       className="bi bi-pen me-3 primary"

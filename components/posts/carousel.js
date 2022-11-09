@@ -4,14 +4,14 @@ export default function Carousel(props) {
   return (
     <>
       <div
-        class="modal fade"
+        className="modal fade"
         id={"carouselModal" + props.postId}
         tabIndex="-1"
         aria-hidden="true"
       >
-        <div class="modal-dialog modal-dialog-centered" style={{maxWidth: "fit-content"}}>
-          <div class="modal-content">
-            <div class="modal-body">
+        <div className="modal-dialog modal-dialog-centered" style={{maxWidth: "fit-content"}}>
+          <div className="modal-content">
+            <div className="modal-body">
               <div
                 id={"carousel2" + props.postId}
                 className="carousel slide card-img-bottom"
@@ -70,11 +70,11 @@ export default function Carousel(props) {
       </div>
 
       <div
-        className="carousel slide card-img-bottom"
+        className="carousel slide card-img-bottom mt-3"
         id={"carousel1" + props.postId}
       >
         <div
-          className="carousel-inner rounded"
+          className="carousel-inner"
           data-bs-toggle="modal"
           data-bs-target={"#carouselModal" + props.postId}
         >

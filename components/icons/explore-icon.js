@@ -2,8 +2,8 @@ export default function ExploreIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="64"
-      height="64"
+      length="auto"
+      height="4rem"
       fill="currentColor"
       className="bi bi-search-heart"
       viewBox="0 0 16 16"

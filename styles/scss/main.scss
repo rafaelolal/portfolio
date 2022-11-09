@@ -1,3 +1,7 @@
+.tab {
+  text-indent: 40px;
+}
+
 .tall1 {
   height: 92vh;
 }
@@ -12,7 +16,8 @@ $tertiary: #212529;
 $dark: #f1eff1;
 $primary: #ea4e48;
 $secondary: #9fa8d1;
-$success: #5ce4ff;
+$success: #4db7d1;
+$warning: #ffb818;
 
 $theme-colors: (
   "tertiary": $tertiary,
@@ -20,7 +25,8 @@ $theme-colors: (
   "primary": $primary,
   "secondary": $secondary,
   "success": $success,
-  "Latest": #4db7d1,
+  "warning": $warning,
+  "Latest": $success,
   "Featured": #ffad5c,
   "Gym": #81c45a,
   "Project": #9468a1,
@@ -63,7 +69,6 @@ $display-font-sizes: (
 .myToast {
   @extend .badge;
   @extend .text-white;
-  @extend .text-bg-success;
   @extend .position-fixed;
   @extend .bottom-0;
   @extend .end-0;

@@ -49,6 +49,8 @@
 }
 
 .commentShow {
+  max-height: 200px;
+  overflow: auto;
   animation: 1s normal 1 commentAnimation;
 }
 
@@ -70,7 +72,7 @@
     transform: translateY(0%);
   }
   100% {
-    transform: translateY(36px);
+    transform: translateY(1rem);
   }
 }
 

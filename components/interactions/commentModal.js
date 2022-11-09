@@ -8,7 +8,7 @@ export default function CommentModal(props) {
       <div className="modal-dialog modal-dialog-centered">
         <div className="modal-content">
           <div className="modal-body">
-            <div className="input-group mb-3">
+            <div className="input-group">
               <span className="input-group-text" id="name-input">
                 Name
               </span>
@@ -20,7 +20,8 @@ export default function CommentModal(props) {
                 defaultValue={props.name}
               />
             </div>
-            <div className="input-group mb-1">
+
+            <div className="input-group mt-3">
               <span className="input-group-text" id="email-input">
                 Email
               </span>
@@ -32,6 +33,12 @@ export default function CommentModal(props) {
                 defaultValue={props.email}
               />
             </div>
+
+            {/* <textarea
+              className="form-control mt-3"
+              ref={props.bodyInputRef}
+              defaultValue={props.bodyInputRef.current.value}
+            ></textarea> */}
           </div>
           <div className="modal-footer">
             <div className="form-check me-auto">
@@ -49,14 +56,14 @@ export default function CommentModal(props) {
 
             <button
               type="button"
-              className="btn btn-secondary my-auto"
+              className="btn btn-secondary my-auto text-white"
               data-bs-dismiss="modal"
             >
               Close
             </button>
             <button
               type="button"
-              className="btn btn-success my-auto"
+              className="btn btn-success my-auto text-white"
               data-bs-dismiss="modal"
               onClick={props.addComment}
             >

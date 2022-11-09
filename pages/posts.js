@@ -1,12 +1,11 @@
-import PostList from "../components/posts/post-list";
-import PostSearch from "../components/posts/post-search";
-
 import { useState } from "react";
 import Head from "next/head";
 
-export default function BlogPage() {
-  const [isShowingCopy, setIsShowingCopy] = useState(false);
+import PostList from "../components/posts/post-list";
+import PostSearch from "../components/posts/post-search";
 
+export default function BlogPage() {
+  // used only to refresh the component, the actual value is always extracted from the url
   const [currentList, setCurrentList] = useState();
   const [currentSearch, setCurrentSearch] = useState();
   const [currentYear, setCurrentYear] = useState();
@@ -17,8 +16,6 @@ export default function BlogPage() {
       <Head>
         <title>Blog</title>
       </Head>
-
-      {isShowingCopy && <p className="myToast">Link copied!</p>}
 
       <div className="blogfolio mt-5">
         <p className="">BLOGFOLIO</p>
@@ -33,12 +30,9 @@ export default function BlogPage() {
 
       <PostList
         setCurrentList={setCurrentList}
-        currentList={currentList}
         currentSearch={currentSearch}
         currentYear={currentYear}
         currentMonth={currentMonth}
-        isShowingCopy={isShowingCopy}
-        setIsShowingCopy={setIsShowingCopy}
       />
 
       <div className="d-flex flex-column my-5">
