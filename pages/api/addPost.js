@@ -6,7 +6,7 @@ export default async function handler(req, res) {
       const { title, list, year, month, day, desc, body, links, images, key } =
         req.body;
 
-      if (key != "8!L0IdaJOaS7") {
+      if (key != process.POST_KEY) {
         res.status(401).json({ message: "Invalid key", status: 401 });
         return;
       }
