@@ -1,0 +1,31 @@
+Achievements
+
+project management
+nextjs
+thrive highlight
+
+-------------------------------------------------
+
+Activities
+
+thrive
+CTE, CC, AIT ambassador
+CS, physics tutoring
+aigo teacher, president, tqt
+CC outreach, president
+
+-------------------------------------------------
+
+Projects
+
+django peru, FBLA
+javascript snippets
+burkhour
+all small little programs
+discord bot cc, scheduling, aigocode
+sat helper
+github colab video
+APCSP big data analysis
+TQT python curriculum, teacher analyzer, star program
+kivy apps, owl games
+CC calc, calc 2, morse code, cfop, checkers, maze bot, number guessing
