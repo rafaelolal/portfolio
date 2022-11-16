@@ -16,43 +16,6 @@ export default function Interactions(props) {
   var frequencyValue;
   const [beNotified, setBeNotified] = useState(false);
 
-  function openCommentModalHandler() {
-    if (
-      document.getElementById("commentBody1" + props.postId).value.trim() &&
-      name
-    ) {
-      commentSubmitHandler(null);
-      return;
-    }
-    document.getElementById("hiddenCommentSubmit").click();
-  }
-
-  function updateCommentBody2() {
-    const body1 = document.getElementById("commentBody1" + props.postId);
-    const body2 = document.getElementById("commentBody2" + props.postId);
-    body2.value = body1.value;
-  }
-
-  function copyLink() {
-    var link = "https://ralmeida.dev/blog/posts#" + props.postId;
-    navigator.clipboard.writeText(link);
-    setToast({ message: "Link copied!", status: 200 });
-  }
-
-  function beNotifiedHandler() {
-    setBeNotified(!beNotified);
-  }
-
-  function frequencyHandler() {
-    const radioButtons = document.querySelectorAll('input[type="radio"]');
-    for (const radioButton of radioButtons) {
-      if (radioButton.checked) {
-        frequencyValue = radioButton.value;
-        break;
-      }
-    }
-  }
-
   function commentSubmitHandler(event) {
     if (event) {
       event.preventDefault();
@@ -118,6 +81,43 @@ export default function Interactions(props) {
     }
   }
 
+  function openCommentModalHandler() {
+    if (
+      document.getElementById("commentBody1" + props.postId).value.trim() &&
+      name
+    ) {
+      commentSubmitHandler(null);
+      return;
+    }
+    document.getElementById("hiddenCommentSubmit" + props.postId).click();
+  }
+
+  function beNotifiedHandler() {
+    setBeNotified(!beNotified);
+  }
+
+  function frequencyHandler() {
+    const radioButtons = document.querySelectorAll('input[type="radio"]');
+    for (const radioButton of radioButtons) {
+      if (radioButton.checked) {
+        frequencyValue = radioButton.value;
+        break;
+      }
+    }
+  }
+
+  function copyLink() {
+    var link = "https://ralmeida.dev/blog/posts#" + props.postId;
+    navigator.clipboard.writeText(link);
+    setToast({ message: "Link copied!", status: 200 });
+  }
+
+  function updateCommentBody2() {
+    const body1 = document.getElementById("commentBody1" + props.postId);
+    const body2 = document.getElementById("commentBody2" + props.postId);
+    body2.value = body1.value;
+  }
+
   return (
     <div className="px-3 mt-3">
       <div className="d-flex justify-content-between">
@@ -163,10 +163,8 @@ export default function Interactions(props) {
           className="visually-hidden"
           data-bs-toggle="modal"
           data-bs-target={"#commentModal" + props.postId}
-          id="hiddenCommentSubmit"
-        >
-          <SendIcon />
-        </span>
+          id={"hiddenCommentSubmit" + props.postId}
+        />
       </div>
 
       <CommentModal
