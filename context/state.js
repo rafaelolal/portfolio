@@ -1,42 +1,40 @@
-import { getNamedMiddlewareRegex } from "next/dist/shared/lib/router/utils/route-regex";
 import { createContext, useContext, useEffect, useState } from "react";
 
+const toastStatus = { 401: "warning", 500: "warning", 200: "success" };
 const AppContext = createContext();
 
 export function AppWrapper({ children }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [toastStatus, setToastStatus] = useState({ message: "", type: "" });
-  const [showingToast, setShowingToast] = useState(false);
+  const toastDefault = { message: null, status: null };
+  const [toast, setToast] = useState(toastDefault);
 
   let sharedState = {
     name,
     setName,
     email,
     setEmail,
-    toastStatus,
-    setToastStatus,
-    showingToast,
-    setShowingToast,
+    toast,
+    setToast,
   };
 
   useEffect(() => {
-    if (showingToast) {
+    if (toast.status) {
       const timer = setTimeout(() => {
-        setShowingToast(false);
+        setToast(toastDefault);
       }, 5000);
 
       return () => {
         clearTimeout(timer);
       };
     }
-  }, [showingToast, setShowingToast]);
+  }, [toast]);
 
   return (
     <>
-      {showingToast && (
-        <p className={"myToast text-bg-" + toastStatus.type}>
-          {toastStatus.message}
+      {toast.status && (
+        <p className={"myToast text-bg-" + toastStatus[toast.status]}>
+          {toast.message}
         </p>
       )}
       <AppContext.Provider value={sharedState}>{children}</AppContext.Provider>

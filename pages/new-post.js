@@ -1,4 +1,5 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
+import { useAppContext } from "../context/state";
 
 const monthNames = [
   "January",
@@ -16,6 +17,8 @@ const monthNames = [
 ];
 
 export default function NewPostPage() {
+  const { setToast } = useAppContext();
+
   const titleRef = useRef();
   const yearRef = useRef();
   const dayRef = useRef();
@@ -34,7 +37,6 @@ export default function NewPostPage() {
   const [imageCount, setImageCount] = useState(1);
 
   function addLink() {
-    const input = document.getElementById("link" + (linkCount - 1));
     setLinkCount(linkCount + 1);
   }
 
@@ -46,7 +48,6 @@ export default function NewPostPage() {
   }
 
   function addImage() {
-    const image = document.getElementById("image" + (imageCount - 1));
     setImageCount(imageCount + 1);
   }
 
@@ -57,7 +58,9 @@ export default function NewPostPage() {
     }
   }
 
-  function addPost() {
+  function postSubmitHandler(event) {
+    event.preventDefault();
+
     const links = document.getElementsByClassName("linkInput");
     const linkValues = [];
     for (let link of links) {
@@ -92,29 +95,35 @@ export default function NewPostPage() {
     })
       .then((response) => response.json())
       .then((data) => {
+        setToast(data)
+
+        if ([401, 500].includes(data.status)) {
+          return;
+        }
+
         titleRef.current.value = "";
         yearRef.current.value = year;
         dayRef.current.value = day;
         descRef.current.value = "";
         bodyRef.current.value = "";
         setLinkCount(1);
-        document.getElementsByClassName("linkInput")[0].value = ""
+        document.getElementsByClassName("linkInput")[0].value = "";
         setImageCount(1);
-        document.getElementsByClassName("imageInput")[0].value = ""
+        document.getElementsByClassName("imageInput")[0].value = "";
         setListSelected("General");
         setMonthSelected(month);
       });
   }
 
   return (
-    <>
+    <form className="container" onSubmit={postSubmitHandler}>
       <div className="input-group mt-5">
         <span className="input-group-text">Title</span>
-        <input className="form-control" ref={titleRef} />
+        <input className="form-control" required ref={titleRef} />
       </div>
 
-      <div className="row mt-2">
-        <div className="col">
+      <div className="row mt-2 g-1">
+        <div className="col-6 col-md-3">
           <select
             className="form-select"
             defaultChecked="General"
@@ -130,19 +139,20 @@ export default function NewPostPage() {
           </select>
         </div>
 
-        <div className="col">
+        <div className="col-6 col-md-3">
           <div className="input-group">
             <span className="input-group-text">Year</span>
             <input
               type="number"
               className="form-control"
+              required
               defaultValue={year}
               ref={yearRef}
             />
           </div>
         </div>
 
-        <div className="col">
+        <div className="col-6 col-md-3">
           <select
             className="form-select"
             id="monthSelect"
@@ -166,12 +176,13 @@ export default function NewPostPage() {
           </select>
         </div>
 
-        <div className="col">
+        <div className="col-6 col-md-3">
           <div className="input-group">
             <span className="input-group-text">Day</span>
             <input
               type="number"
               className="form-control"
+              required
               defaultValue={day}
               ref={dayRef}
             />
@@ -181,7 +192,7 @@ export default function NewPostPage() {
 
       <div className="input-group mt-2">
         <span className="input-group-text">Desc</span>
-        <textarea className="form-control" ref={descRef} />
+        <textarea className="form-control" required ref={descRef} />
       </div>
 
       <div className="input-group mt-2">
@@ -189,9 +200,9 @@ export default function NewPostPage() {
         <textarea className="form-control" ref={bodyRef} />
       </div>
 
-      <div className="row mt-2">
+      <div className="row mt-1 g-1">
         <div className="col">
-          <p>Links</p>
+          <p className="mb-0">Links</p>
           {[...Array(linkCount)].map((e, i) => (
             <input
               key={i}
@@ -210,7 +221,7 @@ export default function NewPostPage() {
         </div>
 
         <div className="col">
-          <p>Images</p>
+          <p className="mb-0">Images</p>
           {[...Array(imageCount)].map((e, i) => (
             <input
               key={i}
@@ -231,12 +242,12 @@ export default function NewPostPage() {
 
       <div className="input-group mt-2">
         <span className="input-group-text">Key</span>
-        <input type="password" className="form-control" ref={keyRef} />
+        <input type="password" className="form-control" required ref={keyRef} />
       </div>
 
-      <button className="btn btn-primary text-white mt-2" onClick={addPost}>
+      <button type="submit" className="btn btn-primary text-white mt-2">
         Post
       </button>
-    </>
+    </form>
   );
 }

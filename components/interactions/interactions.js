@@ -8,21 +8,24 @@ import ShareIcon from "../icons/share-icon";
 import CommentModal from "./commentModal";
 
 export default function Interactions(props) {
-  const { name, setName, email, setEmail, setShowingToast, setToastStatus } =
-    useAppContext();
+  const { name, setName, email, setEmail, setToast } = useAppContext();
 
   const nameInputRef = useRef();
   const emailInputRef = useRef();
-  const bodyInputRef = useRef();
   const beNotifiedInputRef = useRef();
   var frequencyValue;
   const [beNotified, setBeNotified] = useState(false);
 
+  function updateCommentBody2() {
+    const body1 = document.getElementById("commentBody1" + props.postId);
+    const body2 = document.getElementById("commentBody2" + props.postId);
+    body2.value = body1.value;
+  }
+
   function copyLink() {
     var link = "https://ralmeida.dev/blog/posts#" + props.postId;
     navigator.clipboard.writeText(link);
-    setToastStatus({ message: "Link copied!", type: "success" });
-    setShowingToast(true);
+    setToast({ message: "Link copied!", status: 200 });
   }
 
   function beNotifiedHandler() {
@@ -39,7 +42,9 @@ export default function Interactions(props) {
     }
   }
 
-  function addComment() {
+  function commentSubmitHandler(event) {
+    event.preventDefault();
+
     if (name != nameInputRef) {
       setName(nameInputRef.current.value);
     }
@@ -52,20 +57,11 @@ export default function Interactions(props) {
         ? nameInputRef.current.value
         : "Anonymous";
     const email = emailInputRef.current.value;
-    const body = bodyInputRef.current.value;
+    const body = document.getElementById("commentBody1" + props.postId).value;
     const beNotified = beNotifiedInputRef.current.checked;
     const postId = props.postId;
 
-    if (body.trim() == "") {
-      setToastStatus({
-        message: "You must type a comment!",
-        type: "warning",
-      });
-      setShowingToast(true);
-      return;
-    }
-
-    const response = fetch("/blog/api/addComment", {
+    fetch("/blog/api/addComment", {
       method: "POST",
       body: JSON.stringify({
         postId,
@@ -77,20 +73,35 @@ export default function Interactions(props) {
       headers: {
         "Content-Type": "application/json",
       },
-    }).then(() => {
-      bodyInputRef.current.value = "";
-      beNotifiedInputRef.current.checked = false;
-      props.showComments();
-    });
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.status == 500) {
+          setToast(data);
+          return;
+        }
+
+        document.getElementById("commentBody1" + props.postId).value = "";
+        document.getElementById("commentBody2" + props.postId).value = "";
+        beNotifiedInputRef.current.checked = false;
+        setBeNotified(false)
+        document.getElementById("commentModalClose" + props.postId).click();
+        props.setShowingComments(true);
+        props.setCommentCount(props.commentCount + 1);
+      });
 
     if (beNotified) {
-      const response = fetch("/blog/api/addEmail", {
+      fetch("/blog/api/addEmail", {
         method: "POST",
         body: JSON.stringify({ name, email, frequencyValue }),
         headers: {
           "Content-Type": "application/json",
         },
-      });
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          setToast(data);
+        });
     }
   }
 
@@ -120,7 +131,8 @@ export default function Interactions(props) {
           }}
           placeholder="Write a comment..."
           aria-label="Comment"
-          ref={bodyInputRef}
+          id={"commentBody1" + props.postId}
+          onChange={updateCommentBody2}
         />
 
         <button
@@ -142,10 +154,9 @@ export default function Interactions(props) {
         email={email}
         nameInputRef={nameInputRef}
         emailInputRef={emailInputRef}
-        bodyInputRef={bodyInputRef}
         beNotifiedHandler={beNotifiedHandler}
         beNotifiedInputRef={beNotifiedInputRef}
-        addComment={addComment}
+        commentSubmitHandler={commentSubmitHandler}
         frequencyHandler={frequencyHandler}
         beNotified={beNotified}
         postId={props.postId}

@@ -10,6 +10,7 @@ export default function Post(props) {
   const postId = props.id;
 
   const [showingComments, setShowingComments] = useState(false);
+  const [commentCount, setCommentCount] = useState(0);
   const [likes, setLikes] = useState(props.likes);
 
   const descriptionList = props.description.split("\n");
@@ -55,13 +56,23 @@ export default function Post(props) {
 
         <p className="fw-bold fs-3 mb-0">{props.title}</p>
         <div style={{ maxHeight: 200, overflow: "auto" }}>
-        <p>
-            {props.links.map((link, i) => (
-              <a key={i} className="me-2" href={link}>{link}</a>
-            ))}
-          </p>
+          {props.links.length > 0 && (
+            <p>
+              {props.links.map((link, i) => (
+                <li key={i} style={{ listStyle: "none" }}>
+                  <small>
+                    <a key={i} className="me-2" href={link}>
+                      {link}
+                    </a>
+                  </small>
+                </li>
+              ))}
+            </p>
+          )}
           {descriptionList.map((paragraph, i) => (
-            <p key={i} className="tab">{paragraph}</p>
+            <p key={i} className="tab">
+              {paragraph}
+            </p>
           ))}
         </div>
       </div>
@@ -74,11 +85,14 @@ export default function Post(props) {
         postId={postId}
         addLike={addLike}
         showComments={showComments}
+        setShowingComments={setShowingComments}
+        commentCount={commentCount}
+        setCommentCount={setCommentCount}
         likes={likes}
       ></Interactions>
 
       {showingComments && (
-        <CommentList postId={postId} showingComments={showingComments} />
+        <CommentList postId={postId} commentCount={commentCount} setCommentCount={setCommentCount} />
       )}
     </div>
   );
