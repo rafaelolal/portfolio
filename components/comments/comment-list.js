@@ -20,7 +20,7 @@ export default function CommentList(props) {
         setCommentCount(data.data.length)
         setComments(data.data);
       });
-  }, [commentCount, postId]);
+  }, [commentCount, setCommentCount, postId]);
 
   if (!comments) {
     return <p className="m-0 mt-3 px-3 commentShow">Loading...</p>;
