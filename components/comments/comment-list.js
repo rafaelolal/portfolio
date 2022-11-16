@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Comment from "./comment";
 
 export default function CommentList(props) {
-  const { commentCount, postId } = props;
+  const { commentCount, setCommentCount, postId } = props;
 
   const [comments, setComments] = useState();
 
@@ -17,7 +17,7 @@ export default function CommentList(props) {
     })
       .then((response) => response.json())
       .then((data) => {
-        props.setCommentCount(data.data.length)
+        setCommentCount(data.data.length)
         setComments(data.data);
       });
   }, [commentCount, postId]);
