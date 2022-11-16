@@ -41,10 +41,10 @@
 
 @keyframes commentAnimation {
   0% {
-    height: 0;
+    max-height: 0;
   }
   100% {
-    height: 300;
+    max-height: 200;
   }
 }
 

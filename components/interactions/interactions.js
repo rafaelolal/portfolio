@@ -16,6 +16,17 @@ export default function Interactions(props) {
   var frequencyValue;
   const [beNotified, setBeNotified] = useState(false);
 
+  function openCommentModalHandler() {
+    if (
+      document.getElementById("commentBody1" + props.postId).value.trim() &&
+      name
+    ) {
+      commentSubmitHandler(null);
+      return;
+    }
+    document.getElementById("hiddenCommentSubmit").click();
+  }
+
   function updateCommentBody2() {
     const body1 = document.getElementById("commentBody1" + props.postId);
     const body2 = document.getElementById("commentBody2" + props.postId);
@@ -43,7 +54,9 @@ export default function Interactions(props) {
   }
 
   function commentSubmitHandler(event) {
-    event.preventDefault();
+    if (event) {
+      event.preventDefault();
+    }
 
     if (name != nameInputRef) {
       setName(nameInputRef.current.value);
@@ -84,7 +97,7 @@ export default function Interactions(props) {
         document.getElementById("commentBody1" + props.postId).value = "";
         document.getElementById("commentBody2" + props.postId).value = "";
         beNotifiedInputRef.current.checked = false;
-        setBeNotified(false)
+        setBeNotified(false);
         document.getElementById("commentModalClose" + props.postId).click();
         props.setShowingComments(true);
         props.setCommentCount(props.commentCount + 1);
@@ -138,15 +151,22 @@ export default function Interactions(props) {
         <button
           className="btn btn-secondary text-white ps-2"
           type="button"
-          data-bs-toggle="modal"
           style={{
             borderTopRightRadius: "20px 20px",
             borderBottomRightRadius: "20px 20px",
           }}
-          data-bs-target={"#commentModal" + props.postId}
+          onClick={openCommentModalHandler}
         >
           <SendIcon />
         </button>
+        <span
+          className="visually-hidden"
+          data-bs-toggle="modal"
+          data-bs-target={"#commentModal" + props.postId}
+          id="hiddenCommentSubmit"
+        >
+          <SendIcon />
+        </span>
       </div>
 
       <CommentModal

@@ -23,15 +23,15 @@ export default function CommentList(props) {
   }, [commentCount, postId]);
 
   if (!comments) {
-    return <p></p>;
+    return <p className="m-0 mt-3 px-3 commentShow">Loading...</p>;
   }
 
   if (commentCount === 0) {
-    return <p className="display-6 m-0 mt-3 px-3">Comments (0)</p>;
+    return <p className="display-6 m-0 mt-3 px-3 commentShow">Comments (0)</p>;
   }
 
   return (
-    <div className="rounded mt-3 commentShow p-3 pt-0">
+    <div className="rounded mt-3 commentShow px-3 pt-0">
       <p className="display-6">Comments ({commentCount})</p>
       {comments.map((comment) => (
         <Comment
