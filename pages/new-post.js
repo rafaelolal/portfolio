@@ -225,7 +225,7 @@ export default function NewPostPage() {
           {[...Array(imageCount)].map((e, i) => (
             <input
               key={i}
-              type="url"
+              type="text"
               className="form-control mt-1 imageInput"
               id={"image" + i}
               onChange={
