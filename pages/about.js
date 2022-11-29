@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Image from "next/image";
+import Image from "next/future/image";
 import AchievementList from "../components/achievements/achievement-list";
 export default function AboutPage() {
   return (
@@ -7,22 +7,21 @@ export default function AboutPage() {
       <Head>
         <title>About Me</title>
       </Head>
-      <div className="row m-0 mt-5 fadeIn">
-        <div className="col-12 col-md-5 col-lg-4 rounded my-auto">
-          <div className="bg-dark p-3 rounded shadow">
-            <Image
-              src="/blog/profile.jpg"
-              className="img-fluid rounded"
-              alt="..."
-              width="75%"
-              height="100%"
-              layout="responsive"
-              objectFit="cover"
-            />
-          </div>
+      <div className="row m-0 mt-5 fadeIn d-flex">
+        <div
+          className="col-7 col-md-5 col-lg-4 mx-auto position-relative"
+          style={{ minHeight: "33vh" }}
+        >
+          <Image
+            src="/blog/profile.jpg"
+            className="rounded shadow"
+            alt="..."
+            fill
+            style={{ objectFit: "cover", objectPosition: "top" }}
+          />
         </div>
 
-        <div className="col-12 col-md-7 col-lg-8 p-3 my-auto">
+        <div className="col-12 col-md-7 col-lg-8 p-3 my-5">
           <div className="fadeIn1">
             <p className="display-3 fw-bold">ABOUT ME</p>
             <p>
@@ -51,7 +50,7 @@ export default function AboutPage() {
             <p className="display-6 fw-bold text-primary">
               I AM CURRENTLY WORKING ON
             </p>
-            <p>
+            <p className="mb-0">
               College applications, and of course, this blog project. I have
               been working diligently for hours on end to make the user
               experience as good as possible to make using the blog enjoyable.
@@ -60,11 +59,7 @@ export default function AboutPage() {
         </div>
       </div>
 
-      <div className="blogfolio mt-4">
-        <p>ACHIEVEMENTS</p>
-      </div>
-
-        <AchievementList />
+      <AchievementList />
     </>
   );
 }

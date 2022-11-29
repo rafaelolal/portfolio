@@ -122,10 +122,26 @@ export default function PostSearch(props) {
           <ul className="dropdown-menu">
             <li>
               <a
-                onClick={() => filterByList("Project")}
+                onClick={() => filterByList("")}
                 className="dropdown-item fs-4"
               >
-                Project
+                All
+              </a>
+            </li>
+            <li>
+              <a
+                onClick={() => filterByList("General")}
+                className="dropdown-item fs-4"
+              >
+                General
+              </a>
+            </li>
+            <li>
+              <a
+                onClick={() => filterByList("Achievement")}
+                className="dropdown-item fs-4"
+              >
+                Achievement
               </a>
             </li>
             <li>
@@ -138,10 +154,10 @@ export default function PostSearch(props) {
             </li>
             <li>
               <a
-                onClick={() => filterByList("Achievement")}
+                onClick={() => filterByList("Project")}
                 className="dropdown-item fs-4"
               >
-                Achievement
+                Project
               </a>
             </li>
           </ul>

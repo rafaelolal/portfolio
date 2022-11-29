@@ -34,6 +34,8 @@ export default function Post(props) {
     }).then(setLikes(likes + 1));
   }
 
+  const postDate = new Date(props.date);
+
   return (
     <div
       className="col-12 col-md-10 col-lg-8 mx-auto bg-dark py-3 rounded my-5 shadow"
@@ -42,7 +44,13 @@ export default function Post(props) {
       <div className="vl ps-2 mx-3">
         <div className="d-flex justify-content-between">
           <p className="text-primary m-0">
-            {props.year + ", " + props.month + " " + props.day}
+            {postDate.toLocaleString(undefined, {
+              timeZone: "UTC",
+              year: "numeric",
+              month: "long",
+              day: "2-digit",
+              weekday: "long",
+            })}
           </p>
           <button
             className={"badge fs-5 rounded-5 text-white btn  btn-" + props.list}
@@ -92,7 +100,11 @@ export default function Post(props) {
       ></Interactions>
 
       {showingComments && (
-        <CommentList postId={postId} commentCount={commentCount} setCommentCount={setCommentCount} />
+        <CommentList
+          postId={postId}
+          commentCount={commentCount}
+          setCommentCount={setCommentCount}
+        />
       )}
     </div>
   );

@@ -11,7 +11,28 @@ export default function AchievementList() {
     })
       .then((response) => response.json())
       .then((data) => {
-        setAchievementGroups(data.data);
+        var grouped = {};
+
+        for (let item of data.data) {
+          console.log({ item });
+          if (!(item.type in grouped)) {
+            grouped[item.type] = [];
+            grouped[item.type].push(item);
+            continue;
+          }
+          grouped[item.type].push(item);
+        }
+
+        var listOfGroups = [];
+        for (var type in grouped) {
+          listOfGroups.push({
+            type: type,
+            achievements: grouped[type],
+            id: type,
+          });
+        }
+
+        setAchievementGroups(listOfGroups);
       });
   }, []);
 
@@ -21,15 +42,15 @@ export default function AchievementList() {
 
   return (
     <div
-      className="rounded my-5 row m-0 gx-3 flex-nowrap fadeIn"
+      className="row flex-nowrap fadeIn rounded my-5 m-0 hiddenBar"
       style={{ overflow: "auto" }}
     >
       {achievementGroups.map((group) => (
         <AchievementGroup
           key={group.id}
           id={group.id}
+          type={group.type}
           achievements={group.achievements}
-          name={group.name}
         />
       ))}
     </div>

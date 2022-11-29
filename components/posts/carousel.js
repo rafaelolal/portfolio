@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/future/image";
 
 export default function Carousel(props) {
   return (
@@ -9,7 +9,10 @@ export default function Carousel(props) {
         tabIndex="-1"
         aria-hidden="true"
       >
-        <div className="modal-dialog modal-dialog-centered" style={{maxWidth: "fit-content"}}>
+        <div
+          className="modal-dialog modal-dialog-centered"
+          style={{ maxWidth: "fit-content" }}
+        >
           <div className="modal-content">
             <div className="modal-body">
               <div
@@ -27,8 +30,8 @@ export default function Carousel(props) {
                     >
                       <img
                         src={"/blog" + imageLink}
-                        alt="..."
-                        className="img-fluid"
+                        alt="hi alt"
+                        style={{ maxHeight: "90vh" }}
                       />
                     </div>
                   ))}
@@ -84,15 +87,15 @@ export default function Carousel(props) {
                 "carousel-item " + (imageLink == props.images[0] && "active")
               }
               key={imageLink}
+              style={{ height: "50vh" }}
             >
               <Image
                 src={"/blog" + imageLink}
-                className="d-block w-100"
-                alt="..."
-                width="100%"
-                height="56%"
-                layout="responsive"
-                objectFit="cover"
+                alt="hi alt 2"
+                style={{ objectFit: "cover" }}
+                fill
+                placeholder="blur"
+                blurDataURL="https://t3.ftcdn.net/jpg/02/48/42/64/360_F_248426448_NVKLywWqArG2ADUxDq6QprtIzsF82dMF.jpg"
               />
             </div>
           ))}

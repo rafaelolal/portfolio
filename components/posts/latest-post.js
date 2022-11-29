@@ -2,19 +2,22 @@ import Link from "next/link";
 import Carousel from "./carousel";
 
 export default function LatestPost(props) {
+  const postDate = new Date(props.date);
+
   return (
-    <div
-      className="bg-dark py-3 rounded shadow"
-      id={props.id}
-    >
+    <div className="bg-dark py-3 rounded shadow" id={props.id}>
       <div className="vl ps-2 mx-3">
         <div className="d-flex justify-content-between">
           <p className="text-primary m-0">
-            {props.year + ", " + props.month + " " + props.day}
+          {postDate.toLocaleString(undefined, {
+              timeZone: "UTC",
+              year: "numeric",
+              month: "long",
+              day: "2-digit",
+              weekday: "long",
+            })}
           </p>
-          <span
-            className="badge fs-5 rounded-5 text-white bg-Latest"
-          >
+          <span className="badge fs-5 rounded-5 text-white bg-Latest">
             Latest
           </span>
         </div>

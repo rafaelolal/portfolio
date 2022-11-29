@@ -3,7 +3,7 @@ import Link from "next/link";
 import DiscordIcon from "../icons/discord-icon";
 import EmailIcon from "../icons/email-icon";
 import HamburgerIcon from "../icons/hamburger-icon";
-import LinkIcon from "../icons/link-icon";
+import VisitIcon from "../icons/visit-icon";
 import LinkedInIcon from "../icons/linkedIn-icon";
 import TelephoneIcon from "../icons/telephone-icon";
 
@@ -78,7 +78,7 @@ export default function OffCanvasBar() {
               >
                 <Link href="/">
                   <a className="nav-link fs-5 pt-0 pb-0">
-                    <LinkIcon />
+                    <VisitIcon />
                     Home
                   </a>
                 </Link>
@@ -90,7 +90,7 @@ export default function OffCanvasBar() {
               >
                 <Link href="/about">
                   <a className="nav-link fs-5 pb-0">
-                    <LinkIcon />
+                    <VisitIcon />
                     About Me
                   </a>
                 </Link>
@@ -102,7 +102,7 @@ export default function OffCanvasBar() {
               >
                 <Link href="/posts">
                   <a className="nav-link fs-5 pb-0">
-                    <LinkIcon />
+                    <VisitIcon />
                     Blog
                   </a>
                 </Link>
@@ -114,7 +114,7 @@ export default function OffCanvasBar() {
               >
                 <Link href="/resume">
                   <a className="nav-link fs-5 pb-0">
-                    <LinkIcon />
+                    <VisitIcon />
                     Resume
                   </a>
                 </Link>

@@ -40,9 +40,8 @@ export default function Home(props) {
                 <p>WELCOME</p>
               </div>
               <p className="text-center mt-3 mx-auto mt-4">
-                You will find from Featured blogs to my day-to-day activities.
                 Here, I show off my technical skills and you learn more about
-                me!
+                me! This site was made from scratch with NextJS.
               </p>
             </div>
 
@@ -94,9 +93,7 @@ export default function Home(props) {
                 id={props.post.id}
                 list={props.post.list}
                 title={props.post.title}
-                year={props.post.year}
-                month={props.post.month}
-                day={props.post.day}
+                date={props.post.date}
                 description={props.post.description}
                 images={props.post.images}
               />

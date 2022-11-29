@@ -3,7 +3,7 @@ import { getDBClient } from "../../helpers/db";
 export default async function handler(req, res) {
   if (req.method == "POST") {
     try {
-      const { title, list, date, desc, body, links, images, key } = req.body;
+      const { name, type, date, desc, link, issuer, key } = req.body;
 
       if (key != process.env.POST_KEY) {
         res.status(401).json({ message: "Invalid key", status: 401 });
@@ -12,17 +12,14 @@ export default async function handler(req, res) {
 
       const client = await getDBClient();
 
-      const collection = client.db().collection("posts");
+      const collection = client.db().collection("achievements");
       const result = await collection.insertOne({
-        title: title,
-        list: list,
+        name: name,
+        type: type,
         date: new Date(date),
         description: desc,
-        body: body,
-        links: links,
-        images: images,
-        likes: 0,
-        comments: [],
+        link: link,
+        issuer: issuer,
       });
 
       client.close();
@@ -37,9 +34,9 @@ export default async function handler(req, res) {
       }
 
       res.status(200).json({
-        message: "Post added",
+        message: "Achievement added",
         status: 200,
-      });     
+      });
     } catch (error) {
       res.status(500).json({
         message: "Error: " + error.message,

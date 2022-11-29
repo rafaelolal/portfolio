@@ -19,7 +19,7 @@ export async function getPosts(reqBody) {
   year && (filters.year = year);
   month && (filters.month = month);
 
-  const posts = await collection.find(filters).sort({ _id: -1 }).toArray();
+  const posts = await collection.find(filters).sort({ date: -1 }).toArray();
   client.close();
 
   if (!posts || posts.length === 0) {
@@ -29,9 +29,7 @@ export async function getPosts(reqBody) {
       data: posts.map((post) => ({
         list: post.list,
         title: post.title,
-        year: post.year,
-        month: post.month,
-        day: post.day,
+        date: JSON.parse(JSON.stringify(post.date)),
         description: post.description,
         body: post.body,
         links: post.links,

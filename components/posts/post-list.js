@@ -9,6 +9,8 @@ export default function PostList(props) {
   const { isReady } = router;
   const routerList = router.query.list;
 
+  const anchorId = router.asPath.split("#")[1];
+
   const [posts, setPosts] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
@@ -37,6 +39,15 @@ export default function PostList(props) {
     }
   }, [routerList, isReady, currentSearch, currentYear, currentMonth]);
 
+  useEffect(() => {
+    if (anchorId) {
+      const postAnchor = document.getElementById("postAnchor");
+      if (postAnchor) {
+        postAnchor.click();
+      }
+    }
+  });
+
   if (isLoading) {
     return <Loading />;
   }
@@ -46,25 +57,26 @@ export default function PostList(props) {
   }
 
   return (
-    <div className="fadeIn">
-      {posts.map((post) => (
-        <Post
-          key={post.id}
-          id={post.id}
-          list={post.list}
-          title={post.title}
-          year={post.year}
-          month={post.month}
-          day={post.day}
-          description={post.description}
-          body={post.body}
-          links={post.links}
-          images={post.images}
-          likes={post.likes}
-          comments={post.comments}
-          setCurrentList={setCurrentList}
-        />
-      ))}
-    </div>
+    <>
+      <a class="visually-hidden" id="postAnchor" href={"#" + anchorId}></a>
+      <div className="fadeIn">
+        {posts.map((post) => (
+          <Post
+            key={post.id}
+            id={post.id}
+            list={post.list}
+            title={post.title}
+            date={post.date}
+            description={post.description}
+            body={post.body}
+            links={post.links}
+            images={post.images}
+            likes={post.likes}
+            comments={post.comments}
+            setCurrentList={setCurrentList}
+          />
+        ))}
+      </div>
+    </>
   );
 }

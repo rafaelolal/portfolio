@@ -38,6 +38,9 @@ $theme-colors: (
   color: $primary;
 }
 
+$accordion-icon-color: $secondary;
+$accordion-icon-active-color: $secondary;
+
 $input-group-addon-bg: $dark;
 
 $navbar-light-color: rgb(0, 0, 0);
@@ -123,6 +126,13 @@ $display-font-sizes: (
 
 ::-webkit-scrollbar-thumb:hover {
   background-color: $tertiary;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.hiddenBar::-webkit-scrollbar {
+  display: none;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 @import "./animations.scss";
