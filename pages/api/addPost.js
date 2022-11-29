@@ -16,7 +16,7 @@ export default async function handler(req, res) {
       const result = await collection.insertOne({
         title: title,
         list: list,
-        date: new Date(date),
+        date: date,
         description: desc,
         body: body,
         links: links,

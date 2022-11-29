@@ -62,7 +62,7 @@ export default function PostForm() {
       body: JSON.stringify({
         title: titleRef.current.value,
         list: listRef.current.value,
-        date: dateRef.current.value,
+        date: new Date(dateRef.current.value),
         desc: descRef.current.value,
         body: bodyRef.current.value,
         links: linkValues,

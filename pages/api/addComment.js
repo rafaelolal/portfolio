@@ -1,26 +1,10 @@
 import { ObjectId } from "mongodb";
 import { getDBClient } from "../../helpers/db";
 
-const monthNames = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
-
 export default async function handler(req, res) {
   if (req.method == "POST") {
     try {
-      const { postId, name, email, body } = req.body;
-      const date = new Date();
+      const { postId, name, email, date, body } = req.body;
 
       const client = await getDBClient();
 
@@ -29,10 +13,8 @@ export default async function handler(req, res) {
         name: name,
         email: email,
         body: body,
+        date: date,
         postId: postId,
-        year: date.getFullYear(),
-        month: monthNames[date.getMonth()],
-        day: date.getDate(),
       });
 
       const postsCollection = client.db().collection("posts");
@@ -54,7 +36,7 @@ export default async function handler(req, res) {
         });
         return;
       }
-      
+
       res.status(200).json({
         message: "Comment submitted",
         status: 200,

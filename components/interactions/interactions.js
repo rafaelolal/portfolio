@@ -28,23 +28,18 @@ export default function Interactions(props) {
       setEmail(emailInputRef.current.value);
     }
 
-    const name =
-      nameInputRef.current.value.trim() != ""
-        ? nameInputRef.current.value
-        : "Anonymous";
-    const email = emailInputRef.current.value;
-    const body = document.getElementById("commentBody1" + props.postId).value;
-    const beNotified = beNotifiedInputRef.current.checked;
-    const postId = props.postId;
-
     fetch("/blog/api/addComment", {
       method: "POST",
       body: JSON.stringify({
-        postId,
-        name,
-        email,
-        body,
-        frequencyValue,
+        postId: props.postId,
+        name:
+          nameInputRef.current.value.trim() != ""
+            ? nameInputRef.current.value
+            : "Anonymous",
+        email: emailInputRef.current.value,
+        body: document.getElementById("commentBody1" + props.postId).value,
+        date: beNotifiedInputRef.current.checked,
+        frequencyValue: frequencyValue,
       }),
       headers: {
         "Content-Type": "application/json",
@@ -52,8 +47,9 @@ export default function Interactions(props) {
     })
       .then((response) => response.json())
       .then((data) => {
+        setToast(data);
+
         if (data.status == 500) {
-          setToast(data);
           return;
         }
 

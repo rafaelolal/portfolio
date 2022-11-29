@@ -38,10 +38,8 @@ export default function CommentList(props) {
           key={comment.id}
           name={comment.name}
           body={comment.body}
-          year={comment.year}
-          month={comment.month}
-          day={comment.day}
-        />
+          date={comment.date}
+          />
       ))}
     </div>
   );
