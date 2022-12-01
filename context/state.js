@@ -1,12 +1,12 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
 const toastStatus = { 401: "warning", 500: "warning", 200: "success" };
+const toastDefault = { message: null, status: null };
 const AppContext = createContext();
 
 export function AppWrapper({ children }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const toastDefault = { message: null, status: null };
   const [toast, setToast] = useState(toastDefault);
 
   let sharedState = {
