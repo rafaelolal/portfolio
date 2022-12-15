@@ -37,7 +37,7 @@ export default function Home(props) {
           <div className="row m-0">
             <div className="col-12 fadeIn1">
               <p className="text-center text-primary fs-5 fw-bold">
-                TIME UNTIL COLUMBIA'S RESULTS
+                TIME UNTIL RESULTS FROM COLUMBIA
               </p>
               <p className="text-center">
                 <Link href="/timer">
