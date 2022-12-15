@@ -38,27 +38,29 @@ export default function TimerPage() {
   }, []);
 
   return (
-    <div className="d-flex" style={{ height: "91vh" }}>
+    <>
       <Head>
         <title>Timer</title>
       </Head>
 
-      {partyTime ? (
-        <div className="mx-auto my-auto">
-          <h1 className="text-center">RESULTS ARE OUT!</h1>
-          <p className="text-center">Contact me to find out the decision.</p>
-        </div>
-      ) : (
-        <div className="mx-auto my-auto">
-          <div className="blogfolio mt-5">
-            <p>TIME UNTIL COLUMBIA'S RESULTS</p>
+      <div className="d-flex" style={{ height: "91vh" }}>
+        {partyTime ? (
+          <div className="my-auto mx-auto">
+            <h1 className="text-center">RESULTS ARE OUT!</h1>
+            <p className="text-center">Contact me to find out the decision.</p>
           </div>
-          <p className="text-center fs-2 mt-5">{days} days</p>
-          <p className="text-center fs-2">
-            {hours} hours, {minutes} minutes, and {seconds} seconds
-          </p>
-        </div>
-      )}
-    </div>
+        ) : (
+          <div className="my-auto mx-auto">
+            <div className="blogfolio mt-5">
+              <p>RESULTS IN</p>
+            </div>
+            <p className="text-center fs-2 mt-5">{days} days</p>
+            <p className="text-center fs-2">
+              {hours} hours, {minutes} minutes, and {seconds} seconds
+            </p>
+          </div>
+        )}
+      </div>
+    </>
   );
 }
