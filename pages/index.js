@@ -36,14 +36,6 @@ export default function Home(props) {
         <div className="col-12 col-md-10 col-lg-6 mx-auto my-auto">
           <div className="row m-0">
             <div className="col-12 fadeIn1">
-              <p className="text-center text-primary fs-5 fw-bold">
-                TIME UNTIL RESULTS FROM COLUMBIA
-              </p>
-              <p className="text-center">
-                <Link href="/timer">
-                  <a className="btn btn-primary text-white">CHECK</a>
-                </Link>
-              </p>
               <div className="blogfolio mt-5">
                 <p>WELCOME</p>
               </div>
