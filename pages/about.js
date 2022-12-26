@@ -17,7 +17,7 @@ export default function AboutPage() {
             className="rounded shadow"
             alt="..."
             fill
-            style={{ objectFit: "cover", objectPosition: "top" }}
+            style={{ objectFit: "cover" }}
           />
         </div>
 

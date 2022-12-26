@@ -38,7 +38,7 @@ export default function Interactions(props) {
             : "Anonymous",
         email: emailInputRef.current.value,
         body: document.getElementById("commentBody1" + props.postId).value,
-        date: beNotifiedInputRef.current.checked,
+        date: new Date(),
         frequencyValue: frequencyValue,
       }),
       headers: {

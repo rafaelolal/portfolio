@@ -7,7 +7,7 @@ export default async function handler(req, res) {
   const client = await getDBClient();
 
   const collection = client.db().collection("posts");
-  const result = await collection.update(
+  const result = await collection.updateOne(
     { _id: ObjectId(postId) },
     { $inc: { likes: 1 } }
   );

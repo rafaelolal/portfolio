@@ -1,0 +1,81 @@
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100;
+  }
+}
+
+.fadeIn {
+  animation: 0.5s normal 0s 1 fadeInAnimation;
+}
+
+.fadeIn1 {
+  @extend .fadeIn;
+  opacity: 0;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+
+.fadeIn2 {
+  @extend .fadeIn;
+  opacity: 0;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+}
+
+.fadeIn3 {
+  @extend .fadeIn;
+  opacity: 0;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+}
+
+.fadeIn4 {
+  @extend .fadeIn;
+  opacity: 0;
+  animation-delay: 3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes commentAnimation {
+  0% {
+    max-height: 0;
+  }
+  100% {
+    max-height: 200;
+  }
+}
+
+.commentShow {
+  max-height: 200px;
+  overflow: auto;
+  animation: 1s normal 1 commentAnimation;
+}
+
+@keyframes featuredPulseAnimation {
+  0% {
+    color: #000;
+  }
+  100% {
+    color: #ffad5c;
+  }
+}
+
+.featuredPulse {
+  animation: featuredPulseAnimation 1s normal forwards;
+}
+
+@keyframes jumpAnimation {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(1rem);
+  }
+}
+
+.jump {
+  animation: jumpAnimation 0.5s alternate infinite forwards ease-in-out;
+}

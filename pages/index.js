@@ -13,79 +13,50 @@ import ResumeIcon from "../components/icons/resume-icon";
 import BlogIcon from "../components/icons/blog-icon";
 
 export default function Home(props) {
-  useEffect(() => {
-    window.onscroll = function (e) {
-      let el = document.getElementsByClassName("jump")[0];
-      if (el) {
-        if (window.scrollY >= 80) {
-          el.style.opacity = 0;
-        } else {
-          el.style.opacity = 100;
-        }
-      }
-    };
-  });
-
   return (
     <>
       <Head>
         <title>Home</title>
       </Head>
 
-      <section className="tall1 d-flex">
-        <div className="col-12 col-md-10 col-lg-6 mx-auto my-auto">
-          <div className="row m-0">
-            <div className="col-12 fadeIn1">
-              <div className="blogfolio mt-5">
-                <p>WELCOME</p>
-              </div>
-              <p className="text-center mt-4">
-                Here, I show off my technical skills and you learn more about
-                me! This site was made from scratch with NextJS.
-              </p>
+      <section
+        className="firstSection d-flex flex-column"
+        style={{ backgroundColor: "lightBlue" }}
+      >
+        <div className="my-auto row">
+          <div className="col-12 col-md-6 fadeIn1">
+            <div className="blogfolio">
+              <p>WELCOME</p>
             </div>
+            <p className="text-center mt-4">Check out my latest post!</p>
 
-            <div className="col-12 col-md-6 mx-auto fadeIn2">
-              <Link href="/about">
-                <a>
-                  <p className="text-center text-primary">
-                    <QuestionIcon />
-                  </p>
-                </a>
-              </Link>
-              <p className="display-6 fw-bold text-center">Why?</p>
-
-              <p className="text-center">
-                I decided to create a blogfolio after noticing that all
-                portfolios, though some may be more complex, always fall in the
-                same structure.
-              </p>
-            </div>
-
-            <div className="col-12 col-md-6 fadeIn3">
-              <Link href="/posts">
-                <a>
-                  <p className="text-center text-primary">
-                    <ExploreIcon />
-                  </p>
-                </a>
-              </Link>
-              <p className="display-6 fw-bold text-center">Explore!</p>
-
-              <p className="text-center">
-                If you are only interested in what really matters, explore About
-                Me and Featured posts. Down this page is my latest post.
-              </p>
-            </div>
+            <Link className="mt-5" href="/posts">
+              <a>
+                <p className="text-center text-primary">
+                  <ExploreIcon />
+                </p>
+              </a>
+            </Link>
+            <p className="display-6 fw-bold text-center">Explore!</p>
+            <center className="fadeIn4">
+              <DownIcon />
+            </center>
           </div>
 
-          <center className="fadeIn4">
-            <DownIcon />
-          </center>
+          <div className="col-12 col-md-6 fadeIn2">
+            <LatestPost
+              id={props.post.id}
+              list={props.post.list}
+              title={props.post.title}
+              date={props.post.date}
+              description={props.post.description}
+              images={props.post.images}
+            />
+          </div>
         </div>
       </section>
 
-      <section id="section2" className="tall2 d-flex">
+      <section className="section d-flex">
         <div className="row m-0 py-auto">
           <div className="col-12 col-md-7 my-auto p-0">
             <div className="">
@@ -152,6 +123,59 @@ export default function Home(props) {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="section d-flex">
+        <div className="col-12 col-md-10 col-lg-6 mx-auto my-auto">
+          <div className="row m-0">
+            <div className="col-12 fadeIn1">
+              <div className="blogfolio mt-5">
+                <p>WELCOME</p>
+              </div>
+              <p className="text-center mt-4">
+                Here, I show off my technical skills and you learn more about
+                me! This site was made from scratch with NextJS.
+              </p>
+            </div>
+
+            <div className="col-12 col-md-6 mx-auto fadeIn2">
+              <Link href="/about">
+                <a>
+                  <p className="text-center text-primary">
+                    <QuestionIcon />
+                  </p>
+                </a>
+              </Link>
+              <p className="display-6 fw-bold text-center">Why?</p>
+
+              <p className="text-center">
+                I decided to create a blogfolio after noticing that all
+                portfolios, though some may be more complex, always fall in the
+                same structure.
+              </p>
+            </div>
+
+            <div className="col-12 col-md-6 fadeIn3">
+              <Link href="/posts">
+                <a>
+                  <p className="text-center text-primary">
+                    <ExploreIcon />
+                  </p>
+                </a>
+              </Link>
+              <p className="display-6 fw-bold text-center">Explore!</p>
+
+              <p className="text-center">
+                If you are only interested in what really matters, explore About
+                Me and Featured posts. Down this page is my latest post.
+              </p>
+            </div>
+          </div>
+
+          <center className="fadeIn4">
+            <DownIcon />
+          </center>
         </div>
       </section>
     </>

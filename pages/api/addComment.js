@@ -18,7 +18,7 @@ export default async function handler(req, res) {
       });
 
       const postsCollection = client.db().collection("posts");
-      const postResult = await postsCollection.update(
+      const postResult = await postsCollection.updateOne(
         { _id: ObjectId(postId) },
         { $push: { comments: commentResult.insertedId.toString() } }
       );

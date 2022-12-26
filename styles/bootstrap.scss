@@ -1,0 +1,35 @@
+$font-family-base: "Arial", serif;
+
+$tertiary: #212529;
+$dark: #f1eff1;
+$primary: #ea4e48;
+$secondary: #9fa8d1;
+$success: #4db7d1;
+$warning: #ffb818;
+
+$theme-colors: (
+  "tertiary": $tertiary,
+  "dark": $dark,
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "warning": $warning,
+  "Latest": $success,
+  "Featured": #ffad5c,
+  "Gym": #81c45a,
+  "Project": #9468a1,
+  "Achievement": #da81ac,
+  "General": #c4a484,
+);
+
+$accordion-icon-color: $secondary;
+$accordion-icon-active-color: $secondary;
+
+$input-group-addon-bg: $dark;
+
+$navbar-light-color: rgb(0, 0, 0);
+$navbar-light-hover-color: $primary;
+
+$offcanvas-horizontal-width: auto;
+
+@import "./node_modules/bootstrap/scss/bootstrap.scss";
