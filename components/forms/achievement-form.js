@@ -49,11 +49,11 @@ export default function AchievementForm() {
 
   return (
     <>
-      <div className="blogfolio mt-4">
+      <div className="blogfolio my-5">
         <p>ACHIEVEMENTS</p>
       </div>
 
-      <form onSubmit={achievementSubmitHandler}>
+      <form className="mb-5" onSubmit={achievementSubmitHandler}>
         <div className="row g-1 mt-1">
           <div className="col-12 col-md-6">
             <div className="input-group">
@@ -69,10 +69,10 @@ export default function AchievementForm() {
               ref={typeRef}
             >
               <option value="General">General</option>
-              <option value="Featured">Achievement</option>
-              <option value="Achievement">Award</option>
-              <option value="Gym">Certificate</option>
-              <option value="Project">Course</option>
+              <option value="Achievement">Achievement</option>
+              <option value="Award">Award</option>
+              <option value="Certificate">Certificate</option>
+              <option value="Course">Course</option>
             </select>
           </div>
 

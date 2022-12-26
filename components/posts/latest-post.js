@@ -9,7 +9,7 @@ export default function LatestPost(props) {
       <div className="vl ps-2 mx-3">
         <div className="d-flex justify-content-between">
           <p className="text-primary m-0">
-          {postDate.toLocaleString(undefined, {
+            {postDate.toLocaleString(undefined, {
               timeZone: "UTC",
               year: "numeric",
               month: "long",

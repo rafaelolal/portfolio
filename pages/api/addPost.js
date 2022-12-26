@@ -16,7 +16,7 @@ export default async function handler(req, res) {
       const result = await collection.insertOne({
         title: title,
         list: list,
-        date: date,
+        date: new Date(date),
         description: desc,
         body: body,
         links: links,
@@ -39,7 +39,7 @@ export default async function handler(req, res) {
       res.status(200).json({
         message: "Post added",
         status: 200,
-      });     
+      });
     } catch (error) {
       res.status(500).json({
         message: "Error: " + error.message,

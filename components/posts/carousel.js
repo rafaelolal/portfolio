@@ -13,7 +13,10 @@ export default function Carousel(props) {
           className="modal-dialog modal-dialog-centered"
           style={{ maxWidth: "fit-content" }}
         >
-          <div className="modal-content">
+          <div
+            className="modal-content"
+            style={{ backgroundColor: "rgba(0, 0, 0, 0)" }}
+          >
             <div className="modal-body">
               <div
                 id={"carousel2" + props.postId}
@@ -29,9 +32,10 @@ export default function Carousel(props) {
                       key={imageLink}
                     >
                       <img
+                        className="img-fluid"
                         src={"/blog" + imageLink}
                         alt="hi alt"
-                        style={{ maxHeight: "90vh" }}
+                        style={{ maxWidth: "90vw", maxHeight: "90vh" }}
                       />
                     </div>
                   ))}

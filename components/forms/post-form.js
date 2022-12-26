@@ -62,7 +62,7 @@ export default function PostForm() {
       body: JSON.stringify({
         title: titleRef.current.value,
         list: listRef.current.value,
-        date: new Date(dateRef.current.value),
+        date: dateRef.current.value,
         desc: descRef.current.value,
         body: bodyRef.current.value,
         links: linkValues,
@@ -92,7 +92,7 @@ export default function PostForm() {
 
   return (
     <>
-      <div className="blogfolio mt-4">
+      <div className="blogfolio my-5">
         <p>POSTS</p>
       </div>
 
