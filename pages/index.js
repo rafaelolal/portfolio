@@ -71,7 +71,7 @@ export default function Home(props) {
         </div>
       </section>
 
-      <div className="blogfolio fadeIn1">
+      <div className="blogfolio">
         <p>MORE</p>
       </div>
 
@@ -105,7 +105,7 @@ export default function Home(props) {
         </div>
       </div>
 
-      <div className="col-12 col-md-10 col-lg-8 mx-auto my-5 fadeIn2">
+      <div className="col-12 col-md-10 col-lg-8 mx-auto my-5">
         <LatestPost
           id={props.post.id}
           list={props.post.list}
