@@ -19,57 +19,59 @@ export default function Home(props) {
       </Head>
 
       <section className="firstSection d-flex flex-column">
-        <div className="blogfolio mt-5 fadeIn1">
-          <p>WELCOME</p>
-        </div>
+        <div className="my-auto">
+          <div className="blogfolio fadeIn1">
+            <p>WELCOME</p>
+          </div>
 
-        <div className="row my-6">
-          <div className="col-12 col-md-6 fadeIn2">
-            <center>
-              <Link href="/posts?list=Project">
-                <a>
-                  <ProjectIcon />
-                  <a className="btn btn-dark fs-1">PROJECTS</a>
-                </a>
-              </Link>
+          <div className="row my-5">
+            <div className="col-12 col-md-6 fadeIn2">
+              <center>
+                <Link href="/posts?list=Project">
+                  <a>
+                    <ProjectIcon />
+                    <a className="btn btn-dark fs-1">PROJECTS</a>
+                  </a>
+                </Link>
+                <p className="mt-4 text-center">
+                  Explore my old, new, and on-going projects.
+                </p>
+              </center>
+            </div>
+
+            <div className="col-12 col-md-6 fadeIn3">
+              <center>
+                <Link href="/resume">
+                  <a>
+                    <ResumeIcon />
+                    <a className="btn btn-dark fs-1">RESUME</a>
+                  </a>
+                </Link>
+              </center>
               <p className="mt-4 text-center">
-                Explore my old, new, and on-going projects.
+                If reading bores you, read about me succinctly with my resume.
               </p>
-            </center>
+            </div>
           </div>
 
-          <div className="col-12 col-md-6 fadeIn3">
-            <center>
-              <Link href="/resume">
-                <a>
-                  <ResumeIcon />
-                  <a className="btn btn-dark fs-1">RESUME</a>
-                </a>
-              </Link>
+          <div className="fadeIn4">
+            <Link href="/posts">
+              <a>
+                <p className="text-center text-primary">
+                  <ExploreIcon />
+                </p>
+              </a>
+            </Link>
+
+            <p className="display-6 fw-bold text-center">Explore!</p>
+            <center className="fadeIn4">
+              <DownIcon />
             </center>
-            <p className="mt-4 text-center">
-              If reading bores you, read about me succinctly with my resume.
-            </p>
           </div>
-        </div>
-
-        <div className="fadeIn4">
-          <Link href="/posts">
-            <a>
-              <p className="text-center text-primary">
-                <ExploreIcon />
-              </p>
-            </a>
-          </Link>
-
-          <p className="display-6 fw-bold text-center">Explore!</p>
-          <center className="fadeIn4">
-            <DownIcon />
-          </center>
         </div>
       </section>
 
-      <div className="mt-5 blogfolio fadeIn1">
+      <div className="blogfolio fadeIn1">
         <p>MORE</p>
       </div>
 
