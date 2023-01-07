@@ -9,7 +9,7 @@ export default function Resume() {
 
       <iframe
         className="mt-5"
-        src="https://drive.google.com/file/d/1nh429mlFwCe_nOriTZX3iJLnGftlTVHa/preview"
+        src="https://drive.google.com/file/d/1F5fQZc9nxexkCjmt68BokXsmkEbCgRV2/preview"
         width="100%"
         style={{ height: "82vh" }}
       />
