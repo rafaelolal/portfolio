@@ -14,7 +14,6 @@ export default function AchievementList() {
         var grouped = {};
 
         for (let item of data.data) {
-          console.log({ item });
           if (!(item.type in grouped)) {
             grouped[item.type] = [];
             grouped[item.type].push(item);

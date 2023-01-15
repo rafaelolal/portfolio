@@ -18,6 +18,9 @@ export default function AboutPage() {
             alt="..."
             fill
             style={{ objectFit: "cover" }}
+            sizes="(max-width: 1080px) 100vw,
+            (max-width: 720px) 50vw,
+            33vw"
           />
         </div>
 

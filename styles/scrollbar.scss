@@ -19,14 +19,16 @@
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
-.hiddenBar::-webkit-scrollbar {
-  display: none;
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+.hiddenBar::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0);
+  // display: none;
+  // -ms-overflow-style: none; /* IE and Edge */
+  // scrollbar-width: none; /* Firefox */
 }
 
-div.hiddenBar:hover::-webkit-scrollbar {
-  display: block;
-  -ms-overflow-style: auto; /* IE and Edge */
-  scrollbar-width: 5px; /* Firefox */
+div.hiddenBar:hover::-webkit-scrollbar-thumb {
+  background-color: $secondary;
+  // display: block;
+  // -ms-overflow-style: auto; /* IE and Edge */
+  // scrollbar-width: 5px; /* Firefox */
 }

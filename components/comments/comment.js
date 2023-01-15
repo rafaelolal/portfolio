@@ -1,6 +1,5 @@
 export default function Comment(props) {
   const commentDate = new Date(props.date);
-  console.log({ "props.date": props.date });
 
   return (
     <div className="bg-white rounded p-3 mt-3">
