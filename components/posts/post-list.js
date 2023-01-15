@@ -58,7 +58,7 @@ export default function PostList(props) {
 
   return (
     <>
-      <a class="visually-hidden" id="postAnchor" href={"#" + anchorId}></a>
+      <a className="visually-hidden" id="postAnchor" href={"#" + anchorId}></a>
       <div className="fadeIn">
         {posts.map((post) => (
           <Post

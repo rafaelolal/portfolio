@@ -7,13 +7,12 @@ export default function Document() {
     <Html>
       <Head>
         <link rel="shortcut icon" href="/blog/favicon.ico" />
-      </Head>
-      <body>
         <Script
-          type="text/javascript"
-          src="js/bootstrap.bundle.min.js"
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
           strategy="beforeInteractive"
         />
+      </Head>
+      <body>
         <Main />
         <NextScript />
       </body>

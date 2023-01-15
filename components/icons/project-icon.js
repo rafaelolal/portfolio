@@ -5,7 +5,7 @@ export default function ProjectIcon() {
       length="auto"
       height="2.5em"
       fill="currentColor"
-      class="bi bi-kanban me-3 primary"
+      className="bi bi-kanban me-3 primary"
       viewBox="0 0 16 16"
     >
       <path d="M13.5 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-11a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h11zm-11-1a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2h-11z" />
