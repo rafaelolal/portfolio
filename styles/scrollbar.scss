@@ -32,3 +32,10 @@ div.hiddenBar:hover::-webkit-scrollbar-thumb {
   // -ms-overflow-style: auto; /* IE and Edge */
   // scrollbar-width: 5px; /* Firefox */
 }
+
+div.hiddenBar:hover::-webkit-scrollbar-thumb:hover {
+  background-color: $tertiary;
+  // display: block;
+  // -ms-overflow-style: auto; /* IE and Edge */
+  // scrollbar-width: 5px; /* Firefox */
+}
