@@ -29,8 +29,7 @@ export default function AboutPage() {
             <p className="display-3 fw-bold">ABOUT ME</p>
             <p>
               I was born in Brazil, Minas Gerais and moved to the United States
-              in 2016. I am currently a senior at the Academy for Information
-              Technology, Scotch Plains.
+              in 2016. I am currently a freshman at Bowdoin College, hoping to major in Computer Science. 
             </p>
           </div>
           <div className="fadeIn2">
@@ -44,7 +43,7 @@ export default function AboutPage() {
           <div className="fadeIn3">
             <p className="display-6 fw-bold text-primary">I LIKE</p>
             <p>
-              To work out and play video games (this excludes coding). Working
+              To work out, bike, hike, and play video games like Overwatch and Call of Duty. Working
               out has completely changed my life, and I play games competitively
               in my free time.
             </p>
@@ -54,9 +53,7 @@ export default function AboutPage() {
               I AM CURRENTLY WORKING ON
             </p>
             <p className="mb-0">
-              College applications, and of course, this blog project. I have
-              been working diligently for hours on end to make the user
-              experience as good as possible to make using the blog enjoyable.
+              Getting acclamated with college life, and of course, this blog project. I have many more feature updates to come. I am also  studying discrete mathematics and learning Docker in my free time.
             </p>
           </div>
         </div>
