@@ -53,7 +53,7 @@ export default function AboutPage() {
               I AM CURRENTLY WORKING ON
             </p>
             <p className="mb-0">
-              Getting acclamated with college life, and of course, this blog project. I have many more feature updates to come. I am also  studying discrete mathematics and learning Docker in my free time.
+              Getting acclimated with college life, and of course, this blog project. I have many more feature updates to come. I am also  studying discrete mathematics and learning Docker in my free time.
             </p>
           </div>
         </div>
