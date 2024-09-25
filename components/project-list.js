@@ -108,7 +108,7 @@ export default function ProjectList(props) {
 
     return (
         <>
-            <div className="align-items-center mt-5">
+            <div className="mt-5">
                 <div className="row mt-3">
                     <div className="col d-flex flex-wrap justify-content-center">
                         {/* This is part of my hacky way of getting the categories to be tags but appear to be different */}
@@ -118,7 +118,7 @@ export default function ProjectList(props) {
                     </div>
                 </div>
 
-                <div className="row mt-3 w-100">
+                <div className="row mt-3">
 
                     <div className="col d-flex flex-wrap justify-content-center">
                         {/* More on my hacky workaround tags and sizes or categories  */}
@@ -134,7 +134,7 @@ export default function ProjectList(props) {
                     </div>
                 </div>
 
-                <div className="row mt-3 w-100">
+                <div className="row mt-3">
                     <div className="col d-flex flex-wrap justify-content-center">
                         {availableTags.map(tag => (
                             <button
@@ -148,7 +148,7 @@ export default function ProjectList(props) {
                     </div>
                 </div>
 
-                <div className="row mt-5">
+                <div className="row">
                     {displayPosts.map((post) => (
                         <Post
                             key={post.id}
