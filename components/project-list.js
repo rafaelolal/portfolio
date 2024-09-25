@@ -159,6 +159,20 @@ export default function ProjectList(props) {
                     ))}
                 </div>
             </div>
+
+            <div className="d-flex flex-column my-5">
+                <button
+                    className="btn btn-secondary btn-block mx-auto text-white"
+                    onClick={() => {
+                        setSelectedTags([]);
+                        setSelectedSize("");
+                        setSelectedCategory("");
+                        setDisplayPosts(posts);
+                    }}
+                >
+                    Reset Filters
+                </button>
+            </div>
         </>
     );
 }

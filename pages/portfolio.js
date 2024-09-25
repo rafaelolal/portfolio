@@ -27,15 +27,6 @@ export default function BlogPage() {
                     currentMonth={currentMonth}
                     size="small"
                 />
-
-                <div className="d-flex flex-column my-5">
-                    <a
-                        className="btn btn-secondary btn-block mx-auto text-white"
-                        href="/blog/posts"
-                    >
-                        Reset Filters
-                    </a>
-                </div>
             </div>
         </>
     );
