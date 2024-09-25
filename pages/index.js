@@ -71,7 +71,7 @@ export default function Home(props) {
           </center>
 
           <center className="mt-5">
-            <Link href="/posts">
+            <Link href="/portfolio">
               <a>
                 <BlogIcon />
                 <a className="btn btn-dark fs-1">PORTFOLIO</a>
