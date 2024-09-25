@@ -38,7 +38,7 @@ export default function Post(props) {
 
   return (
     <div
-      className="col-12 col-md-10 col-lg-8 mx-auto bg-dark py-3 rounded my-5 shadow"
+      className={`col-12 col-md-10 col-lg-${props.size == "small" ? 5 : 8} mx-auto bg-dark py-3 rounded my-5 shadow h-100`}
       id={props.id}
     >
       <div className="vl ps-2 mx-3">

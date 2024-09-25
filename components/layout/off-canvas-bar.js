@@ -1,11 +1,10 @@
-import Image from "next/image";
 import Link from "next/link";
 import DiscordIcon from "../icons/discord-icon";
 import EmailIcon from "../icons/email-icon";
 import HamburgerIcon from "../icons/hamburger-icon";
-import VisitIcon from "../icons/visit-icon";
 import LinkedInIcon from "../icons/linkedIn-icon";
 import TelephoneIcon from "../icons/telephone-icon";
+import VisitIcon from "../icons/visit-icon";
 
 export default function OffCanvasBar() {
   return (
@@ -100,22 +99,10 @@ export default function OffCanvasBar() {
                 data-bs-toggle="offcanvas"
                 data-bs-target="#offcanvasNavbar"
               >
-                <Link href="/posts">
+                <Link href="/portfolio">
                   <a className="nav-link fs-5 pb-0">
                     <VisitIcon />
-                    Blog
-                  </a>
-                </Link>
-              </li>
-              <li
-                className="nav-item"
-                data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasNavbar"
-              >
-                <Link href="/resume">
-                  <a className="nav-link fs-5 pb-0">
-                    <VisitIcon />
-                    Resume
+                    Portfolio
                   </a>
                 </Link>
               </li>

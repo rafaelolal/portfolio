@@ -19,13 +19,8 @@ export default function CenterNavbar() {
               </Link>
             </li>
             <li>
-              <Link href="/posts">
-                <a className="nav-link fw-bold">BLOG</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/resume">
-                <a className="nav-link fw-bold">RESUME</a>
+              <Link href="/portfolio">
+                <a className="nav-link fw-bold">PORTFOLIO</a>
               </Link>
             </li>
           </ul>

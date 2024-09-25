@@ -1,15 +1,14 @@
-import Link from "next/link";
 import Head from "next/head";
+import Link from "next/link";
 
 import { getPosts } from "./api/getPosts";
 
-import LatestPost from "../components/posts/latest-post";
-import ExploreIcon from "../components/icons/explore-icon";
-import DownIcon from "../components/icons/down-icon";
-import ProjectIcon from "../components/icons/project-icon";
 import AboutIcon from "../components/icons/about-icon";
-import ResumeIcon from "../components/icons/resume-icon";
 import BlogIcon from "../components/icons/blog-icon";
+import DownIcon from "../components/icons/down-icon";
+import ExploreIcon from "../components/icons/explore-icon";
+import ProjectIcon from "../components/icons/project-icon";
+import LatestPost from "../components/posts/latest-post";
 
 export default function Home(props) {
   return (
@@ -37,21 +36,9 @@ export default function Home(props) {
                   Explore my old, new, and on-going projects.
                 </p>
               </center>
-
-              <center className="fadeIn3 mt-5">
-                <Link href="/resume">
-                  <a>
-                    <ResumeIcon />
-                    <a className="btn btn-dark fs-1">RESUME</a>
-                  </a>
-                </Link>
-                <p className="mt-4 text-center">
-                  If reading bores you, read about me succinctly with my resume.
-                </p>
-              </center>
             </div>
 
-            <div className="col-12 col-md-6 fadeIn4 my-auto">
+            <div className="col-12 col-md-6 fadeIn3 my-auto">
               <Link href="/posts">
                 <a>
                   <p className="text-center text-primary">
@@ -87,11 +74,11 @@ export default function Home(props) {
             <Link href="/posts">
               <a>
                 <BlogIcon />
-                <a className="btn btn-dark fs-1">BLOG</a>
+                <a className="btn btn-dark fs-1">PORTFOLIO</a>
               </a>
             </Link>
             <p className="mt-4 text-center">
-              Check out the featured blogs for my best accomplishments
+              Check out all of my projects.
             </p>
           </center>
         </div>

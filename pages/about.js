@@ -1,6 +1,8 @@
-import Head from "next/head";
 import Image from "next/future/image";
+import Head from "next/head";
+import Link from "next/link";
 import AchievementList from "../components/achievements/achievement-list";
+import BlogIcon from "../components/icons/blog-icon";
 export default function AboutPage() {
   return (
     <>
@@ -29,8 +31,18 @@ export default function AboutPage() {
             <p className="display-3 fw-bold">ABOUT ME</p>
             <p>
               I was born in Brazil, Minas Gerais and moved to the United States
-              in 2016. I am currently a freshman at Bowdoin College, hoping to major in Computer Science. 
+              in 2016. I am currently a CS major at Bowdoin College in Maine. Visit my blog below to learn more about my personal life.
             </p>
+
+            <div className="mt-1 mb-3 ms-0">
+              <Link href="/posts">
+                <a>
+
+                  <a className="btn btn-dark fs-4 me-2">Blog</a>
+                  <BlogIcon />
+                </a>
+              </Link>
+            </div>
           </div>
           <div className="fadeIn2">
             <p className="display-6 fw-bold text-primary">I ASPIRE TO BE</p>
@@ -43,9 +55,7 @@ export default function AboutPage() {
           <div className="fadeIn3">
             <p className="display-6 fw-bold text-primary">I LIKE</p>
             <p>
-              To work out, bike, hike, and play video games like Overwatch and Call of Duty. Working
-              out has completely changed my life, and I play games competitively
-              in my free time.
+              To work out, bike, hike, and play competitive shooter games. Currently, my favorite games are Overwatch and The Finals. I have also started to practice more calisthenics instead of weightlifting.
             </p>
           </div>
           <div className="fadeIn4">
@@ -53,7 +63,7 @@ export default function AboutPage() {
               I AM CURRENTLY WORKING ON
             </p>
             <p className="mb-0">
-              Getting acclimated with college life, and of course, this blog project. I have many more feature updates to come. I am also  studying discrete mathematics and learning Docker in my free time.
+              Living the college life, working on my own projects, and attending as many hackathons as possible!
             </p>
           </div>
         </div>

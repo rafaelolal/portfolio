@@ -1,10 +1,12 @@
-import { Router, useRouter } from "next/router";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
-import Post from "./post";
 import Loading from "../layout/loading";
+import Post from "./post";
 
 export default function PostList(props) {
+  const size = props.size
+
   const router = useRouter();
   const { isReady } = router;
   const routerList = router.query.list;
@@ -59,9 +61,10 @@ export default function PostList(props) {
   return (
     <>
       <a className="visually-hidden" id="postAnchor" href={"#" + anchorId}></a>
-      <div className="fadeIn">
+      <div className="row fadeIn">
         {posts.map((post) => (
           <Post
+            size={size}
             key={post.id}
             id={post.id}
             list={post.list}
