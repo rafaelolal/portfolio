@@ -1,9 +1,7 @@
 import Link from "next/link";
-import DiscordIcon from "../icons/discord-icon";
 import EmailIcon from "../icons/email-icon";
 import HamburgerIcon from "../icons/hamburger-icon";
 import LinkedInIcon from "../icons/linkedIn-icon";
-import TelephoneIcon from "../icons/telephone-icon";
 import VisitIcon from "../icons/visit-icon";
 
 export default function OffCanvasBar() {
@@ -42,18 +40,14 @@ export default function OffCanvasBar() {
           </div>
           <div className="offcanvas-body">
             <p className="nav-link fs-5">
-              <TelephoneIcon />
-              +1 (908) 937-4898
-            </p>
-            <p className="nav-link fs-5">
               <EmailIcon />
-              rafaelpbcp@gmail.com
+              portfolio@ralmeida.dev
             </p>
             <ul className="navbar-nav">
               <li className="nav-item">
                 <a
                   className="nav-link"
-                  href="https://www.linkedin.com/in/rafael-almeida-386bb0202/"
+                  href="https://www.linkedin.com/in/ralmeidadev/"
                 >
                   <p className="fs-5">
                     <LinkedInIcon />
@@ -62,10 +56,6 @@ export default function OffCanvasBar() {
                 </a>
               </li>
             </ul>
-            <p className="nav-link fs-5">
-              <DiscordIcon />
-              Rafael Almeida#3398
-            </p>
 
             <hr />
 
